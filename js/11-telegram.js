@@ -1,9 +1,10 @@
 const EDGE_URL = 'https://duzfttrrzeqvxpfnyxfg.supabase.co/functions/v1/quick-responder';
-const PORTAL_KEY = 'tiflis_internal';
+const PORTAL_KEY = ''; // disabled: migrate calls to tiflis-secure-api
 
 // Отримати токен бота з налаштувань
 function getTgToken() {
-  return DB.get('tg_bot_token') || localStorage.getItem('tiflis_tg_token') || '';
+  try { localStorage.removeItem('tiflis_tg_token'); } catch(e) {}
+  return '';
 }
 
 // ── Відправка особистого повідомлення через Telegram Bot API ─────
