@@ -1,0 +1,84 @@
+name: Phase 0 sanitize browser sources
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - security/phase-0
+
+permissions:
+  contents: write
+
+jobs:
+  sanitize:
+    if: ${{ !contains(github.event.head_commit.message, '[phase0-sanitize]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: security/phase-0
+
+      - name: Remove privileged browser credentials
+        env:
+          SUPABASE_PUBLISHABLE_KEY: sb_publishable_ICnIrODW2ZMbbhia8iBoCA_vCgQwoPx
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          publishable = os.environ['SUPABASE_PUBLISHABLE_KEY']
+
+          db_file = Path('js/01-supabase-db.js')
+          db_text = db_file.read_text(encoding='utf-8')
+          db_text, count = re.subn(
+              r"const SUPA_KEY\s*=\s*['\"][^'\"]+['\"]\s*;",
+              f"const SUPA_KEY = '{publishable}';",
+              db_text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit('Could not replace SUPA_KEY safely')
+          db_file.write_text(db_text, encoding='utf-8')
+
+          telegram_file = Path('js/11-telegram.js')
+          telegram_text = telegram_file.read_text(encoding='utf-8')
+          telegram_text, count = re.subn(
+              r"const PORTAL_KEY\s*=\s*['\"][^'\"]*['\"]\s*;",
+              "const PORTAL_KEY = ''; // disabled: migrate calls to tiflis-secure-api",
+              telegram_text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit('Could not disable legacy portal key safely')
+
+          telegram_text, count = re.subn(
+              r"function getTgToken\(\)\s*\{.*?\n\}",
+              "function getTgToken() {\n  try { localStorage.removeItem('tiflis_tg_token'); } catch(e) {}\n  return '';\n}",
+              telegram_text,
+              count=1,
+              flags=re.S,
+          )
+          if count != 1:
+              raise SystemExit('Could not disable browser Telegram token safely')
+          telegram_file.write_text(telegram_text, encoding='utf-8')
+
+          bootstrap_file = Path('js/21-bootstrap.js')
+          bootstrap_text = bootstrap_file.read_text(encoding='utf-8')
+          cleanup = "try { localStorage.removeItem('tiflis_tg_token'); } catch(e) {}\n\n"
+          if cleanup not in bootstrap_text:
+              bootstrap_text = cleanup + bootstrap_text
+              bootstrap_file.write_text(bootstrap_text, encoding='utf-8')
+          PY
+
+      - name: Commit sanitized sources
+        run: |
+          if git diff --quiet; then
+            echo "Sources are already sanitized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/01-supabase-db.js js/11-telegram.js js/21-bootstrap.js
+          git commit -m "security: remove browser credentials [phase0-sanitize]"
+          git push origin HEAD:security/phase-0
