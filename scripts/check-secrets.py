@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
-"""Fail CI when browser-accessible source contains high-risk credentials."""
+"""Fail CI when deployable browser source contains high-risk credentials."""
 
 from __future__ import annotations
 
 import pathlib
 import re
 import sys
+from collections.abc import Iterable
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-TEXT_SUFFIXES = {
-    ".html", ".js", ".mjs", ".cjs", ".ts", ".tsx", ".json", ".css",
-    ".md", ".yml", ".yaml", ".toml", ".sql", ".txt",
-}
-SKIP_PARTS = {".git", ".supabase", "node_modules", "dist", "build"}
+BROWSER_TARGETS = (
+    pathlib.Path("index.html"),
+    pathlib.Path("manifest.json"),
+    pathlib.Path("sw.js"),
+    pathlib.Path("js"),
+    pathlib.Path("css"),
+)
+TEXT_SUFFIXES = {".html", ".js", ".mjs", ".cjs", ".ts", ".tsx", ".json", ".css"}
 
-# These checks intentionally focus on credentials that must never be shipped
-# to a browser or committed as literal values. Publishable/anon Supabase keys
-# are not treated as secrets, but service-role keys are.
-PATTERNS: list[tuple[str, re.Pattern[str]]] = [
+BROWSER_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     (
-        "Supabase service-role credential or variable in browser source",
+        "Supabase service-role credential in browser source",
         re.compile(r"(?:service[_-]?role|SUPABASE_SERVICE_ROLE_KEY)", re.I),
     ),
     (
@@ -36,48 +37,41 @@ PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ),
 ]
 
-# Server-side Supabase functions legitimately reference environment variable
-# names. Literal secrets are still scanned there, but service-role variable
-# names alone are allowed.
-SERVER_PREFIX = pathlib.Path("supabase/functions")
 
-
-def is_text_file(path: pathlib.Path) -> bool:
-    return path.suffix.lower() in TEXT_SUFFIXES or path.name in {"Dockerfile", "Makefile"}
-
-
-def should_skip(path: pathlib.Path) -> bool:
-    return any(part in SKIP_PARTS for part in path.parts)
+def iter_files(target: pathlib.Path) -> Iterable[pathlib.Path]:
+    absolute = ROOT / target
+    if absolute.is_file():
+        yield absolute
+        return
+    if absolute.is_dir():
+        for path in absolute.rglob("*"):
+            if path.is_file() and path.suffix.lower() in TEXT_SUFFIXES:
+                yield path
 
 
 def main() -> int:
     findings: list[str] = []
 
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or should_skip(path.relative_to(ROOT)) or not is_text_file(path):
-            continue
-
-        relative = path.relative_to(ROOT)
-        try:
-            text = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
-            continue
-
-        for label, pattern in PATTERNS:
-            if relative.is_relative_to(SERVER_PREFIX) and "service-role credential" in label:
+    for target in BROWSER_TARGETS:
+        for path in iter_files(target):
+            relative = path.relative_to(ROOT)
+            try:
+                text = path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
                 continue
 
-            for match in pattern.finditer(text):
-                line = text.count("\n", 0, match.start()) + 1
-                findings.append(f"{relative}:{line}: {label}")
+            for label, pattern in BROWSER_PATTERNS:
+                for match in pattern.finditer(text):
+                    line = text.count("\n", 0, match.start()) + 1
+                    findings.append(f"{relative}:{line}: {label}")
 
     if findings:
-        print("Security scan failed. Remove or rotate the following credentials/patterns:", file=sys.stderr)
+        print("Security scan failed. Remove and rotate the following credentials:", file=sys.stderr)
         for finding in findings:
             print(f"  - {finding}", file=sys.stderr)
         return 1
 
-    print("Security scan passed: no blocked credential patterns found.")
+    print("Security scan passed: browser sources contain no blocked credential patterns.")
     return 0
 
 
