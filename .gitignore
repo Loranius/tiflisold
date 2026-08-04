@@ -1,0 +1,22 @@
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Supabase local state
+.supabase/
+supabase/.temp/
+
+# Logs and local caches
+*.log
+.cache/
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
