@@ -1,5 +1,5 @@
 const EDGE_URL = 'https://duzfttrrzeqvxpfnyxfg.supabase.co/functions/v1/quick-responder';
-const PORTAL_KEY = ''; // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api
+const PORTAL_KEY = ''; // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api // disabled: migrate calls to tiflis-secure-api
 
 // Отримати токен бота з налаштувань
 function getTgToken() {
