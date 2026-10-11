@@ -80,7 +80,7 @@
       if (!menu.hidden && !menu.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
     });
     // Якщо екран розширився до повної навігації, відкрите меню більше не потрібне.
-    var wide = window.matchMedia('(min-width: 1101px)');
+    var wide = window.matchMedia('(min-width: 68.8125em)');
     var onWide = function () { if (wide.matches && !menu.hidden) setMenu(false); };
     if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
   }

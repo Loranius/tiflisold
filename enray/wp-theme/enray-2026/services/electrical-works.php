@@ -61,7 +61,7 @@
 
   <section class="section closing closing--scenario" aria-label="Заявка">
     <div class="request" id="zayavka">
-      <h2>Заявка на електромонтаж</h2>
+      <h2>Заявка на електро­монтаж</h2>
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00.</p>
       <?php enray_request_form( 'service', 'Електромонтаж' ); ?>
     </div>

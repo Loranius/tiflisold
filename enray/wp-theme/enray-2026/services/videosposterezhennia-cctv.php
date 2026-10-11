@@ -4,7 +4,7 @@
   <section class="hero hero--scenario hero--service" aria-labelledby="hero-h">
     <div class="hero-copy">
       <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true"> / </span><a href="<?php echo esc_url( home_url( '/' ) ); ?>#posluhy">Послуги</a><span aria-hidden="true"> / </span><span>Відеоспостереження</span></p>
-      <h1 id="hero-h">Відео&shy;спостереження для дому й бізнесу</h1>
+      <h1 id="hero-h">Відео&shy;спосте&shy;реження для дому й бізнесу</h1>
       <p class="hero-sub">Підбір і монтаж камер, запис 24/7 і перегляд з телефона чи комп'ютера: для будинку, офісу, складу або території.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#zayavka">Замовити огляд</a>
@@ -60,7 +60,7 @@
 
   <section class="section closing closing--scenario" aria-label="Заявка">
     <div class="request" id="zayavka">
-      <h2>Заявка на відеоспостереження</h2>
+      <h2>Заявка на відео­спостереження</h2>
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00.</p>
       <?php enray_request_form( 'service', 'Відеоспостереження' ); ?>
     </div>
