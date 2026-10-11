@@ -252,3 +252,7 @@
 
 /* Межі графіків: світлі стани мережі й сонця на білому отримують контур ≥3:1. */
 .cell, .bcol, .scol-need, .legend .sw { box-shadow: inset 0 0 0 1px rgba(11, 18, 48, .35); }
+
+/* Відповідь FAQ розгортається вниз від питання */
+.faq details[open] > p { animation: unfold .28s cubic-bezier(.16,1,.3,1); }
+@media (prefers-reduced-motion: reduce) { .faq details[open] > p { animation: fade .15s ease-out; } }

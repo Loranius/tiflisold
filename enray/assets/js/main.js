@@ -2,6 +2,17 @@
   'use strict';
 
   var fmt = new Intl.NumberFormat('uk-UA');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var EASE = 'cubic-bezier(.16,1,.3,1)';
+  // Відгук на зміну результату: число «клацає» на місце, лише коли воно справді змінилось.
+  var tick = function (el, text) {
+    if (el.textContent === text) return;
+    el.textContent = text;
+    if (!el.animate || !el.isConnected || el.closest('[hidden]')) return;
+    el.getAnimations().forEach(function (a) { a.cancel(); });
+    el.animate(calm.matches ? [{ opacity: .4 }, { opacity: 1 }]
+      : [{ opacity: .35, transform: 'translateY(.14em)' }, { opacity: 1, transform: 'none' }], { duration: 200, easing: EASE });
+  };
   var TARIFF = 4.32;          // грн за кВт·год, побутовий тариф
   var YIELD = 1150;           // кВт·год на рік з 1 кВт панелей, Вінницька обл.
   var SIZES = [3, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50];
@@ -48,7 +59,7 @@
     var kw = SIZES.find(function (s) { return s >= need * 0.95; }) || SIZES[SIZES.length - 1];
     var plus = v >= Number(bill.max);
     billOut.textContent = fmt.format(v) + (plus ? '+ грн' : ' грн');
-    kwOut.textContent = (plus ? 'від ' : '≈ ') + kw + ' кВт';
+    tick(kwOut, (plus ? 'від ' : '≈ ') + kw + ' кВт');
     kwhOut.textContent = '≈ ' + fmt.format(roundTo(month, 10)) + ' кВт·год на місяць, ≈ ' + fmt.format(roundTo(year, 100)) + ' кВт·год на рік';
     bill.setAttribute('aria-valuetext', billOut.textContent);
   }
@@ -72,7 +83,7 @@
     setP(cKwh);
     document.getElementById('c-kwh-out').textContent = fmt.format(v) + (plus ? '+' : '') + ' кВт·год';
     cKwh.setAttribute('aria-valuetext', fmt.format(v) + ' кВт·год на місяць');
-    document.getElementById('c-biz-kw').textContent = (plus ? 'від ' : '≈ ') + kw + ' кВт';
+    tick(document.getElementById('c-biz-kw'), (plus ? 'від ' : '≈ ') + kw + ' кВт');
     document.getElementById('c-biz-detail').textContent = '≈ ' + fmt.format(roundTo(year, 100)) + ' кВт·год на рік споживання, станція дасть ≈ ' +
       fmt.format(roundTo(kw * YIELD, 100)) + ' кВт·год на рік.' + (kw > 100 ? BIG : '');
   };
@@ -95,7 +106,7 @@
     document.getElementById('c-pump-out').textContent = pump + ' кВт';
     document.getElementById('c-hours-out').textContent = hours + ' год';
     cHours.setAttribute('aria-valuetext', hours + ' год на день');
-    document.getElementById('c-agro-kw').textContent = '≈ ' + kw + ' кВт';
+    tick(document.getElementById('c-agro-kw'), '≈ ' + kw + ' кВт');
     document.getElementById('c-agro-detail').textContent = 'Насосам потрібно ≈ ' + fmt.format(roundTo(need, 100)) +
       ' кВт·год за сезон, найслабший місяць — ' + MON[worst] + '.' + (kw > 100 ? BIG : '');
   };
@@ -108,7 +119,20 @@
     var autoObj = null;
     sw.addEventListener('change', function (e) {
       var mode = e.target.value;
-      document.querySelectorAll('.calc-panel').forEach(function (p) { p.hidden = p.dataset.mode !== mode; });
+      document.querySelectorAll('.calc-panel').forEach(function (p) {
+        var show = p.dataset.mode === mode;
+        if (p.hidden === !show) return;
+        p.hidden = !show;
+        // Нова панель проявляється, а результат дописується розчерком — видно, що змінився режим.
+        if (show && p.animate) {
+          p.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: EASE });
+          var res = p.querySelector('.calc-result');
+          if (res && !calm.matches) {
+            var r = getComputedStyle(res).borderRadius;
+            res.animate([{ clipPath: 'inset(0 100% 0 0 round ' + r + ')' }, { clipPath: 'inset(0 0 0 0 round ' + r + ')' }], { duration: 420, easing: EASE });
+          }
+        }
+      });
       // Вибір відвідувача переносимо у форму, якщо там ще нічого не обрано вручну.
       var cur = document.querySelector('#request-form input[name="object"]:checked');
       if (!cur || cur === autoObj) {

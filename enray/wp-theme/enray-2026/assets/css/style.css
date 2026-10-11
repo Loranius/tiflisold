@@ -42,7 +42,17 @@
 [hidden] { display: none !important; }
 .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 24px); -webkit-text-size-adjust: 100%; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+/* Рух. Одна мова на весь сайт — «інженерний розчерк»: відкриття зліва направо, як перо по аркушу.
+   Менше руху: без переміщень і розчерків, лише короткі зміни кольору й прозорості, які несуть стан. */
+@keyframes pen { from { clip-path: inset(-30% 100% -30% 0); } to { clip-path: inset(-30% 0 -30% 0); } }
+@keyframes drop { from { clip-path: inset(0 0 100% 0 round 16px); opacity: .5; } to { clip-path: inset(0 0 0 0 round 16px); opacity: 1; } }
+@keyframes unfold { from { clip-path: inset(0 0 100% 0); opacity: 0; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+@keyframes settle { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-property: color, background-color, border-color, outline-color, opacity !important; transition-duration: .15s !important; transition-delay: 0s !important; }
+}
 body {
   margin: 0;
   background: var(--paper);
@@ -127,6 +137,11 @@ p { margin: 0; }
 .hero-figure img { width: 100%; height: 100%; min-height: 100%; object-fit: cover; object-position: 50% 100%;
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%); mask-image: linear-gradient(90deg, transparent 0, #000 6%); }
 .callouts { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+.callouts text { animation: pen .75s cubic-bezier(.16,1,.3,1) both; }
+/* Порядок, у якому креслить інженер: що це за об'єкт → розмір → строк */
+.callouts text:nth-child(2) { animation-delay: .45s; }
+.callouts text:nth-child(1) { animation-delay: .7s; }
+.callouts text:nth-child(3) { animation-delay: .95s; }
 .callouts text { font: 500 26px var(--f-mono); fill: var(--cobalt-deep); paint-order: stroke; stroke: #dcedfd; stroke-width: 6px; stroke-linejoin: round; }
 
 /* Facts */
@@ -401,4 +416,15 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
   .mobile-bar .btn { min-height: 52px; font-size: 18px; }
   .mobile-bar .btn-outline { background: var(--paper); }
   .site-footer { padding-bottom: calc(28px + 76px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Стан і відгук */
+.calc-kw b { display: inline-block; }
+.mobile-menu:not([hidden]) { animation: drop .26s cubic-bezier(.16,1,.3,1); }
+.field-err:not([hidden]), .form-errors:not([hidden]) { animation: settle .18s cubic-bezier(.16,1,.3,1); }
+.form-msg.is-success { animation: unfold .32s cubic-bezier(.16,1,.3,1); }
+@media (prefers-reduced-motion: reduce) {
+  .callouts text { animation: none; }
+  .mobile-menu:not([hidden]), .field-err:not([hidden]), .form-errors:not([hidden]), .form-msg.is-success { animation: fade .15s ease-out; }
+  .scenario:hover .scenario-media img { transform: none; }
 }
