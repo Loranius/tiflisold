@@ -119,6 +119,41 @@ typography:
     fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Consolas, monospace"
     fontSize: "26px"
     fontWeight: 500
+  small:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.4
+  nav-link:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(15px, 1.3vw, 21px)"
+    fontWeight: 500
+    lineHeight: 1
+  segment:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.2vw, 20px)"
+    fontWeight: 600
+    lineHeight: 1
+  calc-detail:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.4vw, 23px)"
+    fontWeight: 400
+    lineHeight: 1.45
+  wordmark-footer:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(26px, 2vw, 34px)"
+    fontWeight: 800
+    lineHeight: 1
+  display-phone:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(30px, 9.4vw, 44px)"
+    fontWeight: 800
+    lineHeight: 1.08
+  callout-phone:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "34px"
+    fontWeight: 500
+    lineHeight: 1
 rounded:
   control: "10px"
   card: "clamp(10px, 0.9vw, 16px)"
