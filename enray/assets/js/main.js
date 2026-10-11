@@ -19,6 +19,14 @@
     toggle.addEventListener('click', function () { setMenu(menu.hidden); });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); toggle.focus(); } });
+    // Дотик поза меню й шапкою закриває меню.
+    document.addEventListener('click', function (e) {
+      if (!menu.hidden && !menu.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
+    });
+    // Якщо екран розширився до повної навігації, відкрите меню більше не потрібне.
+    var wide = window.matchMedia('(min-width: 1101px)');
+    var onWide = function () { if (wide.matches && !menu.hidden) setMenu(false); };
+    if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
   }
 
   // Калькулятор
