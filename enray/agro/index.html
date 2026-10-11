@@ -76,18 +76,20 @@
         <div class="bill-cols season-cols" id="season-cols"></div>
         <div class="bill-scale"><span data-s="С">січ</span><span data-s="Л">лют</span><span data-s="Б">бер</span><span data-s="К">кві</span><span data-s="Т">тра</span><span data-s="Ч">чер</span><span data-s="Л">лип</span><span data-s="С">сер</span><span data-s="В">вер</span><span data-s="Ж">жов</span><span data-s="Л">лис</span><span data-s="Г">гру</span></div>
       </div>
-      <p class="day-summary" id="season-summary" aria-live="polite"></p>
+      <p class="day-summary" id="season-summary" aria-live="polite">За сезон насосам потрібно <b>≈ 43 900 кВт·год</b>, усе з мережі або генератора.</p>
       <ul class="legend" aria-hidden="true">
         <li><i class="sw sw--grid"></i>мережа або генератор</li>
         <li><i class="sw sw--sun"></i>закриває станція</li>
         <li><i class="sw sw--idle"></i>поза сезоном</li>
+        <li><i class="sw sw--gen"></i>генерація станції</li>
+        <li><i class="sw sw--weak"></i>найслабший місяць</li>
       </ul>
       <table class="sr-only" id="season-table">
-        <caption>Енергія насосів по місяцях сезону, кВт·год</caption>
+        <caption id="season-caption">Енергія насосів по місяцях сезону, кВт·год</caption>
         <thead><tr><th scope="col">Місяць</th><th scope="col">Потрібно насосам</th><th scope="col">Закриває станція</th></tr></thead>
         <tbody></tbody>
       </table>
-      <p class="day-note" id="season-note"></p>
+      <p class="day-note" id="season-note">Приклад, ілюстративно: насоси 30 кВт, 8 год на день, сезон квітень — вересень, станція 50 кВт. Змініть дані в калькуляторі нижче.</p>
     </figure>
   </section>
 
@@ -127,8 +129,8 @@
       </div>
       <div class="rezerv-result" aria-live="polite">
         <p class="rz-label" id="a-cover-label">Станція закриває за сезон · приклад</p>
-        <p class="rz-kwh"><span id="a-cover">≈ 86</span> <small>%</small></p>
-        <p class="bi-sentence" id="a-sentence"></p>
+        <p class="rz-kwh"><span id="a-cover">≈ 93</span>&nbsp;<span class="rz-pct">%</span></p>
+        <p class="bi-sentence" id="a-sentence">Насосам потрібно ≈ 43 900 кВт·год за сезон. Щоб закрити й найслабший місяць (вересень), потрібно ≈ 70 кВт панелей.</p>
         <div class="bill-mini" aria-hidden="true">
           <div class="bill-cols bill-cols--mini season-cols" id="season-mini"></div>
         </div>
@@ -141,15 +143,21 @@
   <section class="section case-feature" aria-labelledby="case-h">
     <h2 id="case-h">Полив саду в Луці-Мелешківській</h2>
     <div class="cf-grid">
-      <figure class="cf-main">
-        <img src="../assets/plates/agro-case.webp" width="1280" height="694" alt="Сонячна станція 100 кВт на даху господарської будівлі поруч із водоймою і садом у селі Лука-Мелешківська" loading="lazy">
-        <svg class="callouts" viewBox="0 0 1280 694" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-          <text x="610" y="282" text-anchor="middle">100 кВт</text>
-          <text class="c-wide" x="300" y="226" text-anchor="start">полив саду · 2025</text>
-          <text class="c-narrow" x="380" y="226" text-anchor="middle">полив · 2025</text>
-          <text x="880" y="218" text-anchor="middle">монтаж — 10 днів</text>
+      <div class="cf-left">
+      <figure class="cf-main cf-main--wide">
+        <img src="../assets/plates/agro-case.webp" width="1440" height="707" alt="Сонячна станція 100 кВт на даху господарської будівлі поруч із водоймою і садом у селі Лука-Мелешківська" loading="lazy">
+        <svg class="callouts" viewBox="0 0 1440 707" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+          <text x="669" y="358" text-anchor="middle">100 кВт</text>
+          <text class="c-wide" x="278" y="290" text-anchor="start">полив саду · 2025</text>
+          <text class="c-narrow" x="380" y="290" text-anchor="middle">полив · 2025</text>
+          <text x="1011" y="280" text-anchor="middle">монтаж — 10 днів</text>
         </svg>
       </figure>
+        <figure class="cf-inverter">
+          <img src="../assets/plates/agro-detail.webp" width="800" height="600" alt="Ряди сонячних панелей на даху господарської будівлі, поруч сад і водойма" loading="lazy">
+          <figcaption>Панелі на даху господарської будівлі, той самий об'єкт</figcaption>
+        </figure>
+      </div>
       <div class="cf-side">
         <dl class="cf-spec">
           <div><dt>Потужність</dt><dd>100 кВт</dd></div>
@@ -159,10 +167,6 @@
           <div><dt>Монтаж</dt><dd>10 днів</dd></div>
         </dl>
         <p class="cf-note">Обстежили ділянку й затінення, розрахували потужність під пікові навантаження поливу, змонтували станцію й налаштували її разом із системою поливу.</p>
-        <figure class="cf-inverter">
-          <img src="../assets/plates/agro-detail.webp" width="800" height="600" alt="Ряди сонячних панелей на даху господарської будівлі, поруч сад і водойма" loading="lazy">
-          <figcaption>Панелі на даху господарської будівлі, той самий об'єкт</figcaption>
-        </figure>
       </div>
     </div>
   </section>
@@ -216,7 +220,8 @@
         <div class="field"><label for="f-pump">Насоси, кВт</label><input id="f-pump" name="pump" type="text" inputmode="numeric" placeholder="сумарно, якщо знаєте"></div>
         <div class="field"><label for="f-hours">Годин поливу на день</label><input id="f-hours" name="hours" type="text" inputmode="numeric" placeholder="наприклад, 8"></div>
         <div class="field"><label for="f-season">Сезон поливу</label><input id="f-season" name="season" type="text" placeholder="наприклад, квітень — вересень"></div>
-        <div class="field field--wide"><label for="f-water">Джерело води і чи є мережа на ділянці</label><input id="f-water" name="water" type="text" placeholder="наприклад, свердловина, мережі немає"></div>
+        <div class="field"><label for="f-kw">Потужність станції, кВт (орієнтир)</label><input id="f-kw" name="kw" type="text" inputmode="numeric" placeholder="якщо знаєте"></div>
+        <div class="field"><label for="f-water">Джерело води і чи є мережа на ділянці</label><input id="f-water" name="water" type="text" placeholder="наприклад, свердловина, мережі немає"></div>
         <button class="btn btn-primary btn-lg" type="submit">Надіслати запит</button>
         <p class="form-msg" id="form-msg" role="status"></p>
       </form>

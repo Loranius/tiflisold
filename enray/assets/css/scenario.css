@@ -227,3 +227,25 @@
   background-position: calc(100% - 20px) 22px, calc(100% - 14px) 22px; background-size: 6px 6px; background-repeat: no-repeat;
 }
 .bi-select:focus { outline: none; border-color: var(--cobalt); box-shadow: 0 0 0 3px rgba(10,79,214,.18); }
+
+/* Живий режим: під час введення без хвилі, хвиля лише на перемикачі */
+.is-live .bcol-sun, .is-live .scol-need { transition-delay: 0s; transition-duration: .2s; }
+
+/* Агро: генерація станції по місяцях і найслабший місяць */
+.gen-mark {
+  position: absolute; left: -2px; right: -2px; bottom: var(--gen, 0%); height: 0;
+  border-top: 2px dashed var(--cobalt-line); opacity: 0; transition: opacity .3s, bottom .2s; pointer-events: none;
+}
+.season-cols.is-on .gen-mark, .bill-cols--mini .gen-mark { opacity: 1; }
+.scol.is-weak .scol-need { box-shadow: inset 0 0 0 2px var(--cobalt); }
+.legend .sw--gen { width: 20px; height: 2px; border-radius: 0; background: repeating-linear-gradient(90deg, var(--cobalt-line) 0 5px, transparent 5px 8px); }
+.legend .sw--weak { background: var(--st-grid); box-shadow: inset 0 0 0 2px var(--cobalt); }
+.rz-pct { font: 800 .55em/1 var(--f-display); color: var(--ink); }
+
+/* Широке фото кейсу без обрізання (Агро) */
+.cf-main--wide { align-self: start; }
+.cf-main--wide img { height: auto; aspect-ratio: 1440 / 707; }
+.cf-left { display: grid; gap: clamp(16px, 1.6vw, 26px); align-content: start; min-width: 0; }
+.cf-left .cf-inverter img { aspect-ratio: 21 / 8; }
+.cf-main--wide .callouts text { font-size: 32px; stroke-width: 7px; }
+@media (max-width: 720px) { .cf-main--wide .callouts text { font-size: 44px; stroke-width: 9px; } }

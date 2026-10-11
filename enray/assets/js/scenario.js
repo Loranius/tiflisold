@@ -186,7 +186,10 @@
     });
     bKw.addEventListener('input', function () { mine.kw = true; render(); });
     document.querySelectorAll('input[name=share]').forEach(function (i) { i.addEventListener('change', function () { mine.share = true; render(); }); });
-    bindToggle(function (md) { mode = md; chart.dataset.mode = md; render(); });
+    var liveB = function () { chart.classList.add('is-live'); if (mini) mini.classList.add('is-live'); };
+    [bBill, bBillNum, bTariff, bKw].forEach(function (i) { i.addEventListener('input', liveB); });
+    document.querySelectorAll('input[name=share]').forEach(function (i) { i.addEventListener('change', liveB); });
+    bindToggle(function (md) { mode = md; chart.dataset.mode = md; chart.classList.remove('is-live'); render(); });
     if (form) form.addEventListener('enray:reset', render);
     if (reduce) { chart.classList.add('no-motion'); if (mini) mini.classList.add('no-motion'); }
     render();
@@ -216,7 +219,7 @@
         var c = document.createElement('span');
         c.className = 'scol';
         c.style.setProperty('--i', m);
-        c.innerHTML = '<span class="scol-need"><span class="bcol-sun"></span></span>';
+        c.innerHTML = '<span class="scol-need"><span class="bcol-sun"></span></span><span class="gen-mark"></span>';
         box.appendChild(c);
       }
     };
@@ -230,7 +233,7 @@
         var on = inSeason(m, a, b);
         var need = on ? pump * hours * d : 0;
         var gen = kw * YA * FA[m];
-        return { on: on, need: need, cover: Math.min(need, gen), full: on && gen >= need, kwNeed: on ? need / (YA * FA[m]) : 0 };
+        return { on: on, need: need, gen: gen, cover: Math.min(need, gen), full: on && gen >= need, kwNeed: on ? need / (YA * FA[m]) : 0 };
       });
       var need = months.reduce(function (s, x) { return s + x.need; }, 0);
       var cover = months.reduce(function (s, x) { return s + x.cover; }, 0);
@@ -246,6 +249,8 @@
         col.classList.toggle('is-idle', !x.on);
         col.style.setProperty('--need', (x.need / max * 100) + '%');
         col.style.setProperty('--sun', (on && x.need ? x.cover / x.need * 100 : 0) + '%');
+        col.style.setProperty('--gen', Math.min(100, x.gen / max * 100) + '%');
+        col.classList.toggle('is-weak', on && i === r.weakest && r.months[i].cover < r.months[i].need);
       }
     };
 
@@ -253,13 +258,16 @@
       var r = calcA();
       var pct = r.need ? Math.round(r.cover / r.need * 100) : 0;
       paintA(sCols, r, aMode === 'on');
+      sCols.classList.toggle('is-on', aMode === 'on');
       if (sMini) paintA(sMini, r, true);
       g('a-pump-out').textContent = r.pump + ' кВт';
       g('a-hours-out').textContent = r.hours + ' год';
       g('a-kw-out').textContent = r.kw + ' кВт';
       g('a-cover').textContent = '≈ ' + pct;
       var anyA = own.pump || own.hours || own.season || own.kw;
-      g('a-cover-label').textContent = 'Станція закриває за сезон · ' + (own.pump && own.hours ? 'за вашими даними' : 'приклад');
+      var allA = own.pump && own.hours && own.season && own.kw;
+      g('a-cover-label').textContent = 'Станція закриває за сезон · ' + (allA ? 'за вашими даними' : anyA ? 'частково приклад' : 'приклад');
+      g('season-caption').textContent = 'Енергія насосів по місяцях сезону, кВт·год. Найслабший місяць — ' + MN[r.weakest] + '.';
       g('a-sentence').textContent = 'Насосам потрібно ≈ ' + fmt.format(Math.round(r.need / 100) * 100) + ' кВт·год за сезон. ' +
         (pct >= 100 ? 'Станції ' + r.kw + ' кВт вистачає на кожен місяць сезону.'
                     : 'Щоб закрити й найслабший місяць (' + MN[r.weakest] + '), потрібно ≈ ' + r.kwFull + ' кВт панелей.');
@@ -285,12 +293,13 @@
         return '<tr><td>' + MN[i] + '</td><td>' + fmt.format(Math.round(x.need)) + '</td><td>' + fmt.format(Math.round(x.cover)) + '</td></tr>';
       }).join('');
       var put = function (id, ok, v) { var f = g(id); if (f && ok) f.value = v; };
-      put('f-pump', own.pump, r.pump); put('f-hours', own.hours, r.hours); put('f-season', own.season, MN[r.a] + ' — ' + MN[r.b]);
+      put('f-kw', own.kw, r.kw); put('f-pump', own.pump, r.pump); put('f-hours', own.hours, r.hours); put('f-season', own.season, MN[r.a] + ' — ' + MN[r.b]);
     };
 
-    [['pump', aPump], ['hours', aHours], ['kw', aKw]].forEach(function (p) { p[1].addEventListener('input', function () { own[p[0]] = true; renderA(); }); });
-    [aFrom, aTo].forEach(function (s) { s.addEventListener('change', function () { own.season = true; renderA(); }); });
-    bindToggle(function (md) { aMode = md; sChart.dataset.mode = md; renderA(); });
+    var liveA = function () { sChart.classList.add('is-live'); if (sMini) sMini.classList.add('is-live'); };
+    [['pump', aPump], ['hours', aHours], ['kw', aKw]].forEach(function (p) { p[1].addEventListener('input', function () { own[p[0]] = true; liveA(); renderA(); }); });
+    [aFrom, aTo].forEach(function (s) { s.addEventListener('change', function () { own.season = true; liveA(); renderA(); }); });
+    bindToggle(function (md) { aMode = md; sChart.dataset.mode = md; sChart.classList.remove('is-live'); renderA(); });
     if (form) form.addEventListener('enray:reset', renderA);
     if (reduce) { sChart.classList.add('no-motion'); if (sMini) sMini.classList.add('no-motion'); }
     renderA();
