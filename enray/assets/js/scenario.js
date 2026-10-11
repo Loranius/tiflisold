@@ -191,4 +191,108 @@
     if (reduce) { chart.classList.add('no-motion'); if (mini) mini.classList.add('no-motion'); }
     render();
   }
+  /* ---------- Агро: енергія насосів у сезон поливу ---------- */
+  var sCols = document.getElementById('season-cols');
+  if (sCols) {
+    var MN = ['січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'];
+    var MG = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+    var ML = ['січні', 'лютому', 'березні', 'квітні', 'травні', 'червні', 'липні', 'серпні', 'вересні', 'жовтні', 'листопаді', 'грудні'];
+    var DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var FA = [0.025, 0.045, 0.075, 0.11, 0.125, 0.13, 0.14, 0.125, 0.095, 0.07, 0.035, 0.025];
+    var YA = 1150;
+    var g = function (id) { return document.getElementById(id); };
+    var aPump = g('a-pump'), aHours = g('a-hours'), aFrom = g('a-from'), aTo = g('a-to'), aKw = g('a-kw');
+    var sChart = document.querySelector('.season-chart'), sMini = g('season-mini');
+    var aMode = 'off';
+    var own = { pump: false, hours: false, season: false, kw: false };
+    MN.forEach(function (m, i) {
+      aFrom.add(new Option(m.charAt(0).toUpperCase() + m.slice(1), i));
+      aTo.add(new Option(m.charAt(0).toUpperCase() + m.slice(1), i));
+    });
+    aFrom.value = 3; aTo.value = 8;
+
+    var mk = function (box) {
+      for (var m = 0; m < 12; m++) {
+        var c = document.createElement('span');
+        c.className = 'scol';
+        c.style.setProperty('--i', m);
+        c.innerHTML = '<span class="scol-need"><span class="bcol-sun"></span></span>';
+        box.appendChild(c);
+      }
+    };
+    mk(sCols); if (sMini) mk(sMini);
+
+    var inSeason = function (m, a, b) { return a <= b ? m >= a && m <= b : m >= a || m <= b; };
+    var calcA = function () {
+      var pump = Number(aPump.value), hours = Number(aHours.value), kw = Number(aKw.value);
+      var a = Number(aFrom.value), b = Number(aTo.value);
+      var months = DAYS.map(function (d, m) {
+        var on = inSeason(m, a, b);
+        var need = on ? pump * hours * d : 0;
+        var gen = kw * YA * FA[m];
+        return { on: on, need: need, cover: Math.min(need, gen), full: on && gen >= need, kwNeed: on ? need / (YA * FA[m]) : 0 };
+      });
+      var need = months.reduce(function (s, x) { return s + x.need; }, 0);
+      var cover = months.reduce(function (s, x) { return s + x.cover; }, 0);
+      var kwFull = Math.ceil(Math.max.apply(null, months.map(function (x) { return x.kwNeed; })) / 5) * 5;
+      var weakest = months.reduce(function (w, x, i) { return x.on && (w < 0 || x.kwNeed > months[w].kwNeed) ? i : w; }, -1);
+      return { pump: pump, hours: hours, kw: kw, a: a, b: b, months: months, need: need, cover: cover, kwFull: kwFull, weakest: weakest };
+    };
+
+    var paintA = function (box, r, on) {
+      var max = Math.max.apply(null, r.months.map(function (x) { return x.need; })) || 1;
+      for (var i = 0; i < 12; i++) {
+        var x = r.months[i], col = box.children[i];
+        col.classList.toggle('is-idle', !x.on);
+        col.style.setProperty('--need', (x.need / max * 100) + '%');
+        col.style.setProperty('--sun', (on && x.need ? x.cover / x.need * 100 : 0) + '%');
+      }
+    };
+
+    var renderA = function () {
+      var r = calcA();
+      var pct = r.need ? Math.round(r.cover / r.need * 100) : 0;
+      paintA(sCols, r, aMode === 'on');
+      if (sMini) paintA(sMini, r, true);
+      g('a-pump-out').textContent = r.pump + ' кВт';
+      g('a-hours-out').textContent = r.hours + ' год';
+      g('a-kw-out').textContent = r.kw + ' кВт';
+      g('a-cover').textContent = '≈ ' + pct;
+      var anyA = own.pump || own.hours || own.season || own.kw;
+      g('a-cover-label').textContent = 'Станція закриває за сезон · ' + (own.pump && own.hours ? 'за вашими даними' : 'приклад');
+      g('a-sentence').textContent = 'Насосам потрібно ≈ ' + fmt.format(Math.round(r.need / 100) * 100) + ' кВт·год за сезон. ' +
+        (pct >= 100 ? 'Станції ' + r.kw + ' кВт вистачає на кожен місяць сезону.'
+                    : 'Щоб закрити й найслабший місяць (' + MN[r.weakest] + '), потрібно ≈ ' + r.kwFull + ' кВт панелей.');
+      var ord = function (i) { return (i - r.a + 12) % 12; };
+      var full = r.months.map(function (x, i) { return x.full ? i : -1; }).filter(function (i) { return i >= 0; })
+        .sort(function (p, q) { return ord(p) - ord(q); });
+      var contiguous = full.every(function (m, k) { return !k || ord(m) === ord(full[k - 1]) + 1; });
+      var fullText = full.length === 1 ? 'у ' + ML[full[0]]
+        : contiguous ? 'з ' + MG[full[0]] + ' по ' + MN[full[full.length - 1]]
+        : 'у ' + full.map(function (m) { return ML[m]; }).join(', ');
+      g('season-summary').innerHTML = aMode === 'off'
+        ? 'За сезон насосам потрібно <b>≈ ' + fmt.format(Math.round(r.need / 100) * 100) + ' кВт·год</b>, усе з мережі або генератора.'
+        : 'Станція закриває <b>≈ ' + pct + '%</b> енергії насосів' +
+          (full.length === r.months.filter(function (x) { return x.on; }).length ? ', у кожному місяці сезону.'
+            : full.length ? '; повністю — ' + fullText + (contiguous ? ', на краях сезону менше.' : ', в інші місяці менше.')
+            : ', жодного місяця повністю: варто більшу станцію.');
+      var tagA = function (o) { return anyA && !o ? ' (приклад)' : ''; };
+      g('season-note').textContent = (anyA ? 'Розрахунок: ' : 'Приклад, ілюстративно: ') +
+        'насоси ' + r.pump + ' кВт' + tagA(own.pump) + ', ' + r.hours + ' год на день' + tagA(own.hours) +
+        ', сезон ' + MN[r.a] + ' — ' + MN[r.b] + tagA(own.season) + ', станція ' + r.kw + ' кВт' + tagA(own.kw) + '. Змініть дані в калькуляторі нижче.';
+      document.querySelector('#season-table tbody').innerHTML = r.months.filter(function (x) { return x.on; }).map(function (x) {
+        var i = r.months.indexOf(x);
+        return '<tr><td>' + MN[i] + '</td><td>' + fmt.format(Math.round(x.need)) + '</td><td>' + fmt.format(Math.round(x.cover)) + '</td></tr>';
+      }).join('');
+      var put = function (id, ok, v) { var f = g(id); if (f && ok) f.value = v; };
+      put('f-pump', own.pump, r.pump); put('f-hours', own.hours, r.hours); put('f-season', own.season, MN[r.a] + ' — ' + MN[r.b]);
+    };
+
+    [['pump', aPump], ['hours', aHours], ['kw', aKw]].forEach(function (p) { p[1].addEventListener('input', function () { own[p[0]] = true; renderA(); }); });
+    [aFrom, aTo].forEach(function (s) { s.addEventListener('change', function () { own.season = true; renderA(); }); });
+    bindToggle(function (md) { aMode = md; sChart.dataset.mode = md; renderA(); });
+    if (form) form.addEventListener('enray:reset', renderA);
+    if (reduce) { sChart.classList.add('no-motion'); if (sMini) sMini.classList.add('no-motion'); }
+    renderA();
+  }
 })();
