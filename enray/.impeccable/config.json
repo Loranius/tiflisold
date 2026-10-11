@@ -1,3 +1,27 @@
 {
-  "buildPath": "comp"
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-11T08:07:20.311Z",
+        "reason": "Claude, evidence: computed padding in Chromium is .calc-result 27px/20px, .request 29px/24px, .nav 10px 20px (desktop) and 8px 16px (mobile, fixed); detector does not resolve clamp() padding"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-11T08:07:20.323Z",
+        "reason": "Claude, evidence: only box-shadows on page are neutral navy rgba(13,31,66,.04-.45) with positive y-offset and negative spread on a light page; no zero-offset or chromatic halo"
+      }
+    ]
+  }
 }

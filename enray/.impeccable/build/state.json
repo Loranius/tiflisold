@@ -45,6 +45,10 @@
         {
           "at": "2026-10-11T07:58:30.455Z",
           "text": "Gates suspended: user chose real EnRay photos over comp imagery (AskUserQuestion 11.10.2026: 'Реальні фото EnRay'); --force parser refused; component-review server unreachable from cloud session. Build proceeds comp-guided, verified by screenshots, detect and finish reviewer."
+        },
+        {
+          "at": "2026-10-11T08:09:58.374Z",
+          "text": "Reviewer round 1 (fix) applied: Onest display, hero photo fills column, calc grid restored, steps scale, mobile CTA and facts, case titles. Plates/hero gates not passed: user-declined comp imagery ('Реальні фото EnRay'); hero-repro/comp-diff not produced. Footer kept separate from form card per pre-approval statement to user ('Футер стане окремим блоком')."
         }
       ],
       "gate": {
