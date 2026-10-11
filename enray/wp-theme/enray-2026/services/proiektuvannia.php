@@ -4,7 +4,7 @@
   <section class="hero hero--scenario hero--service" aria-labelledby="hero-h">
     <div class="hero-copy">
       <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true"> / </span><a href="<?php echo esc_url( home_url( '/' ) ); ?>#posluhy">Послуги</a><span aria-hidden="true"> / </span><span>Проєктування</span></p>
-      <h1 id="hero-h">Проєкт сонячної станції під ваше споживання</h1>
+      <h1 id="hero-h">Проєкт сонячної станції під ваше спожи&shy;вання</h1>
       <p class="hero-sub">Виїзд і заміри, оцінка даху чи ділянки й можливості підключення до мережі, підбір обладнання під ваші рахунки.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="<?php echo esc_url( home_url( '/' ) ); ?>#kalkulyator">Порахувати потужність</a>

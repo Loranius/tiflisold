@@ -4,7 +4,7 @@
   <section class="hero hero--scenario hero--service" aria-labelledby="hero-h">
     <div class="hero-copy">
       <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true"> / </span><a href="<?php echo esc_url( home_url( '/' ) ); ?>#posluhy">Послуги</a><span aria-hidden="true"> / </span><span>Обслуговування</span></p>
-      <h1 id="hero-h">Обслуговування сонячних станцій</h1>
+      <h1 id="hero-h">Обслугову&shy;вання сонячних станцій</h1>
       <p class="hero-sub">Огляд і діагностика, чищення панелей, налаштування інвертора й ремонт, щоб станція давала стільки енергії, скільки має.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#zayavka">Замовити огляд</a>

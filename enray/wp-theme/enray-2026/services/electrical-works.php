@@ -4,7 +4,7 @@
   <section class="hero hero--scenario hero--service" aria-labelledby="hero-h">
     <div class="hero-copy">
       <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true"> / </span><a href="<?php echo esc_url( home_url( '/' ) ); ?>#posluhy">Послуги</a><span aria-hidden="true"> / </span><span>Електромонтаж</span></p>
-      <h1 id="hero-h">Електромонтажні роботи у&nbsp;Вінниці та області</h1>
+      <h1 id="hero-h">Електро&shy;монтажні роботи у&nbsp;Вінниці та області</h1>
       <p class="hero-sub">Проєкт і монтаж проводки, освітлення, заземлення й блискавкозахист, модернізація старих мереж для будинків, комерційних і промислових об'єктів.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#zayavka">Замовити виїзд</a>
