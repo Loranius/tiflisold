@@ -1,0 +1,29 @@
+Форма Contact Form 7 «EnRay — заявка (Послуги)»
+=============================================
+
+Одна форма на всі шість сторінок послуг. Назву послуги тема передає сама
+через шорткод (service="…"), вона потрапляє в приховане поле service.
+
+1. Contact → Add New, назва: EnRay — заявка (Послуги).
+2. Вкладка «Form»: вставте все між рядками ---8<--- нижче.
+3. Вкладка «Mail»: тема «Нова заявка: [service]», тіло листа — блок «Mail body».
+4. Збережіть, скопіюйте числовий ID і вкажіть його:
+   Зовнішній вигляд → Налаштувати → EnRay: контакти й форми → ID форми: послуги.
+
+---8<--- Form
+[hidden service default:shortcode_attr]
+<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
+<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
+<div class="field field--wide"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2 maxlength:80]</div>
+<div class="field field--wide"><label for="f-task">Що потрібно зробити</label>[textarea task id:f-task x3 maxlength:500]</div>
+[submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]
+<p class="form-next">Інженер передзвонить, уточнить задачу й домовиться про виїзд. Дані з форми використовуємо лише для зв'язку з вами: <a href="/privacy-policy/">політика конфіденційності</a>.</p>
+---8<---
+
+---8<--- Mail body
+Послуга: [service]
+Ім'я: [your-name]
+Телефон: [your-phone]
+Населений пункт: [place]
+Що потрібно: [task]
+---8<---

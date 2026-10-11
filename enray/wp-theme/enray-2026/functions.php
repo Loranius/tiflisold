@@ -60,6 +60,7 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		'cf7_dim'  => array( 'ID форми Contact Form 7: Дім', 'number' ),
 		'cf7_biznes' => array( 'ID форми Contact Form 7: Бізнес', 'number' ),
 		'cf7_agro' => array( 'ID форми Contact Form 7: Агро', 'number' ),
+		'cf7_service' => array( 'ID форми Contact Form 7: послуги (одна на всі)', 'number' ),
 	);
 	foreach ( $fields as $key => $f ) {
 		$wp_customize->add_setting( 'enray_' . $key, array(
@@ -90,6 +91,10 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'enray', enray_asset( 'css/style.css' ), array( 'enray-fonts' ), ENRAY_VERSION );
 	wp_enqueue_style( 'enray-wp', enray_asset( 'css/wp.css' ), array( 'enray' ), ENRAY_VERSION );
 	wp_enqueue_script( 'enray', enray_asset( 'js/main.js' ), array(), ENRAY_VERSION, array( 'strategy' => 'defer' ) );
+	if ( enray_current_service() ) {
+		wp_enqueue_style( 'enray-scenario', enray_asset( 'css/scenario.css' ), array( 'enray' ), ENRAY_VERSION );
+		wp_enqueue_style( 'enray-service', enray_asset( 'css/service.css' ), array( 'enray-scenario' ), ENRAY_VERSION );
+	}
 	if ( enray_current_scenario() ) {
 		wp_enqueue_style( 'enray-scenario', enray_asset( 'css/scenario.css' ), array( 'enray' ), ENRAY_VERSION );
 		wp_enqueue_script( 'enray-scenario', enray_asset( 'js/scenario.js' ), array( 'enray' ), ENRAY_VERSION, array( 'strategy' => 'defer' ) );
@@ -105,7 +110,27 @@ add_filter( 'body_class', function ( $classes ) {
 	if ( enray_current_scenario() ) {
 		$classes[] = 'page-scenario';
 	}
+	if ( enray_current_service() ) {
+		$classes[] = 'page-scenario';
+		$classes[] = 'page-service';
+	}
 	return $classes;
+} );
+
+/**
+ * Slug сторінки послуги або ''. Вміст послуг лежить у services/<slug>.php
+ * (генерує enray/tools/build_services.py), тож сторінки не залежать від полів старої теми.
+ */
+function enray_current_service() {
+	if ( ! is_page() ) {
+		return '';
+	}
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+	return ( $slug && preg_match( '/^[a-z0-9-]+$/', $slug ) && file_exists( get_template_directory() . '/services/' . $slug . '.php' ) ) ? $slug : '';
+}
+
+add_filter( 'template_include', function ( $template ) {
+	return enray_current_service() ? get_template_directory() . '/page-service.php' : $template;
 } );
 
 /** Slug сценарію поточної сторінки або ''. */
@@ -200,10 +225,11 @@ function enray_nav_links( $location = 'primary' ) {
  * Форма заявки: Contact Form 7, якщо її ID задано в налаштуваннях теми.
  * Інакше показуємо телефон і Viber, а адміністратору — підказку, як підключити форму.
  */
-function enray_request_form( $key ) {
+function enray_request_form( $key, $service = '' ) {
 	$id = absint( get_theme_mod( 'enray_cf7_' . $key ) );
 	if ( $id && shortcode_exists( 'contact-form-7' ) ) {
-		echo do_shortcode( sprintf( '[contact-form-7 id="%d" html_id="request-form" html_class="request-form"]', $id ) );
+		$extra = $service ? sprintf( ' service="%s"', esc_attr( $service ) ) : '';
+		echo do_shortcode( sprintf( '[contact-form-7 id="%d" html_id="request-form" html_class="request-form"%s]', $id, $extra ) );
 		return;
 	}
 	if ( current_user_can( 'edit_theme_options' ) ) {
@@ -219,6 +245,14 @@ function enray_request_form( $key ) {
 		esc_attr( enray_viber() )
 	);
 }
+
+/* CF7: назва послуги з шорткоду потрапляє в приховане поле [hidden service default:shortcode_attr]. */
+add_filter( 'shortcode_atts_wpcf7', function ( $out, $pairs, $atts ) {
+	if ( isset( $atts['service'] ) ) {
+		$out['service'] = sanitize_text_field( $atts['service'] );
+	}
+	return $out;
+}, 10, 3 );
 
 /* CF7: без автоматичних <p>/<br> у наших розмітках форм. */
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
