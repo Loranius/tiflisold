@@ -1,0 +1,396 @@
+{
+ "regions": [
+  {
+   "id": "nav-bar",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 72,
+    "y": 40,
+    "w": 1552,
+    "h": 100
+   },
+   "note": "floating white rounded navigation bar"
+  },
+  {
+   "id": "logo",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 96,
+    "y": 62,
+    "w": 214,
+    "h": 54
+   },
+   "note": "EnRay small raster mark icon and ENRAY wordmark set as text"
+  },
+  {
+   "id": "nav-links",
+   "kind": "text",
+   "pixelBox": {
+    "x": 495,
+    "y": 70,
+    "w": 605,
+    "h": 40
+   },
+   "note": "nav links Для дому, Для бізнесу, Агро, Кейси, Про нас"
+  },
+  {
+   "id": "nav-phone",
+   "kind": "text",
+   "pixelBox": {
+    "x": 1165,
+    "y": 70,
+    "w": 222,
+    "h": 40
+   },
+   "note": "phone +38 067 672 22 44"
+  },
+  {
+   "id": "nav-cta",
+   "kind": "control",
+   "pixelBox": {
+    "x": 1408,
+    "y": 60,
+    "w": 192,
+    "h": 58
+   },
+   "note": "cobalt button Розрахувати"
+  },
+  {
+   "id": "grid-texture",
+   "kind": "texture",
+   "pixelBox": {
+    "x": 870,
+    "y": 160,
+    "w": 150,
+    "h": 70
+   },
+   "note": "pale blue millimetre drawing grid"
+  },
+  {
+   "id": "hero-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 96,
+    "y": 255,
+    "w": 762,
+    "h": 250
+   },
+   "note": "headline Сонячна станція, яка тримає світло під час відключень"
+  },
+  {
+   "id": "hero-sub",
+   "kind": "text",
+   "pixelBox": {
+    "x": 96,
+    "y": 535,
+    "w": 480,
+    "h": 78
+   },
+   "note": "subline Проєкт, монтаж і підключення у Вінницькій області за 7–10 днів"
+  },
+  {
+   "id": "hero-cta",
+   "kind": "control",
+   "pixelBox": {
+    "x": 96,
+    "y": 644,
+    "w": 322,
+    "h": 70
+   },
+   "note": "cobalt button Розрахувати станцію"
+  },
+  {
+   "id": "hero-call",
+   "kind": "control",
+   "pixelBox": {
+    "x": 434,
+    "y": 644,
+    "w": 212,
+    "h": 70
+   },
+   "note": "outlined button Подзвонити"
+  },
+  {
+   "id": "hero-photo",
+   "kind": "plate",
+   "pixelBox": {
+    "x": 850,
+    "y": 232,
+    "w": 846,
+    "h": 590
+   },
+   "note": "photo of rooftop solar station on a house with blue engineering dimension lines and callouts",
+   "bleed": true
+  },
+  {
+   "id": "facts",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 98,
+    "y": 881,
+    "w": 1500,
+    "h": 68
+   },
+   "note": "outlined strip with three facts 100 кВт, 7–10 днів, документи"
+  },
+  {
+   "id": "solutions-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 98,
+    "y": 1005,
+    "w": 295,
+    "h": 55
+   },
+   "note": "heading Наші рішення"
+  },
+  {
+   "id": "card-home",
+   "kind": "image",
+   "pixelBox": {
+    "x": 110,
+    "y": 1096,
+    "w": 460,
+    "h": 240
+   },
+   "note": "photo of house with rooftop solar, label Дім",
+   "bleed": true
+  },
+  {
+   "id": "card-biz",
+   "kind": "image",
+   "pixelBox": {
+    "x": 625,
+    "y": 1096,
+    "w": 446,
+    "h": 240
+   },
+   "note": "photo of commercial roof with solar, label Бізнес",
+   "bleed": true
+  },
+  {
+   "id": "card-agro",
+   "kind": "image",
+   "pixelBox": {
+    "x": 1128,
+    "y": 1096,
+    "w": 458,
+    "h": 240
+   },
+   "note": "photos of ground solar arrays in fields, label Агро",
+   "bleed": true
+  },
+  {
+   "id": "calc-band",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 0,
+    "y": 1400,
+    "w": 1696,
+    "h": 270
+   },
+   "note": "pale blue grid band of the calculator"
+  },
+  {
+   "id": "calc-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 98,
+    "y": 1450,
+    "w": 662,
+    "h": 52
+   },
+   "note": "heading Ваш рахунок за світло, грн/міс"
+  },
+  {
+   "id": "calc-slider",
+   "kind": "control",
+   "pixelBox": {
+    "x": 98,
+    "y": 1535,
+    "w": 752,
+    "h": 75
+   },
+   "note": "slider 1 000 to 15 000+ with value 5 000"
+  },
+  {
+   "id": "calc-result",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 900,
+    "y": 1440,
+    "w": 698,
+    "h": 190
+   },
+   "note": "result panel Рекомендована потужність 10 кВт with link"
+  },
+  {
+   "id": "cases-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 98,
+    "y": 1735,
+    "w": 505,
+    "h": 58
+   },
+   "note": "heading Наші реалізовані кейси"
+  },
+  {
+   "id": "case-1-photo",
+   "kind": "image",
+   "pixelBox": {
+    "x": 117,
+    "y": 1877,
+    "w": 695,
+    "h": 165
+   },
+   "note": "orchard with ground solar array",
+   "bleed": true
+  },
+  {
+   "id": "case-2-photo",
+   "kind": "image",
+   "pixelBox": {
+    "x": 884,
+    "y": 1877,
+    "w": 695,
+    "h": 165
+   },
+   "note": "ground solar array near village house",
+   "bleed": true
+  },
+  {
+   "id": "process-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 98,
+    "y": 2215,
+    "w": 362,
+    "h": 62
+   },
+   "note": "heading Як ми працюємо"
+  },
+  {
+   "id": "process-steps",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 98,
+    "y": 2308,
+    "w": 740,
+    "h": 95
+   },
+   "note": "five numbered steps on a dotted line"
+  },
+  {
+   "id": "form-panel",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 866,
+    "y": 2155,
+    "w": 783,
+    "h": 328
+   },
+   "note": "navy panel with request form Отримати розрахунок and footer"
+  },
+  {
+   "id": "card-home-frame",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 98,
+    "y": 1084,
+    "w": 484,
+    "h": 258
+   },
+   "note": "outlined scenario card frame Дім"
+  },
+  {
+   "id": "card-biz-frame",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 613,
+    "y": 1084,
+    "w": 471,
+    "h": 258
+   },
+   "note": "outlined scenario card frame Бізнес"
+  },
+  {
+   "id": "card-agro-frame",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 1116,
+    "y": 1084,
+    "w": 482,
+    "h": 258
+   },
+   "note": "outlined scenario card frame Агро"
+  },
+  {
+   "id": "case-1-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 117,
+    "y": 1820,
+    "w": 695,
+    "h": 45
+   },
+   "note": "case title СЕС 100 кВт для поливу саду, Лука-Мелешківська, 2025"
+  },
+  {
+   "id": "case-2-title",
+   "kind": "text",
+   "pixelBox": {
+    "x": 884,
+    "y": 1820,
+    "w": 695,
+    "h": 45
+   },
+   "note": "case title Наземна СЕС 30 кВт, Ладижин, 2026"
+  },
+  {
+   "id": "case-1-meta",
+   "kind": "text",
+   "pixelBox": {
+    "x": 117,
+    "y": 2050,
+    "w": 695,
+    "h": 40
+   },
+   "note": "case meta line"
+  },
+  {
+   "id": "case-2-meta",
+   "kind": "text",
+   "pixelBox": {
+    "x": 884,
+    "y": 2050,
+    "w": 695,
+    "h": 40
+   },
+   "note": "case meta line"
+  },
+  {
+   "id": "case-1-frame",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 98,
+    "y": 1810,
+    "w": 733,
+    "h": 290
+   },
+   "note": "outlined case card"
+  },
+  {
+   "id": "case-2-frame",
+   "kind": "chrome",
+   "pixelBox": {
+    "x": 865,
+    "y": 1810,
+    "w": 733,
+    "h": 290
+   },
+   "note": "outlined case card"
+  }
+ ],
+ "allowUncovered": true
+}

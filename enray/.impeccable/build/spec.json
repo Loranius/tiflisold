@@ -1,0 +1,2191 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-10-11T07:56:41.030Z",
+  "comp": ".impeccable/mocks/home-desktop.png",
+  "warnings": [
+    "region hero-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-home: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-biz: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-agro: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region case-1-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region case-2-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+  ],
+  "uncoveredInkCells": [
+    "A1",
+    "B2",
+    "C2",
+    "A4",
+    "D4",
+    "G4",
+    "B5",
+    "C5",
+    "D5",
+    "E5",
+    "F5",
+    "G5",
+    "H5",
+    "I5",
+    "B8",
+    "C8",
+    "F8",
+    "G8",
+    "H8"
+  ],
+  "compSize": {
+    "width": 1696,
+    "height": 2528
+  },
+  "aspect": 0.6709,
+  "orientation": "portrait",
+  "palette": [
+    {
+      "hex": "#ebf1f7",
+      "coverage": 0.8135
+    },
+    {
+      "hex": "#091228",
+      "coverage": 0.0917
+    },
+    {
+      "hex": "#52617d",
+      "coverage": 0.0464
+    },
+    {
+      "hex": "#b3b9c2",
+      "coverage": 0.0311
+    },
+    {
+      "hex": "#7f899e",
+      "coverage": 0.0173
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0314,
+      "strength": 0.4096
+    },
+    {
+      "y": 0.0524,
+      "strength": 0.2244
+    },
+    {
+      "y": 0.1099,
+      "strength": 0.4648
+    },
+    {
+      "y": 0.178,
+      "strength": 0.7488
+    },
+    {
+      "y": 0.199,
+      "strength": 0.3884
+    },
+    {
+      "y": 0.2565,
+      "strength": 0.3875
+    },
+    {
+      "y": 0.2827,
+      "strength": 0.5241
+    },
+    {
+      "y": 0.3246,
+      "strength": 0.648
+    },
+    {
+      "y": 0.3665,
+      "strength": 0.5872
+    },
+    {
+      "y": 0.4136,
+      "strength": 0.284
+    },
+    {
+      "y": 0.4346,
+      "strength": 0.4495
+    },
+    {
+      "y": 0.4555,
+      "strength": 0.3045
+    },
+    {
+      "y": 0.5236,
+      "strength": 1
+    },
+    {
+      "y": 0.555,
+      "strength": 0.2737
+    },
+    {
+      "y": 0.5916,
+      "strength": 0.8025
+    },
+    {
+      "y": 0.623,
+      "strength": 0.3205
+    },
+    {
+      "y": 0.6597,
+      "strength": 0.2378
+    },
+    {
+      "y": 0.6911,
+      "strength": 0.3288
+    },
+    {
+      "y": 0.7435,
+      "strength": 0.8333
+    },
+    {
+      "y": 0.8063,
+      "strength": 1
+    },
+    {
+      "y": 0.8325,
+      "strength": 0.2538
+    },
+    {
+      "y": 0.8534,
+      "strength": 1
+    },
+    {
+      "y": 0.8796,
+      "strength": 0.3896
+    },
+    {
+      "y": 0.911,
+      "strength": 0.2118
+    },
+    {
+      "y": 0.9372,
+      "strength": 0.5611
+    },
+    {
+      "y": 0.9843,
+      "strength": 0.8589
+    }
+  ],
+  "regions": [
+    {
+      "id": "nav-bar",
+      "kind": "chrome",
+      "note": "floating white rounded navigation bar",
+      "grid": null,
+      "box": {
+        "x": 0.0425,
+        "y": 0.0158,
+        "w": 0.9151,
+        "h": 0.0396
+      },
+      "px": {
+        "x": 72,
+        "y": 40,
+        "w": 1552,
+        "h": 100
+      },
+      "aspect": 15.52,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8919
+        },
+        {
+          "hex": "#0848d6",
+          "coverage": 0.0545
+        },
+        {
+          "hex": "#0a0b22",
+          "coverage": 0.026
+        },
+        {
+          "hex": "#c8d6e0",
+          "coverage": 0.0202
+        },
+        {
+          "hex": "#1048ad",
+          "coverage": 0.0074
+        }
+      ],
+      "detail": {
+        "energy": 36.967
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": true
+      }
+    },
+    {
+      "id": "logo",
+      "kind": "chrome",
+      "note": "EnRay small raster mark icon and ENRAY wordmark set as text",
+      "grid": null,
+      "box": {
+        "x": 0.0566,
+        "y": 0.0245,
+        "w": 0.1262,
+        "h": 0.0214
+      },
+      "px": {
+        "x": 96,
+        "y": 62,
+        "w": 214,
+        "h": 54
+      },
+      "aspect": 3.963,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.6742
+        },
+        {
+          "hex": "#08082b",
+          "coverage": 0.1802
+        },
+        {
+          "hex": "#4fb7f5",
+          "coverage": 0.0537
+        },
+        {
+          "hex": "#0cb083",
+          "coverage": 0.0503
+        },
+        {
+          "hex": "#0848d5",
+          "coverage": 0.0416
+        }
+      ],
+      "detail": {
+        "energy": 37.1541
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "nav-links",
+      "kind": "text",
+      "note": "nav links Для дому, Для бізнесу, Агро, Кейси, Про нас",
+      "grid": null,
+      "box": {
+        "x": 0.2919,
+        "y": 0.0277,
+        "w": 0.3567,
+        "h": 0.0158
+      },
+      "px": {
+        "x": 495,
+        "y": 70,
+        "w": 605,
+        "h": 40
+      },
+      "aspect": 15.125,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8596
+        },
+        {
+          "hex": "#0e1124",
+          "coverage": 0.0765
+        },
+        {
+          "hex": "#4a4c5d",
+          "coverage": 0.0289
+        },
+        {
+          "hex": "#adb0bc",
+          "coverage": 0.0282
+        },
+        {
+          "hex": "#808495",
+          "coverage": 0.0068
+        }
+      ],
+      "detail": {
+        "energy": 74.4022
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 33,
+          "capHeightPx": 19.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5979,
+          "advTall": 0.5979,
+          "advX": 0.5979,
+          "gap": 0.13,
+          "xRatio": 0.7407,
+          "stemW": 0.1422,
+          "contrast": 1.0267,
+          "serif": 0.984,
+          "densTall": 0.5462,
+          "densX": 0.5233,
+          "weight": 0.5462
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "nav-phone",
+      "kind": "text",
+      "note": "phone +38 067 672 22 44",
+      "grid": null,
+      "box": {
+        "x": 0.6869,
+        "y": 0.0277,
+        "w": 0.1309,
+        "h": 0.0158
+      },
+      "px": {
+        "x": 1165,
+        "y": 70,
+        "w": 222,
+        "h": 40
+      },
+      "aspect": 5.55,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8444
+        },
+        {
+          "hex": "#0a0c1e",
+          "coverage": 0.0538
+        },
+        {
+          "hex": "#323546",
+          "coverage": 0.044
+        },
+        {
+          "hex": "#b5b9c4",
+          "coverage": 0.0333
+        },
+        {
+          "hex": "#878996",
+          "coverage": 0.0245
+        }
+      ],
+      "detail": {
+        "energy": 55.3683
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 13,
+          "capHeightPx": 19.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6249,
+          "advTall": 0.6249,
+          "advX": null,
+          "gap": 0.1822,
+          "xRatio": 0.8247,
+          "stemW": 0.1503,
+          "contrast": 1.0219,
+          "serif": null,
+          "densTall": 0.4534,
+          "densX": null,
+          "weight": 0.4534
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "nav-cta",
+      "kind": "control",
+      "note": "cobalt button Розрахувати",
+      "grid": null,
+      "box": {
+        "x": 0.8302,
+        "y": 0.0237,
+        "w": 0.1132,
+        "h": 0.0229
+      },
+      "px": {
+        "x": 1408,
+        "y": 60,
+        "w": 192,
+        "h": 58
+      },
+      "aspect": 3.3103,
+      "palette": [
+        {
+          "hex": "#0848d7",
+          "coverage": 0.7166
+        },
+        {
+          "hex": "#edf6f8",
+          "coverage": 0.0945
+        },
+        {
+          "hex": "#a9c9f7",
+          "coverage": 0.0798
+        },
+        {
+          "hex": "#3868c8",
+          "coverage": 0.0562
+        },
+        {
+          "hex": "#0c48b6",
+          "coverage": 0.0529
+        }
+      ],
+      "detail": {
+        "energy": 28.9476
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "grid-texture",
+      "kind": "texture",
+      "note": "pale blue millimetre drawing grid",
+      "grid": null,
+      "box": {
+        "x": 0.513,
+        "y": 0.0633,
+        "w": 0.0884,
+        "h": 0.0277
+      },
+      "px": {
+        "x": 870,
+        "y": 160,
+        "w": 150,
+        "h": 70
+      },
+      "aspect": 2.1429,
+      "palette": [
+        {
+          "hex": "#d5e6f6",
+          "coverage": 1
+        }
+      ],
+      "detail": {
+        "energy": 4.5274
+      },
+      "medium": "raster",
+      "plate": "assets/plates/grid-texture.png",
+      "text": null
+    },
+    {
+      "id": "hero-title",
+      "kind": "text",
+      "note": "headline Сонячна станція, яка тримає світло під час відключень",
+      "grid": null,
+      "box": {
+        "x": 0.0566,
+        "y": 0.1009,
+        "w": 0.4493,
+        "h": 0.0989
+      },
+      "px": {
+        "x": 96,
+        "y": 255,
+        "w": 762,
+        "h": 250
+      },
+      "aspect": 3.048,
+      "palette": [
+        {
+          "hex": "#dcebf8",
+          "coverage": 0.713
+        },
+        {
+          "hex": "#08082b",
+          "coverage": 0.2402
+        },
+        {
+          "hex": "#080919",
+          "coverage": 0.0242
+        },
+        {
+          "hex": "#788599",
+          "coverage": 0.0132
+        },
+        {
+          "hex": "#39445a",
+          "coverage": 0.0093
+        }
+      ],
+      "detail": {
+        "energy": 84.294
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 51,
+          "capHeightPx": 50.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6373,
+          "advTall": 0.8369,
+          "advX": 0.6373,
+          "gap": 0.133,
+          "xRatio": 0.6832,
+          "stemW": 0.2568,
+          "contrast": 1.2068,
+          "serif": 1.0021,
+          "densTall": 0.6796,
+          "densX": 0.6803,
+          "weight": 0.6796
+        },
+        "widthClass": "normal",
+        "weightClass": "black",
+        "chosen": {
+          "family": "Anek Odia",
+          "weight": 700,
+          "fontSizePx": 72,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "10fa569a76f7"
+        }
+      }
+    },
+    {
+      "id": "hero-sub",
+      "kind": "text",
+      "note": "subline Проєкт, монтаж і підключення у Вінницькій області за 7–10 днів",
+      "grid": null,
+      "box": {
+        "x": 0.0566,
+        "y": 0.2116,
+        "w": 0.283,
+        "h": 0.0309
+      },
+      "px": {
+        "x": 96,
+        "y": 535,
+        "w": 480,
+        "h": 78
+      },
+      "aspect": 6.1538,
+      "palette": [
+        {
+          "hex": "#deedf8",
+          "coverage": 0.8414
+        },
+        {
+          "hex": "#0c1026",
+          "coverage": 0.0957
+        },
+        {
+          "hex": "#354353",
+          "coverage": 0.027
+        },
+        {
+          "hex": "#2c2f4d",
+          "coverage": 0.0207
+        },
+        {
+          "hex": "#7f8da0",
+          "coverage": 0.0152
+        }
+      ],
+      "detail": {
+        "energy": 87.6018
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 51,
+          "capHeightPx": 23.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5694,
+          "advTall": 0.1273,
+          "advX": 0.573,
+          "gap": 0.1485,
+          "xRatio": 0.7508,
+          "stemW": 0.1195,
+          "contrast": 1.0046,
+          "serif": 0.9464,
+          "densTall": 0.7485,
+          "densX": 0.4739,
+          "weight": 0.7485
+        },
+        "widthClass": "condensed",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "hero-cta",
+      "kind": "control",
+      "note": "cobalt button Розрахувати станцію",
+      "grid": null,
+      "box": {
+        "x": 0.0566,
+        "y": 0.2547,
+        "w": 0.1899,
+        "h": 0.0277
+      },
+      "px": {
+        "x": 96,
+        "y": 644,
+        "w": 322,
+        "h": 70
+      },
+      "aspect": 4.6,
+      "palette": [
+        {
+          "hex": "#0848d8",
+          "coverage": 0.7882
+        },
+        {
+          "hex": "#e0f3f8",
+          "coverage": 0.1343
+        },
+        {
+          "hex": "#5288e8",
+          "coverage": 0.0442
+        },
+        {
+          "hex": "#1148b5",
+          "coverage": 0.0286
+        },
+        {
+          "hex": "#b4d4f8",
+          "coverage": 0.0047
+        }
+      ],
+      "detail": {
+        "energy": 35.8327
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "hero-call",
+      "kind": "control",
+      "note": "outlined button Подзвонити",
+      "grid": null,
+      "box": {
+        "x": 0.2559,
+        "y": 0.2547,
+        "w": 0.125,
+        "h": 0.0277
+      },
+      "px": {
+        "x": 434,
+        "y": 644,
+        "w": 212,
+        "h": 70
+      },
+      "aspect": 3.0286,
+      "palette": [
+        {
+          "hex": "#dbeaf8",
+          "coverage": 0.8151
+        },
+        {
+          "hex": "#08091f",
+          "coverage": 0.0978
+        },
+        {
+          "hex": "#5c687c",
+          "coverage": 0.0492
+        },
+        {
+          "hex": "#b5c0d6",
+          "coverage": 0.0261
+        },
+        {
+          "hex": "#8a96aa",
+          "coverage": 0.0119
+        }
+      ],
+      "detail": {
+        "energy": 41.3967
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "hero-photo",
+      "kind": "plate",
+      "note": "photo of rooftop solar station on a house with blue engineering dimension lines and callouts",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.5012,
+        "y": 0.0918,
+        "w": 0.4988,
+        "h": 0.2334
+      },
+      "px": {
+        "x": 850,
+        "y": 232,
+        "w": 846,
+        "h": 590
+      },
+      "aspect": 1.4339,
+      "palette": [
+        {
+          "hex": "#d9e6f2",
+          "coverage": 0.4714
+        },
+        {
+          "hex": "#5c6d88",
+          "coverage": 0.2189
+        },
+        {
+          "hex": "#b7bac1",
+          "coverage": 0.1289
+        },
+        {
+          "hex": "#141820",
+          "coverage": 0.0944
+        },
+        {
+          "hex": "#3c5080",
+          "coverage": 0.0863
+        }
+      ],
+      "detail": {
+        "energy": 32.2679
+      },
+      "medium": "raster",
+      "plate": "assets/plates/hero-photo.png",
+      "text": null
+    },
+    {
+      "id": "facts",
+      "kind": "chrome",
+      "note": "outlined strip with three facts 100 кВт, 7–10 днів, документи",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.3485,
+        "w": 0.8844,
+        "h": 0.0269
+      },
+      "px": {
+        "x": 98,
+        "y": 881,
+        "w": 1500,
+        "h": 68
+      },
+      "aspect": 22.0588,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8926
+        },
+        {
+          "hex": "#57585f",
+          "coverage": 0.0525
+        },
+        {
+          "hex": "#0d0d1e",
+          "coverage": 0.0336
+        },
+        {
+          "hex": "#9494a2",
+          "coverage": 0.0127
+        },
+        {
+          "hex": "#c0c2cd",
+          "coverage": 0.0086
+        }
+      ],
+      "detail": {
+        "energy": 39.4695
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "solutions-title",
+      "kind": "text",
+      "note": "heading Наші рішення",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.3975,
+        "w": 0.1739,
+        "h": 0.0218
+      },
+      "px": {
+        "x": 98,
+        "y": 1005,
+        "w": 295,
+        "h": 55
+      },
+      "aspect": 5.3636,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.7445
+        },
+        {
+          "hex": "#090a26",
+          "coverage": 0.1962
+        },
+        {
+          "hex": "#262d42",
+          "coverage": 0.0236
+        },
+        {
+          "hex": "#080838",
+          "coverage": 0.0181
+        },
+        {
+          "hex": "#5b5d73",
+          "coverage": 0.0176
+        }
+      ],
+      "detail": {
+        "energy": 59.8822
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 11,
+          "capHeightPx": 33.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6239,
+          "advTall": 0.208,
+          "advX": 0.6239,
+          "gap": 0.1337,
+          "xRatio": 0.7475,
+          "stemW": 0.1907,
+          "contrast": 1.1585,
+          "serif": 0.6451,
+          "densTall": 0.8282,
+          "densX": 0.6793,
+          "weight": 0.8282
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "card-home",
+      "kind": "image",
+      "note": "photo of house with rooftop solar, label Дім",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.0649,
+        "y": 0.4335,
+        "w": 0.2712,
+        "h": 0.0949
+      },
+      "px": {
+        "x": 110,
+        "y": 1096,
+        "w": 460,
+        "h": 240
+      },
+      "aspect": 1.9167,
+      "palette": [
+        {
+          "hex": "#cedeee",
+          "coverage": 0.231
+        },
+        {
+          "hex": "#92b7d9",
+          "coverage": 0.2152
+        },
+        {
+          "hex": "#919b9d",
+          "coverage": 0.2084
+        },
+        {
+          "hex": "#f2f4f2",
+          "coverage": 0.191
+        },
+        {
+          "hex": "#36362e",
+          "coverage": 0.1544
+        }
+      ],
+      "detail": {
+        "energy": 34.9668
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-home.png",
+      "text": null
+    },
+    {
+      "id": "card-biz",
+      "kind": "image",
+      "note": "photo of commercial roof with solar, label Бізнес",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.3685,
+        "y": 0.4335,
+        "w": 0.263,
+        "h": 0.0949
+      },
+      "px": {
+        "x": 625,
+        "y": 1096,
+        "w": 446,
+        "h": 240
+      },
+      "aspect": 1.8583,
+      "palette": [
+        {
+          "hex": "#baafa5",
+          "coverage": 0.3165
+        },
+        {
+          "hex": "#f0f1f1",
+          "coverage": 0.2077
+        },
+        {
+          "hex": "#586c89",
+          "coverage": 0.1927
+        },
+        {
+          "hex": "#94a2b6",
+          "coverage": 0.1542
+        },
+        {
+          "hex": "#2b3f53",
+          "coverage": 0.1288
+        }
+      ],
+      "detail": {
+        "energy": 37.2616
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-biz.png",
+      "text": null
+    },
+    {
+      "id": "card-agro",
+      "kind": "image",
+      "note": "photos of ground solar arrays in fields, label Агро",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.6651,
+        "y": 0.4335,
+        "w": 0.27,
+        "h": 0.0949
+      },
+      "px": {
+        "x": 1128,
+        "y": 1096,
+        "w": 458,
+        "h": 240
+      },
+      "aspect": 1.9083,
+      "palette": [
+        {
+          "hex": "#f4f6f5",
+          "coverage": 0.2643
+        },
+        {
+          "hex": "#c6d3e3",
+          "coverage": 0.2181
+        },
+        {
+          "hex": "#687327",
+          "coverage": 0.2105
+        },
+        {
+          "hex": "#647292",
+          "coverage": 0.1731
+        },
+        {
+          "hex": "#495821",
+          "coverage": 0.134
+        }
+      ],
+      "detail": {
+        "energy": 36.4222
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-agro.png",
+      "text": null
+    },
+    {
+      "id": "calc-band",
+      "kind": "chrome",
+      "note": "pale blue grid band of the calculator",
+      "grid": null,
+      "box": {
+        "x": 0,
+        "y": 0.5538,
+        "w": 1,
+        "h": 0.1068
+      },
+      "px": {
+        "x": 0,
+        "y": 1400,
+        "w": 1696,
+        "h": 270
+      },
+      "aspect": 6.2815,
+      "palette": [
+        {
+          "hex": "#d8e8f7",
+          "coverage": 0.9416
+        },
+        {
+          "hex": "#090b20",
+          "coverage": 0.0406
+        },
+        {
+          "hex": "#acbed6",
+          "coverage": 0.0074
+        },
+        {
+          "hex": "#3e78bc",
+          "coverage": 0.0053
+        },
+        {
+          "hex": "#6f7f8f",
+          "coverage": 0.0052
+        }
+      ],
+      "detail": {
+        "energy": 31.4218
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "calc-title",
+      "kind": "text",
+      "note": "heading Ваш рахунок за світло, грн/міс",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.5736,
+        "w": 0.3903,
+        "h": 0.0206
+      },
+      "px": {
+        "x": 98,
+        "y": 1450,
+        "w": 662,
+        "h": 52
+      },
+      "aspect": 12.7308,
+      "palette": [
+        {
+          "hex": "#dbebf7",
+          "coverage": 0.7255
+        },
+        {
+          "hex": "#080920",
+          "coverage": 0.2081
+        },
+        {
+          "hex": "#a5b2c6",
+          "coverage": 0.0329
+        },
+        {
+          "hex": "#616d7e",
+          "coverage": 0.0172
+        },
+        {
+          "hex": "#2a3848",
+          "coverage": 0.0162
+        }
+      ],
+      "detail": {
+        "energy": 114.7838
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 24,
+          "capHeightPx": 33.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.65,
+          "advTall": 0.2068,
+          "advX": 0.65,
+          "gap": 0.1182,
+          "xRatio": 0.7453,
+          "stemW": 0.1912,
+          "contrast": 1.2047,
+          "serif": null,
+          "densTall": 0.824,
+          "densX": 0.6224,
+          "weight": 0.824
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "calc-slider",
+      "kind": "control",
+      "note": "slider 1 000 to 15 000+ with value 5 000",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.6072,
+        "w": 0.4434,
+        "h": 0.0297
+      },
+      "px": {
+        "x": 98,
+        "y": 1535,
+        "w": 752,
+        "h": 75
+      },
+      "aspect": 10.0267,
+      "palette": [
+        {
+          "hex": "#d7e7f6",
+          "coverage": 0.9389
+        },
+        {
+          "hex": "#0848cb",
+          "coverage": 0.0307
+        },
+        {
+          "hex": "#0f1526",
+          "coverage": 0.0168
+        },
+        {
+          "hex": "#718090",
+          "coverage": 0.0081
+        },
+        {
+          "hex": "#364252",
+          "coverage": 0.0055
+        }
+      ],
+      "detail": {
+        "energy": 37.077
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "calc-result",
+      "kind": "chrome",
+      "note": "result panel Рекомендована потужність 10 кВт with link",
+      "grid": null,
+      "box": {
+        "x": 0.5307,
+        "y": 0.5696,
+        "w": 0.4116,
+        "h": 0.0752
+      },
+      "px": {
+        "x": 900,
+        "y": 1440,
+        "w": 698,
+        "h": 190
+      },
+      "aspect": 3.6737,
+      "palette": [
+        {
+          "hex": "#dbeaf8",
+          "coverage": 0.8673
+        },
+        {
+          "hex": "#090c21",
+          "coverage": 0.0706
+        },
+        {
+          "hex": "#a6b4c6",
+          "coverage": 0.0242
+        },
+        {
+          "hex": "#4478c8",
+          "coverage": 0.019
+        },
+        {
+          "hex": "#75abec",
+          "coverage": 0.0189
+        }
+      ],
+      "detail": {
+        "energy": 51.436
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "cases-title",
+      "kind": "text",
+      "note": "heading Наші реалізовані кейси",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.6863,
+        "w": 0.2978,
+        "h": 0.0229
+      },
+      "px": {
+        "x": 98,
+        "y": 1735,
+        "w": 505,
+        "h": 58
+      },
+      "aspect": 8.7069,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.7197
+        },
+        {
+          "hex": "#0a0a20",
+          "coverage": 0.2095
+        },
+        {
+          "hex": "#4d4f60",
+          "coverage": 0.0293
+        },
+        {
+          "hex": "#bdc0c8",
+          "coverage": 0.0272
+        },
+        {
+          "hex": "#878796",
+          "coverage": 0.0143
+        }
+      ],
+      "detail": {
+        "energy": 99.3192
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 20,
+          "capHeightPx": 33.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6503,
+          "advTall": 0.2069,
+          "advX": 0.6503,
+          "gap": 0.1182,
+          "xRatio": 0.7468,
+          "stemW": 0.1952,
+          "contrast": 1.1945,
+          "serif": 0.71,
+          "densTall": 0.824,
+          "densX": 0.6615,
+          "weight": 0.824
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "case-1-photo",
+      "kind": "image",
+      "note": "orchard with ground solar array",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.069,
+        "y": 0.7425,
+        "w": 0.4098,
+        "h": 0.0653
+      },
+      "px": {
+        "x": 117,
+        "y": 1877,
+        "w": 695,
+        "h": 165
+      },
+      "aspect": 4.2121,
+      "palette": [
+        {
+          "hex": "#62671c",
+          "coverage": 0.2236
+        },
+        {
+          "hex": "#898826",
+          "coverage": 0.2137
+        },
+        {
+          "hex": "#d3d8e3",
+          "coverage": 0.2129
+        },
+        {
+          "hex": "#505f87",
+          "coverage": 0.2009
+        },
+        {
+          "hex": "#29310b",
+          "coverage": 0.1489
+        }
+      ],
+      "detail": {
+        "energy": 46.1484
+      },
+      "medium": "raster",
+      "plate": "assets/plates/case-1-photo.png",
+      "text": null
+    },
+    {
+      "id": "case-2-photo",
+      "kind": "image",
+      "note": "ground solar array near village house",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.5212,
+        "y": 0.7425,
+        "w": 0.4098,
+        "h": 0.0653
+      },
+      "px": {
+        "x": 884,
+        "y": 1877,
+        "w": 695,
+        "h": 165
+      },
+      "aspect": 4.2121,
+      "palette": [
+        {
+          "hex": "#a1933e",
+          "coverage": 0.2554
+        },
+        {
+          "hex": "#818a3f",
+          "coverage": 0.2459
+        },
+        {
+          "hex": "#515e85",
+          "coverage": 0.2123
+        },
+        {
+          "hex": "#595c1c",
+          "coverage": 0.2064
+        },
+        {
+          "hex": "#bac3d3",
+          "coverage": 0.08
+        }
+      ],
+      "detail": {
+        "energy": 43.6803
+      },
+      "medium": "raster",
+      "plate": "assets/plates/case-2-photo.png",
+      "text": null
+    },
+    {
+      "id": "process-title",
+      "kind": "text",
+      "note": "heading Як ми працюємо",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.8762,
+        "w": 0.2134,
+        "h": 0.0245
+      },
+      "px": {
+        "x": 98,
+        "y": 2215,
+        "w": 362,
+        "h": 62
+      },
+      "aspect": 5.8387,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.7498
+        },
+        {
+          "hex": "#090923",
+          "coverage": 0.1917
+        },
+        {
+          "hex": "#babcca",
+          "coverage": 0.0334
+        },
+        {
+          "hex": "#292b3d",
+          "coverage": 0.0155
+        },
+        {
+          "hex": "#858593",
+          "coverage": 0.0095
+        }
+      ],
+      "detail": {
+        "energy": 63.8477
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 12,
+          "capHeightPx": 33.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6886,
+          "advTall": 0.7186,
+          "advX": 0.6587,
+          "gap": 0.1198,
+          "xRatio": 0.7438,
+          "stemW": 0.1973,
+          "contrast": 1.1175,
+          "serif": 0.9055,
+          "densTall": 0.6572,
+          "densX": 0.6754,
+          "weight": 0.6572
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "process-steps",
+      "kind": "chrome",
+      "note": "five numbered steps on a dotted line",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.913,
+        "w": 0.4363,
+        "h": 0.0376
+      },
+      "px": {
+        "x": 98,
+        "y": 2308,
+        "w": 740,
+        "h": 95
+      },
+      "aspect": 7.7895,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9249
+        },
+        {
+          "hex": "#0c0e1d",
+          "coverage": 0.0256
+        },
+        {
+          "hex": "#91939c",
+          "coverage": 0.0247
+        },
+        {
+          "hex": "#c2c6cb",
+          "coverage": 0.0129
+        },
+        {
+          "hex": "#4c4e5b",
+          "coverage": 0.012
+        }
+      ],
+      "detail": {
+        "energy": 39.1687
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "form-panel",
+      "kind": "chrome",
+      "note": "navy panel with request form Отримати розрахунок and footer",
+      "grid": null,
+      "box": {
+        "x": 0.5106,
+        "y": 0.8525,
+        "w": 0.4617,
+        "h": 0.1297
+      },
+      "px": {
+        "x": 866,
+        "y": 2155,
+        "w": 783,
+        "h": 328
+      },
+      "aspect": 2.3872,
+      "palette": [
+        {
+          "hex": "#08162a",
+          "coverage": 0.8939
+        },
+        {
+          "hex": "#0848c8",
+          "coverage": 0.0306
+        },
+        {
+          "hex": "#f1f3f6",
+          "coverage": 0.0275
+        },
+        {
+          "hex": "#aaabba",
+          "coverage": 0.0266
+        },
+        {
+          "hex": "#373954",
+          "coverage": 0.0214
+        }
+      ],
+      "detail": {
+        "energy": 25.7576
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "card-home-frame",
+      "kind": "chrome",
+      "note": "outlined scenario card frame Дім",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.4288,
+        "w": 0.2854,
+        "h": 0.1021
+      },
+      "px": {
+        "x": 98,
+        "y": 1084,
+        "w": 484,
+        "h": 258
+      },
+      "aspect": 1.876,
+      "palette": [
+        {
+          "hex": "#f5f6f5",
+          "coverage": 0.2921
+        },
+        {
+          "hex": "#cfdeee",
+          "coverage": 0.2137
+        },
+        {
+          "hex": "#92b7d9",
+          "coverage": 0.1815
+        },
+        {
+          "hex": "#939da2",
+          "coverage": 0.1687
+        },
+        {
+          "hex": "#666971",
+          "coverage": 0.144
+        }
+      ],
+      "detail": {
+        "energy": 37.3278
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "card-biz-frame",
+      "kind": "chrome",
+      "note": "outlined scenario card frame Бізнес",
+      "grid": null,
+      "box": {
+        "x": 0.3614,
+        "y": 0.4288,
+        "w": 0.2777,
+        "h": 0.1021
+      },
+      "px": {
+        "x": 613,
+        "y": 1084,
+        "w": 471,
+        "h": 258
+      },
+      "aspect": 1.8256,
+      "palette": [
+        {
+          "hex": "#f2f2f3",
+          "coverage": 0.3193
+        },
+        {
+          "hex": "#baafa5",
+          "coverage": 0.2601
+        },
+        {
+          "hex": "#596c87",
+          "coverage": 0.1748
+        },
+        {
+          "hex": "#94a2b6",
+          "coverage": 0.127
+        },
+        {
+          "hex": "#4c535b",
+          "coverage": 0.1188
+        }
+      ],
+      "detail": {
+        "energy": 38.943
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "card-agro-frame",
+      "kind": "chrome",
+      "note": "outlined scenario card frame Агро",
+      "grid": null,
+      "box": {
+        "x": 0.658,
+        "y": 0.4288,
+        "w": 0.2842,
+        "h": 0.1021
+      },
+      "px": {
+        "x": 1116,
+        "y": 1084,
+        "w": 482,
+        "h": 258
+      },
+      "aspect": 1.8682,
+      "palette": [
+        {
+          "hex": "#edf0f3",
+          "coverage": 0.4628
+        },
+        {
+          "hex": "#687327",
+          "coverage": 0.1728
+        },
+        {
+          "hex": "#657290",
+          "coverage": 0.1538
+        },
+        {
+          "hex": "#495821",
+          "coverage": 0.11
+        },
+        {
+          "hex": "#92853b",
+          "coverage": 0.1006
+        }
+      ],
+      "detail": {
+        "energy": 38.1229
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "case-1-title",
+      "kind": "text",
+      "note": "case title СЕС 100 кВт для поливу саду, Лука-Мелешківська, 2025",
+      "grid": null,
+      "box": {
+        "x": 0.069,
+        "y": 0.7199,
+        "w": 0.4098,
+        "h": 0.0178
+      },
+      "px": {
+        "x": 117,
+        "y": 1820,
+        "w": 695,
+        "h": 45
+      },
+      "aspect": 15.4444,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8395
+        },
+        {
+          "hex": "#0b0c1c",
+          "coverage": 0.0845
+        },
+        {
+          "hex": "#9293a1",
+          "coverage": 0.0312
+        },
+        {
+          "hex": "#c2c4ca",
+          "coverage": 0.0256
+        },
+        {
+          "hex": "#525362",
+          "coverage": 0.0192
+        }
+      ],
+      "detail": {
+        "energy": 80.5207
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 47,
+          "capHeightPx": 18.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6244,
+          "advTall": 0.6377,
+          "advX": 0.6111,
+          "gap": 0.1329,
+          "xRatio": 0.7372,
+          "stemW": 0.1736,
+          "contrast": 1.0864,
+          "serif": 1.1717,
+          "densTall": 0.4909,
+          "densX": 0.5716,
+          "weight": 0.4909
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "case-2-title",
+      "kind": "text",
+      "note": "case title Наземна СЕС 30 кВт, Ладижин, 2026",
+      "grid": null,
+      "box": {
+        "x": 0.5212,
+        "y": 0.7199,
+        "w": 0.4098,
+        "h": 0.0178
+      },
+      "px": {
+        "x": 884,
+        "y": 1820,
+        "w": 695,
+        "h": 45
+      },
+      "aspect": 15.4444,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8941
+        },
+        {
+          "hex": "#0c0d1d",
+          "coverage": 0.056
+        },
+        {
+          "hex": "#aeafba",
+          "coverage": 0.0231
+        },
+        {
+          "hex": "#4b4d5a",
+          "coverage": 0.0136
+        },
+        {
+          "hex": "#7b7f8a",
+          "coverage": 0.0133
+        }
+      ],
+      "detail": {
+        "energy": 51.7165
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 28,
+          "capHeightPx": 18.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6373,
+          "advTall": 0.6772,
+          "advX": 0.6108,
+          "gap": 0.1593,
+          "xRatio": 0.7563,
+          "stemW": 0.1741,
+          "contrast": 1.0451,
+          "serif": 0.9712,
+          "densTall": 0.4741,
+          "densX": 0.5879,
+          "weight": 0.4741
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "case-1-meta",
+      "kind": "text",
+      "note": "case meta line",
+      "grid": null,
+      "box": {
+        "x": 0.069,
+        "y": 0.8109,
+        "w": 0.4098,
+        "h": 0.0158
+      },
+      "px": {
+        "x": 117,
+        "y": 2050,
+        "w": 695,
+        "h": 40
+      },
+      "aspect": 17.375,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9318
+        },
+        {
+          "hex": "#5d5f6a",
+          "coverage": 0.0259
+        },
+        {
+          "hex": "#c9c9d1",
+          "coverage": 0.0241
+        },
+        {
+          "hex": "#8f8f99",
+          "coverage": 0.0182
+        }
+      ],
+      "detail": {
+        "energy": 22.1102
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 32,
+          "capHeightPx": 16.9,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5907,
+          "advTall": 0.635,
+          "advX": 0.5612,
+          "gap": 0.1477,
+          "xRatio": 0.7527,
+          "stemW": 0.1335,
+          "contrast": 1.0212,
+          "serif": null,
+          "densTall": 0.4454,
+          "densX": 0.4588,
+          "weight": 0.4454
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "case-2-meta",
+      "kind": "text",
+      "note": "case meta line",
+      "grid": null,
+      "box": {
+        "x": 0.5212,
+        "y": 0.8109,
+        "w": 0.4098,
+        "h": 0.0158
+      },
+      "px": {
+        "x": 884,
+        "y": 2050,
+        "w": 695,
+        "h": 40
+      },
+      "aspect": 17.375,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9411
+        },
+        {
+          "hex": "#5c5d69",
+          "coverage": 0.0247
+        },
+        {
+          "hex": "#a1a2ab",
+          "coverage": 0.012
+        },
+        {
+          "hex": "#c7c9cb",
+          "coverage": 0.0114
+        },
+        {
+          "hex": "#7d7e87",
+          "coverage": 0.0108
+        }
+      ],
+      "detail": {
+        "energy": 21.6408
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 32,
+          "capHeightPx": 16.9,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5912,
+          "advTall": 0.6503,
+          "advX": 0.5616,
+          "gap": 0.1478,
+          "xRatio": 0.7548,
+          "stemW": 0.137,
+          "contrast": 1.0133,
+          "serif": null,
+          "densTall": 0.4465,
+          "densX": 0.4866,
+          "weight": 0.4465
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "case-1-frame",
+      "kind": "chrome",
+      "note": "outlined case card",
+      "grid": null,
+      "box": {
+        "x": 0.0578,
+        "y": 0.716,
+        "w": 0.4322,
+        "h": 0.1147
+      },
+      "px": {
+        "x": 98,
+        "y": 1810,
+        "w": 733,
+        "h": 290
+      },
+      "aspect": 2.5276,
+      "palette": [
+        {
+          "hex": "#f3f4f5",
+          "coverage": 0.6176
+        },
+        {
+          "hex": "#60661c",
+          "coverage": 0.1166
+        },
+        {
+          "hex": "#506087",
+          "coverage": 0.0999
+        },
+        {
+          "hex": "#888725",
+          "coverage": 0.0971
+        },
+        {
+          "hex": "#424711",
+          "coverage": 0.0688
+        }
+      ],
+      "detail": {
+        "energy": 46.8729
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "case-2-frame",
+      "kind": "chrome",
+      "note": "outlined case card",
+      "grid": null,
+      "box": {
+        "x": 0.51,
+        "y": 0.716,
+        "w": 0.4322,
+        "h": 0.1147
+      },
+      "px": {
+        "x": 865,
+        "y": 1810,
+        "w": 733,
+        "h": 290
+      },
+      "aspect": 2.5276,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.5867
+        },
+        {
+          "hex": "#818a3f",
+          "coverage": 0.1174
+        },
+        {
+          "hex": "#a2933d",
+          "coverage": 0.1066
+        },
+        {
+          "hex": "#515e85",
+          "coverage": 0.0962
+        },
+        {
+          "hex": "#565b1b",
+          "coverage": 0.0932
+        }
+      ],
+      "detail": {
+        "energy": 41.9203
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    }
+  ],
+  "compSha256": "122c473ce3eae5b387fa494ce5addeefc64d1d487f86031700e0d9e541584ba0",
+  "regionsSource": {
+    "path": ".impeccable/build/regions.json",
+    "sha256": "d8506b0e8674220f21aa686241911c8f30150407fbef91c35e852fedb173948b"
+  }
+}
