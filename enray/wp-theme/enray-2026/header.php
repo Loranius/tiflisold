@@ -19,6 +19,8 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></symbol>
   <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L4.5 13.5H11l-1 8 8.5-11H12l1-8z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-viber" viewBox="0 0 24 24"><path d="M12 2.5c4.9 0 8.5 2.6 8.5 8.3 0 5.6-3.6 8.2-8.5 8.2-.8 0-1.6-.1-2.3-.2L6 21.5v-3.6C4.3 16.5 3.5 14 3.5 10.8 3.5 5.1 7.1 2.5 12 2.5z"/><path d="M9.2 7.6c.4-.3 1-.3 1.2.2l.6 1.3c.2.4 0 .8-.3 1.1l-.4.3c.4 1 1.3 1.9 2.3 2.3l.3-.4c.3-.3.7-.4 1.1-.3l1.3.6c.5.2.5.8.2 1.2-.6.8-1.6 1.1-2.6.6a8.3 8.3 0 0 1-3.8-3.8c-.5-1-.2-2 .1-3.1z"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>

@@ -59,3 +59,7 @@
 .request .pick input:checked + .wpcf7-list-item-label { background: var(--cobalt); color: #fff; }
 .request .pick input:focus-visible + .wpcf7-list-item-label { outline: 2px solid #6f9cff; outline-offset: 2px; }
 .request .pick .wpcf7-form-control-wrap { display: contents; }
+
+/* CF7: шість варіантів «Що потрібно» — окремі кнопки, як у прототипі */
+.request .pick--6 .wpcf7-list-item-label { padding: 8px 10px; text-align: center; line-height: 1.2; border: 1.5px solid #5f7393; background: var(--navy-2); }
+.request .pick--6 input:checked + .wpcf7-list-item-label { border-color: var(--cobalt); }

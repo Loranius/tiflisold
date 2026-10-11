@@ -159,6 +159,25 @@ p { margin: 0; }
 .scenario-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
 .scenario { position: relative; }
 
+/* Services: усі напрями компанії, рядками креслярської специфікації */
+.services { padding-top: clamp(44px, 3.4vw, 58px); }
+.services-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 40px; margin-bottom: clamp(22px, 2vw, 34px); }
+.services-lead { max-width: 46ch; font-size: clamp(16px, 1.3vw, 21px); line-height: 1.45; color: var(--ink-2); }
+.svc-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 3.4vw, 64px); }
+.svc-group h3 { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 2px solid var(--rule-strong); font: 700 clamp(20px, 1.6vw, 27px)/1.15 var(--f-display); letter-spacing: -0.01em; }
+.svc-group h3 .ico { font-size: 1.15em; color: var(--cobalt); }
+.svc-list { list-style: none; margin: 0; padding: 0; }
+.svc-list li { border-bottom: 1px solid var(--rule); }
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 20px; row-gap: 4px; align-items: center; min-height: 44px; padding: clamp(14px, 1.2vw, 20px) 10px; margin: 0 -10px; border-radius: 10px; color: var(--ink); text-decoration: none; transition: background-color .2s; }
+.svc-name { font: 600 clamp(17px, 1.35vw, 22px)/1.25 var(--f-body); }
+.svc-what { grid-column: 1; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.45; color: var(--ink-2); }
+.svc .ico { grid-column: 2; grid-row: 1 / 3; font-size: 22px; color: var(--ink); transition: transform .25s cubic-bezier(.16,1,.3,1), color .2s; }
+@media (hover: hover) {
+  .svc:hover { background: var(--paper-2); }
+  .svc:hover .svc-name { color: var(--cobalt); }
+  .svc:hover .ico { color: var(--cobalt); transform: translateX(4px); }
+}
+
 /* Calculator */
 .calc { margin-top: var(--section); background: var(--grid-bg), var(--sky-2); padding: clamp(36px, 2.95vw, 50px) var(--gutter); }
 .calc-inner { max-width: var(--wrap); margin: 0 auto; }
@@ -249,6 +268,10 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
 .pick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; border-radius: 14px; background: var(--navy-2); border: 1.5px solid #5f7393; }
 .pick label { position: relative; }
 .pick input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.pick--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0; border: 0; background: transparent; }
+/* Шість варіантів — окремі кнопки з власною рамкою (3.8:1 на navy), а не сегменти однієї плашки. */
+.pick--6 span { padding: 8px 10px; text-align: center; line-height: 1.2; border: 1.5px solid #5f7393; background: var(--navy-2); }
+.pick--6 input:checked + span { border-color: var(--cobalt); }
 .pick span { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 10px; font: 600 16px/1 var(--f-body); color: var(--on-navy); transition: background-color .2s, color .2s; }
 @media (hover: hover) { .pick label:hover span { background: #1b3050; } }
 .pick input:checked + span { background: var(--cobalt); color: #fff; }
@@ -269,15 +292,17 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
 
 /* Footer */
 .site-footer { background: var(--navy); color: var(--on-navy-muted); padding: clamp(40px, 3.5vw, 60px) var(--gutter) calc(clamp(28px, 2.4vw, 40px) + env(safe-area-inset-bottom, 0px)); }
-.footer-inner { max-width: var(--wrap); margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 24px 48px; align-items: center; }
+.footer-inner { max-width: var(--wrap); margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 24px 48px; align-items: start; }
 .brand--light { color: #fff; font-size: clamp(26px, 2vw, 34px); }
-.footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 28px; }
+.footer-links { display: grid; grid-template-columns: repeat(3, auto); justify-content: end; gap: 8px clamp(32px, 4vw, 72px); align-items: start; }
+.footer-col { display: grid; align-content: start; }
+.footer-h { margin: 0 0 4px; font-size: 14px; color: var(--on-navy-muted); }
 .footer-links a, .footer-contacts a { display: inline-flex; align-items: center; min-height: 44px; }
 .footer-links a { color: var(--on-navy); text-decoration: none; font-size: 17px; }
 .footer-links a:hover { color: #fff; text-decoration: underline; }
 .footer-contacts { grid-column: 1 / -1; font-style: normal; display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; padding-top: 22px; border-top: 1px solid #22324b; font-size: 15px; }
 .footer-contacts a { color: var(--on-navy); text-decoration: none; font-variant-numeric: tabular-nums; }
-.footer-legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
+.footer-legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; font-size: 14px; }
 .footer-legal a { display: inline-flex; align-items: center; min-height: 44px; color: var(--on-navy-muted); }
 
 .mobile-bar { display: none; }
@@ -314,6 +339,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
 
 /* Вузький планшет: кроки роботи вертикальною стрічкою */
 @media (max-width: 900px) {
+  .svc-groups { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; gap: 0; }
   .steps::before { left: 6px; right: auto; top: 8px; bottom: 8px; border-top: 0; border-left: 2px dotted #9aa3b5; }
   .steps li { grid-template-columns: 40px auto; column-gap: 12px; padding: 0 0 18px 28px; position: relative; justify-items: start; text-align: left; }
@@ -363,8 +389,9 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
   .slider-scale span:nth-child(2) { display: none; }
   .request-form { grid-template-columns: 1fr; }
   .pick span { min-height: 48px; }
+  .pick--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: 1fr; }
-  .footer-links { justify-content: flex-start; }
+  .footer-links { justify-content: start; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
   .mobile-bar {
     display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
     position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;

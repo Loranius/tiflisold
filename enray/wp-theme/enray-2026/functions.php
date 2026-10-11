@@ -124,8 +124,31 @@ function enray_default_menu() {
 		array( 'Для дому', home_url( '/dim/' ) ),
 		array( 'Для бізнесу', home_url( '/biznes/' ) ),
 		array( 'Агро', home_url( '/agro/' ) ),
+		array( 'Послуги', home_url( '/#posluhy' ) ),
 		array( 'Кейси', home_url( '/keysy/' ) ),
-		array( 'Про нас', home_url( '/pro-nas/' ) ),
+	);
+}
+
+/** Футер за замовчуванням: усі напрями компанії, згруповані. */
+function enray_footer_groups() {
+	return array(
+		'Сонячні станції'     => array(
+			array( 'Станції для дому', home_url( '/dim/' ) ),
+			array( 'Станції для бізнесу', home_url( '/biznes/' ) ),
+			array( 'Станції для поливу', home_url( '/agro/' ) ),
+			array( 'Обслуговування СЕС', home_url( '/obsluhovuvannia/' ) ),
+		),
+		'Електрика й безпека' => array(
+			array( 'Електромонтаж', home_url( '/electrical-works/' ) ),
+			array( 'Системи охорони', home_url( '/systemy-okhorony-ta-bezpeky/' ) ),
+			array( 'Відеоспостереження', home_url( '/videosposterezhennia-cctv/' ) ),
+		),
+		'Компанія'            => array(
+			array( 'Усі послуги', home_url( '/#posluhy' ) ),
+			array( 'Кейси', home_url( '/keysy/' ) ),
+			array( 'Про нас', home_url( '/pro-nas/' ) ),
+			array( 'Контакти', home_url( '/kontakty/' ) ),
+		),
 	);
 }
 
@@ -144,16 +167,25 @@ function enray_menu_items( $location ) {
 			return $out;
 		}
 	}
-	if ( 'footer' === $location ) {
-		return array_merge( enray_default_menu(), array(
-			array( 'Електромонтаж', home_url( '/electrical-works/' ) ),
-			array( 'Відеоспостереження', home_url( '/videosposterezhennia-cctv/' ) ),
-		) );
-	}
 	return enray_default_menu();
 }
 
 /** Посилання меню без ul/li, з aria-current для поточної сторінки. */
+function enray_footer_links() {
+	$locations = get_nav_menu_locations();
+	if ( ! empty( $locations['footer'] ) ) {
+		enray_nav_links( 'footer' ); // призначене меню — як є, одним рядом
+		return;
+	}
+	foreach ( enray_footer_groups() as $title => $items ) {
+		echo '<div class="footer-col"><p class="footer-h">' . esc_html( $title ) . '</p>';
+		foreach ( $items as $item ) {
+			printf( '<a href="%s">%s</a>', esc_url( $item[1] ), esc_html( $item[0] ) );
+		}
+		echo '</div>';
+	}
+}
+
 function enray_nav_links( $location = 'primary' ) {
 	$here = untrailingslashit( strtok( home_url( add_query_arg( array() ) ), '?' ) );
 	foreach ( enray_menu_items( $location ) as $item ) {
@@ -222,7 +254,7 @@ add_action( 'wp_head', function () {
 		return; // Yoast або Rank Math самі виводять description.
 	}
 	$desc = array(
-		'front'  => 'EnRay проєктує, монтує й підключає сонячні електростанції для дому, бізнесу та агро у Вінницькій області. Монтаж за 7–10 днів, документи й підключення беремо на себе.',
+		'front'  => 'EnRay у Вінницькій області: сонячні електростанції для дому, бізнесу й поливу, електромонтажні роботи, системи охорони й відеоспостереження. Проєкт, монтаж і сервіс від однієї команди.',
 		'dim'    => 'Гібридна сонячна станція для приватного будинку у Вінницькій області: світло, котел, холодильник та інтернет під час відключень. Проєкт, монтаж і підключення від EnRay.',
 		'biznes' => 'Мережеві та гібридні сонячні станції для бізнесу у Вінницькій області: менший рахунок за електроенергію, монтаж на даху чи на землі, документи й підключення від EnRay.',
 		'agro'   => 'Сонячні станції для поливу та насосів у Вінницькій області, зокрема автономні: СЕС 100 кВт для поливу саду в Луці-Мелешківській. Проєкт, монтаж і запуск від EnRay.',

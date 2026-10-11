@@ -5,11 +5,11 @@ get_header();
 <main id="main">
   <section class="hero" id="top">
     <div class="hero-copy">
-      <h1>Сонячні станції для дому, бізнесу й&nbsp;поливу</h1>
-      <p class="hero-sub">Світло під час відключень, менший рахунок, енергія для насосів. Під ключ у&nbsp;Вінницькій області за&nbsp;<span class="nw">7–10&nbsp;днів</span>.</p>
+      <h1>Сонячні станції, електрика й&nbsp;безпека під&nbsp;ключ</h1>
+      <p class="hero-sub">Для дому, бізнесу й&nbsp;поливу у&nbsp;Вінницькій області: станції, електромонтаж, сигналізація й&nbsp;камери від однієї команди.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#kalkulyator">Порахувати потужність</a>
-        <a class="btn btn-outline btn-lg" href="<?php echo esc_attr( enray_tel() ); ?>">Подзвонити</a>
+        <a class="btn btn-outline btn-lg" href="#posluhy">Усі послуги</a>
       </div>
     </div>
     <figure class="hero-figure">
@@ -31,8 +31,33 @@ get_header();
     </ul>
   </section>
 
+  <section class="section services" id="posluhy" aria-labelledby="services-h">
+    <div class="services-head">
+      <h2 id="services-h">Що ми робимо</h2>
+      <p class="services-lead">Станція, проводка, сигналізація й камери від однієї команди, без пошуку окремих підрядників.</p>
+    </div>
+    <div class="svc-groups">
+      <div class="svc-group">
+        <h3><svg class="ico"><use href="#i-sun"/></svg>Сонячна енергетика</h3>
+        <ul class="svc-list">
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/proiektuvannia/' ) ); ?>"><span class="svc-name">Проєктування СЕС</span><span class="svc-what">виїзд і заміри, оцінка підключення до мережі, проєкт під ваше споживання</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/budivnytstvo/' ) ); ?>"><span class="svc-name">Будівництво СЕС</span><span class="svc-what">дахові й наземні станції: кріплення, панелі, інвертор і акумулятори, налагодження</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/obsluhovuvannia/' ) ); ?>"><span class="svc-name">Обслуговування СЕС</span><span class="svc-what">діагностика, чищення панелей, налаштування інвертора, ремонт</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="svc-group">
+        <h3><svg class="ico"><use href="#i-bolt"/></svg>Електрика й безпека</h3>
+        <ul class="svc-list">
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/electrical-works/' ) ); ?>"><span class="svc-name">Електромонтажні роботи</span><span class="svc-what">проєкт і монтаж проводки, освітлення, заземлення й блискавкозахист, модернізація мереж</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/systemy-okhorony-ta-bezpeky/' ) ); ?>"><span class="svc-name">Системи охорони</span><span class="svc-what">охоронна й пожежна сигналізація, контроль доступу, захист периметра</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="svc" href="<?php echo esc_url( home_url( '/videosposterezhennia-cctv/' ) ); ?>"><span class="svc-name">Відеоспостереження</span><span class="svc-what">камери для дому й бізнесу, запис 24/7, перегляд з телефона</span><svg class="ico"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="section solutions" aria-labelledby="solutions-h">
-    <h2 id="solutions-h">Оберіть свій сценарій</h2>
+    <h2 id="solutions-h">Сонячна станція під ваш сценарій</h2>
     <div class="scenario-grid">
       <article class="scenario" id="dim">
         <div class="scenario-media"><span class="tab">Дім</span><img src="<?php echo esc_url( enray_img( 'card-home.webp' ) ); ?>" width="720" height="376" alt="Дахова сонячна станція EnRay на приватному будинку" loading="lazy"></div>
@@ -67,9 +92,9 @@ get_header();
         <h2 id="calc-h">Яка потужність вам потрібна</h2>
         <fieldset class="calc-switch" id="calc-switch" hidden>
           <legend class="sr-only">Для чого станція</legend>
-          <label><input type="radio" name="calc-mode" value="dim" data-object="Дім" checked><span>Дім</span></label>
-          <label><input type="radio" name="calc-mode" value="biz" data-object="Бізнес"><span>Бізнес</span></label>
-          <label><input type="radio" name="calc-mode" value="agro" data-object="Агро"><span>Агро</span></label>
+          <label><input type="radio" name="calc-mode" value="dim" data-object="Станція для дому" checked><span>Дім</span></label>
+          <label><input type="radio" name="calc-mode" value="biz" data-object="Станція для бізнесу"><span>Бізнес</span></label>
+          <label><input type="radio" name="calc-mode" value="agro" data-object="Станція для поливу"><span>Агро</span></label>
         </fieldset>
       </div>
 

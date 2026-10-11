@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <a class="brand brand--light" href="#top" aria-label="EnRay, на початок сторінки"><img src="<?php echo esc_url( enray_img( 'logo-mark.png' ) ); ?>" width="43" height="41" alt=""><span>ENRAY</span></a>
-    <nav class="footer-links" aria-label="Розділи"><?php enray_nav_links( 'footer' ); ?></nav>
+    <nav class="footer-links" aria-label="Розділи"><?php enray_footer_links(); ?></nav>
     <address class="footer-contacts">
       <a href="<?php echo esc_attr( enray_tel() ); ?>"><?php echo esc_html( enray_opt( 'phone' ) ); ?></a>
       <span><?php echo esc_html( enray_opt( 'address' ) ); ?></span>
