@@ -271,7 +271,8 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
 .field input { width: 100%; min-height: 50px; padding: 0 14px; border-radius: 10px; border: 1.5px solid #5f7393; background: var(--navy-2); color: #fff; font: 400 17px/1 var(--f-body); transition: border-color .2s, background-color .2s; }
 .field input::placeholder { color: #8ea0b8; }
 .field input:hover { border-color: #7d92b3; }
-.field input:focus { outline: none; border-color: #6f9cff; background: #172b49; }
+/* Фокус на темному тлі: власне кільце 2px (6.8:1 до navy), а не лише зміна рамки */
+.field input:focus { outline: 2px solid #6f9cff; outline-offset: 2px; border-color: #6f9cff; background: #172b49; }
 .field input[aria-invalid=true] { border-color: #ff8f7a; }
 .request-form .btn { grid-column: 1 / -1; margin-top: 4px; box-shadow: none; }
 .request-form .btn:hover { box-shadow: none; }

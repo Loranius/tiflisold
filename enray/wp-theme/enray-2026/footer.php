@@ -12,10 +12,10 @@
   </div>
 </footer>
 
-<div class="mobile-bar">
+<nav class="mobile-bar" aria-label="Швидкий зв'язок">
   <a class="btn btn-outline" href="<?php echo esc_attr( enray_tel() ); ?>"><svg class="ico"><use href="#i-phone"/></svg>Подзвонити</a>
   <a class="btn btn-viber" href="<?php echo esc_attr( enray_viber() ); ?>"><svg class="ico"><use href="#i-viber"/></svg>Viber</a>
-</div>
+</nav>
 
 
 <?php wp_footer(); ?>

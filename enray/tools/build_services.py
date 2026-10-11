@@ -374,11 +374,11 @@ def render_main(slug, ctx):
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00.</p>
       {form}
     </div>
-    <aside class="closing-aside">
+    <div class="closing-aside">
       <p>Не хочете заповнювати форму? Зателефонуйте або напишіть у Viber, інженер відповість у робочий час.</p>
       <a class="nav-phone big-phone" href="{ctx.tel()}">{phone}</a>
       <a class="btn btn-viber" href="{viber}"><svg class="ico"><use href="#i-viber"/></svg>Написати у Viber</a>
-    </aside>
+    </div>
   </section>
 
 ''')

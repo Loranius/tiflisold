@@ -150,11 +150,11 @@ get_header();
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00, з попереднім розрахунком потужності й ємності акумулятора.</p>
       <?php enray_request_form( 'dim' ); ?>
     </div>
-    <aside class="closing-aside">
+    <div class="closing-aside">
       <p>Не хочете заповнювати форму? Зателефонуйте або напишіть у Viber, інженер відповість у робочий час.</p>
       <a class="nav-phone big-phone" href="<?php echo esc_attr( enray_tel() ); ?>"><?php echo esc_html( enray_opt( 'phone' ) ); ?></a>
       <a class="btn btn-viber" href="<?php echo esc_attr( enray_viber() ); ?>"><svg class="ico"><use href="#i-viber"/></svg>Написати у Viber</a>
-    </aside>
+    </div>
   </section>
 </main>
 <?php

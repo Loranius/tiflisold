@@ -165,11 +165,11 @@ get_header();
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00, і попросить рахунки за рік, щоб порахувати потужність та економію точно.</p>
       <?php enray_request_form( 'biznes' ); ?>
     </div>
-    <aside class="closing-aside">
+    <div class="closing-aside">
       <p>Зручніше голосом? Зателефонуйте або напишіть у Viber, інженер відповість у робочий час.</p>
       <a class="nav-phone big-phone" href="<?php echo esc_attr( enray_tel() ); ?>"><?php echo esc_html( enray_opt( 'phone' ) ); ?></a>
       <a class="btn btn-viber" href="<?php echo esc_attr( enray_viber() ); ?>"><svg class="ico"><use href="#i-viber"/></svg>Написати у Viber</a>
-    </aside>
+    </div>
   </section>
 </main>
 <?php
