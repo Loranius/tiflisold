@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T08:17:23+00:00",
+  "title": "Design System: EnRay",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Чорнило",
+        "canonical": "oklch(19.6% 0.060 270)",
+        "tonalRamp": [
+          "#080b14",
+          "#1f2435",
+          "#394159",
+          "#556081",
+          "#7581a4",
+          "#9aa4c1",
+          "#c1c9df",
+          "#e9eefd"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Чорнило 2",
+        "canonical": "oklch(34.9% 0.039 272)",
+        "tonalRamp": [
+          "#090b11",
+          "#21252f",
+          "#3d4151",
+          "#5a6076",
+          "#7b8198",
+          "#9fa4b7",
+          "#c4c9d7",
+          "#ebeef8"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Приглушений",
+        "canonical": "oklch(47.4% 0.031 274)",
+        "tonalRamp": [
+          "#0a0b10",
+          "#22252d",
+          "#3e414e",
+          "#5c6072",
+          "#7d8294",
+          "#a0a4b4",
+          "#c5c9d4",
+          "#eceef6"
+        ]
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Кобальт креслення",
+        "canonical": "oklch(48.5% 0.216 262)",
+        "tonalRamp": [
+          "#000729",
+          "#031e5b",
+          "#0d3992",
+          "#1a56ce",
+          "#3d7af5",
+          "#6fa3ff",
+          "#a1c9ff",
+          "#d5efff"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Глибокий кобальт",
+        "canonical": "oklch(41.6% 0.185 262)",
+        "tonalRamp": [
+          "#010824",
+          "#082153",
+          "#183c87",
+          "#285abe",
+          "#497de5",
+          "#77a4f8",
+          "#a7caff",
+          "#d9efff"
+        ]
+      },
+      "cobalt-line": {
+        "role": "primary",
+        "displayName": "Кобальт лінії",
+        "canonical": "oklch(51.9% 0.198 262)",
+        "tonalRamp": [
+          "#000826",
+          "#052056",
+          "#123b8b",
+          "#2159c5",
+          "#427cec",
+          "#73a4fd",
+          "#a4caff",
+          "#d7f0ff"
+        ]
+      },
+      "sky": {
+        "role": "neutral",
+        "displayName": "Небо",
+        "canonical": "oklch(93.8% 0.028 246)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f262c",
+          "#39434c",
+          "#56636f",
+          "#768491",
+          "#9ba7b1",
+          "#c2cad2",
+          "#eaeff5"
+        ]
+      },
+      "sky-2": {
+        "role": "neutral",
+        "displayName": "Небо 2",
+        "canonical": "oklch(93.2% 0.024 240)",
+        "tonalRamp": [
+          "#080c0e",
+          "#20262b",
+          "#3a434a",
+          "#57636c",
+          "#77848e",
+          "#9ca7af",
+          "#c2cad0",
+          "#eaeff3"
+        ]
+      },
+      "grid": {
+        "role": "neutral",
+        "displayName": "Сітка",
+        "canonical": "oklch(89.8% 0.033 248)",
+        "tonalRamp": [
+          "#080c10",
+          "#1f262d",
+          "#38434e",
+          "#546372",
+          "#758494",
+          "#9aa7b4",
+          "#c1cad4",
+          "#e9eff6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Папір",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Тонка лінія",
+        "canonical": "oklch(85.5% 0.021 257)",
+        "tonalRamp": [
+          "#090b0e",
+          "#22252a",
+          "#3d424a",
+          "#5b626c",
+          "#7b838e",
+          "#9fa6ae",
+          "#c5c9d0",
+          "#eceff3"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Чорнильна лінія",
+        "canonical": "oklch(26.1% 0.041 271)",
+        "tonalRamp": [
+          "#090b11",
+          "#212530",
+          "#3c4152",
+          "#596077",
+          "#7a8299",
+          "#9ea4b8",
+          "#c4c9d7",
+          "#ebeef8"
+        ]
+      },
+      "navy": {
+        "role": "secondary",
+        "displayName": "Глибокий navy",
+        "canonical": "oklch(20.0% 0.045 257)",
+        "tonalRamp": [
+          "#070b11",
+          "#1e2631",
+          "#374353",
+          "#536279",
+          "#73849b",
+          "#99a6ba",
+          "#c0cad9",
+          "#e8eff9"
+        ]
+      },
+      "navy-2": {
+        "role": "secondary",
+        "displayName": "Navy поля",
+        "canonical": "oklch(25.6% 0.054 259)",
+        "tonalRamp": [
+          "#070b13",
+          "#1d2533",
+          "#354357",
+          "#50627d",
+          "#7183a0",
+          "#97a6be",
+          "#becadc",
+          "#e7effb"
+        ]
+      },
+      "on-navy": {
+        "role": "secondary",
+        "displayName": "Текст на navy",
+        "canonical": "oklch(96.2% 0.010 253)",
+        "tonalRamp": [
+          "#080b0f",
+          "#22252a",
+          "#3e4247",
+          "#5d6267",
+          "#7e8388",
+          "#a1a5ab",
+          "#c5cacf",
+          "#eaeff5"
+        ]
+      },
+      "on-navy-muted": {
+        "role": "secondary",
+        "displayName": "Приглушений текст на navy",
+        "canonical": "oklch(77.7% 0.033 256)",
+        "tonalRamp": [
+          "#080b10",
+          "#20262e",
+          "#3a434f",
+          "#566272",
+          "#778495",
+          "#9ca6b4",
+          "#c2cad5",
+          "#eaeff6"
+        ]
+      },
+      "viber": {
+        "role": "tertiary",
+        "displayName": "Viber (сторонній бренд)",
+        "canonical": "oklch(54.4% 0.219 283)",
+        "tonalRamp": [
+          "#090328",
+          "#211659",
+          "#3b2d90",
+          "#5845cb",
+          "#766af3",
+          "#9896ff",
+          "#bec0ff",
+          "#e6e9ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "display",
+        "purpose": "H1 героя, до трьох рядків."
+      },
+      "headline": {
+        "displayName": "headline",
+        "purpose": "H2 секцій."
+      },
+      "headline-panel": {
+        "displayName": "headline-panel",
+        "purpose": "Заголовок на navy-панелі заявки."
+      },
+      "title": {
+        "displayName": "title",
+        "purpose": "Рядок результату калькулятора."
+      },
+      "wordmark": {
+        "displayName": "wordmark",
+        "purpose": "Напис ENRAY біля знака."
+      },
+      "lead": {
+        "displayName": "lead",
+        "purpose": "Підзаголовок героя."
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "Основний текст."
+      },
+      "body-lg": {
+        "displayName": "body-lg",
+        "purpose": "Навігація, факти, вкладки, назви етапів."
+      },
+      "note": {
+        "displayName": "note",
+        "purpose": "Примітки, описи етапів, підписи полів."
+      },
+      "button": {
+        "displayName": "button",
+        "purpose": "Кнопки."
+      },
+      "button-lg": {
+        "displayName": "button-lg",
+        "purpose": "Великі кнопки героя й форми."
+      },
+      "spec": {
+        "displayName": "spec",
+        "purpose": "Spec-рядки карток сценаріїв."
+      },
+      "spec-value": {
+        "displayName": "spec-value",
+        "purpose": "Значення в мета кейсу."
+      },
+      "callout": {
+        "displayName": "callout",
+        "purpose": "Живі SVG-підписи на фото героя (одиниці viewBox)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "nav-float",
+        "value": "0 1px 0 rgba(13,31,66,.04), 0 12px 32px -18px rgba(13,31,66,.28)",
+        "purpose": "Плаваюча навігація (разом із backdrop-filter: saturate(1.4) blur(14px))."
+      },
+      {
+        "name": "button-primary",
+        "value": "0 6px 16px -8px rgba(13,31,66,.45)",
+        "purpose": "Головна кнопка в спокої; знята на navy-панелі."
+      },
+      {
+        "name": "button-primary-hover",
+        "value": "0 10px 22px -10px rgba(13,31,66,.5)",
+        "purpose": "Hover головної кнопки разом із translateY(-1px)."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 18px 40px -28px rgba(13,31,66,.45)",
+        "purpose": "Hover картки сценарію."
+      },
+      {
+        "name": "menu",
+        "value": "0 20px 40px -20px rgba(13,31,66,.35)",
+        "purpose": "Мобільне меню."
+      },
+      {
+        "name": "mobile-bar",
+        "value": "0 -10px 24px -16px rgba(13,31,66,.35)",
+        "purpose": "Липка нижня панель на телефоні."
+      },
+      {
+        "name": "slider-thumb",
+        "value": "0 2px 8px rgba(10,79,214,.35)",
+        "purpose": "Бігунок повзунка; фокус 0 0 0 4px rgba(10,79,214,.25)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Кнопки (.2s), стрілка посилання (.25s), масштаб фото картки (.6s)."
+      },
+      {
+        "name": "state-fast",
+        "value": ".2s",
+        "purpose": "Колір, рамка, тінь кнопок і полів."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce → transition/animation none, scroll-behavior auto",
+        "purpose": "Обов'язково для всіх сторінок."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "phone",
+        "value": "720px"
+      }
+    ],
+    "surfaces": {
+      "grid-paper": "linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 24px 24px",
+      "hero-ground": "linear-gradient(100deg, #e5f1fd 0%, var(--sky) 45%, var(--sky) 100%)",
+      "hero-photo-mask": "linear-gradient(90deg, transparent 0, #000 6%)"
+    },
+    "ruleWeights": {
+      "border": "1.5px",
+      "divider": "1px",
+      "process-line": "2px dotted #9aa3b5",
+      "link-strong-underline": "2px, offset .28em",
+      "focus-ring": "2px solid var(--cobalt), offset 3px",
+      "icon-stroke": "1.8"
+    },
+    "draftingAnnotation": {
+      "photo": "Реальне фото об'єкта EnRay; розмірні лінії запечені в растр.",
+      "labels": "Живий SVG <text>, viewBox = розмір растра, preserveAspectRatio xMidYMax slice; JetBrains Mono 500, fill var(--cobalt-deep), paint-order stroke, stroke #dcedfd 6px; aria-hidden, факти дубльовані в alt.",
+      "content": "Лише підтверджені факти об'єкта: потужність, тип, рік, термін монтажу."
+    }
+  },
+  "components": [
+    {
+      "name": "Головна кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Кобальтова дія: «Розрахувати», «Надіслати запит».",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Розрахувати станцію</a>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-primary{background:var(--cobalt);color:#fff;box-shadow:0 6px 16px -8px rgba(13,31,66,.45);} .ds-btn-primary:hover{background:var(--cobalt-deep);transform:translateY(-1px);box-shadow:0 10px 22px -10px rgba(13,31,66,.5);} .ds-btn-primary:active{transform:translateY(0);}"
+    },
+    {
+      "name": "Кнопка-контур",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Друга дія поруч із головною: «Подзвонити».",
+      "html": "<a class=\"ds-btn ds-btn-outline\" href=\"#\">Подзвонити</a>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{background:var(--paper);border-color:var(--cobalt);color:var(--cobalt);}"
+    },
+    {
+      "name": "Плаваюча навігація",
+      "kind": "nav",
+      "refersTo": "nav-floating",
+      "description": "Біла напівпрозора панель над героєм із розмиттям.",
+      "html": "<div class=\"ds-wrap\"><div class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-mark\"></span>ENRAY</a><nav class=\"ds-links\"><a href=\"#\">Для дому</a><a href=\"#\">Для бізнесу</a><a href=\"#\">Агро</a><a href=\"#\">Кейси</a></nav><a class=\"ds-phone\" href=\"#\">+38 067 672 22 44</a><a class=\"ds-cta\" href=\"#\">Розрахувати</a></div></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-wrap{padding:24px;background:linear-gradient(100deg,#e5f1fd,var(--sky));} .ds-nav{display:flex;align-items:center;gap:24px;min-height:72px;padding:10px 20px;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);border-radius:18px;box-shadow:0 1px 0 rgba(13,31,66,.04),0 12px 32px -18px rgba(13,31,66,.28);} .ds-brand{display:inline-flex;align-items:center;gap:10px;font:800 28px/1 var(--f-display);letter-spacing:-.01em;color:var(--ink);text-decoration:none;} .ds-mark{width:32px;height:30px;border-radius:4px;background:linear-gradient(135deg,#0a4fd6 0 40%,#22b04b 40% 70%,#f2b000 70%);} .ds-links{display:flex;gap:22px;margin-left:auto;} .ds-links a,.ds-phone{font:500 17px/1 var(--f-body);color:var(--ink);text-decoration:none;white-space:nowrap;} .ds-links a:hover{color:var(--cobalt);} .ds-phone{font-weight:400;font-variant-numeric:tabular-nums;} .ds-cta{display:inline-flex;align-items:center;min-height:46px;padding:0 1.1em;border-radius:10px;background:var(--cobalt);color:#fff;font:600 17px/1 var(--f-body);text-decoration:none;} .ds-cta:hover{background:var(--cobalt-deep);} .ds-nav a:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px;}"
+    },
+    {
+      "name": "Смуга фактів",
+      "kind": "custom",
+      "refersTo": "facts-strip",
+      "description": "Три перевірені факти під героєм у рамці 1.5px.",
+      "html": "<ul class=\"ds-facts\"><li><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg><span><b>7–10 днів</b> — монтаж</span></li><li><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12l4 4L19 6\"/></svg><span>Документи й підключення — на нас</span></li></ul>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-facts{list-style:none;margin:0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;border:1.5px solid var(--rule-strong);border-radius:10px;} .ds-facts li{display:flex;align-items:center;gap:12px;font:400 18px/1.3 var(--f-body);color:var(--ink-2);} .ds-facts b{color:var(--ink);font-weight:600;} .ds-facts .ds-ico{color:var(--ink);}"
+    },
+    {
+      "name": "Картка сценарію з вкладкою",
+      "kind": "card",
+      "refersTo": "scenario-card",
+      "description": "Сценарій (Дім / Бізнес / Агро): реальне фото з врізаною вкладкою, опис і spec-рядок моно.",
+      "html": "<article class=\"ds-scn\"><div class=\"ds-media\"><span class=\"ds-tab\">Дім</span><div class=\"ds-ph\"></div></div><div class=\"ds-body\"><p>Резерв на час відключень: гібридна станція з акумулятором.</p><p class=\"ds-spec\">приклад: дахова СЕС 6 кВт · 2024</p></div></article>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-scn{max-width:420px;border:1.5px solid var(--rule);border-radius:var(--radius);padding:10px;background:var(--paper);display:grid;transition:border-color .25s,box-shadow .25s;} .ds-scn:hover{border-color:#9fb6d6;box-shadow:0 18px 40px -28px rgba(13,31,66,.45);} .ds-media{position:relative;overflow:hidden;border-radius:calc(var(--radius) - 4px);} .ds-ph{aspect-ratio:720/376;background:linear-gradient(160deg,#9cc2ea,#4a6a8f 60%,#7a5a44);} .ds-tab{position:absolute;left:0;top:0;padding:12px 18px;background:var(--paper);border-bottom-right-radius:14px;font:500 18px/1 var(--f-body);color:var(--ink);} .ds-body{padding:16px 10px 6px;display:grid;gap:12px;font:400 16px/1.55 var(--f-body);} .ds-body p{margin:0;color:var(--ink-2);} .ds-spec{font:500 13px/1.4 var(--f-mono)!important;color:var(--cobalt-line)!important;letter-spacing:.01em;}"
+    },
+    {
+      "name": "Калькулятор",
+      "kind": "input",
+      "refersTo": "calc-result",
+      "description": "Повзунок рахунку на сітці й картка результату з кобальтовим значенням кВт.",
+      "html": "<div class=\"ds-calc\"><input class=\"ds-range\" type=\"range\" min=\"1000\" max=\"15000\" step=\"500\" value=\"5000\" aria-label=\"Рахунок за світло\"><div class=\"ds-res\"><p class=\"ds-kw\">Рекомендована потужність: <b>≈ 12 кВт</b></p><p class=\"ds-note\">Орієнтовно; точну потужність і ціну інженер порахує після огляду.</p><a class=\"ds-link\" href=\"#\">Отримати детальний розрахунок <svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-calc{display:grid;gap:24px;padding:32px;background:var(--grid-bg),var(--sky-2);} .ds-range{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;} .ds-range::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--cobalt) 28.6%,#c4cad3 28.6%);} .ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:#fff;border:6px solid var(--cobalt);box-shadow:0 2px 8px rgba(10,79,214,.35);} .ds-range:focus-visible{outline:none;} .ds-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(10,79,214,.25);} .ds-res{background:rgba(240,247,254,.78);border:1.5px solid var(--cobalt-line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;} .ds-res p{margin:0;} .ds-kw{font:700 26px/1.15 var(--f-display);letter-spacing:-.015em;color:var(--ink);} .ds-kw b{font-weight:800;color:var(--cobalt);white-space:nowrap;font-variant-numeric:tabular-nums;} .ds-note{font:400 14px/1.5 var(--f-body);color:var(--muted);} .ds-link{display:inline-flex;align-items:center;gap:.4em;width:fit-content;font:600 18px/1.2 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.28em;} .ds-link .ds-ico{transition:transform .25s cubic-bezier(.16,1,.3,1);} .ds-link:hover{color:var(--cobalt);} .ds-link:hover .ds-ico{transform:translateX(4px);} .ds-link:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}"
+    },
+    {
+      "name": "Картка кейсу зі spec-мета",
+      "kind": "card",
+      "refersTo": "case-card",
+      "description": "Реальний кейс: назва · місто · рік, широке фото, мета потужність / монтаж / задача.",
+      "html": "<article class=\"ds-case\"><h3><b>Наземна СЕС 30 кВт</b> · Ладижин · 2026</h3><div class=\"ds-ph\"></div><dl class=\"ds-meta\"><div><dt>Потужність</dt><dd>30 кВт</dd></div><div><dt>Монтаж</dt><dd>1 тиждень</dd></div><div><dt>Задача</dt><dd class=\"ds-txt\">«зелений тариф»</dd></div></dl></article>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-case{max-width:620px;border:1.5px solid var(--rule-strong);border-radius:var(--radius);padding:16px;display:grid;gap:14px;background:var(--paper);} .ds-case h3{margin:0;font:400 18px/1.3 var(--f-body);color:var(--ink);} .ds-case h3 b{font-weight:600;} .ds-ph{aspect-ratio:695/165;border-radius:calc(var(--radius) - 6px);background:linear-gradient(170deg,#c9d6e6,#5a6c84 55%,#6f7a4a);} .ds-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0;} .ds-meta div{display:flex;gap:8px;align-items:baseline;} .ds-meta dt{font:400 16px/1.3 var(--f-body);color:var(--muted);} .ds-meta dd{margin:0;font:500 14px/1.3 var(--f-mono);color:var(--ink);} .ds-meta dd.ds-txt{font:500 16px/1.3 var(--f-body);}"
+    },
+    {
+      "name": "Етапи роботи",
+      "kind": "custom",
+      "refersTo": "process-steps",
+      "description": "П'ять етапів: номер, назва, кобальтова точка на пунктирі, опис.",
+      "html": "<ol class=\"ds-steps\"><li><span class=\"ds-n\">01</span><b>Виїзд</b><span>огляд даху чи ділянки</span></li><li><span class=\"ds-n\">02</span><b>Проєкт</b><span>розрахунок генерації</span></li><li><span class=\"ds-n\">03</span><b>Монтаж</b><span>7–10 днів</span></li></ol>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);position:relative;font-family:var(--f-body);} .ds-steps::before{content:'';position:absolute;left:16%;right:16%;top:66px;border-top:2px dotted #9aa3b5;} .ds-steps li{display:grid;gap:6px;justify-items:center;text-align:center;} .ds-n{font:500 20px/1 var(--f-body);color:var(--ink-2);font-variant-numeric:tabular-nums;} .ds-steps b{position:relative;padding-bottom:26px;font:500 20px/1.15 var(--f-body);color:var(--ink);} .ds-steps b::after{content:'';position:absolute;left:calc(50% - 7px);bottom:0;width:14px;height:14px;border-radius:50%;background:var(--cobalt);box-shadow:0 0 0 4px var(--paper);} .ds-steps li>span:last-child{font-size:14px;line-height:1.4;color:var(--muted);max-width:13ch;}"
+    },
+    {
+      "name": "Панель заявки (navy)",
+      "kind": "input",
+      "refersTo": "request-panel",
+      "description": "Темно-синя панель з формою: поля на navy, кобальтова кнопка на всю ширину.",
+      "html": "<div class=\"ds-req\"><h2>Отримати розрахунок</h2><p>Інженер передзвонить у робочий час, 09:00–18:00.</p><form class=\"ds-form\" onsubmit=\"return false\"><label class=\"ds-f\">Ім'я<input type=\"text\"></label><label class=\"ds-f\">Телефон<input type=\"tel\" placeholder=\"+38 0__ ___ __ __\"></label><button class=\"ds-submit\" type=\"submit\">Надіслати запит</button></form></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-req{background:var(--navy);color:var(--on-navy);border-radius:var(--radius);padding:30px;display:grid;gap:14px;font-family:var(--f-body);} .ds-req h2{margin:0;font:700 32px/1.1 var(--f-display);color:#fff;} .ds-req p{margin:0;color:var(--on-navy-muted);font-size:16px;} .ds-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;} .ds-f{display:grid;gap:6px;font-size:14px;color:var(--on-navy-muted);} .ds-f input{min-height:50px;padding:0 14px;border-radius:10px;border:1.5px solid #3a4b66;background:var(--navy-2);color:#fff;font:400 17px/1 var(--f-body);transition:border-color .2s,background-color .2s;} .ds-f input::placeholder{color:#8ea0b8;} .ds-f input:hover{border-color:#5a6f90;} .ds-f input:focus{outline:none;border-color:#6f9cff;background:#172b49;} .ds-submit{grid-column:1/-1;min-height:60px;border:0;border-radius:10px;background:var(--cobalt);color:#fff;font:500 20px/1 var(--f-body);cursor:pointer;transition:background-color .2s;} .ds-submit:hover{background:var(--cobalt-deep);} .ds-submit:focus-visible{outline:2px solid #6f9cff;outline-offset:3px;}"
+    },
+    {
+      "name": "Мобільна панель дзвінка",
+      "kind": "custom",
+      "refersTo": "mobile-bar",
+      "description": "Лише ≤720px: фіксована внизу, «Подзвонити» (контур) і «Viber».",
+      "html": "<div class=\"ds-bar\"><a class=\"ds-btn ds-btn-outline\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z\"/></svg>Подзвонити</a><a class=\"ds-btn ds-btn-viber\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M12 2.5c4.9 0 8.5 2.6 8.5 8.3 0 5.6-3.6 8.2-8.5 8.2-.8 0-1.6-.1-2.3-.2L6 21.5v-3.6C4.3 16.5 3.5 14 3.5 10.8 3.5 5.1 7.1 2.5 12 2.5z\"/></svg>Viber</a></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-bar{max-width:390px;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px;background:rgba(255,255,255,.96);box-shadow:0 -10px 24px -16px rgba(13,31,66,.35);} .ds-bar .ds-btn{min-height:52px;font-size:18px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{border-color:var(--cobalt);color:var(--cobalt);} .ds-btn-viber{background:var(--viber);color:#fff;} .ds-btn-viber:hover{background:#5640d6;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Креслярський аркуш поверх реального фото",
+    "overview": "Кожна станція EnRay показана як інженерний об'єкт: справжнє фото змонтованої СЕС, поверх нього тонкі кобальтові розмірні лінії й моноширинні виноски з фактами (потужність, рік, місто, термін монтажу). Тло — білий аркуш і дуже світле небо з ледь помітною міліметровою сіткою 24 px; текст — темно-синє чорнило; один кобальтовий колір для дій. Світ тримається на правді: підписи несуть тільки перевірені факти з кейсів, фото тільки з власних об'єктів.\n\nЩільність помірна, ритм рівний: широкі білі поля, картки з тонкою рамкою 1.5 px, великі заголовки щільним гротеском Onest 800. Глибина майже пласка — сітка, рамки й тонкий тон замість тіней; темно-синя (navy) поверхня з'являється лише там, де сторінка переходить у дію (панель заявки, футер). Відмова від категорійного «темний фон, неоновий градієнт, 3D-рендер панелей» — свідомий вибір напряму.\n\nРозміри зняті з погодженого макета 1696 px і задані у vw з межами clamp(), тож композиція масштабується пропорційно від планшета до широкого екрана; на телефоні (≤720 px) шари перебудовуються в одну колонку з липкою нижньою панеллю дзвінка.",
+    "keyCharacteristics": [
+      "Біло-блакитний аркуш із міліметровою сіткою 24 px як фірмове тло (герой праворуч, калькулятор).",
+      "Реальні фото EnRay з розмірними лініями (запечені в растр) і живими SVG-підписами моноширинним шрифтом.",
+      "Один акцент — кобальт; navy лише для панелі заявки й футера.",
+      "Рамки 1.5 px замість тіней; радіуси 10–16 px.",
+      "Моноширинний шрифт тільки для параметрів (кВт, рік, місто, термін)."
+    ],
+    "rules": [
+      {
+        "name": "Правило одного кобальту",
+        "body": "Дія на світлій поверхні завжди кобальтова. Другого акцентного кольору немає; navy — поверхня, а не акцент.",
+        "section": "colors"
+      },
+      {
+        "name": "Правило navy для фіналу",
+        "body": "Темно-синя поверхня з'являється тільки там, де сторінка закінчується дією (заявка) або сама сторінка закінчується (футер). Темних героїв і темних секцій посередині немає.",
+        "section": "colors"
+      },
+      {
+        "name": "Правило моно лише для параметрів",
+        "body": "JetBrains Mono пише тільки вимірювані факти: кВт, рік, місто, термін. Речення, заголовки й кнопки моно не набираються.",
+        "section": "typography"
+      },
+      {
+        "name": "Правило цифр у стовпчик",
+        "body": "Телефони, кВт, гривні, номери етапів — `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "Правило аркуша",
+        "body": "Міліметрова сітка (1px `grid` через `grid-cell`) лежить тільки на небесних поверхнях — правій половині героя та смузі калькулятора. На білому папері й на navy сітки немає.",
+        "section": "layout"
+      },
+      {
+        "name": "Правило пласкої картки",
+        "body": "Картки в спокої без тіні — тільки рамка. Тінь з'являється на hover або в елемента, що плаває над контентом.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** використовувати лише реальні фото об'єктів EnRay (`assets/src/` → `assets/plates/`, webp); у alt писати тип станції, потужність, місто й рік.",
+      "**Do** підписувати фото героя чи нових сторінок (Дім / Бізнес / Агро, кейси) живим SVG-текстом JetBrains Mono `cobalt-deep` з обвідкою `sky` поверх растра з запеченими лініями, тим самим viewBox і `preserveAspectRatio`, що й фото.",
+      "**Do** писати в підписах і spec-рядках тільки факти, які є в PRODUCT.md або в кейсі: кВт, рік, місто, термін.",
+      "**Do** тримати один кобальтовий акцент для дій і `cobalt-line` для ліній креслення.",
+      "**Do** класти міліметрову сітку 24px тільки на небесні поверхні (`sky`, `sky-2`).",
+      "**Do** задавати рамки карток і елементів керування 1.5px, роздільники 1px.",
+      "**Do** задавати розміри як clamp(min, vw, max) і перевіряти обидва брейкпоінти, 1100px і 720px; на телефоні завжди лишати нижню панель «Подзвонити / Viber».",
+      "**Do** вживати `tabular-nums` для телефонів, кВт, гривень і номерів етапів."
+    ],
+    "donts": [
+      "**Don't** ставити стокові, згенеровані фото або 3D-рендери панелей — навіть як тло.",
+      "**Don't** робити темний герой, неонові градієнти чи світіння: navy тільки для панелі заявки й футера.",
+      "**Don't** набирати речення, заголовки чи кнопки JetBrains Mono — моно лише для параметрів.",
+      "**Don't** вигадувати в підписах ціни, окупність, бренди обладнання, гарантії чи кількість об'єктів.",
+      "**Don't** вводити другий акцентний колір; фіолетовий Viber — лише кнопка Viber.",
+      "**Don't** додавати тіні карткам у спокої; тінь — тільки для плаваючих шарів і hover."
+    ]
+  }
+}
