@@ -1,0 +1,415 @@
+<title>EnRay: концепція редизайну</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: одна колонка документа ~760px, широкі вставки (макет, таблиці) до 1080px; секції розділені тонкою лінією, без карток усюди */
+:root{
+  --bg:#F3F5F6; --surface:#FFFFFF; --ink:#0F1D2B; --muted:#56636F; --line:#D9E0E5;
+  --blue:#0A5BEA; --blue-soft:#E3ECFD; --sun:#F2B000; --sun-ink:#5A4100; --todo:#FFF0B8;
+  --bad:#B4321F; --good:#13775A;
+  --mock-bg:#0D1824; --mock-ink:#EEF3F7; --mock-muted:#9DB0C0; --mock-line:#22344A; --mock-blue:#3D82FF; --mock-sun:#FFC21A;
+  --f-display:"Unbounded", "Golos Text", system-ui, sans-serif;
+  --f-body:"Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B131B; --surface:#121D28; --ink:#E7EDF2; --muted:#9AA8B4; --line:#24323F;
+  --blue:#5B95FF; --blue-soft:#16294A; --sun:#FFC633; --sun-ink:#FFE08A; --todo:#3B310D;
+  --bad:#FF7A66; --good:#4FD1A5; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0B131B; --surface:#121D28; --ink:#E7EDF2; --muted:#9AA8B4; --line:#24323F;
+  --blue:#5B95FF; --blue-soft:#16294A; --sun:#FFC633; --sun-ink:#FFE08A; --todo:#3B310D;
+  --bad:#FF7A66; --good:#4FD1A5; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);padding-inline:20px;padding-block:0 80px}
+.wrap{max-width:760px;margin:0 auto}
+.wide{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5.2vw,52px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(22px,3vw,30px);font-weight:700}
+h3{font-size:18px;font-weight:500}
+p{margin:0}
+a{color:var(--blue)}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:20px;color:var(--muted);max-width:62ch}
+section{padding-block:64px;border-top:1px solid var(--line)}
+section > .wrap, section > .wide{display:grid;gap:22px}
+.stack{display:grid;gap:14px}
+mark.todo{background:var(--todo);color:inherit;padding:0 .25em;border-radius:3px;font-family:var(--f-mono);font-size:.86em}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* top */
+header.top{padding-block:56px 48px;display:grid;gap:24px}
+.brandline{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo-sq{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--blue) 0 50%,#2BB673 50% 75%,var(--sun) 75%)}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.summary > div{background:var(--surface);padding:20px;display:grid;gap:8px;min-width:0}
+.summary b{font-family:var(--f-display);font-weight:500;font-size:15px}
+.summary p{font-size:15px;color:var(--muted)}
+
+/* audit */
+.audit{display:grid;gap:0;border-top:1px solid var(--line)}
+.audit .row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding-block:16px;border-bottom:1px solid var(--line)}
+.audit .row > *{min-width:0}
+.tag{font:600 11px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding-top:4px}
+.tag.d{color:var(--blue)} .tag.t{color:var(--bad)} .tag.s{color:var(--muted)}
+.audit h3{font-family:var(--f-body);font-weight:600;font-size:17px;margin-bottom:4px}
+.audit p{color:var(--muted);font-size:15.5px}
+q{quotes:"«" "»";color:var(--ink)}
+@media (max-width:560px){.audit .row{grid-template-columns:1fr;gap:4px}}
+
+/* positioning */
+.thesis{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.6vw,26px);line-height:1.35;border-left:4px solid var(--sun);padding-left:20px}
+.aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.aud > div{display:grid;gap:6px;align-content:start;min-width:0}
+.aud .k{font:600 12px/1 var(--f-mono);color:var(--blue);letter-spacing:.06em;text-transform:uppercase}
+.aud p{font-size:15.5px;color:var(--muted)}
+
+/* sitemap */
+.tree{font-family:var(--f-mono);font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;overflow-x:auto;line-height:1.85;white-space:pre;color:var(--ink)}
+.tree .n{color:var(--good)} .tree .c{color:var(--muted)}
+
+/* mock */
+.mock{background:var(--mock-bg);color:var(--mock-ink);border-radius:14px;overflow:hidden;border:1px solid var(--mock-line)}
+.mock-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;border-bottom:1px solid var(--mock-line);flex-wrap:wrap}
+.mock-bar nav{display:flex;gap:22px;font-size:14px;color:var(--mock-muted);flex-wrap:wrap}
+.mock-bar .ph{font:600 14px var(--f-mono);color:var(--mock-ink)}
+.mock-logo{display:flex;align-items:center;gap:10px;font:700 16px var(--f-display);letter-spacing:.02em}
+.mock-logo i{width:22px;height:22px;border-radius:5px;background:linear-gradient(135deg,var(--mock-blue) 0 50%,#2BB673 50% 75%,var(--mock-sun) 75%)}
+.mock-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;padding:48px 28px 36px;align-items:center}
+.mock-hero > *{min-width:0}
+.mock-hero .eb{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mock-sun)}
+.mock-hero h4{font:700 clamp(26px,3.6vw,42px)/1.12 var(--f-display);margin:14px 0 16px;text-wrap:balance}
+.mock-hero p{color:var(--mock-muted);font-size:17px;max-width:46ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{font:600 15px var(--f-body);padding:13px 20px;border-radius:8px;border:1px solid transparent}
+.btn.p{background:var(--mock-sun);color:#1B1400}
+.btn.g{border-color:var(--mock-line);color:var(--mock-ink)}
+.photo{aspect-ratio:4/3;max-width:100%;border-radius:10px;position:relative;overflow:hidden;
+  background:
+   repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.18) 46px 48px),
+   repeating-linear-gradient(0deg,transparent 0 30px,rgba(255,255,255,.18) 30px 32px),
+   linear-gradient(160deg,#1E4C8F,#0F2B55 60%,#3B4B2E 60%,#56663A);}
+.photo span{position:absolute;left:12px;bottom:12px;right:12px;font:600 12px/1.4 var(--f-mono);background:rgba(13,24,36,.82);padding:8px 10px;border-radius:6px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--mock-line)}
+.facts > div{padding:20px 28px;border-right:1px solid var(--mock-line);display:grid;gap:4px;min-width:0}
+.facts > div:last-child{border-right:0}
+.facts b{font:700 24px var(--f-display);font-variant-numeric:tabular-nums}
+.facts small{color:var(--mock-muted);font-size:13px;line-height:1.4}
+.mock mark.todo{background:#4A3B07;color:#FFE08A}
+@media (max-width:760px){.mock-hero{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.facts > div:nth-child(2){border-right:0}.facts > div:nth-child(-n+2){border-bottom:1px solid var(--mock-line)}.mock-bar nav{display:none}}
+.caption{font-size:14px;color:var(--muted)}
+
+/* home blocks */
+ol.blocks{list-style:none;padding:0;margin:0;display:grid;gap:0;counter-reset:b;border-top:1px solid var(--line)}
+ol.blocks li{counter-increment:b;display:grid;grid-template-columns:44px 1fr;gap:14px;padding-block:14px;border-bottom:1px solid var(--line)}
+ol.blocks li::before{content:counter(b,decimal-leading-zero);font:600 13px var(--f-mono);color:var(--blue);padding-top:3px}
+ol.blocks b{display:block;font-weight:600}
+ol.blocks span{color:var(--muted);font-size:15.5px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* visual system */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.sw{display:grid;gap:8px;font-size:14px}
+.sw i{display:block;height:72px;border-radius:8px;border:1px solid var(--line)}
+.sw code{font:13px var(--f-mono);color:var(--muted)}
+.type{display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.type .row{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:baseline}
+.type .row > *{min-width:0}
+@media (max-width:560px){.type .row{grid-template-columns:1fr;gap:4px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 13px var(--f-mono);padding:6px 10px;border-radius:6px;background:var(--blue-soft);color:var(--blue)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.rules > div{display:grid;gap:6px;align-content:start}
+.rules p{font-size:15.5px;color:var(--muted)}
+
+/* before/after */
+.ba{display:grid;gap:18px}
+.pair{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.pair > div{padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.pair > div + div{border-left:1px solid var(--line)}
+.pair .lbl{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.pair .was .lbl{color:var(--bad)} .pair .now .lbl{color:var(--good)}
+.pair .was p{color:var(--muted);font-size:15.5px}
+.pair .now p{font-size:16px}
+.pair .why{grid-column:1 / -1;border-left:0 !important;border-top:1px dashed var(--line);font-size:14px;color:var(--muted);padding-block:12px}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.pair > div + div{border-left:0;border-top:1px solid var(--line)}}
+
+/* checklist */
+.need{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.need ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15.5px}
+.need h3{margin-bottom:10px}
+ol.steps{margin:0;padding-left:22px;display:grid;gap:12px}
+ol.steps li::marker{font-family:var(--f-mono);color:var(--blue);font-weight:600}
+ol.steps span{color:var(--muted)}
+footer{padding-top:40px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){a,.btn{transition:opacity .15s}}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brandline"><span class="logo-sq" aria-hidden="true"></span><span class="eyebrow">enray.com.ua · концепція редизайну · жовтень 2026</span></div>
+    <h1>Від «сонячних станцій всіх видів» до станції, яку можна порахувати</h1>
+    <p class="lead">Аналіз поточного сайту EnRay і пропозиція: що змінити в структурі, дизайні й текстах, щоб відвідувач за хвилину зрозумів, що він отримає, за скільки і чому вам можна довіряти.</p>
+    <div class="summary">
+      <div><b>Головна проблема</b><p>Сайт говорить загальними словами. Ні цін, ні обладнання, ні цифр по об'єктах, хоча реальні кейси у вас є.</p></div>
+      <div><b>Дизайн</b><p>Темний фон і неонові градієнти виглядають як шаблон. Реальних фото об'єктів мало, головний банер на 3D-рендері.</p></div>
+      <div><b>Пропозиція</b><p>Світла інженерна стилістика, сценарії «дім / бізнес / агро», готові комплекти з цінами «від», кейси з цифрами.</p></div>
+      <div><b>Що потрібно від вас</b><p>Ціни, бренди обладнання, кількість об'єктів, гарантії. Список у кінці сторінки, місця для даних позначені <mark class="todo">[так]</mark>.</p></div>
+    </div>
+  </header>
+</div>
+
+<section id="audit">
+  <div class="wrap">
+    <span class="eyebrow">01 · Аудит</span>
+    <h2>Що зараз заважає продавати</h2>
+    <p class="caption">Переглянуто 14 сторінок, десктоп 1440 px і мобільний 390 px. <span style="color:var(--blue)">Дизайн</span> · <span style="color:var(--bad)">Тексти</span> · <span>Техніка й довіра</span></p>
+    <div class="audit">
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Обіцянка, яку важко довести</h3><p>H1: <q>з окупністю 2-3 роки</q>, а у FAQ <q>від 2 до 3 років</q>. Без розрахунку на прикладі це викликає недовіру. Окупність залежить від тарифу, схеми (мережева / гібрид) і частки власного споживання. Краще показати розрахунок на реальному кейсі.</p></div></div>
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Суперечності в «Про нас»</h3><p><q>займаємо провідне положення на ринку</q>, <q>понад два роки досвіду</q> і одразу <q>маємо багаторічний досвід</q>. Ні числа об'єктів, ні сумарних кВт, ні року заснування.</p></div></div>
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Послуги без суті</h3><p>На головній три картки: «Проєктування», «Будівництво», «Обслуговування», у кожній лише кнопка «Замовити». Підзаголовок <q>Ми будуємо сонячні станції, щоб ви отримали доступ до чистої невичерпної енергії</q> однаковий на всіх трьох сторінках послуг. Ціни немає ніде, хоча title сторінки: <q>Купити … ціна в Україні</q>.</p></div></div>
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Один і той самий FAQ на кожній сторінці</h3><p>Сім підручникових питань (<q>Що таке сонячна станція…</q>) повторюються на Проєктуванні, Будівництві й Обслуговуванні. Для SEO це дублікат, для клієнта це не відповіді на його питання: скільки коштує, що з відключеннями, скільки чекати, що з документами.</p></div></div>
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Кейси названі однаково</h3><p>7 з 9 кейсів мають назву <q>Будівництво дахової СЕС</q>, адреси на кшталт <span class="mono">/620-2/</span>, <span class="mono">/budivnytstvo-dakhovoi-ses-5/</span>. Усередині є корисне (потужність, місто, термін), але немає обладнання, генерації і економії. Друкарська помилка: <q>ХАРАКРЕРИСТИКИ</q>. Строк служби: десь «20 років», десь «до 30».</p></div></div>
+      <div class="row"><span class="tag t">Тексти</span><div><h3>Гарантія подана як перевага, хоча це не так</h3><p><q>інвертори … 2 роки</q>, <q>панелі … 10 років</q>. Для покупця це скоріше мінус. Якщо виробники обладнання, з яким ви працюєте, дають більше, пишіть їхні цифри і окремо вашу гарантію на монтаж.</p></div></div>
+      <div class="row"><span class="tag d">Дизайн</span><div><h3>Перший екран не відповідає на питання «що мені пропонують»</h3><p>H1 на 6 рядків капсом з градієнтом, далі ще один заголовок і сірий тонкий текст з низьким контрастом. На мобільному заголовок займає весь екран, кнопка нижче згину. Зображення: 3D-рендер панелей, а не ваш об'єкт.</p></div></div>
+      <div class="row"><span class="tag d">Дизайн</span><div><h3>Шаблонна стилістика</h3><p>Темний #1E1E1E, неоново-сині градієнти, «краплі» за картками й іконками, текст-градієнт. Так виглядають сотні лендингів; нічого не каже про інженерну компанію з Вінниці.</p></div></div>
+      <div class="row"><span class="tag d">Дизайн</span><div><h3>Контент схований до прокрутки</h3><p>Блоки з'являються лише після скролу: без нього нижче першого екрана порожньо. Це ламає прев'ю в месенджерах, скриншоти й частину пошукових рендерів.</p></div></div>
+      <div class="row"><span class="tag s">Довіра</span><div><h3>Відгуки й контакти</h3><p>Останній відгук: січень 2024; без посилання на Google / Facebook; портрети схожі на стокові (якщо так, прибрати). У шапці <span class="mono">067 672 22 44</span>, на «Контактах» інші номери регіональних представників. Пошта <span class="mono">@ukr.net</span>, а не на домені. Немає ЄДРПОУ, ліцензій, назв брендів обладнання.</p></div></div>
+      <div class="row"><span class="tag s">Структура</span><div><h3>Три бізнеси без зв'язку</h3><p>Сонячні станції, електромонтаж і охорона/CCTV лежать в одному меню «Послуги». «Системи охорони» й «Відеоспостереження» значною мірою дублюють одна одну. У футері лише 3 з 6 послуг.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="position">
+  <div class="wrap">
+    <span class="eyebrow">02 · Позиціонування</span>
+    <h2>Про що має бути сайт</h2>
+    <p class="thesis">EnRay проєктує і будує сонячні станції у Вінницькій області під ключ: від 6 кВт на даху будинку до 100 кВт для поливу саду, з документами, підключенням і сервісом.</p>
+    <p>Головний мотив покупки зараз: не «екологія», а світло під час відключень і менші рахунки для бізнесу. Тексти про «стале майбутнє» йдуть у другий план, на перший виходять сценарії клієнта:</p>
+    <div class="aud">
+      <div><span class="k">Дім</span><h3>Резерв на відключення</h3><p>Гібридна станція з акумулятором. Питання: скільки годин протримає, що буде працювати, скільки коштує комплект.</p></div>
+      <div><span class="k">Бізнес</span><h3>Менший рахунок за електроенергію</h3><p>Мережева або гібридна СЕС на даху. Питання: окупність, частка власного споживання, ПДВ і бухгалтерія.</p></div>
+      <div><span class="k">Агро</span><h3>Полив, насоси, віддалені об'єкти</h3><p>Ваш найсильніший кейс: 100 кВт у Луці-Мелешківській. Окремий сценарій, у конкурентів його часто немає.</p></div>
+    </div>
+    <p class="caption">Електромонтаж і безпека (CCTV, сигналізація, СКУД) залишаються як суміжні послуги: «заодно зробимо проводку й поставимо камери», а не рівноправні напрями на головній.</p>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="wrap">
+    <span class="eyebrow">03 · Структура</span>
+    <h2>Нова карта сайту</h2>
+    <div class="tree"><span class="c">/</span>                         Головна
+├── <span class="n">/dim/</span>                СЕС для дому       <span class="c">← нова, сценарій «резерв»</span>
+├── <span class="n">/biznes/</span>             СЕС для бізнесу    <span class="c">← нова</span>
+├── <span class="n">/agro/</span>               СЕС для агро       <span class="c">← нова, полив і насоси</span>
+├── <span class="n">/komplekty/</span>          Комплекти й ціни   <span class="c">← нова, 4–5 типових рішень</span>
+├── /keysy/               Кейси              <span class="c">← фільтр: дім / бізнес / агро</span>
+│   └── /keysy/ses-6-kvt-vinnytska-2024/    <span class="c">← людські адреси, 301 зі старих</span>
+├── /yak-my-pratsiuiemo/  Етапи, терміни, документи   <span class="c">← замість 3 сторінок послуг</span>
+├── /servis/              Сервіс і гарантія
+├── /elektromontazh/      Електромонтаж
+├── /bezpeka/             Відеоспостереження й охорона  <span class="c">← 2 сторінки → 1</span>
+├── /pro-nas/             Про компанію
+└── /kontakty/            Контакти</div>
+    <p class="caption">Проєктування / Будівництво / Обслуговування як окремі сторінки клієнту не потрібні: це етапи одного процесу. Їх замінює сторінка «Як ми працюємо» з термінами кожного етапу. Старі адреси перенаправити (301), щоб не втратити позиції в пошуку.</p>
+  </div>
+</section>
+
+<section id="hero">
+  <div class="wide stack">
+    <div class="wrap stack" style="margin:0">
+      <span class="eyebrow">04 · Головна сторінка</span>
+      <h2>Перший екран: ескіз</h2>
+      <p>Конкретна обіцянка, дві дії (порахувати або подзвонити) і чотири факти з ваших реальних об'єктів. Фото: тільки власні станції.</p>
+    </div>
+    <div class="mock" role="img" aria-label="Ескіз першого екрана нового сайту EnRay">
+      <div class="mock-bar">
+        <span class="mock-logo"><i aria-hidden="true"></i>ENRAY</span>
+        <nav><span>Для дому</span><span>Для бізнесу</span><span>Агро</span><span>Комплекти й ціни</span><span>Кейси</span></nav>
+        <span class="ph">+38 067 672 22 44</span>
+      </div>
+      <div class="mock-hero">
+        <div>
+          <span class="eb">Вінниця та область · проєкт, монтаж, сервіс</span>
+          <h4>Сонячна станція, яка тримає світло під час відключень</h4>
+          <p>Проєктуємо й будуємо СЕС для дому, бізнесу та агро. Монтаж за 7–10 днів, документи й підключення до мережі беремо на себе.</p>
+          <div class="btns"><span class="btn p">Розрахувати станцію</span><span class="btn g">Комплекти від <mark class="todo">[ціна]</mark> грн</span></div>
+        </div>
+        <div class="photo"><span>Фото вашого об'єкта, напр.: наземна СЕС 30 кВт, Ладижин, 2026</span></div>
+      </div>
+      <div class="facts">
+        <div><b><mark class="todo">[N]</mark></b><small>збудованих станцій з <mark class="todo">[рік]</mark></small></div>
+        <div><b>100 кВт</b><small>найбільший об'єкт: полив саду, Лука-Мелешківська</small></div>
+        <div><b>7–10 днів</b><small>монтаж і запуск станції 6–100 кВт</small></div>
+        <div><b><mark class="todo">[N]</mark> років</b><small>гарантія на монтаж від EnRay</small></div>
+      </div>
+    </div>
+    <p class="caption">Цифри «100 кВт» і «7–10 днів» узяті з ваших кейсів. Позначене жовтим потрібно заповнити реальними даними.</p>
+  </div>
+</section>
+
+<section id="blocks">
+  <div class="wrap">
+    <span class="eyebrow">05 · Головна сторінка</span>
+    <h2>Порядок блоків</h2>
+    <ol class="blocks">
+      <li><div><b>Перший екран</b><span>Обіцянка, дві кнопки, факти (ескіз вище).</span></div></li>
+      <li><div><b>Оберіть свій сценарій</b><span>Три великі плитки: Дім / Бізнес / Агро, кожна з одним реальним кейсом і ціною «від».</span></div></li>
+      <li><div><b>Калькулятор</b><span>Середній рахунок за місяць → рекомендована потужність, орієнтовна ціна, окупність. Дає заявку з цифрою, а не «передзвоніть мені».</span></div></li>
+      <li><div><b>Кейси з цифрами</b><span>Картка: потужність, місто, рік, термін монтажу, обладнання, генерація за рік.</span></div></li>
+      <li><div><b>Як ми працюємо</b><span>5 кроків із термінами: виїзд і розрахунок → проєкт і договір → постачання → монтаж → підключення і сервіс.</span></div></li>
+      <li><div><b>Обладнання</b><span>Логотипи брендів панелей, інверторів, акумуляторів, з якими працюєте, і гарантії виробників.</span></div></li>
+      <li><div><b>Відгуки</b><span>Свіжі, з прив'язкою до кейсу або посиланням на Google Maps. Краще 3 справжні, ніж 4 зі стоковими фото.</span></div></li>
+      <li><div><b>FAQ</b><span>Питання клієнта: ціна, відключення, документи, ПДВ, кредит, що буде взимку.</span></div></li>
+      <li><div><b>Заявка</b><span>Ім'я, телефон, населений пункт, рахунок за світло. Обіцянка: коли й з чим передзвонить інженер.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="kits">
+  <div class="wide stack">
+    <div class="wrap stack" style="margin:0">
+      <span class="eyebrow">06 · Конкретика</span>
+      <h2>Комплекти з цінами «від»</h2>
+      <p>Найсильніший крок до конкретики. Клієнт бачить, що купує і скільки це приблизно коштує, ще до дзвінка. Склад і ціни заповнюєте ви; нижче пропонована сітка.</p>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>Комплект</th><th>Для кого</th><th>Потужність</th><th>Акумулятор</th><th>Що дає</th><th>Ціна під ключ</th></tr></thead>
+      <tbody>
+        <tr><td><b>Резерв</b></td><td>Квартира в приватному секторі, невеликий будинок</td><td class="num">5 кВт</td><td class="num">10 кВт·год</td><td>Світло, холодильник, котел, інтернет під час відключень</td><td class="num">від <mark class="todo">[…]</mark> грн</td></tr>
+        <tr><td><b>Дім</b></td><td>Будинок з бойлером, насосом, кондиціонером</td><td class="num">10 кВт</td><td class="num">15 кВт·год</td><td>Майже повна автономія вдень, резерв уночі</td><td class="num">від <mark class="todo">[…]</mark> грн</td></tr>
+        <tr><td><b>Бізнес</b></td><td>Магазин, СТО, невелике виробництво</td><td class="num">30 кВт</td><td class="num">опційно</td><td>Зменшення рахунку на <mark class="todo">[…]</mark>%</td><td class="num">від <mark class="todo">[…]</mark> грн</td></tr>
+        <tr><td><b>Агро</b></td><td>Полив, насосні станції, ферми</td><td class="num">50–100 кВт</td><td class="num">за проєктом</td><td>Живлення насосів у сезон без мережі або з частковою мережею</td><td class="num">за розрахунком</td></tr>
+      </tbody>
+    </table></div>
+    <p class="caption">Потужності й ємності умовні, для прикладу структури; підставте ваші типові конфігурації.</p>
+  </div>
+</section>
+
+<section id="visual">
+  <div class="wrap">
+    <span class="eyebrow">07 · Візуальний напрям</span>
+    <h2>Світла інженерна стилістика замість неону</h2>
+    <p>Сайт має виглядати як компанія, якій довіряють дах і щиток: чисто, рівно, з цифрами. Синій лишається, бо він у логотипі; акцентом стає сонячно-жовтий, теж із логотипа. Основа сторінок світла; глибокий темно-синій лише для першого екрана, блоку заявки й футера.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#0F1D2B"></i><b>Чорнило</b><code>#0F1D2B · текст, темні блоки</code></div>
+      <div class="sw"><i style="background:#0A5BEA"></i><b>Синій EnRay</b><code>#0A5BEA · посилання, акценти</code></div>
+      <div class="sw"><i style="background:#F2B000"></i><b>Сонце</b><code>#F2B000 · головна кнопка</code></div>
+      <div class="sw"><i style="background:#F3F5F6"></i><b>Фон</b><code>#F3F5F6 · світлий холодний</code></div>
+      <div class="sw"><i style="background:#2BB673"></i><b>Зелений</b><code>#2BB673 · лише статуси</code></div>
+    </div>
+    <div class="type">
+      <div class="row"><span class="eyebrow">Заголовки</span><span style="font:700 26px/1.2 var(--f-display)">Unbounded: СЕС 30 кВт за тиждень</span></div>
+      <div class="row"><span class="eyebrow">Текст</span><span style="font:400 17px/1.6 var(--f-body)">Golos Text: шрифт, спроєктований для кирилиці, добре читається на телефоні.</span></div>
+      <div class="row"><span class="eyebrow">Цифри</span><span class="chips"><span class="chip">30 кВт</span><span class="chip">Ладижин</span><span class="chip">2026</span><span class="chip">7 днів</span></span></div>
+    </div>
+    <div class="rules">
+      <div><h3>Фото</h3><p>Тільки ваші об'єкти: загальний план, деталь монтажу, щиток, команда на даху. Жодних 3D-рендерів і стокових портретів.</p></div>
+      <div><h3>Цифри як елемент дизайну</h3><p>Потужність, місто, рік і термін у моноширинних «чипах» на кожній картці кейсу та комплекту.</p></div>
+      <div><h3>Без ефектів заради ефектів</h3><p>Прибрати градієнтний текст, «краплі» за іконками, приховування блоків до скролу. Анімація лише м'яка, і контент видно одразу.</p></div>
+      <div><h3>Мобільний перш за все</h3><p>Заголовок до 3 рядків, кнопка «Розрахувати» на першому екрані, закріплена кнопка дзвінка / Viber.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="copy">
+  <div class="wrap">
+    <span class="eyebrow">08 · Тексти</span>
+    <h2>Було → стало</h2>
+    <p>Принцип: кожне твердження підкріплене цифрою, назвою або прикладом. Якщо підкріпити нічим, речення прибираємо.</p>
+    <div class="ba">
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · H1</span><p>Сонячні електростанції всіх видів для дому та бізнесу з окупністю 2-3 роки</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Сонячна станція, яка тримає світло під час відключень. Проєкт, монтаж і підключення у Вінницькій області за 7–10 днів.</p></div>
+        <div class="why">Окупність переїжджає в калькулятор і кейси, де її можна показати розрахунком.</div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Про нас</span><p>Протягом останніх років ми займаємо провідне положення на ринку, пропонуючи інноваційні рішення у сфері сонячної енергетики.</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>EnRay — інженерна компанія з Вінниці. З <mark class="todo">[рік]</mark> ми збудували <mark class="todo">[N]</mark> сонячних станцій загальною потужністю <mark class="todo">[N]</mark> кВт: від 6 кВт на даху приватного будинку до 100 кВт для поливу садів. Проєкт, монтаж і сервіс робить одна команда.</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Чому ми</span><p>Швидка реалізація проектів</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Монтаж за тиждень. Наземну станцію 30 кВт у Ладижині змонтували, налаштували й підключили до мережі за 7 днів.</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Чому ми</span><p>Комплексний підхід до обслуговування, включаючи юридичну підтримку</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Документи на нас: технічні умови, договір з обленерго, оформлення <mark class="todo">[зеленого тарифу / активного споживача]</mark>. Ви підписуєте, ми подаємо.</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Картка послуги</span><p>Проєктування <br>[Замовити]</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Виїзд інженера і розрахунок. Огляд даху чи ділянки, розрахунок генерації та окупності, підбір обладнання. <mark class="todo">[Безкоштовно при замовленні монтажу]</mark>.</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Кейс</span><p>Будівництво дахової СЕС</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Дахова СЕС 6 кВт для приватного будинку · Вінницька обл. · 2024 · монтаж 1 тиждень · панелі <mark class="todo">[бренд]</mark>, інвертор <mark class="todo">[бренд]</mark> · генерація ≈ <mark class="todo">[N]</mark> кВт·год/рік</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Гарантія</span><p>Наші сонячні панелі мають тривалу гарантію на 10 років, що підтверджує високу якість і надійність нашої продукції.</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Гарантія виробника: панелі <mark class="todo">[N]</mark> років, інвертор <mark class="todo">[N]</mark> років. Гарантія EnRay на монтаж: <mark class="todo">[N]</mark> років. Виїзд на гарантійний випадок протягом <mark class="todo">[N]</mark> днів.</p></div>
+      </div>
+      <div class="pair">
+        <div class="was"><span class="lbl">Було · Форма</span><p>Залишайте заявку і наш менеджер з вами зв'яжеться, або телефонуйте</p></div>
+        <div class="now"><span class="lbl">Стало</span><p>Напишіть населений пункт і середній рахунок за світло. Інженер передзвонить протягом робочого дня з попереднім розрахунком потужності й ціни.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="need">
+  <div class="wrap">
+    <span class="eyebrow">09 · Дані від EnRay</span>
+    <h2>Що потрібно, щоб тексти стали конкретними</h2>
+    <div class="need">
+      <div><h3>Цифри компанії</h3><ul>
+        <li>Рік заснування, кількість збудованих станцій, сумарна потужність</li>
+        <li>Географія: міста й області, куди виїжджаєте</li>
+        <li>Склад команди: скільки інженерів і монтажних бригад</li>
+        <li>ЄДРПОУ, ліцензії, допуски, членство в асоціаціях</li>
+      </ul></div>
+      <div><h3>Продукт і ціни</h3><ul>
+        <li>3–5 типових конфігурацій з цінами «від»</li>
+        <li>Бренди панелей, інверторів, акумуляторів і їхні гарантії</li>
+        <li>Ваша гарантія на монтаж і умови сервісу (ціна виїзду, абонемент)</li>
+        <li>Оплата: етапи, безготівка з ПДВ, кредитні програми, з якими працюєте</li>
+      </ul></div>
+      <div><h3>Кейси</h3><ul>
+        <li>По кожному: тип клієнта, обладнання, генерація або економія за рік</li>
+        <li>3–6 якісних фото на кейс: загальний план, монтаж, щиток</li>
+        <li>Дозвіл клієнта на коротку цитату або відгук</li>
+      </ul></div>
+      <div><h3>Контакти</h3><ul>
+        <li>Один головний номер для сайту і чи потрібні регіональні</li>
+        <li>Пошта на домені (напр. <span class="mono">info@enray.com.ua</span>)</li>
+        <li>Посилання на профіль у Google Maps з відгуками</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <span class="eyebrow">10 · Наступні кроки</span>
+    <h2>План робіт</h2>
+    <ol class="steps">
+      <li><b>Узгодити концепцію</b> <span>і зібрати дані зі списку вище.</span></li>
+      <li><b>Тексти</b> <span>для головної, трьох сценаріїв, комплектів і 3–4 ключових кейсів.</span></li>
+      <li><b>Прототип і дизайн</b> <span>головної та шаблонів сторінок (сценарій, кейс, комплект), десктоп і мобільний.</span></li>
+      <li><b>Верстка у WordPress</b> <span>оновлення поточної теми або нова тема; форма Contact Form 7 зберігається.</span></li>
+      <li><b>Перенесення без втрат у пошуку</b> <span>301-перенаправлення зі старих адрес, нові title/description, розмітка Organization і LocalBusiness.</span></li>
+    </ol>
+  </div>
+</section>
+
+<div class="wrap"><footer>Дані зібрано з enray.com.ua 11.10.2026. Цифри в прикладах беруться з кейсів на сайті; жовті поля потрібно заповнити.</footer></div>
