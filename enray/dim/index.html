@@ -116,9 +116,9 @@
       <div class="rezerv-result" aria-live="polite">
         <p class="rz-label">Енергія на 8 нічних годин відключень</p>
         <p class="rz-kwh"><span id="rz-kwh">≈ 2,5</span> <small>кВт·год</small></p>
-        <p class="rz-label">Орієнтир ємності акумулятора</p>
+        <p class="rz-label">Орієнтир ємності акумулятора · приклад</p>
         <p class="rz-bat" id="rz-bat">від 5 кВт·год</p>
-        <p class="rz-note">Середня потужність приладів орієнтовна, із запасом 25%. Денні відключення закривають панелі, якщо світить сонце. Точну схему й ємність інженер підбере після огляду.</p>
+        <p class="rz-note">Орієнтовно: середня потужність кожного приладу × 8 нічних годин (кожен прилад, зокрема бойлер, рахуємо увімкненим усі 8 годин), плюс запас 25% з округленням угору до кроку 5 кВт·год. Денні відключення закривають панелі, якщо світить сонце. Точну схему й ємність інженер підбере після огляду.</p>
         <a class="link-strong" href="#zayavka" id="rz-cta">Надіслати цей набір інженеру <svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
@@ -128,7 +128,12 @@
     <h2 id="case-h">Як це виглядає на даху</h2>
     <div class="cf-grid">
       <figure class="cf-main">
-        <img src="../assets/plates/dim-case.webp" width="1200" height="800" alt="Сонячні панелі на даху цегляного будинку: станція EnRay 6 кВт у Вінницькій області" loading="lazy">
+        <img src="../assets/plates/dim-case.webp" width="1200" height="735" alt="Сонячні панелі на даху цегляного будинку: станція EnRay 6 кВт у Вінницькій області" loading="lazy">
+        <svg class="callouts" viewBox="0 0 1200 735" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+          <text x="375" y="56" text-anchor="middle">дахова СЕС · 2024</text>
+          <text x="470" y="146" text-anchor="middle" transform="rotate(10 470 146)">6 кВт</text>
+          <text x="750" y="152" text-anchor="middle">монтаж — 1 тиждень</text>
+        </svg>
       </figure>
       <div class="cf-side">
         <dl class="cf-spec">
@@ -198,7 +203,7 @@
         <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+38 0__ ___ __ __" required></div>
         <div class="field"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2"></div>
         <div class="field"><label for="f-bill">Рахунок, грн/міс</label><input id="f-bill" name="bill" type="text" inputmode="numeric" placeholder="наприклад, 2500"></div>
-        <div class="field field--wide"><label for="f-loads">Що тримати на резерві</label><input id="f-loads" name="loads" type="text" value="холодильник, газовий котел, роутер і зарядки, світло"></div>
+        <div class="field field--wide"><label for="f-loads">Що тримати на резерві</label><textarea id="f-loads" name="loads" rows="2">холодильник, газовий котел, роутер і зарядки, світло</textarea></div>
         <button class="btn btn-primary btn-lg" type="submit">Надіслати запит</button>
         <p class="form-msg" id="form-msg" role="status"></p>
       </form>

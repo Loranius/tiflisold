@@ -6,7 +6,7 @@
 
   // Доба з відключеннями: приклад графіка (ілюстративно)
   var OUTAGES = [[2, 6], [10, 14], [18, 22]];
-  var SUN = [7, 19];                      // години, коли панелі дають енергію
+  var SUN = [7, 18];                      // години, коли панелі дають енергію
   var cellsBox = document.getElementById('day-cells');
   var strip = document.querySelector('.day-strip');
   var summary = document.getElementById('day-summary');
@@ -14,7 +14,7 @@
 
   function isOut(h) { return OUTAGES.some(function (o) { return h >= o[0] && h < o[1]; }); }
   function kind(h, mode) {
-    if (!isOut(h)) return mode === 'on' && h >= SUN[0] && h < SUN[1] ? 'grid sun' : 'grid';
+    if (!isOut(h)) return 'grid';
     if (mode === 'off') return 'dark';
     return h >= SUN[0] && h < SUN[1] ? 'sun' : 'bat';
   }
@@ -22,7 +22,7 @@
   if (cellsBox) {
     for (var h = 0; h < 24; h++) {
       var c = document.createElement('span');
-      c.className = 'cell cell--' + kind(h, 'off').split(' ')[0];
+      c.className = 'cell cell--' + kind(h, 'off');
       c.style.setProperty('--i', h);
       cellsBox.appendChild(c);
     }
@@ -39,8 +39,7 @@
     summary.innerHTML = TEXT[mode];
     var cells = cellsBox.children;
     for (var h = 0; h < cells.length; h++) {
-      var k = kind(h, mode).split(' ');
-      cells[h].className = 'cell cell--' + k[0] + (k[1] ? ' cell--sunlit' : '');
+      cells[h].className = 'cell cell--' + kind(h, mode);
     }
   }
   btns.forEach(function (b) { b.addEventListener('click', function () { setMode(b.dataset.mode); }); });
@@ -61,7 +60,7 @@
     var bat = BATS.find(function (b) { return b >= need; });
     kwhOut.textContent = '≈ ' + fmt1.format(kwh);
     batOut.textContent = !names.length ? 'оберіть прилади' : bat ? 'від ' + bat + ' кВт·год' : 'понад 30 кВт·год';
-    if (fLoads) fLoads.value = names.join(', ');
+    if (fLoads) { fLoads.value = names.join(', '); fLoads.style.height = 'auto'; fLoads.style.height = fLoads.scrollHeight + 'px'; }
   }
   loads.forEach(function (i) { i.addEventListener('change', calc); });
   if (kwhOut) calc();

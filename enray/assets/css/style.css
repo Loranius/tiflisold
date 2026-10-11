@@ -245,7 +245,6 @@ input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rg
 /* Phone */
 @media (max-width: 720px) {
   html { scroll-padding-top: 88px; }
-  body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
   .site-header { padding: 0; margin-bottom: -64px; }
   .nav { border-radius: 0; min-height: 64px; gap: 10px; padding: 8px 16px; box-shadow: 0 1px 0 rgba(13,31,66,.08); }
   .nav-phone, .nav-cta { display: none; }
@@ -286,7 +285,9 @@ input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rg
     display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
     position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;
     padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
-    background: rgba(255,255,255,.96); box-shadow: 0 -10px 24px -16px rgba(13,31,66,.35);
+    background: var(--paper); box-shadow: 0 -10px 24px -16px rgba(13,31,66,.35);
   }
   .mobile-bar .btn { min-height: 52px; font-size: 18px; }
+  .mobile-bar .btn-outline { background: var(--paper); }
+  .site-footer { padding-bottom: calc(28px + 76px + env(safe-area-inset-bottom, 0px)); }
 }
