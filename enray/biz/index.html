@@ -74,12 +74,13 @@
       </div>
       <div class="bill-chart" data-mode="off" aria-hidden="true">
         <div class="bill-cols" id="bill-cols"></div>
-        <div class="bill-scale"><span>С</span><span>Л</span><span>Б</span><span>К</span><span>Т</span><span>Ч</span><span>Л</span><span>С</span><span>В</span><span>Ж</span><span>Л</span><span>Г</span></div>
+        <div class="bill-scale"><span data-s="С">січ</span><span data-s="Л">лют</span><span data-s="Б">бер</span><span data-s="К">кві</span><span data-s="Т">тра</span><span data-s="Ч">чер</span><span data-s="Л">лип</span><span data-s="С">сер</span><span data-s="В">вер</span><span data-s="Ж">жов</span><span data-s="Л">лис</span><span data-s="Г">гру</span></div>
       </div>
       <p class="day-summary" id="bill-summary" aria-live="polite"></p>
       <ul class="legend" aria-hidden="true">
         <li><i class="sw sw--grid"></i>оплата мережі</li>
         <li><i class="sw sw--sun"></i>закриває станція</li>
+        <li><i class="sw sw--cap"></i>денне споживання</li>
       </ul>
       <table class="sr-only" id="bill-table">
         <caption>Рахунок по місяцях без станції і зі станцією, грн</caption>
@@ -93,19 +94,20 @@
   <section class="section biz-calc" id="kalkulyator" aria-labelledby="calc-h">
     <div class="rezerv-head">
       <h2 id="calc-h">Порахуйте для свого бізнесу</h2>
-      <p class="lead">Введіть свій рахунок і тариф. Графік угорі перерахується за вашими даними.</p>
+      <p class="lead">Введіть свій рахунок і тариф. Графік поруч і графік на початку сторінки перерахуються за вашими даними.</p>
     </div>
     <div class="rezerv-grid">
       <div class="biz-inputs">
         <div class="bi-row">
-          <label for="b-bill">Рахунок за електроенергію, грн/міс</label>
-          <input id="b-bill" type="range" min="5000" max="200000" step="1000" value="20000">
-          <output for="b-bill" id="b-bill-out" class="bi-val">20 000 грн</output>
+          <label for="b-bill-num">Рахунок за електроенергію, грн/міс</label>
+          <input id="b-bill-num" class="bi-num" type="text" placeholder="наприклад, 20 000" inputmode="numeric" autocomplete="off">
+          <input id="b-bill" type="range" min="5000" max="500000" step="5000" value="20000" aria-label="Рахунок, повзунок">
+          <p class="bi-hint" id="b-bill-hint">20 000 грн у графіку — приклад. Введіть суму з рахунку.</p>
         </div>
         <div class="bi-row">
           <label for="b-tariff">Ваш тариф, грн за кВт·год</label>
-          <input id="b-tariff" class="bi-num" type="number" min="1" max="30" step="0.01" value="8" inputmode="decimal">
-          <p class="bi-hint">8 грн — приклад. Візьміть ціну з останнього рахунку.</p>
+          <input id="b-tariff" class="bi-num" type="text" placeholder="наприклад, 8" inputmode="decimal" autocomplete="off">
+          <p class="bi-hint" id="b-tariff-hint">Поки поле порожнє, рахуємо з прикладом 8 грн. Введіть тариф з рахунку.</p>
         </div>
         <div class="bi-row">
           <label for="b-kw">Потужність станції, кВт</label>
@@ -123,12 +125,12 @@
         </fieldset>
       </div>
       <div class="rezerv-result" aria-live="polite">
-        <p class="rz-label">Економія за рік · приклад</p>
+        <p class="rz-label" id="b-save-label">Економія за рік · приклад</p>
         <p class="rz-kwh"><span id="b-save">≈ 131 000</span> <small>грн</small></p>
-        <p class="rz-label">Частка річного рахунку</p>
-        <p class="rz-bat" id="b-share-out">≈ 55%</p>
-        <p class="rz-label">Генерація станції за рік</p>
-        <p class="bi-gen" id="b-gen">≈ 34 500 кВт·год</p>
+        <p class="bi-sentence" id="b-sentence">Це ≈ 55% річного рахунку. Станція 30 кВт дасть ≈ 34 500 кВт·год за рік.</p>
+        <div class="bill-mini" aria-hidden="true">
+          <div class="bill-cols bill-cols--mini" id="bill-mini"></div>
+        </div>
         <p class="rz-note">Орієнтовно: 1 кВт панелей дає ≈ 1 150 кВт·год на рік, розподіл по місяцях типовий для Вінниччини. Станція покриває лише денну частину споживання. Надлишок, що йде в мережу, не рахуємо. Точний розрахунок інженер зробить за вашими рахунками за рік.</p>
         <a class="link-strong" href="#zayavka">Надіслати ці дані інженеру <svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
@@ -155,6 +157,7 @@
           <div><dt>Монтаж</dt><dd>1 тиждень</dd></div>
           <div><dt>Задача</dt><dd class="txt">«зелений тариф»</dd></div>
         </dl>
+        <p class="cf-note">Ця станція продає енергію в мережу за «зеленим тарифом». Розрахунок економії вище — для бізнесу, який споживає енергію на місці.</p>
         <figure class="cf-inverter">
           <img src="../assets/plates/biz-detail.webp" width="800" height="600" alt="Інвертор і щиток захисту на стійках під панелями станції в Ладижині" loading="lazy">
           <figcaption>Інвертор і щиток захисту під панелями, той самий об'єкт</figcaption>
@@ -215,9 +218,9 @@
         <div class="field"><label for="f-name">Ім'я</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+38 0__ ___ __ __" required></div>
         <div class="field"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2"></div>
-        <div class="field"><label for="f-bill">Рахунок, грн/міс</label><input id="f-bill" name="bill" type="text" inputmode="numeric" value="20000"></div>
-        <div class="field"><label for="f-tariff">Тариф, грн/кВт·год</label><input id="f-tariff" name="tariff" type="text" inputmode="decimal" value="8"></div>
-        <div class="field"><label for="f-kw">Потужність, кВт (орієнтир)</label><input id="f-kw" name="kw" type="text" inputmode="numeric" value="30"></div>
+        <div class="field"><label for="f-bill">Рахунок, грн/міс</label><input id="f-bill" name="bill" type="text" inputmode="numeric" placeholder="наприклад, 20 000"></div>
+        <div class="field"><label for="f-tariff">Тариф, грн/кВт·год</label><input id="f-tariff" name="tariff" type="text" inputmode="decimal" placeholder="з вашого рахунку"></div>
+        <div class="field"><label for="f-kw">Потужність, кВт (орієнтир)</label><input id="f-kw" name="kw" type="text" inputmode="numeric" placeholder="якщо знаєте"></div>
         <div class="field field--wide"><label for="f-hours">Графік роботи</label><input id="f-hours" name="hours" type="text" placeholder="наприклад, Пн–Сб, 08:00–20:00"></div>
         <button class="btn btn-primary btn-lg" type="submit">Надіслати запит</button>
         <p class="form-msg" id="form-msg" role="status"></p>
