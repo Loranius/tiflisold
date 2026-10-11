@@ -139,27 +139,30 @@ get_header();
     </div>
     <div class="case-grid">
       <article class="case">
-        <h3><b>СЕС 100 кВт для поливу саду</b> <span class="nw">· Лука-Мелешківська · 2025</span></h3>
-        <picture>
-          <source media="(max-width: 720px)" srcset="<?php echo esc_url( enray_img( 'case-1-m.webp' ) ); ?>" width="800" height="500">
-          <img src="<?php echo esc_url( enray_img( 'case-1-photo.webp' ) ); ?>
-        </picture>" width="1100" height="262" alt="Сонячні панелі на даху господарської будівлі серед садів у селі Лука-Мелешківська" loading="lazy">
+        <h3><b>Дахова СЕС 6&nbsp;кВт</b> <span class="nw">· Вінницька обл. · 2024</span></h3>
+        <img src="<?php echo esc_url( enray_img( 'case-3.webp' ) ); ?>" width="800" height="500" alt="Сонячні панелі на даху цегляного приватного будинку: станція EnRay 6 кВт у Вінницькій області" loading="lazy" decoding="async">
         <dl class="case-meta">
-          <div><dt>Потужність</dt><dd>100 кВт</dd></div>
-          <div><dt>Монтаж</dt><dd>10 днів</dd></div>
-          <div><dt>Задача</dt><dd class="txt">живлення поливу</dd></div>
+          <div><dt>Потужність</dt><dd>6 кВт</dd></div>
+          <div><dt>Монтаж</dt><dd>1 тиждень</dd></div>
+          <div><dt>Об'єкт</dt><dd class="txt">приватний будинок</dd></div>
         </dl>
       </article>
       <article class="case">
-        <h3><b>Наземна СЕС 30 кВт</b> <span class="nw">· Ладижин · 2026</span></h3>
-        <picture>
-          <source media="(max-width: 720px)" srcset="<?php echo esc_url( enray_img( 'case-2-m.webp' ) ); ?>" width="800" height="500">
-          <img src="<?php echo esc_url( enray_img( 'case-2-photo.webp' ) ); ?>
-        </picture>" width="1100" height="262" alt="Ряд сонячних панелей наземної станції 30 кВт у Ладижині" loading="lazy" decoding="async">
+        <h3><b>Наземна СЕС 30&nbsp;кВт</b> <span class="nw">· Ладижин · 2026</span></h3>
+        <img src="<?php echo esc_url( enray_img( 'case-2.webp' ) ); ?>" width="800" height="500" alt="Ряд сонячних панелей наземної станції 30 кВт у Ладижині" loading="lazy" decoding="async">
         <dl class="case-meta">
           <div><dt>Потужність</dt><dd>30 кВт</dd></div>
           <div><dt>Монтаж</dt><dd>1 тиждень</dd></div>
           <div><dt>Задача</dt><dd class="txt">«зелений тариф»</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <h3><b>СЕС 100&nbsp;кВт для поливу саду</b> <span class="nw">· Лука-Мелешківська · 2025</span></h3>
+        <img src="<?php echo esc_url( enray_img( 'case-1.webp' ) ); ?>" width="800" height="500" alt="Сонячні панелі на даху господарської будівлі серед садів у селі Лука-Мелешківська" loading="lazy" decoding="async">
+        <dl class="case-meta">
+          <div><dt>Потужність</dt><dd>100 кВт</dd></div>
+          <div><dt>Монтаж</dt><dd>10 днів</dd></div>
+          <div><dt>Задача</dt><dd class="txt">живлення поливу</dd></div>
         </dl>
       </article>
     </div>
