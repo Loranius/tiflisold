@@ -1,0 +1,31 @@
+Форма Contact Form 7 «EnRay — заявка (Дім)»
+=============================================
+
+1. Contact → Add New, назва: EnRay — заявка (Дім).
+2. Вкладка «Form»: вставте все між рядками ---8<--- нижче.
+3. Вкладка «Mail»: тема «Нова заявка: Дім», тіло листа — блок «Mail body».
+4. Збережіть, скопіюйте числовий ID з шорткоду і вкажіть його:
+   Зовнішній вигляд → Налаштувати → EnRay: контакти й форми → ID форми: Дім.
+
+Тема сама виводить форму з класом request-form та id request-form, тому
+поля стають у дві колонки, а калькулятор підставляє в них дані відвідувача.
+Маску телефону з плагіна cf7-phone-mask-field можна застосувати до поля your-phone.
+
+---8<--- Form
+[hidden scenario "Дім"]
+<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name]</div>
+<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 0__ ___ __ __"]</div>
+<div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2]</div>
+<div class="field"><label for="f-bill">Рахунок, грн/міс</label>[text bill id:f-bill placeholder "наприклад, 2500"]</div>
+<div class="field field--wide"><label for="f-loads">Що тримати на резерві</label>[textarea loads id:f-loads x2]</div>
+[submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]
+---8<---
+
+---8<--- Mail body
+Сценарій: Дім
+Ім'я: [your-name]
+Телефон: [your-phone]
+Населений пункт: [place]
+Рахунок, грн/міс: [bill]
+На резерві: [loads]
+---8<---

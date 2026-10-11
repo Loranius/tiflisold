@@ -1,0 +1,37 @@
+Форма Contact Form 7 «EnRay — заявка (Агро)»
+=============================================
+
+1. Contact → Add New, назва: EnRay — заявка (Агро).
+2. Вкладка «Form»: вставте все між рядками ---8<--- нижче.
+3. Вкладка «Mail»: тема «Нова заявка: Агро», тіло листа — блок «Mail body».
+4. Збережіть, скопіюйте числовий ID з шорткоду і вкажіть його:
+   Зовнішній вигляд → Налаштувати → EnRay: контакти й форми → ID форми: Агро.
+
+Тема сама виводить форму з класом request-form та id request-form, тому
+поля стають у дві колонки, а калькулятор підставляє в них дані відвідувача.
+Маску телефону з плагіна cf7-phone-mask-field можна застосувати до поля your-phone.
+
+---8<--- Form
+[hidden scenario "Агро"]
+<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name]</div>
+<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 0__ ___ __ __"]</div>
+<div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2]</div>
+<div class="field"><label for="f-pump">Насоси, кВт</label>[text pump id:f-pump placeholder "сумарно, якщо знаєте"]</div>
+<div class="field"><label for="f-hours">Годин поливу на день</label>[text hours id:f-hours placeholder "наприклад, 8"]</div>
+<div class="field"><label for="f-season">Сезон поливу</label>[text season id:f-season placeholder "наприклад, квітень — вересень"]</div>
+<div class="field"><label for="f-kw">Потужність станції, кВт (орієнтир)</label>[text kw id:f-kw placeholder "якщо знаєте"]</div>
+<div class="field"><label for="f-water">Джерело води і чи є мережа на ділянці</label>[text water id:f-water placeholder "свердловина, мережі немає"]</div>
+[submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]
+---8<---
+
+---8<--- Mail body
+Сценарій: Агро
+Ім'я: [your-name]
+Телефон: [your-phone]
+Населений пункт: [place]
+Насоси, кВт: [pump]
+Години/графік: [hours]
+Сезон поливу: [season]
+Потужність станції, кВт: [kw]
+Вода і мережа: [water]
+---8<---

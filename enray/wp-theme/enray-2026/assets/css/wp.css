@@ -1,0 +1,50 @@
+/* Частини, яких немає в прототипі: звичайні сторінки, кейси, Contact Form 7. Токени з style.css. */
+
+.wp-main { padding-top: clamp(150px, 12vw, 200px); }
+.wp-main > .section:first-child { padding-top: 0; }
+.wp-article, .wp-main > .section { padding-bottom: var(--section); }
+.wp-title { font-size: clamp(34px, 3.6vw, 60px); line-height: 1.1; margin-bottom: clamp(20px, 2vw, 32px); max-width: 20em; }
+.wp-content { max-width: 70ch; color: var(--ink-2); display: grid; gap: 1em; }
+.wp-content h2 { font-size: clamp(24px, 2vw, 34px); margin-top: .8em; }
+.wp-content h3 { font-size: clamp(19px, 1.4vw, 24px); margin-top: .6em; }
+.wp-content ul, .wp-content ol { padding-left: 1.2em; margin: 0; display: grid; gap: .4em; }
+.wp-content img { border-radius: calc(var(--radius) - 4px); }
+.wp-content a { color: var(--cobalt); }
+.wp-lead { margin-bottom: clamp(24px, 2.4vw, 40px); }
+.wp-hero-img { margin: 0 0 clamp(20px, 2vw, 32px); }
+.wp-hero-img img { width: 100%; max-height: 640px; object-fit: cover; border-radius: var(--radius); }
+.wp-back { margin-top: clamp(28px, 3vw, 48px); }
+.wp-404-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.wp-main .gallery { margin-top: clamp(24px, 2.4vw, 40px); }
+
+.case-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); }
+.case-card { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.case-card-link { display: grid; gap: 12px; text-decoration: none; color: var(--ink); }
+.case-card-link img, .case-card-noimg { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); display: block; background: var(--sky); }
+.case-card h2 { font: 600 clamp(17px, 1.3vw, 21px)/1.3 var(--f-body); letter-spacing: 0; }
+.case-card-link:hover h2 { color: var(--cobalt); }
+.nav-links { list-style: none; }
+.pagination, .nav-links .page-numbers { margin-top: 24px; }
+
+/* Contact Form 7 усередині темної панелі заявки */
+.request .wpcf7 { margin-top: 6px; }
+.request .wpcf7-form-control-wrap { display: block; }
+.request .wpcf7-not-valid-tip { color: #ffb3a6; font-size: 14px; margin-top: 6px; }
+.request .wpcf7-not-valid { border-color: #ff8f7a !important; }
+.request .wpcf7-response-output { grid-column: 1 / -1; margin: 4px 0 0 !important; padding: 12px 14px !important; border-radius: 10px; border: 1.5px solid #3a4b66 !important; color: var(--on-navy); font-size: 15px; }
+.request .wpcf7 form.sent .wpcf7-response-output { border-color: #6fd3a8 !important; }
+.request .wpcf7 form.invalid .wpcf7-response-output, .request .wpcf7 form.failed .wpcf7-response-output { border-color: #ff8f7a !important; }
+.request .wpcf7-spinner { display: none; }
+.request form.submitting input[type="submit"] { opacity: .6; cursor: progress; }
+.request input[type="submit"] { grid-column: 1 / -1; width: 100%; margin-top: 4px; }
+.request .wpcf7 .hidden-fields-container, .request .wpcf7 fieldset.hidden-fields-container { display: none; }
+.request-fallback { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.form-admin-note { font-size: 14px; color: #ffd98a; border: 1px dashed #ffd98a; border-radius: 10px; padding: 10px 12px; }
+.form-admin-note code { color: #fff; }
+
+@media (max-width: 1100px) { .case-list { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) {
+  .case-list { grid-template-columns: 1fr; }
+  .wp-main { padding-top: 104px; }
+}
+.wp-main .nav-links { margin-left: 0; display: flex; gap: 12px; }
