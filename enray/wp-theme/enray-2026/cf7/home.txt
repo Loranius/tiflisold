@@ -13,9 +13,10 @@
 
 ---8<--- Form
 [hidden scenario "Головна"]
-<div class="field field--wide pick-field"><span class="pick-legend">Що потрібно</span><div class="pick pick--6">[radio object use_label_element "Станція для дому" "Станція для бізнесу" "Станція для поливу" "Обслуговування СЕС" "Електромонтаж" "Охорона й камери"]</div></div>
-<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
-<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
+<p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+<div class="field field--wide pick-field"><span class="pick-legend">Що потрібно <span class="req" aria-hidden="true">*</span></span><div class="pick pick--6">[radio object use_label_element "Станція для дому" "Станція для бізнесу" "Станція для поливу" "Обслуговування СЕС" "Електромонтаж" "Охорона й камери"]</div></div>
+<div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
+<div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
 <div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2 maxlength:80]</div>
 <div class="field"><label for="f-bill">Рахунок, грн/міс</label>[text bill id:f-bill maxlength:9 placeholder "наприклад, 5 000"]</div>
 [submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]

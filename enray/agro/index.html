@@ -214,8 +214,9 @@
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00, і попросить дані насосів, щоб підібрати потужність станції.</p>
       <form class="request-form" id="request-form" method="post" action="#" novalidate>
         <input type="hidden" name="scenario" value="Агро">
-        <div class="field"><label for="f-name">Ім'я</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
-        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
+        <p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+        <div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
+        <div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
         <div class="field"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2" maxlength="80"></div>
         <div class="field"><label for="f-pump">Насоси, кВт</label><input id="f-pump" name="pump" type="text" inputmode="numeric" maxlength="5" data-unit="кВт" placeholder="сумарно, якщо знаєте"></div>
         <div class="field"><label for="f-hours">Годин поливу на день</label><input id="f-hours" name="hours" type="text" inputmode="numeric" maxlength="2" data-unit="год на день" placeholder="наприклад, 8"></div>

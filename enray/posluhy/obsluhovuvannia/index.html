@@ -124,8 +124,9 @@
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00.</p>
       <form class="request-form" id="request-form" method="post" action="#" novalidate>
         <input type="hidden" name="service" value="Обслуговування СЕС">
-        <div class="field"><label for="f-name">Ім'я</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
-        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
+        <p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+        <div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
+        <div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
         <div class="field field--wide"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2" maxlength="80"></div>
         <div class="field field--wide"><label for="f-task">Що сталося зі станцією</label><textarea id="f-task" name="task" rows="3" maxlength="500"></textarea></div>
         <p class="form-errors" id="form-errors" role="alert" hidden></p>

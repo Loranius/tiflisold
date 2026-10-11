@@ -302,6 +302,8 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 
 .form-msg.is-success { min-height: 0; padding: 14px 16px; border-radius: 10px; background: #0f3a2c; border: 1.5px solid #6fd3a8; color: #e6fff4; font-size: 16px; line-height: 1.45; }
 .form-msg.is-success:focus { outline: none; }
 .form-msg:empty { display: none; }
+.req { margin-left: 2px; font-weight: 700; color: #6f9cff; }
+.form-req { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--on-navy-muted); }
 .form-next { grid-column: 1 / -1; margin: 0; font-size: 14px; line-height: 1.5; color: var(--on-navy-muted); }
 .form-next a { color: var(--on-navy); }
 .request-form .field, .request-form .pick-field { scroll-margin: calc(var(--header-h) + 24px) 0 120px; }

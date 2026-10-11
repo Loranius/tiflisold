@@ -13,8 +13,9 @@
 
 ---8<--- Form
 [hidden scenario "Дім"]
-<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
-<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
+<p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+<div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
+<div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
 <div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2 maxlength:80]</div>
 <div class="field"><label for="f-bill">Рахунок, грн/міс</label>[text bill id:f-bill maxlength:9 placeholder "наприклад, 2 500"]</div>
 <div class="field field--wide"><label for="f-loads">Що тримати на резерві</label>[textarea loads id:f-loads x2 maxlength:300 placeholder "оберіть прилади в калькуляторі або напишіть"]</div>

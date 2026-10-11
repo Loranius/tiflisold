@@ -262,8 +262,9 @@
       <h2>Отримати розрахунок</h2>
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00, уточнить задачу й дасть попередній розрахунок.</p>
       <form class="request-form" id="request-form" method="post" action="#" novalidate>
+        <p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
         <fieldset class="field field--wide pick-field" id="f-object" data-required data-err="Оберіть, що вам потрібно.">
-          <legend>Що потрібно</legend>
+          <legend>Що потрібно <span class="req" aria-hidden="true">*</span></legend>
           <div class="pick pick--6">
             <label><input type="radio" name="object" value="Станція для дому"><span>Станція для дому</span></label>
             <label><input type="radio" name="object" value="Станція для бізнесу"><span>Станція для бізнесу</span></label>
@@ -273,8 +274,8 @@
             <label><input type="radio" name="object" value="Охорона й камери"><span>Охорона й камери</span></label>
           </div>
         </fieldset>
-        <div class="field"><label for="f-name">Ім'я</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
-        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
+        <div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
+        <div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
         <div class="field"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2" maxlength="80"></div>
         <div class="field"><label for="f-bill">Рахунок, грн/міс</label><input id="f-bill" name="bill" type="text" inputmode="numeric" maxlength="9" data-unit="грн" placeholder="наприклад, 5 000"></div>
         <p class="form-errors" id="form-errors" role="alert" hidden></p>
