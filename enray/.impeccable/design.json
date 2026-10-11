@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T08:17:23+00:00",
+  "generatedAt": "2026-10-11T15:03:19.758611Z",
   "title": "Design System: EnRay",
   "extensions": {
     "colorMeta": {
@@ -258,6 +258,14 @@
           "#bec0ff",
           "#e6e9ff"
         ]
+      },
+      "state-grid": {
+        "value": "#b9c8dc",
+        "role": "Стан «мережа / генератор» на графіках енергії; не акцент"
+      },
+      "state-sun": {
+        "value": "#f4c542",
+        "role": "Стан «дає станція» на графіках енергії; не акцент"
       }
     },
     "typographyMeta": {
@@ -481,6 +489,46 @@
       "description": "Лише ≤720px: фіксована внизу, «Подзвонити» (контур) і «Viber».",
       "html": "<div class=\"ds-bar\"><a class=\"ds-btn ds-btn-outline\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z\"/></svg>Подзвонити</a><a class=\"ds-btn ds-btn-viber\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M12 2.5c4.9 0 8.5 2.6 8.5 8.3 0 5.6-3.6 8.2-8.5 8.2-.8 0-1.6-.1-2.3-.2L6 21.5v-3.6C4.3 16.5 3.5 14 3.5 10.8 3.5 5.1 7.1 2.5 12 2.5z\"/></svg>Viber</a></div>",
       "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-bar{max-width:390px;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px;background:rgba(255,255,255,.96);box-shadow:0 -10px 24px -16px rgba(13,31,66,.35);} .ds-bar .ds-btn{min-height:52px;font-size:18px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{border-color:var(--cobalt);color:var(--cobalt);} .ds-btn-viber{background:var(--viber);color:#fff;} .ds-btn-viber:hover{background:#5640d6;}"
+    },
+    {
+      "name": "Перемикач «Без станції / Зі станцією»",
+      "kind": "control",
+      "refersTo": "segmented-toggle",
+      "description": "Капсула sky з двома кнопками; активна «Зі станцією» — кобальт. Єдина взаємодія, що запускає хвилю графіка.",
+      "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"Порівняння\"><button type=\"button\" aria-pressed=\"false\">Без станції</button><button type=\"button\" aria-pressed=\"true\" data-on>Зі станцією</button></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-seg{display:inline-flex;gap:4px;padding:4px;background:var(--sky);border-radius:14px;font-family:'Golos Text',system-ui,sans-serif} .ds-seg button{min-height:44px;padding:0 18px;border:0;border-radius:10px;background:transparent;font:600 16px/1 inherit;color:var(--ink-2);cursor:pointer;transition:background-color .25s cubic-bezier(.16,1,.3,1),color .25s} .ds-seg button:hover{color:var(--ink)} .ds-seg button[aria-pressed=true]{background:var(--paper);color:var(--ink);box-shadow:0 2px 6px -2px rgba(13,31,66,.3)} .ds-seg button[data-on][aria-pressed=true]{background:var(--cobalt);color:#fff} .ds-seg button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}"
+    },
+    {
+      "name": "Місячний енергетичний графік",
+      "kind": "chart",
+      "refersTo": "energy-chart",
+      "description": "12 стовпчиків: сірий — мережа, жовтий — частка станції, пунктир cobalt-line — рівень порівняння, обвідка — найслабший місяць, штрихування — поза сезоном.",
+      "html": "<figure class=\"ds-chart\" aria-hidden=\"true\"><div class=\"ds-cols\"><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"\" style=\"--h:70%;--s:55%\"><i></i></span><span class=\"\" style=\"--h:88%;--s:88%\"><i></i></span><span class=\"\" style=\"--h:95%;--s:95%\"><i></i></span><span class=\"\" style=\"--h:100%;--s:100%\"><i></i></span><span class=\"\" style=\"--h:100%;--s:100%\"><i></i></span><span class=\"\" style=\"--h:95%;--s:95%\"><i></i></span><span class=\"weak\" style=\"--h:80%;--s:58%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><b class=\"ds-cap\" style=\"--c:62%\"></b></div><div class=\"ds-scale\"><span>січ</span><span>лют</span><span>бер</span><span>кві</span><span>тра</span><span>чер</span><span>лип</span><span>сер</span><span>вер</span><span>жов</span><span>лис</span><span>гру</span></div></figure>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-chart{margin:0;padding:20px;background:#fff;border:1.5px solid var(--cobalt-line);border-radius:14px;max-width:560px} .ds-cols{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:6px;height:150px;align-items:end} .ds-cols span{position:relative;height:var(--h);background:var(--st-grid);border-radius:4px 4px 0 0;overflow:hidden} .ds-cols span i{position:absolute;left:0;right:0;bottom:0;height:var(--s);background:var(--st-sun)} .ds-cols span.off{height:100%;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(185,200,220,.45) 6px 7px)} .ds-cols span.weak{box-shadow:inset 0 0 0 2px var(--cobalt)} .ds-cap{position:absolute;left:0;right:0;bottom:var(--c);border-top:2px dashed var(--cobalt-line)} .ds-scale{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);text-align:center;font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}"
+    },
+    {
+      "name": "Смуга доби з відключеннями",
+      "kind": "chart",
+      "refersTo": "energy-chart",
+      "description": "24 клітинки годин зі шкалою 00–24: ink — без світла, сірий — мережа, жовтий — сонце, кобальт — акумулятор.",
+      "html": "<div class=\"ds-day\" aria-hidden=\"true\"><div class=\"ds-cells\"><span class=\"g\"></span><span class=\"g\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"g\"></span><span class=\"g\"></span></div><div class=\"ds-scale\"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-day{max-width:560px} .ds-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:90px} .ds-cells span{border-radius:3px;background:var(--st-grid)} .ds-cells .s{background:var(--st-sun)} .ds-cells .b{background:var(--cobalt)} .ds-cells .d{background:var(--ink)} .ds-scale{display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);font:500 13px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}"
+    },
+    {
+      "name": "Результат калькулятора з міні-графіком",
+      "kind": "card",
+      "refersTo": "calc-result",
+      "description": "Мітка режиму даних, велике число з одиницею, одне речення-висновок, живий міні-графік і примітка з методикою.",
+      "html": "<div class=\"ds-res\"><p class=\"ds-l\">Станція закриває за сезон · приклад</p><p class=\"ds-n\">≈ 93&nbsp;<span>%</span></p><p class=\"ds-s\">Насосам потрібно ≈ 43 900 кВт·год за сезон. Щоб закрити й вересень, потрібно ≈ 70 кВт панелей.</p><div class=\"ds-mini\"><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:82%\"></i><i style=\"--h:96%\"></i><i style=\"--h:100%\"></i><i style=\"--h:100%\"></i><i style=\"--h:96%\"></i><i style=\"--h:72%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i></div><p class=\"ds-note\">Орієнтовно: 1 кВт панелей дає ≈ 1 150 кВт·год на рік. Точний розрахунок зробить інженер.</p></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-res{max-width:520px;padding:28px;border:1.5px solid var(--cobalt-line);border-radius:14px;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px,var(--sky-2);font-family:'Golos Text',system-ui,sans-serif;display:grid;gap:8px} .ds-res p{margin:0} .ds-l{font-size:15px;color:var(--ink-2)} .ds-n{font:800 64px/1 Onest,system-ui,sans-serif;color:var(--ink);font-variant-numeric:tabular-nums} .ds-n span{font-size:.55em} .ds-s{font-size:17px;color:var(--ink-2)} .ds-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:72px;align-items:end} .ds-mini i{height:var(--h);background:var(--st-sun);border-radius:3px 3px 0 0} .ds-note{font-size:14px;color:var(--muted)}"
+    },
+    {
+      "name": "Питання й відповідь",
+      "kind": "disclosure",
+      "refersTo": "faq-item",
+      "description": "details/summary з лінійним «+», що повертається на 45°; роздільники rule.",
+      "html": "<div class=\"ds-faq\"><details open><summary>Чи можна поливати там, де немає мережі?<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></summary><p>Так. Станцію в Луці-Мелешківській ми будували саме для автономного поливу саду.</p></details><details><summary>Скільки триває монтаж?<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></summary><p>Станцію 100 кВт змонтували за 10 днів.</p></details></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-faq{max-width:760px;border-top:1.5px solid var(--rule-strong);font-family:'Golos Text',system-ui,sans-serif} .ds-faq details{border-bottom:1px solid var(--rule)} .ds-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-weight:600;font-size:19px;color:var(--ink)} .ds-faq summary::-webkit-details-marker{display:none} .ds-faq summary:hover{color:var(--cobalt)} .ds-faq svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .3s cubic-bezier(.16,1,.3,1)} .ds-faq details[open] svg{transform:rotate(45deg)} .ds-faq p{margin:0 0 18px;color:var(--ink-2)}"
     }
   ],
   "narrative": {
@@ -523,7 +571,12 @@
         "name": "Правило пласкої картки",
         "body": "Картки в спокої без тіні — тільки рамка. Тінь з'являється на hover або в елемента, що плаває над контентом.",
         "section": "elevation"
-      }
+      },
+      "The Visitor's Data Rule: у форму заявки потрапляє лише те, що відвідувач ввів сам.",
+      "The Example Label Rule: кожне невведене число підписане як приклад; мітка результату — приклад / частково приклад / за вашими даними.",
+      "The No Silent Fallback Rule: некоректне значення не підмінюється мовчки.",
+      "The Summary From Data Rule: підсумок пишеться з тих самих чисел, що й графік.",
+      "Хвиля перефарбування графіка — тільки на перемикачі; під час введення оновлення миттєве."
     ],
     "dos": [
       "**Do** використовувати лише реальні фото об'єктів EnRay (`assets/src/` → `assets/plates/`, webp); у alt писати тип станції, потужність, місто й рік.",
