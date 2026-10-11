@@ -98,7 +98,7 @@
         var col = document.createElement('span');
         col.className = 'bcol';
         col.style.setProperty('--i', m);
-        col.innerHTML = '<span class="bcol-ghost"></span><span class="bcol-sun"></span>';
+        col.innerHTML = '<span class="bcol-sun"></span>';
         box.appendChild(col);
       }
       var cap = document.createElement('span');
@@ -126,7 +126,6 @@
       for (var i = 0; i < 12; i++) {
         var p = Math.min(100, r.months[i].save / r.bill * 100);
         box.children[i].style.setProperty('--sun', (on ? p : 0) + '%');
-        box.children[i].style.setProperty('--ghost', (on ? 0 : p) + '%');
       }
       box.style.setProperty('--cap', (r.share * 100) + '%');
       box.classList.toggle('is-on', on);
@@ -152,13 +151,14 @@
         ? 'За рік <b>' + fmt.format(round(r.bill * 12, 1000)) + ' грн</b> за електроенергію, кожен місяць повністю з мережі.'
         : 'Станція закриває <b>≈ ' + fmt.format(round(r.save, 1000)) + ' грн</b> за рік' +
           (rg ? ': ' + rg + ' — всю денну частину споживання, взимку менше.' : ', найбільше влітку.');
-      var parts = [
-        'рахунок ' + fmt.format(r.bill) + ' грн/міс' + (mine.bill ? '' : ' (приклад)'),
-        'тариф ' + String(r.tariff).replace('.', ',') + ' грн/кВт·год' + (mine.tariff ? '' : ' (приклад)'),
-        'станція ' + r.kw + ' кВт' + (mine.kw ? '' : ' (приклад)'),
-        '≈ ' + Math.round(r.share * 100) + '% споживання вдень' + (mine.share ? '' : ' (приклад)')
-      ];
       var any = mine.bill || mine.tariff || mine.kw || mine.share;
+      var tag = function (own) { return any && !own ? ' (приклад)' : ''; };
+      var parts = [
+        'рахунок ' + fmt.format(r.bill) + ' грн/міс' + tag(mine.bill),
+        'тариф ' + String(r.tariff).replace('.', ',') + ' грн/кВт·год' + tag(mine.tariff),
+        'станція ' + r.kw + ' кВт' + tag(mine.kw),
+        '≈ ' + Math.round(r.share * 100) + '% споживання вдень' + tag(mine.share)
+      ];
       el('bill-note').textContent = (any ? 'Розрахунок: ' : 'Приклад, ілюстративно: ') + parts.join(', ') + '. Змініть дані в калькуляторі нижче.';
       document.querySelector('#bill-table tbody').innerHTML = r.months.map(function (x, i) {
         return '<tr><td>' + MONTHS[i] + '</td><td>' + fmt.format(round(r.bill, 10)) + '</td><td>' + fmt.format(round(r.bill - x.save, 10)) + '</td></tr>';
