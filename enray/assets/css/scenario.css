@@ -91,6 +91,7 @@
 .cf-main { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; }
 .cf-main img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 100%; }
 .cf-main .callouts text { font-size: 24px; }
+.cf-main .callouts .c-narrow { display: none; }
 .cf-side { display: grid; gap: clamp(16px, 1.6vw, 26px); align-content: start; }
 .cf-spec { margin: 0; display: grid; border-top: 1.5px solid var(--rule-strong); }
 .cf-spec div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
@@ -148,5 +149,7 @@
   .load { gap: 12px; }
   .load-kw { font-size: 13px; }
   .closing-aside { display: none; }
-  .cf-main .callouts text { font-size: 34px; }
+  .cf-main .callouts text { font-size: 44px; stroke-width: 9px; }
+  .cf-main .callouts .c-wide { display: none; }
+  .cf-main .callouts .c-narrow { display: inline; }
 }
