@@ -76,7 +76,8 @@
         btn.textContent = 'Надіслати запит';
         msg.textContent = 'Дякуємо, ' + name.value.trim() + '! Інженер передзвонить на ' + phone.value.trim() + ' у робочий час. (Прототип: заявка не надсилається.)';
         form.reset();
-        update();
+        if (bill) update();
+        form.dispatchEvent(new CustomEvent('enray:reset'));
       }, 600);
     });
   }
