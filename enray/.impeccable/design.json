@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T15:03:19.758611Z",
+  "generatedAt": "2026-10-11T22:35:44Z",
   "title": "Design System: EnRay",
   "extensions": {
     "colorMeta": {
@@ -260,12 +260,379 @@
         ]
       },
       "state-grid": {
-        "value": "#b9c8dc",
-        "role": "Стан «мережа / генератор» на графіках енергії; не акцент"
+        "role": "neutral",
+        "displayName": "Стан «мережа / генератор»",
+        "canonical": "oklch(82.8% 0.033 256)",
+        "tonalRamp": [
+          "#080c10",
+          "#20262e",
+          "#3a434f",
+          "#566272",
+          "#778394",
+          "#9ba6b4",
+          "#c2cad4",
+          "#e9eff6"
+        ]
       },
       "state-sun": {
-        "value": "#f4c542",
-        "role": "Стан «дає станція» на графіках енергії; не акцент"
+        "role": "neutral",
+        "displayName": "Стан «дає станція» (сонце)",
+        "canonical": "oklch(84.3% 0.151 88)",
+        "tonalRamp": [
+          "#110a00",
+          "#302300",
+          "#533f00",
+          "#795d00",
+          "#a17d00",
+          "#c1a14c",
+          "#dec78c",
+          "#fdedc6"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Папір 2 (hover рядків)",
+        "canonical": "oklch(98.1% 0.003 248)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a6",
+          "#c8c9ca",
+          "#edeeef"
+        ]
+      },
+      "sky-0": {
+        "role": "neutral",
+        "displayName": "Небо 0 (початок градієнта героя)",
+        "canonical": "oklch(95.3% 0.021 248)",
+        "tonalRamp": [
+          "#090c0e",
+          "#21262b",
+          "#3c434a",
+          "#59626c",
+          "#7a848d",
+          "#9ea6ae",
+          "#c4cad0",
+          "#eaeff3"
+        ]
+      },
+      "rule-ui": {
+        "role": "neutral",
+        "displayName": "Межа інтерактивної картки",
+        "canonical": "oklch(60.8% 0.038 262)",
+        "tonalRamp": [
+          "#080b11",
+          "#202530",
+          "#3a4251",
+          "#566276",
+          "#778398",
+          "#9ba5b7",
+          "#c2c9d7",
+          "#e9eef7"
+        ]
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Доріжка повзунка",
+        "canonical": "oklch(59.7% 0.039 260)",
+        "tonalRamp": [
+          "#080b11",
+          "#1f2530",
+          "#3a4351",
+          "#566276",
+          "#768398",
+          "#9ba6b7",
+          "#c1c9d7",
+          "#e9eef8"
+        ]
+      },
+      "rule-dark": {
+        "role": "secondary",
+        "displayName": "Роздільник у футері",
+        "canonical": "oklch(31.6% 0.050 259)",
+        "tonalRamp": [
+          "#070c12",
+          "#1d2633",
+          "#374355",
+          "#52627c",
+          "#72839e",
+          "#97a6bc",
+          "#bfcadb",
+          "#e7effa"
+        ]
+      },
+      "dots": {
+        "role": "neutral",
+        "displayName": "Пунктир етапів",
+        "canonical": "oklch(71.4% 0.028 264)",
+        "tonalRamp": [
+          "#090b0f",
+          "#21252d",
+          "#3d424d",
+          "#5a6170",
+          "#7b8292",
+          "#9ea5b2",
+          "#c4c9d3",
+          "#ebeef5"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "Текст на кобальті й navy",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "focus-dark": {
+        "role": "secondary",
+        "displayName": "Фокус на navy",
+        "canonical": "oklch(70.5% 0.154 264)",
+        "tonalRamp": [
+          "#030920",
+          "#10224e",
+          "#233e7c",
+          "#375cb0",
+          "#577ed6",
+          "#81a4ec",
+          "#afc9ff",
+          "#e6eeff"
+        ]
+      },
+      "field-line": {
+        "role": "secondary",
+        "displayName": "Рамка поля на navy",
+        "canonical": "oklch(55.2% 0.056 260)",
+        "tonalRamp": [
+          "#070b13",
+          "#1c2634",
+          "#364358",
+          "#50627f",
+          "#7083a1",
+          "#96a6bf",
+          "#becadd",
+          "#e7effc"
+        ]
+      },
+      "field-line-hover": {
+        "role": "secondary",
+        "displayName": "Рамка поля на navy, hover",
+        "canonical": "oklch(65.5% 0.055 259)",
+        "tonalRamp": [
+          "#070c13",
+          "#1c2634",
+          "#364357",
+          "#50627e",
+          "#7083a1",
+          "#96a6bf",
+          "#becadc",
+          "#e7effb"
+        ]
+      },
+      "field-placeholder": {
+        "role": "secondary",
+        "displayName": "Плейсхолдер на navy",
+        "canonical": "oklch(70.0% 0.041 256)",
+        "tonalRamp": [
+          "#080c11",
+          "#1e2630",
+          "#384352",
+          "#536377",
+          "#748499",
+          "#99a6b8",
+          "#c0cad7",
+          "#e8eff8"
+        ]
+      },
+      "field-focus": {
+        "role": "secondary",
+        "displayName": "Тло поля у фокусі",
+        "canonical": "oklch(28.9% 0.061 258)",
+        "tonalRamp": [
+          "#060c14",
+          "#1b2636",
+          "#34435a",
+          "#4e6281",
+          "#6e84a4",
+          "#94a6c1",
+          "#bccade",
+          "#e6effd"
+        ]
+      },
+      "field-hover": {
+        "role": "secondary",
+        "displayName": "Hover варіанта вибору",
+        "canonical": "oklch(30.9% 0.064 259)",
+        "tonalRamp": [
+          "#060c14",
+          "#1b2636",
+          "#33435b",
+          "#4d6283",
+          "#6d84a6",
+          "#93a6c3",
+          "#bccae0",
+          "#e5effe"
+        ]
+      },
+      "error-line": {
+        "role": "secondary",
+        "displayName": "Рамка помилки на navy",
+        "canonical": "oklch(76.6% 0.140 32)",
+        "tonalRamp": [
+          "#1b0302",
+          "#43130b",
+          "#6e291d",
+          "#9d3f2f",
+          "#c36250",
+          "#dd8d7d",
+          "#f5b8ab",
+          "#ffe8e4"
+        ]
+      },
+      "error-ink": {
+        "role": "secondary",
+        "displayName": "Текст помилки на navy",
+        "canonical": "oklch(83.5% 0.091 30)",
+        "tonalRamp": [
+          "#160605",
+          "#3a1b16",
+          "#60342d",
+          "#8b4e44",
+          "#af6f64",
+          "#cb968c",
+          "#e7beb7",
+          "#ffe8e4"
+        ]
+      },
+      "error-ink-strong": {
+        "role": "secondary",
+        "displayName": "Підсумок помилок на navy",
+        "canonical": "oklch(90.0% 0.052 31)",
+        "tonalRamp": [
+          "#120907",
+          "#32201d",
+          "#543b36",
+          "#7a5750",
+          "#9d7871",
+          "#bc9d96",
+          "#dac3be",
+          "#faeae7"
+        ]
+      },
+      "success-bg": {
+        "role": "secondary",
+        "displayName": "Тло картки успіху",
+        "canonical": "oklch(31.4% 0.054 168)",
+        "tonalRamp": [
+          "#050e0a",
+          "#162a22",
+          "#2d493e",
+          "#456b5c",
+          "#658c7c",
+          "#8eada0",
+          "#b8cfc5",
+          "#e3f2ec"
+        ]
+      },
+      "success-line": {
+        "role": "secondary",
+        "displayName": "Рамка картки успіху",
+        "canonical": "oklch(79.4% 0.114 164)",
+        "tonalRamp": [
+          "#001008",
+          "#002e1d",
+          "#004f36",
+          "#027351",
+          "#399671",
+          "#72b697",
+          "#a5d6be",
+          "#d7f7e7"
+        ]
+      },
+      "success-ink": {
+        "role": "secondary",
+        "displayName": "Текст картки успіху",
+        "canonical": "oklch(97.9% 0.030 167)",
+        "tonalRamp": [
+          "#080d0a",
+          "#1e2824",
+          "#374640",
+          "#53675e",
+          "#73887f",
+          "#99aaa2",
+          "#c0ccc7",
+          "#e8f0ed"
+        ]
+      },
+      "viber-deep": {
+        "role": "tertiary",
+        "displayName": "Viber hover (сторонній бренд)",
+        "canonical": "oklch(49.3% 0.217 282)",
+        "tonalRamp": [
+          "#090428",
+          "#20155c",
+          "#3a2d91",
+          "#5645cd",
+          "#736af4",
+          "#9697ff",
+          "#bfc3ff",
+          "#ebedff"
+        ]
+      },
+      "todo-line": {
+        "role": "neutral",
+        "displayName": "Позначка «уточнити»: рамка (робочий маркер, не бренд)",
+        "canonical": "oklch(55.5% 0.146 49)",
+        "tonalRamp": [
+          "#190500",
+          "#401800",
+          "#6b2d00",
+          "#9a4500",
+          "#c16630",
+          "#db9068",
+          "#f3bb9d",
+          "#ffe9de"
+        ]
+      },
+      "todo-bg": {
+        "role": "neutral",
+        "displayName": "Позначка «уточнити»: тло (робочий маркер, не бренд)",
+        "canonical": "oklch(98.0% 0.016 74)",
+        "tonalRamp": [
+          "#0d0b09",
+          "#282521",
+          "#46413c",
+          "#666058",
+          "#888179",
+          "#a9a49d",
+          "#ccc8c3",
+          "#f0eeea"
+        ]
+      },
+      "todo-ink": {
+        "role": "neutral",
+        "displayName": "Позначка «уточнити»: текст (робочий маркер, не бренд)",
+        "canonical": "oklch(47.0% 0.143 37)",
+        "tonalRamp": [
+          "#1b0400",
+          "#431305",
+          "#6e2914",
+          "#9d4023",
+          "#c36245",
+          "#de8d75",
+          "#f5b8a6",
+          "#ffe9e2"
+        ]
       }
     },
     "typographyMeta": {
@@ -328,86 +695,242 @@
     },
     "shadows": [
       {
+        "name": "shadow-rgb",
+        "value": "--shadow-rgb: 13 31 66",
+        "purpose": "Канал чорнильної тіні; усі тіні нижче пишуться як rgb(var(--shadow-rgb) / α)."
+      },
+      {
         "name": "nav-float",
-        "value": "0 1px 0 rgba(13,31,66,.04), 0 12px 32px -18px rgba(13,31,66,.28)",
-        "purpose": "Плаваюча навігація (разом із backdrop-filter: saturate(1.4) blur(14px))."
+        "value": "0 1px 0 rgb(13 31 66 / .04), 0 12px 32px -18px rgb(13 31 66 / .28)",
+        "purpose": "Плаваюча навігація (разом із backdrop-filter: saturate(1.4) blur(14px) на rgba(255,255,255,.86)); на телефоні лише 0 1px 0 rgb(13 31 66 / .08)."
       },
       {
         "name": "button-primary",
-        "value": "0 6px 16px -8px rgba(13,31,66,.45)",
+        "value": "0 6px 16px -8px rgb(13 31 66 / .45)",
         "purpose": "Головна кнопка в спокої; знята на navy-панелі."
       },
       {
         "name": "button-primary-hover",
-        "value": "0 10px 22px -10px rgba(13,31,66,.5)",
+        "value": "0 10px 22px -10px rgb(13 31 66 / .5)",
         "purpose": "Hover головної кнопки разом із translateY(-1px)."
       },
       {
         "name": "card-hover",
-        "value": "0 18px 40px -28px rgba(13,31,66,.45)",
-        "purpose": "Hover картки сценарію."
+        "value": "0 18px 40px -28px rgb(13 31 66 / .45)",
+        "purpose": "Hover картки сценарію (рамка cobalt-line, фото scale 1.03)."
+      },
+      {
+        "name": "stamp",
+        "value": "0 24px 48px -32px rgb(13 31 66 / .45)",
+        "purpose": "Штамп креслення на першому екрані сторінки послуги, що лежить поверх героя."
+      },
+      {
+        "name": "segment-pressed",
+        "value": "0 2px 6px -2px rgb(13 31 66 / .3)",
+        "purpose": "Натиснутий білий сегмент «Без станції»."
       },
       {
         "name": "menu",
-        "value": "0 20px 40px -20px rgba(13,31,66,.35)",
+        "value": "0 20px 40px -20px rgb(13 31 66 / .35)",
         "purpose": "Мобільне меню."
       },
       {
         "name": "mobile-bar",
-        "value": "0 -10px 24px -16px rgba(13,31,66,.35)",
+        "value": "0 -10px 24px -16px rgb(13 31 66 / .35)",
         "purpose": "Липка нижня панель на телефоні."
       },
       {
         "name": "slider-thumb",
         "value": "0 2px 8px rgba(10,79,214,.35)",
-        "purpose": "Бігунок повзунка; фокус 0 0 0 4px rgba(10,79,214,.25)."
+        "purpose": "Бігунок повзунка в спокої."
+      },
+      {
+        "name": "slider-thumb-focus",
+        "value": "0 0 0 3px var(--on-accent), 0 0 0 5px var(--cobalt)",
+        "purpose": "Кільце фокусу бігунка (outline самого input знято)."
+      },
+      {
+        "name": "nav-call-quiet",
+        "value": "inset 0 0 0 1.5px var(--rule-ui)",
+        "purpose": "Тиха кнопка дзвінка поруч із CTA на 721–1280px."
+      },
+      {
+        "name": "chart-contour",
+        "value": "inset 0 0 0 1px rgba(11,18,48,.35)",
+        "purpose": "Контур ≥3:1 світлих клітинок і стовпчиків графіків та зразків легенди."
       }
     ],
     "motion": [
       {
         "name": "ease-out-expo",
         "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Кнопки (.2s), стрілка посилання (.25s), масштаб фото картки (.6s)."
+        "purpose": "Єдина крива для всього руху. Вихід миттєвий."
       },
       {
         "name": "state-fast",
         "value": ".2s",
-        "purpose": "Колір, рамка, тінь кнопок і полів."
+        "purpose": "Колір, рамка, тінь і підйом кнопок, полів, перемикачів."
+      },
+      {
+        "name": "card-hover",
+        "value": ".25s (рамка, тінь), .6s (масштаб фото 1.03)",
+        "purpose": "Картка сценарію; стрілка сильного посилання й рядка послуги зсувається на 4px за .25s."
+      },
+      {
+        "name": "pen",
+        "value": "@keyframes pen: clip-path inset(-30% 100% -30% 0) → inset(-30% 0 -30% 0)",
+        "purpose": "«Інженерний розчерк» зліва направо."
+      },
+      {
+        "name": "pen-callouts",
+        "value": "pen .75s, затримки .45s / .7s / .95s",
+        "purpose": "Підписи на фото героя: об’єкт → розмір → строк."
+      },
+      {
+        "name": "pen-stamp",
+        "value": "pen .55s, рядки з .25s кроком 70ms",
+        "purpose": "Рядки штампу на сторінках послуг."
+      },
+      {
+        "name": "calc-mode-switch",
+        "value": "панель: opacity 220ms; результат: clip-path inset(0 100% 0 0) → 0, 420ms",
+        "purpose": "Перемикач Дім / Бізнес / Агро (Web Animations у main.js)."
+      },
+      {
+        "name": "kw-tick",
+        "value": "200ms, opacity .35 → 1, translateY(.14em) → 0",
+        "purpose": "Число «Рекомендована потужність» лише коли розмір станції змінився."
+      },
+      {
+        "name": "drop",
+        "value": ".26s, clip-path згори з round 16px, opacity .5 → 1",
+        "purpose": "Мобільне меню."
+      },
+      {
+        "name": "unfold",
+        "value": ".28s (FAQ), .32s (картка успіху)",
+        "purpose": "Розгортання вниз через clip-path."
+      },
+      {
+        "name": "settle",
+        "value": ".18s, opacity 0 → 1, translateY(-3px) → 0",
+        "purpose": "Помилки поля й підсумок помилок форми."
+      },
+      {
+        "name": "faq-icon",
+        "value": "rotate(45deg), .3s",
+        "purpose": "«+» у відкритому питанні."
+      },
+      {
+        "name": "chart-wave",
+        "value": ".45s клітинки (--i × 18ms), .55s стовпчики (--i × 35ms)",
+        "purpose": "Хвиля графіка лише на перемикачі «Без / Зі станцією»; під час введення .is-live: без затримки, .2s."
       },
       {
         "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce → transition/animation none, scroll-behavior auto",
-        "purpose": "Обов'язково для всіх сторінок."
+        "value": "prefers-reduced-motion: reduce → transition-property колір/тло/рамка/outline/opacity, .15s, без затримок; розчерки й зсуви вимкнено; меню, помилки, успіх, FAQ — fade .15s; scroll-behavior auto; графіки .no-motion",
+        "purpose": "Обов’язково для всіх сторінок."
       }
     ],
     "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width: 1700px"
+      },
+      {
+        "name": "narrow-desktop",
+        "value": "1280px"
+      },
       {
         "name": "tablet",
         "value": "1100px"
       },
       {
+        "name": "narrow-tablet",
+        "value": "900px"
+      },
+      {
         "name": "phone",
         "value": "720px"
+      },
+      {
+        "name": "chart-labels",
+        "value": "600px"
+      },
+      {
+        "name": "small-phone",
+        "value": "400px"
+      },
+      {
+        "name": "landscape-phone",
+        "value": "max-height: 500px and (orientation: landscape)"
       }
     ],
     "surfaces": {
       "grid-paper": "linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 24px 24px",
-      "hero-ground": "linear-gradient(100deg, #e5f1fd 0%, var(--sky) 45%, var(--sky) 100%)",
+      "hero-ground": "linear-gradient(100deg, var(--sky-0) 0%, var(--sky) 45%, var(--sky) 100%)",
       "hero-photo-mask": "linear-gradient(90deg, transparent 0, #000 6%)"
     },
     "ruleWeights": {
       "border": "1.5px",
       "divider": "1px",
-      "process-line": "2px dotted #9aa3b5",
+      "stamp-frame": "2px solid var(--rule-strong); рядки 1px var(--rule-ui)",
+      "group-rule": "2px solid var(--rule-strong) (група послуг, «Що входить», штамп)",
+      "process-line": "2px dotted var(--dots)",
       "link-strong-underline": "2px, offset .28em",
-      "focus-ring": "2px solid var(--cobalt), offset 3px",
+      "link-underline": "1px, offset .2em",
+      "todo-marker": "1.5px dashed var(--todo-line) (робочий маркер, не бренд)",
       "icon-stroke": "1.8"
     },
     "draftingAnnotation": {
       "photo": "Реальне фото об'єкта EnRay; розмірні лінії запечені в растр.",
       "labels": "Живий SVG <text>, viewBox = розмір растра, preserveAspectRatio xMidYMax slice; JetBrains Mono 500, fill var(--cobalt-deep), paint-order stroke, stroke #dcedfd 6px; aria-hidden, факти дубльовані в alt.",
       "content": "Лише підтверджені факти об'єкта: потужність, тип, рік, термін монтажу."
-    }
+    },
+    "focusRings": [
+      {
+        "name": "default",
+        "value": "outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 6px",
+        "purpose": "Глобальний :focus-visible на світлих поверхнях."
+      },
+      {
+        "name": "dark-surface",
+        "value": "outline-color: var(--focus-dark) (#6f9cff, 6.8:1 на navy)",
+        "purpose": "Усередині .request і .site-footer."
+      },
+      {
+        "name": "navy-field",
+        "value": "outline: 2px solid var(--focus-dark); outline-offset: 2px; border-color: var(--focus-dark); background: var(--field-focus)",
+        "purpose": "Поля, textarea й варіанти вибору на navy; caret-color focus-dark."
+      },
+      {
+        "name": "light-field",
+        "value": "outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt)",
+        "purpose": "calc-input і select на світлих калькуляторах."
+      },
+      {
+        "name": "slider",
+        "value": "0 0 0 3px var(--on-accent), 0 0 0 5px var(--cobalt) на бігунку",
+        "purpose": "Повзунок; outline input знято."
+      }
+    ],
+    "fontFaces": [
+      {
+        "family": "Onest",
+        "weights": "700 800 (змінний)",
+        "files": "Onest-var-{cyrillic,cyrillic-ext,latin}.woff2"
+      },
+      {
+        "family": "Golos Text",
+        "weights": "400 600 (змінний)",
+        "files": "GolosText-var-{cyrillic,cyrillic-ext,latin}.woff2"
+      },
+      {
+        "family": "JetBrains Mono",
+        "weights": "500",
+        "files": "JetBrainsMono-500-{cyrillic,cyrillic-ext,latin}.woff2"
+      }
+    ]
   },
   "components": [
     {
@@ -416,7 +939,7 @@
       "refersTo": "button-primary",
       "description": "Кобальтова дія: «Розрахувати», «Надіслати запит».",
       "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Розрахувати станцію</a>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-primary{background:var(--cobalt);color:#fff;box-shadow:0 6px 16px -8px rgba(13,31,66,.45);} .ds-btn-primary:hover{background:var(--cobalt-deep);transform:translateY(-1px);box-shadow:0 10px 22px -10px rgba(13,31,66,.5);} .ds-btn-primary:active{transform:translateY(0);}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-primary{background:var(--cobalt);color:var(--on-accent);box-shadow:0 6px 16px -8px rgb(var(--shadow-rgb) / .45);} .ds-btn-primary:hover{background:var(--cobalt-deep);transform:translateY(-1px);box-shadow:0 10px 22px -10px rgb(var(--shadow-rgb) / .5);} .ds-btn-primary:active{transform:translateY(0);}"
     },
     {
       "name": "Кнопка-контур",
@@ -424,7 +947,7 @@
       "refersTo": "button-outline",
       "description": "Друга дія поруч із головною: «Подзвонити».",
       "html": "<a class=\"ds-btn ds-btn-outline\" href=\"#\">Подзвонити</a>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{background:var(--paper);border-color:var(--cobalt);color:var(--cobalt);}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{background:var(--paper);border-color:var(--cobalt);color:var(--cobalt);}"
     },
     {
       "name": "Плаваюча навігація",
@@ -432,7 +955,7 @@
       "refersTo": "nav-floating",
       "description": "Біла напівпрозора панель над героєм із розмиттям.",
       "html": "<div class=\"ds-wrap\"><div class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-mark\"></span>ENRAY</a><nav class=\"ds-links\"><a href=\"#\">Для дому</a><a href=\"#\">Для бізнесу</a><a href=\"#\">Агро</a><a href=\"#\">Кейси</a></nav><a class=\"ds-phone\" href=\"#\">+38 067 672 22 44</a><a class=\"ds-cta\" href=\"#\">Розрахувати</a></div></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-wrap{padding:24px;background:linear-gradient(100deg,#e5f1fd,var(--sky));} .ds-nav{display:flex;align-items:center;gap:24px;min-height:72px;padding:10px 20px;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);border-radius:18px;box-shadow:0 1px 0 rgba(13,31,66,.04),0 12px 32px -18px rgba(13,31,66,.28);} .ds-brand{display:inline-flex;align-items:center;gap:10px;font:800 28px/1 var(--f-display);letter-spacing:-.01em;color:var(--ink);text-decoration:none;} .ds-mark{width:32px;height:30px;border-radius:4px;background:linear-gradient(135deg,#0a4fd6 0 40%,#22b04b 40% 70%,#f2b000 70%);} .ds-links{display:flex;gap:22px;margin-left:auto;} .ds-links a,.ds-phone{font:500 17px/1 var(--f-body);color:var(--ink);text-decoration:none;white-space:nowrap;} .ds-links a:hover{color:var(--cobalt);} .ds-phone{font-weight:400;font-variant-numeric:tabular-nums;} .ds-cta{display:inline-flex;align-items:center;min-height:46px;padding:0 1.1em;border-radius:10px;background:var(--cobalt);color:#fff;font:600 17px/1 var(--f-body);text-decoration:none;} .ds-cta:hover{background:var(--cobalt-deep);} .ds-nav a:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px;}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-wrap{padding:24px;background:linear-gradient(100deg,var(--sky-0),var(--sky));} .ds-nav{display:flex;align-items:center;gap:24px;min-height:72px;padding:10px 20px;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);border-radius:18px;box-shadow:0 1px 0 rgb(var(--shadow-rgb) / .04),0 12px 32px -18px rgb(var(--shadow-rgb) / .28);} .ds-brand{display:inline-flex;align-items:center;gap:10px;font:800 28px/1 var(--f-display);letter-spacing:-.01em;color:var(--ink);text-decoration:none;} .ds-mark{width:32px;height:30px;border-radius:4px;background:linear-gradient(135deg,#0a4fd6 0 40%,#22b04b 40% 70%,#f2b000 70%);} .ds-links{display:flex;gap:22px;margin-left:auto;} .ds-links a,.ds-phone{font:500 17px/1 var(--f-body);color:var(--ink);text-decoration:none;white-space:nowrap;} .ds-links a:hover{color:var(--cobalt);} .ds-phone{font-weight:400;font-variant-numeric:tabular-nums;} .ds-cta{display:inline-flex;align-items:center;min-height:46px;padding:0 1.1em;border-radius:10px;background:var(--cobalt);color:var(--on-accent);font:600 17px/1 var(--f-body);text-decoration:none;} .ds-cta:hover{background:var(--cobalt-deep);} .ds-nav a:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px;}"
     },
     {
       "name": "Смуга фактів",
@@ -440,23 +963,31 @@
       "refersTo": "facts-strip",
       "description": "Три перевірені факти під героєм у рамці 1.5px.",
       "html": "<ul class=\"ds-facts\"><li><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg><span><b>7–10 днів</b> — монтаж</span></li><li><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12l4 4L19 6\"/></svg><span>Документи й підключення — на нас</span></li></ul>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-facts{list-style:none;margin:0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;border:1.5px solid var(--rule-strong);border-radius:10px;} .ds-facts li{display:flex;align-items:center;gap:12px;font:400 18px/1.3 var(--f-body);color:var(--ink-2);} .ds-facts b{color:var(--ink);font-weight:600;} .ds-facts .ds-ico{color:var(--ink);}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-facts{list-style:none;margin:0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;border:1.5px solid var(--rule-strong);border-radius:10px;} .ds-facts li{display:flex;align-items:center;gap:12px;font:400 18px/1.3 var(--f-body);color:var(--ink-2);} .ds-facts b{color:var(--ink);font-weight:600;} .ds-facts .ds-ico{color:var(--ink);}"
+    },
+    {
+      "name": "Рядки послуг",
+      "kind": "list",
+      "refersTo": "svc-rows",
+      "description": "«Що ми робимо»: група з кобальтовою іконкою й лінією rule-strong 2px; послуги — клікабельні рядки специфікації, не картки.",
+      "html": "<div class=\"ds-svc-group\"><h3><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/></svg>Сонячна енергетика</h3><ul class=\"ds-svc-list\"><li><a class=\"ds-svc\" href=\"#\"><span class=\"ds-svc-name\">Проєктування СЕС</span><span class=\"ds-svc-what\">виїзд і заміри, оцінка підключення до мережі, проєкт під ваше споживання</span><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></li><li><a class=\"ds-svc\" href=\"#\"><span class=\"ds-svc-name\">Будівництво СЕС</span><span class=\"ds-svc-what\">дахові й наземні станції: кріплення, панелі, інвертор і акумулятори, налагодження</span><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></li></ul></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-svc-group{max-width:640px;font-family:var(--f-body);} .ds-svc-group h3{display:flex;align-items:center;gap:12px;margin:0;padding-bottom:14px;border-bottom:2px solid var(--rule-strong);font:700 24px/1.15 var(--f-display);letter-spacing:-.01em;color:var(--ink);} .ds-svc-group h3 .ds-ico{color:var(--cobalt);} .ds-svc-list{list-style:none;margin:0;padding:0;} .ds-svc-list li{border-bottom:1px solid var(--rule);} .ds-svc{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;row-gap:4px;align-items:center;min-height:44px;padding:16px 10px;margin:0 -10px;border-radius:10px;color:var(--ink);text-decoration:none;transition:background-color .2s;} .ds-svc-name{font:600 19px/1.25 var(--f-body);transition:color .2s;} .ds-svc-what{grid-column:1;font-size:16px;line-height:1.45;color:var(--ink-2);} .ds-svc .ds-ico{grid-column:2;grid-row:1/3;font-size:22px;color:var(--ink);transition:transform .25s cubic-bezier(.16,1,.3,1),color .2s;} .ds-svc:hover{background:var(--paper-2);} .ds-svc:hover .ds-svc-name,.ds-svc:hover .ds-ico{color:var(--cobalt);} .ds-svc:hover .ds-ico{transform:translateX(4px);} .ds-svc:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px;}"
     },
     {
       "name": "Картка сценарію з вкладкою",
       "kind": "card",
       "refersTo": "scenario-card",
-      "description": "Сценарій (Дім / Бізнес / Агро): реальне фото з врізаною вкладкою, опис і spec-рядок моно.",
+      "description": "Сценарій (Дім / Бізнес / Агро): біла картка з рамкою rule-ui (3.8:1), фото з врізаною вкладкою, опис і spec-рядок моно; hover — рамка cobalt-line, тінь, фото 1.03.",
       "html": "<article class=\"ds-scn\"><div class=\"ds-media\"><span class=\"ds-tab\">Дім</span><div class=\"ds-ph\"></div></div><div class=\"ds-body\"><p>Резерв на час відключень: гібридна станція з акумулятором.</p><p class=\"ds-spec\">приклад: дахова СЕС 6 кВт · 2024</p></div></article>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-scn{max-width:420px;border:1.5px solid var(--rule);border-radius:var(--radius);padding:10px;background:var(--paper);display:grid;transition:border-color .25s,box-shadow .25s;} .ds-scn:hover{border-color:#9fb6d6;box-shadow:0 18px 40px -28px rgba(13,31,66,.45);} .ds-media{position:relative;overflow:hidden;border-radius:calc(var(--radius) - 4px);} .ds-ph{aspect-ratio:720/376;background:linear-gradient(160deg,#9cc2ea,#4a6a8f 60%,#7a5a44);} .ds-tab{position:absolute;left:0;top:0;padding:12px 18px;background:var(--paper);border-bottom-right-radius:14px;font:500 18px/1 var(--f-body);color:var(--ink);} .ds-body{padding:16px 10px 6px;display:grid;gap:12px;font:400 16px/1.55 var(--f-body);} .ds-body p{margin:0;color:var(--ink-2);} .ds-spec{font:500 13px/1.4 var(--f-mono)!important;color:var(--cobalt-line)!important;letter-spacing:.01em;}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-scn{max-width:420px;border:1.5px solid var(--rule-ui);border-radius:var(--radius);padding:10px;background:var(--paper);display:grid;transition:border-color .25s,box-shadow .25s;} .ds-scn:hover{border-color:var(--cobalt-line);box-shadow:0 18px 40px -28px rgb(var(--shadow-rgb) / .45);} .ds-media{position:relative;overflow:hidden;border-radius:calc(var(--radius) - 4px);} .ds-ph{aspect-ratio:720/376;background:linear-gradient(160deg,#9cc2ea,#4a6a8f 60%,#7a5a44);} .ds-tab{position:absolute;left:0;top:0;padding:12px 18px;background:var(--paper);border-bottom-right-radius:14px;font:500 18px/1 var(--f-body);color:var(--ink);} .ds-body{padding:16px 10px 6px;display:grid;gap:12px;font:400 16px/1.55 var(--f-body);} .ds-body p{margin:0;color:var(--ink-2);} .ds-spec{font:500 13px/1.4 var(--f-mono)!important;color:var(--cobalt-line)!important;letter-spacing:.01em;} .ds-scn:hover .ds-ph{transform:scale(1.03);} .ds-ph{transition:transform .6s cubic-bezier(.16,1,.3,1);}"
     },
     {
       "name": "Калькулятор",
       "kind": "input",
       "refersTo": "calc-result",
-      "description": "Повзунок рахунку на сітці й картка результату з кобальтовим значенням кВт.",
+      "description": "Повзунок на сітці (заповнення кобальтом, решта доріжки track #728097) і картка результату з рамкою cobalt-line та кобальтовим значенням кВт.",
       "html": "<div class=\"ds-calc\"><input class=\"ds-range\" type=\"range\" min=\"1000\" max=\"15000\" step=\"500\" value=\"5000\" aria-label=\"Рахунок за світло\"><div class=\"ds-res\"><p class=\"ds-kw\">Рекомендована потужність: <b>≈ 12 кВт</b></p><p class=\"ds-note\">Орієнтовно; точну потужність і ціну інженер порахує після огляду.</p><a class=\"ds-link\" href=\"#\">Отримати детальний розрахунок <svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-calc{display:grid;gap:24px;padding:32px;background:var(--grid-bg),var(--sky-2);} .ds-range{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;} .ds-range::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--cobalt) 28.6%,#c4cad3 28.6%);} .ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:#fff;border:6px solid var(--cobalt);box-shadow:0 2px 8px rgba(10,79,214,.35);} .ds-range:focus-visible{outline:none;} .ds-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(10,79,214,.25);} .ds-res{background:rgba(240,247,254,.78);border:1.5px solid var(--cobalt-line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;} .ds-res p{margin:0;} .ds-kw{font:700 26px/1.15 var(--f-display);letter-spacing:-.015em;color:var(--ink);} .ds-kw b{font-weight:800;color:var(--cobalt);white-space:nowrap;font-variant-numeric:tabular-nums;} .ds-note{font:400 14px/1.5 var(--f-body);color:var(--muted);} .ds-link{display:inline-flex;align-items:center;gap:.4em;width:fit-content;font:600 18px/1.2 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.28em;} .ds-link .ds-ico{transition:transform .25s cubic-bezier(.16,1,.3,1);} .ds-link:hover{color:var(--cobalt);} .ds-link:hover .ds-ico{transform:translateX(4px);} .ds-link:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-calc{display:grid;gap:24px;padding:32px;background:var(--grid-bg),var(--sky-2);} .ds-range{-webkit-appearance:none;appearance:none;touch-action:pan-y;width:100%;height:44px;background:transparent;cursor:pointer;} .ds-range::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--cobalt) 28.6%,var(--track) 28.6%);} .ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:var(--on-accent);border:6px solid var(--cobalt);box-shadow:0 2px 8px rgba(10,79,214,.35);} .ds-range:focus-visible{outline:none;} .ds-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--on-accent),0 0 0 5px var(--cobalt);} .ds-res{background:rgba(240,247,254,.78);border:1.5px solid var(--cobalt-line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;} .ds-res p{margin:0;} .ds-kw{font:700 26px/1.15 var(--f-display);letter-spacing:-.015em;color:var(--ink);} .ds-kw b{font-weight:800;color:var(--cobalt);white-space:nowrap;font-variant-numeric:tabular-nums;} .ds-note{font:400 14px/1.5 var(--f-body);color:var(--muted);} .ds-link{display:inline-flex;min-height:44px;align-items:center;gap:.4em;width:fit-content;font:600 18px/1.2 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.28em;} .ds-link .ds-ico{transition:transform .25s cubic-bezier(.16,1,.3,1);} .ds-link:hover{color:var(--cobalt);} .ds-link:hover .ds-ico{transform:translateX(4px);} .ds-link:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}"
     },
     {
       "name": "Картка кейсу зі spec-мета",
@@ -464,7 +995,7 @@
       "refersTo": "case-card",
       "description": "Реальний кейс: назва · місто · рік, широке фото, мета потужність / монтаж / задача.",
       "html": "<article class=\"ds-case\"><h3><b>Наземна СЕС 30 кВт</b> · Ладижин · 2026</h3><div class=\"ds-ph\"></div><dl class=\"ds-meta\"><div><dt>Потужність</dt><dd>30 кВт</dd></div><div><dt>Монтаж</dt><dd>1 тиждень</dd></div><div><dt>Задача</dt><dd class=\"ds-txt\">«зелений тариф»</dd></div></dl></article>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-case{max-width:620px;border:1.5px solid var(--rule-strong);border-radius:var(--radius);padding:16px;display:grid;gap:14px;background:var(--paper);} .ds-case h3{margin:0;font:400 18px/1.3 var(--f-body);color:var(--ink);} .ds-case h3 b{font-weight:600;} .ds-ph{aspect-ratio:695/165;border-radius:calc(var(--radius) - 6px);background:linear-gradient(170deg,#c9d6e6,#5a6c84 55%,#6f7a4a);} .ds-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0;} .ds-meta div{display:flex;gap:8px;align-items:baseline;} .ds-meta dt{font:400 16px/1.3 var(--f-body);color:var(--muted);} .ds-meta dd{margin:0;font:500 14px/1.3 var(--f-mono);color:var(--ink);} .ds-meta dd.ds-txt{font:500 16px/1.3 var(--f-body);}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-case{max-width:620px;border:1.5px solid var(--rule-strong);border-radius:var(--radius);padding:16px;display:grid;gap:14px;background:var(--paper);} .ds-case h3{margin:0;font:400 18px/1.3 var(--f-body);color:var(--ink);} .ds-case h3 b{font-weight:600;} .ds-ph{aspect-ratio:16/10;border-radius:calc(var(--radius) - 6px);background:linear-gradient(170deg,#c9d6e6,#5a6c84 55%,#6f7a4a);} .ds-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0;} .ds-meta div{display:flex;gap:8px;align-items:baseline;} .ds-meta dt{font:400 16px/1.3 var(--f-body);color:var(--muted);} .ds-meta dd{margin:0;font:500 14px/1.3 var(--f-mono);color:var(--ink);} .ds-meta dd.ds-txt{font:500 16px/1.3 var(--f-body);}"
     },
     {
       "name": "Етапи роботи",
@@ -472,23 +1003,31 @@
       "refersTo": "process-steps",
       "description": "П'ять етапів: номер, назва, кобальтова точка на пунктирі, опис.",
       "html": "<ol class=\"ds-steps\"><li><span class=\"ds-n\">01</span><b>Виїзд</b><span>огляд даху чи ділянки</span></li><li><span class=\"ds-n\">02</span><b>Проєкт</b><span>розрахунок генерації</span></li><li><span class=\"ds-n\">03</span><b>Монтаж</b><span>7–10 днів</span></li></ol>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);position:relative;font-family:var(--f-body);} .ds-steps::before{content:'';position:absolute;left:16%;right:16%;top:66px;border-top:2px dotted #9aa3b5;} .ds-steps li{display:grid;gap:6px;justify-items:center;text-align:center;} .ds-n{font:500 20px/1 var(--f-body);color:var(--ink-2);font-variant-numeric:tabular-nums;} .ds-steps b{position:relative;padding-bottom:26px;font:500 20px/1.15 var(--f-body);color:var(--ink);} .ds-steps b::after{content:'';position:absolute;left:calc(50% - 7px);bottom:0;width:14px;height:14px;border-radius:50%;background:var(--cobalt);box-shadow:0 0 0 4px var(--paper);} .ds-steps li>span:last-child{font-size:14px;line-height:1.4;color:var(--muted);max-width:13ch;}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);position:relative;font-family:var(--f-body);} .ds-steps::before{content:'';position:absolute;left:16%;right:16%;top:66px;border-top:2px dotted var(--dots);} .ds-steps li{display:grid;gap:6px;justify-items:center;text-align:center;} .ds-n{font:500 20px/1 var(--f-body);color:var(--ink-2);font-variant-numeric:tabular-nums;} .ds-steps b{position:relative;padding-bottom:26px;font:500 20px/1.15 var(--f-body);color:var(--ink);} .ds-steps b::after{content:'';position:absolute;left:calc(50% - 7px);bottom:0;width:14px;height:14px;border-radius:50%;background:var(--cobalt);box-shadow:0 0 0 4px var(--paper);} .ds-steps li>span:last-child{font-size:14px;line-height:1.4;color:var(--muted);max-width:13ch;}"
     },
     {
       "name": "Панель заявки (navy)",
       "kind": "input",
       "refersTo": "request-panel",
-      "description": "Темно-синя панель з формою: поля на navy, кобальтова кнопка на всю ширину.",
-      "html": "<div class=\"ds-req\"><h2>Отримати розрахунок</h2><p>Інженер передзвонить у робочий час, 09:00–18:00.</p><form class=\"ds-form\" onsubmit=\"return false\"><label class=\"ds-f\">Ім'я<input type=\"text\"></label><label class=\"ds-f\">Телефон<input type=\"tel\" placeholder=\"+38 0__ ___ __ __\"></label><button class=\"ds-submit\" type=\"submit\">Надіслати запит</button></form></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-req{background:var(--navy);color:var(--on-navy);border-radius:var(--radius);padding:30px;display:grid;gap:14px;font-family:var(--f-body);} .ds-req h2{margin:0;font:700 32px/1.1 var(--f-display);color:#fff;} .ds-req p{margin:0;color:var(--on-navy-muted);font-size:16px;} .ds-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;} .ds-f{display:grid;gap:6px;font-size:14px;color:var(--on-navy-muted);} .ds-f input{min-height:50px;padding:0 14px;border-radius:10px;border:1.5px solid #3a4b66;background:var(--navy-2);color:#fff;font:400 17px/1 var(--f-body);transition:border-color .2s,background-color .2s;} .ds-f input::placeholder{color:#8ea0b8;} .ds-f input:hover{border-color:#5a6f90;} .ds-f input:focus{outline:none;border-color:#6f9cff;background:#172b49;} .ds-submit{grid-column:1/-1;min-height:60px;border:0;border-radius:10px;background:var(--cobalt);color:#fff;font:500 20px/1 var(--f-body);cursor:pointer;transition:background-color .2s;} .ds-submit:hover{background:var(--cobalt-deep);} .ds-submit:focus-visible{outline:2px solid #6f9cff;outline-offset:3px;}"
+      "description": "Темно-синя панель: позначка обов’язкових полів (form-req), поля navy-2 з рамкою field-line, фокус — кільце 2px focus-dark з відступом 2px, помилка error-line/error-ink, кобальтова кнопка на всю ширину без тіні.",
+      "html": "<div class=\"ds-req\"><h2>Отримати розрахунок</h2><p class=\"ds-lead\">Інженер передзвонить у робочий час, 09:00–18:00.</p><form class=\"ds-form\" onsubmit=\"return false\"><p class=\"ds-form-req\"><span class=\"ds-mark\" aria-hidden=\"true\">*</span> — обов’язкові поля, решта за бажанням.</p><div class=\"ds-f\"><label for=\"ds-n\">Ім’я <span class=\"ds-mark\" aria-hidden=\"true\">*</span></label><input id=\"ds-n\" type=\"text\" required></div><div class=\"ds-f\"><label for=\"ds-t\">Телефон <span class=\"ds-mark\" aria-hidden=\"true\">*</span></label><input id=\"ds-t\" type=\"tel\" placeholder=\"+38 0__ ___ __ __\" aria-invalid=\"true\"><p class=\"ds-err\">Вкажіть номер телефону</p></div><button class=\"ds-submit\" type=\"submit\">Надіслати запит</button></form></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-req{background:var(--navy);color:var(--on-navy);border-radius:var(--radius);padding:30px;display:grid;gap:14px;font-family:var(--f-body);} .ds-req h2{margin:0;font:700 32px/1.1 var(--f-display);color:var(--on-accent);} .ds-req p{margin:0;} .ds-lead{color:var(--on-navy-muted);font-size:16px;} .ds-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;} .ds-form-req{grid-column:1/-1;font-size:14px;color:var(--on-navy-muted);} .ds-mark{margin-left:2px;font-weight:700;color:var(--focus-dark);} .ds-f{display:grid;gap:6px;min-width:0;} .ds-f label{font-size:14px;color:var(--on-navy-muted);} .ds-f input{width:100%;min-height:50px;padding:0 14px;border-radius:10px;border:1.5px solid var(--field-line);background:var(--navy-2);color:var(--on-accent);caret-color:var(--focus-dark);font:400 17px/1 var(--f-body);transition:border-color .2s,background-color .2s;} .ds-f input::placeholder{color:var(--field-placeholder);} .ds-f input:hover{border-color:var(--field-line-hover);} .ds-f input:focus{outline:2px solid var(--focus-dark);outline-offset:2px;border-color:var(--focus-dark);background:var(--field-focus);} .ds-f input[aria-invalid=true]{border-color:var(--error-line);} .ds-err{margin:2px 0 0;font-size:14px;line-height:1.35;color:var(--error-ink);animation:ds-settle .18s cubic-bezier(.16,1,.3,1);} .ds-err::before{content:\"! \";font-weight:700;} @keyframes ds-settle{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}} .ds-submit{grid-column:1/-1;margin-top:4px;min-height:60px;border:0;border-radius:10px;background:var(--cobalt);color:var(--on-accent);font:500 20px/1 var(--f-body);cursor:pointer;transition:background-color .2s;} .ds-submit:hover{background:var(--cobalt-deep);} .ds-submit:focus-visible{outline:2px solid var(--focus-dark);outline-offset:3px;} .ds-submit[disabled]{opacity:.6;cursor:progress;}"
+    },
+    {
+      "name": "Вибір «Що потрібно» (pick--6)",
+      "kind": "control",
+      "refersTo": "pick-6",
+      "description": "Шість радіо-варіантів у заявці головної: окремі кнопки з рамкою field-line (3.8:1 на navy) у сітці 3×2 (2×3 на телефоні); обраний — кобальт.",
+      "html": "<div class=\"ds-wrap\"><fieldset class=\"ds-pf\"><legend>Що потрібно <span class=\"ds-mark\" aria-hidden=\"true\">*</span></legend><div class=\"ds-pick\"><label><input type=\"radio\" name=\"o\" checked><span>Станція для дому</span></label><label><input type=\"radio\" name=\"o\"><span>Станція для бізнесу</span></label><label><input type=\"radio\" name=\"o\"><span>Станція для поливу</span></label><label><input type=\"radio\" name=\"o\"><span>Обслуговування СЕС</span></label><label><input type=\"radio\" name=\"o\"><span>Електромонтаж</span></label><label><input type=\"radio\" name=\"o\"><span>Охорона й камери</span></label></div></fieldset></div>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-wrap{background:var(--navy);padding:24px;border-radius:var(--radius);max-width:560px;font-family:var(--f-body);} .ds-pf{margin:0;padding:0;border:0;} .ds-pf legend{padding:0;margin-bottom:6px;font-size:14px;color:var(--on-navy-muted);} .ds-mark{margin-left:2px;font-weight:700;color:var(--focus-dark);} .ds-pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;} .ds-pick label{position:relative;} .ds-pick input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;} .ds-pick span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 10px;text-align:center;border-radius:10px;border:1.5px solid var(--field-line);background:var(--navy-2);font:600 16px/1.2 var(--f-body);color:var(--on-navy);transition:background-color .2s,color .2s;} .ds-pick label:hover span{background:var(--field-hover);} .ds-pick input:checked+span{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);} .ds-pick input:focus-visible+span{outline:2px solid var(--focus-dark);outline-offset:2px;}"
     },
     {
       "name": "Мобільна панель дзвінка",
       "kind": "custom",
       "refersTo": "mobile-bar",
-      "description": "Лише ≤720px: фіксована внизу, «Подзвонити» (контур) і «Viber».",
+      "description": "Лише ≤720px: фіксована внизу суцільна біла панель, «Подзвонити» (контур) і «Viber» (hover viber-deep).",
       "html": "<div class=\"ds-bar\"><a class=\"ds-btn ds-btn-outline\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z\"/></svg>Подзвонити</a><a class=\"ds-btn ds-btn-viber\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M12 2.5c4.9 0 8.5 2.6 8.5 8.3 0 5.6-3.6 8.2-8.5 8.2-.8 0-1.6-.1-2.3-.2L6 21.5v-3.6C4.3 16.5 3.5 14 3.5 10.8 3.5 5.1 7.1 2.5 12 2.5z\"/></svg>Viber</a></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-bar{max-width:390px;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px;background:rgba(255,255,255,.96);box-shadow:0 -10px 24px -16px rgba(13,31,66,.35);} .ds-bar .ds-btn{min-height:52px;font-size:18px;} .ds-btn-outline{background:transparent;color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{border-color:var(--cobalt);color:var(--cobalt);} .ds-btn-viber{background:var(--viber);color:#fff;} .ds-btn-viber:hover{background:#5640d6;}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.15em;border-radius:10px;border:1.5px solid transparent;font:600 17px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s,border-color .2s,box-shadow .2s,transform .2s cubic-bezier(.16,1,.3,1);} .ds-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;} .ds-ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;} .ds-bar{max-width:390px;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px;background:var(--paper);box-shadow:0 -10px 24px -16px rgb(var(--shadow-rgb) / .35);} .ds-bar .ds-btn{min-height:52px;font-size:18px;} .ds-btn-outline{background:var(--paper);color:var(--ink);border-color:var(--rule-strong);} .ds-btn-outline:hover{border-color:var(--cobalt);color:var(--cobalt);} .ds-btn-viber{background:var(--viber);color:var(--on-accent);} .ds-btn-viber:hover{background:var(--viber-deep);}"
     },
     {
       "name": "Перемикач «Без станції / Зі станцією»",
@@ -496,7 +1035,7 @@
       "refersTo": "segmented-toggle",
       "description": "Капсула sky з двома кнопками; активна «Зі станцією» — кобальт. Єдина взаємодія, що запускає хвилю графіка.",
       "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"Порівняння\"><button type=\"button\" aria-pressed=\"false\">Без станції</button><button type=\"button\" aria-pressed=\"true\" data-on>Зі станцією</button></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-seg{display:inline-flex;gap:4px;padding:4px;background:var(--sky);border-radius:14px;font-family:'Golos Text',system-ui,sans-serif} .ds-seg button{min-height:44px;padding:0 18px;border:0;border-radius:10px;background:transparent;font:600 16px/1 inherit;color:var(--ink-2);cursor:pointer;transition:background-color .25s cubic-bezier(.16,1,.3,1),color .25s} .ds-seg button:hover{color:var(--ink)} .ds-seg button[aria-pressed=true]{background:var(--paper);color:var(--ink);box-shadow:0 2px 6px -2px rgba(13,31,66,.3)} .ds-seg button[data-on][aria-pressed=true]{background:var(--cobalt);color:#fff} .ds-seg button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} *{box-sizing:border-box;} .ds-seg{display:inline-flex;gap:4px;padding:4px;background:var(--sky);border-radius:14px;font-family:var(--f-body)} .ds-seg button{min-height:44px;padding:0 18px;border:0;border-radius:10px;background:transparent;font:600 16px/1 inherit;color:var(--ink-2);cursor:pointer;transition:background-color .25s cubic-bezier(.16,1,.3,1),color .25s} .ds-seg button:hover{color:var(--ink)} .ds-seg button[aria-pressed=true]{background:var(--paper);color:var(--ink);box-shadow:0 2px 6px -2px rgb(var(--shadow-rgb) / .3)} .ds-seg button[data-on][aria-pressed=true]{background:var(--cobalt);color:var(--on-accent)} .ds-seg button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}"
     },
     {
       "name": "Місячний енергетичний графік",
@@ -504,7 +1043,7 @@
       "refersTo": "energy-chart",
       "description": "12 стовпчиків: сірий — мережа, жовтий — частка станції, пунктир cobalt-line — рівень порівняння, обвідка — найслабший місяць, штрихування — поза сезоном.",
       "html": "<figure class=\"ds-chart\" aria-hidden=\"true\"><div class=\"ds-cols\"><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"\" style=\"--h:70%;--s:55%\"><i></i></span><span class=\"\" style=\"--h:88%;--s:88%\"><i></i></span><span class=\"\" style=\"--h:95%;--s:95%\"><i></i></span><span class=\"\" style=\"--h:100%;--s:100%\"><i></i></span><span class=\"\" style=\"--h:100%;--s:100%\"><i></i></span><span class=\"\" style=\"--h:95%;--s:95%\"><i></i></span><span class=\"weak\" style=\"--h:80%;--s:58%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><span class=\"off\" style=\"--h:100%;--s:0%\"><i></i></span><b class=\"ds-cap\" style=\"--c:62%\"></b></div><div class=\"ds-scale\"><span>січ</span><span>лют</span><span>бер</span><span>кві</span><span>тра</span><span>чер</span><span>лип</span><span>сер</span><span>вер</span><span>жов</span><span>лис</span><span>гру</span></div></figure>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-chart{margin:0;padding:20px;background:#fff;border:1.5px solid var(--cobalt-line);border-radius:14px;max-width:560px} .ds-cols{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:6px;height:150px;align-items:end} .ds-cols span{position:relative;height:var(--h);background:var(--st-grid);border-radius:4px 4px 0 0;overflow:hidden} .ds-cols span i{position:absolute;left:0;right:0;bottom:0;height:var(--s);background:var(--st-sun)} .ds-cols span.off{height:100%;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(185,200,220,.45) 6px 7px)} .ds-cols span.weak{box-shadow:inset 0 0 0 2px var(--cobalt)} .ds-cap{position:absolute;left:0;right:0;bottom:var(--c);border-top:2px dashed var(--cobalt-line)} .ds-scale{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);text-align:center;font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} *{box-sizing:border-box;} .ds-chart{margin:0;padding:20px;background:var(--paper);border:1.5px solid var(--cobalt-line);border-radius:14px;max-width:560px} .ds-cols{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:6px;height:150px;align-items:end} .ds-cols span{position:relative;box-shadow:inset 0 0 0 1px rgba(11,18,48,.35);height:var(--h);background:var(--st-grid);border-radius:4px 4px 0 0;overflow:hidden} .ds-cols span i{position:absolute;left:0;right:0;bottom:0;height:var(--s);background:var(--st-sun)} .ds-cols span.off{height:100%;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(185,200,220,.45) 6px 7px)} .ds-cols span.weak{box-shadow:inset 0 0 0 2px var(--cobalt)} .ds-cap{position:absolute;left:0;right:0;bottom:var(--c);border-top:2px dashed var(--cobalt-line)} .ds-scale{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);text-align:center;font:500 12px/1 var(--f-mono);color:var(--muted)}"
     },
     {
       "name": "Смуга доби з відключеннями",
@@ -512,7 +1051,7 @@
       "refersTo": "energy-chart",
       "description": "24 клітинки годин зі шкалою 00–24: ink — без світла, сірий — мережа, жовтий — сонце, кобальт — акумулятор.",
       "html": "<div class=\"ds-day\" aria-hidden=\"true\"><div class=\"ds-cells\"><span class=\"g\"></span><span class=\"g\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"s\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"g\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"b\"></span><span class=\"g\"></span><span class=\"g\"></span></div><div class=\"ds-scale\"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-day{max-width:560px} .ds-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:90px} .ds-cells span{border-radius:3px;background:var(--st-grid)} .ds-cells .s{background:var(--st-sun)} .ds-cells .b{background:var(--cobalt)} .ds-cells .d{background:var(--ink)} .ds-scale{display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);font:500 13px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--muted)}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} *{box-sizing:border-box;} .ds-day{max-width:560px} .ds-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:90px} .ds-cells span{border-radius:3px;box-shadow:inset 0 0 0 1px rgba(11,18,48,.35);background:var(--st-grid)} .ds-cells .s{background:var(--st-sun)} .ds-cells .b{background:var(--cobalt)} .ds-cells .d{background:var(--ink)} .ds-scale{display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1.5px solid var(--rule-strong);font:500 13px/1 var(--f-mono);color:var(--muted)}"
     },
     {
       "name": "Результат калькулятора з міні-графіком",
@@ -520,7 +1059,7 @@
       "refersTo": "calc-result",
       "description": "Мітка режиму даних, велике число з одиницею, одне речення-висновок, живий міні-графік і примітка з методикою.",
       "html": "<div class=\"ds-res\"><p class=\"ds-l\">Станція закриває за сезон · приклад</p><p class=\"ds-n\">≈ 93&nbsp;<span>%</span></p><p class=\"ds-s\">Насосам потрібно ≈ 43 900 кВт·год за сезон. Щоб закрити й вересень, потрібно ≈ 70 кВт панелей.</p><div class=\"ds-mini\"><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:82%\"></i><i style=\"--h:96%\"></i><i style=\"--h:100%\"></i><i style=\"--h:100%\"></i><i style=\"--h:96%\"></i><i style=\"--h:72%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i><i style=\"--h:0%\"></i></div><p class=\"ds-note\">Орієнтовно: 1 кВт панелей дає ≈ 1 150 кВт·год на рік. Точний розрахунок зробить інженер.</p></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-res{max-width:520px;padding:28px;border:1.5px solid var(--cobalt-line);border-radius:14px;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px,var(--sky-2);font-family:'Golos Text',system-ui,sans-serif;display:grid;gap:8px} .ds-res p{margin:0} .ds-l{font-size:15px;color:var(--ink-2)} .ds-n{font:800 64px/1 Onest,system-ui,sans-serif;color:var(--ink);font-variant-numeric:tabular-nums} .ds-n span{font-size:.55em} .ds-s{font-size:17px;color:var(--ink-2)} .ds-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:72px;align-items:end} .ds-mini i{height:var(--h);background:var(--st-sun);border-radius:3px 3px 0 0} .ds-note{font-size:14px;color:var(--muted)}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} *{box-sizing:border-box;} .ds-res{max-width:520px;padding:28px;border:1.5px solid var(--cobalt-line);border-radius:14px;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px,var(--sky-2);font-family:var(--f-body);display:grid;gap:8px} .ds-res p{margin:0} .ds-l{font-size:15px;color:var(--ink-2)} .ds-n{font:800 64px/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums} .ds-n span{font-size:.55em} .ds-s{font-size:17px;color:var(--ink-2)} .ds-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:72px;align-items:end} .ds-mini i{height:var(--h);background:var(--st-sun);border-radius:3px 3px 0 0} .ds-note{font-size:14px;color:var(--muted)}"
     },
     {
       "name": "Питання й відповідь",
@@ -528,7 +1067,15 @@
       "refersTo": "faq-item",
       "description": "details/summary з лінійним «+», що повертається на 45°; роздільники rule.",
       "html": "<div class=\"ds-faq\"><details open><summary>Чи можна поливати там, де немає мережі?<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></summary><p>Так. Станцію в Луці-Мелешківській ми будували саме для автономного поливу саду.</p></details><details><summary>Скільки триває монтаж?<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></summary><p>Станцію 100 кВт змонтували за 10 днів.</p></details></div>",
-      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--rule:#c7d0dd;--rule-strong:#1d2338;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--viber:#6550e8;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;;--st-grid:#b9c8dc;--st-sun:#f4c542} *{box-sizing:border-box} .ds-faq{max-width:760px;border-top:1.5px solid var(--rule-strong);font-family:'Golos Text',system-ui,sans-serif} .ds-faq details{border-bottom:1px solid var(--rule)} .ds-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-weight:600;font-size:19px;color:var(--ink)} .ds-faq summary::-webkit-details-marker{display:none} .ds-faq summary:hover{color:var(--cobalt)} .ds-faq svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .3s cubic-bezier(.16,1,.3,1)} .ds-faq details[open] svg{transform:rotate(45deg)} .ds-faq p{margin:0 0 18px;color:var(--ink-2)}"
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} *{box-sizing:border-box;} .ds-faq{max-width:760px;border-top:1.5px solid var(--rule-strong);font-family:var(--f-body)} .ds-faq details{border-bottom:1px solid var(--rule)} .ds-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-weight:600;font-size:19px;color:var(--ink)} .ds-faq summary::-webkit-details-marker{display:none} .ds-faq summary:hover{color:var(--cobalt)} .ds-faq svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .3s cubic-bezier(.16,1,.3,1)} .ds-faq details[open] svg{transform:rotate(45deg)} .ds-faq p{margin:0 0 18px;color:var(--ink-2)} .ds-faq summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px} .ds-faq details[open]>p{animation:ds-unfold .28s cubic-bezier(.16,1,.3,1)} @keyframes ds-unfold{from{clip-path:inset(0 0 100% 0);opacity:0}to{clip-path:inset(0 0 0 0);opacity:1}}"
+    },
+    {
+      "name": "Штамп креслення",
+      "kind": "card",
+      "refersTo": "stamp",
+      "description": "Сторінки послуг: основний напис аркуша праворуч на першому екрані — рамка rule-strong 2px, назва Onest 700, «EnRay · Вінниця» моно cobalt-line, рядки «параметр — значення» через rule-ui; рядки дописуються розчерком pen.",
+      "html": "<figure class=\"ds-stamp\"><figcaption class=\"ds-head\"><span>Будівництво СЕС</span><span class=\"ds-by\">EnRay · Вінниця</span></figcaption><dl class=\"ds-rows\"><div><dt>Станції</dt><dd>дахові й наземні, мережеві й гібридні</dd></div><div><dt>Потужність</dt><dd>6–100 кВт</dd></div><div><dt>Монтаж</dt><dd>7–10 днів</dd></div><div><dt>Документи й підключення</dt><dd>беремо на себе</dd></div></dl></figure>",
+      "css": ":host{--ink:#0b1230;--ink-2:#33394f;--muted:#565b6e;--cobalt:#0a4fd6;--cobalt-deep:#083fae;--cobalt-line:#1f5ed8;--sky:#dcedfd;--sky-0:#e5f1fd;--sky-2:#dbebf7;--grid:#cde0f3;--paper:#fff;--paper-2:#f7f9fb;--rule:#c7d0dd;--rule-strong:#1d2338;--rule-ui:#76839a;--track:#728097;--rule-dark:#22324b;--dots:#9aa3b5;--navy:#08162a;--navy-2:#12233d;--on-navy:#eef3f9;--on-navy-muted:#a9b8cc;--on-accent:#fff;--focus-dark:#6f9cff;--field-line:#5f7393;--field-line-hover:#7d92b3;--field-placeholder:#8ea0b8;--field-focus:#172b49;--field-hover:#1b3050;--error-line:#ff8f7a;--error-ink:#ffb3a6;--error-ink-strong:#ffd2c9;--success-bg:#0f3a2c;--success-line:#6fd3a8;--success-ink:#e6fff4;--viber:#6550e8;--viber-deep:#5640d6;--st-grid:#b9c8dc;--st-sun:#f4c542;--shadow-rgb:13 31 66;--f-display:'Onest','Golos Text',system-ui,sans-serif;--f-body:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;--f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;--radius:clamp(10px,.9vw,16px);--grid-bg:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px;} .ds-stamp{margin:0;max-width:520px;background:var(--paper);border:2px solid var(--rule-strong);border-radius:4px;box-shadow:0 24px 48px -32px rgb(var(--shadow-rgb) / .45);font-family:var(--f-body);} .ds-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;padding:16px 20px;border-bottom:2px solid var(--rule-strong);} .ds-head span:first-child{font:700 24px/1.15 var(--f-display);letter-spacing:-.01em;color:var(--ink);} .ds-by{font:500 13px/1.3 var(--f-mono);color:var(--cobalt-line);letter-spacing:.02em;} .ds-rows{margin:0;} .ds-rows div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);border-bottom:1px solid var(--rule-ui);animation:ds-pen .55s cubic-bezier(.16,1,.3,1) both;} .ds-rows div:last-child{border-bottom:0;} .ds-rows div:nth-child(1){animation-delay:.25s} .ds-rows div:nth-child(2){animation-delay:.32s} .ds-rows div:nth-child(3){animation-delay:.39s} .ds-rows div:nth-child(4){animation-delay:.46s} .ds-rows dt,.ds-rows dd{margin:0;padding:12px 20px;} .ds-rows dt{font-size:15px;line-height:1.35;color:var(--muted);border-right:1px solid var(--rule-ui);} .ds-rows dd{font:600 16px/1.35 var(--f-body);color:var(--ink);} @keyframes ds-pen{from{clip-path:inset(-30% 100% -30% 0)}to{clip-path:inset(-30% 0 -30% 0)}} @media (prefers-reduced-motion:reduce){.ds-rows div{animation:none}}"
     }
   ],
   "narrative": {
@@ -572,11 +1119,36 @@
         "body": "Картки в спокої без тіні — тільки рамка. Тінь з'являється на hover або в елемента, що плаває над контентом.",
         "section": "elevation"
       },
-      "The Visitor's Data Rule: у форму заявки потрапляє лише те, що відвідувач ввів сам.",
-      "The Example Label Rule: кожне невведене число підписане як приклад; мітка результату — приклад / частково приклад / за вашими даними.",
-      "The No Silent Fallback Rule: некоректне значення не підмінюється мовчки.",
-      "The Summary From Data Rule: підсумок пишеться з тих самих чисел, що й графік.",
-      "Хвиля перефарбування графіка — тільки на перемикачі; під час введення оновлення миттєве."
+      {
+        "name": "The Visitor's Data Rule",
+        "body": "У форму заявки потрапляє лише те, що відвідувач ввів або змінив сам. Прикладові значення живуть у плейсхолдерах, не в `value`.",
+        "section": "scenario-pages"
+      },
+      {
+        "name": "The Example Label Rule",
+        "body": "Кожне число, якого відвідувач не вводив, підписане як приклад: «Приклад, ілюстративно» — коли все прикладове; «(приклад)» біля окремих значень — коли дані змішані; мітка результату трьохстанова: «приклад» / «частково приклад» / «за вашими даними».",
+        "section": "scenario-pages"
+      },
+      {
+        "name": "The No Silent Fallback Rule",
+        "body": "Некоректне значення ніколи не підмінюється мовчки: зберігається останній правильний результат і з'являється підказка.",
+        "section": "scenario-pages"
+      },
+      {
+        "name": "The Method Note Rule",
+        "body": "Біля кожного результату — примітка з припущеннями (генерація ≈ 1 150 кВт·год з 1 кВт на рік, розподіл по місяцях, що не враховано) і «точно порахує інженер».",
+        "section": "scenario-pages"
+      },
+      {
+        "name": "The Summary From Data Rule",
+        "body": "Текст підсумку будується з тих самих чисел, що й графік; не пишемо «найбільше влітку», якщо стовпчики показують плато.",
+        "section": "scenario-pages"
+      },
+      {
+        "name": "The Static Truth Rule",
+        "body": "Без JavaScript розмітка вже містить правильні прикладові числа й підписи.",
+        "section": "scenario-pages"
+      }
     ],
     "dos": [
       "**Do** використовувати лише реальні фото об'єктів EnRay (`assets/src/` → `assets/plates/`, webp); у alt писати тип станції, потужність, місто й рік.",
@@ -586,7 +1158,8 @@
       "**Do** класти міліметрову сітку 24px тільки на небесні поверхні (`sky`, `sky-2`).",
       "**Do** задавати рамки карток і елементів керування 1.5px, роздільники 1px.",
       "**Do** задавати розміри як clamp(min, vw, max) і перевіряти обидва брейкпоінти, 1100px і 720px; на телефоні завжди лишати нижню панель «Подзвонити / Viber».",
-      "**Do** вживати `tabular-nums` для телефонів, кВт, гривень і номерів етапів."
+      "**Do** вживати `tabular-nums` для телефонів, кВт, гривень і номерів етапів.",
+      "**Do** будувати кожну нову сторінку сценарію з тих самих частин: панель порівняння з перемикачем, калькулятор з міні-графіком, реальний кейс із кресленням, етапи, FAQ, заявка."
     ],
     "donts": [
       "**Don't** ставити стокові, згенеровані фото або 3D-рендери панелей — навіть як тло.",
@@ -594,7 +1167,8 @@
       "**Don't** набирати речення, заголовки чи кнопки JetBrains Mono — моно лише для параметрів.",
       "**Don't** вигадувати в підписах ціни, окупність, бренди обладнання, гарантії чи кількість об'єктів.",
       "**Don't** вводити другий акцентний колір; фіолетовий Viber — лише кнопка Viber.",
-      "**Don't** додавати тіні карткам у спокої; тінь — тільки для плаваючих шарів і hover."
+      "**Don't** додавати тіні карткам у спокої; тінь — тільки для плаваючих шарів і hover.",
+      "**Don't** вживати сонячно-жовтий поза графіками станів енергії і не малювати на графіку позначок, яких немає в легенді поточного режиму."
     ]
   }
 }
