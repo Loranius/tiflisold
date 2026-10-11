@@ -2,7 +2,7 @@
 
 /* Штамп креслення: параметри послуги в рамці, як основний напис на аркуші */
 .hero--service .hero-copy { padding-bottom: clamp(40px, 5vw, 90px); }
-.stamp { position: relative; z-index: 3; margin: clamp(24px, 4vw, 70px) 0 clamp(40px, 5vw, 90px); background: var(--paper); border: 2px solid var(--rule-strong); border-radius: 4px; box-shadow: 0 24px 48px -32px rgba(13, 31, 66, .45); }
+.stamp { position: relative; z-index: 3; margin: clamp(24px, 4vw, 70px) 0 clamp(40px, 5vw, 90px); background: var(--paper); border: 2px solid var(--rule-strong); border-radius: 4px; box-shadow: 0 24px 48px -32px rgb(var(--shadow-rgb) / .45); }
 .stamp-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: clamp(14px, 1.2vw, 20px) clamp(16px, 1.4vw, 24px); border-bottom: 2px solid var(--rule-strong); }
 .stamp-head span:first-child { overflow-wrap: anywhere; font: 700 clamp(20px, 1.6vw, 27px)/1.15 var(--f-display); letter-spacing: -0.01em; color: var(--ink); }
 .stamp-by { font: 500 13px/1.3 var(--f-mono); color: var(--cobalt-line); letter-spacing: .02em; }
@@ -23,8 +23,8 @@
 .stamp-rows dd { font: 600 clamp(15px, 1.1vw, 18px)/1.35 var(--f-body); color: var(--ink); }
 
 /* Прогалина, яку заповнить компанія. У WordPress її бачать лише редактори. */
-.todo { display: inline-block; padding: 2px 8px; border: 1.5px dashed #b45309; border-radius: 6px; background: #fff7ed; font: 600 13px/1.4 var(--f-body); color: #9a3412; letter-spacing: .01em; }
-.works-todo { max-width: 60ch; padding: 18px 20px; border: 1.5px dashed #b45309; border-radius: var(--radius); background: #fff7ed; color: #9a3412; }
+.todo { display: inline-block; padding: 2px 8px; border: 1.5px dashed var(--todo-line); border-radius: 6px; background: var(--todo-bg); font: 600 13px/1.4 var(--f-body); color: var(--todo-ink); letter-spacing: .01em; }
+.works-todo { max-width: 60ch; padding: 18px 20px; border: 1.5px dashed var(--todo-line); border-radius: var(--radius); background: var(--todo-bg); color: var(--todo-ink); }
 
 /* Що входить: колонки специфікації, розділені лініями, а не картки */
 .includes h2 { margin-bottom: clamp(20px, 1.8vw, 30px); }
