@@ -1,0 +1,393 @@
+---
+name: EnRay
+description: Креслярський аркуш поверх реального фото — сонячні станції EnRay як підписані інженерні об'єкти.
+colors:
+  ink: "#0b1230"
+  ink-2: "#33394f"
+  muted: "#565b6e"
+  cobalt: "#0a4fd6"
+  cobalt-deep: "#083fae"
+  cobalt-line: "#1f5ed8"
+  sky: "#dcedfd"
+  sky-2: "#dbebf7"
+  grid: "#cde0f3"
+  paper: "#ffffff"
+  rule: "#c7d0dd"
+  rule-strong: "#1d2338"
+  navy: "#08162a"
+  navy-2: "#12233d"
+  on-navy: "#eef3f9"
+  on-navy-muted: "#a9b8cc"
+  viber: "#6550e8"
+typography:
+  display:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(40px, 4.5vw, 84px)"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0"
+  headline:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(28px, 2.72vw, 46px)"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0"
+  headline-panel:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(26px, 2.36vw, 40px)"
+    fontWeight: 700
+    lineHeight: 1.1
+  title:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(22px, 2.06vw, 35px)"
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.015em"
+  wordmark:
+    fontFamily: "Onest, Golos Text, system-ui, sans-serif"
+    fontSize: "clamp(26px, 2.6vw, 44px)"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "-0.01em"
+  lead:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(18px, 1.86vw, 32px)"
+    fontWeight: 400
+    lineHeight: 1.32
+  body:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.06vw, 18px)"
+    fontWeight: 400
+    lineHeight: 1.55
+  body-lg:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.5vw, 25px)"
+    fontWeight: 500
+    lineHeight: 1.15
+  note:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.5
+  button:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.1vw, 19px)"
+    fontWeight: 600
+    lineHeight: 1
+  button-lg:
+    fontFamily: "Golos Text, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(17px, 1.42vw, 24px)"
+    fontWeight: 500
+    lineHeight: 1
+  spec:
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Consolas, monospace"
+    fontSize: "clamp(12px, 0.85vw, 14px)"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0.01em"
+  spec-value:
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Consolas, monospace"
+    fontSize: "clamp(13px, 1.05vw, 17px)"
+    fontWeight: 500
+    lineHeight: 1.3
+  callout:
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Consolas, monospace"
+    fontSize: "26px"
+    fontWeight: 500
+rounded:
+  control: "10px"
+  card: "clamp(10px, 0.9vw, 16px)"
+  nav: "clamp(14px, 1.2vw, 20px)"
+  menu: "16px"
+  tab: "14px"
+  dot: "50%"
+spacing:
+  grid-cell: "24px"
+  gutter: "clamp(16px, 5.78vw, 98px)"
+  section: "clamp(64px, 7.5vw, 128px)"
+  wrap: "1500px"
+  card-gap: "clamp(16px, 1.9vw, 32px)"
+  field-gap: "12px"
+  mobile-edge: "16px"
+components:
+  button-primary:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.paper}"
+    typography: "{typography.button}"
+    rounded: "{rounded.control}"
+    padding: "0 1.15em"
+    height: "48px"
+  button-primary-hover:
+    backgroundColor: "{colors.cobalt-deep}"
+    textColor: "{colors.paper}"
+  button-primary-lg:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "{colors.paper}"
+    typography: "{typography.button-lg}"
+    rounded: "{rounded.control}"
+    padding: "0 clamp(20px, 1.85vw, 32px)"
+    height: "clamp(52px, 4.1vw, 70px)"
+  button-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    typography: "{typography.button}"
+    rounded: "{rounded.control}"
+    padding: "0 1.15em"
+    height: "48px"
+  button-outline-hover:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.cobalt}"
+  button-viber:
+    backgroundColor: "{colors.viber}"
+    textColor: "{colors.paper}"
+    typography: "{typography.button}"
+    rounded: "{rounded.control}"
+    height: "52px"
+  nav-floating:
+    backgroundColor: "rgba(255, 255, 255, 0.86)"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.nav}"
+    padding: "10px clamp(14px, 1.42vw, 24px)"
+    height: "clamp(64px, 5.9vw, 100px)"
+  facts-strip:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink-2}"
+    typography: "{typography.body-lg}"
+    rounded: "{rounded.control}"
+    padding: "0 clamp(16px, 2.6vw, 44px)"
+    height: "clamp(56px, 3.9vw, 68px)"
+  scenario-card:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink-2}"
+    rounded: "{rounded.card}"
+    padding: "clamp(8px, 0.7vw, 12px)"
+  scenario-tab:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body-lg}"
+    rounded: "{rounded.tab}"
+    padding: "12px 18px"
+  calc-result:
+    backgroundColor: "rgba(240, 247, 254, 0.78)"
+    textColor: "{colors.ink}"
+    typography: "{typography.title}"
+    rounded: "{rounded.card}"
+    padding: "clamp(20px, 1.9vw, 32px)"
+  case-card:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "clamp(14px, 1.1vw, 19px)"
+  request-panel:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.on-navy}"
+    typography: "{typography.headline-panel}"
+    rounded: "{rounded.card}"
+    padding: "clamp(24px, 2vw, 34px)"
+  input-on-navy:
+    backgroundColor: "{colors.navy-2}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.control}"
+    padding: "0 14px"
+    height: "50px"
+  footer:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.on-navy-muted}"
+    padding: "clamp(40px, 3.5vw, 60px) clamp(16px, 5.78vw, 98px)"
+  mobile-bar:
+    backgroundColor: "rgba(255, 255, 255, 0.96)"
+    padding: "10px 16px"
+    height: "52px"
+---
+
+# Design System: EnRay
+
+## Overview
+
+**Creative North Star: "Креслярський аркуш поверх реального фото"**
+
+Кожна станція EnRay показана як інженерний об'єкт: справжнє фото змонтованої СЕС, поверх нього тонкі кобальтові розмірні лінії й моноширинні виноски з фактами (потужність, рік, місто, термін монтажу). Тло — білий аркуш і дуже світле небо з ледь помітною міліметровою сіткою 24 px; текст — темно-синє чорнило; один кобальтовий колір для дій. Світ тримається на правді: підписи несуть тільки перевірені факти з кейсів, фото тільки з власних об'єктів.
+
+Щільність помірна, ритм рівний: широкі білі поля, картки з тонкою рамкою 1.5 px, великі заголовки щільним гротеском Onest 800. Глибина майже пласка — сітка, рамки й тонкий тон замість тіней; темно-синя (navy) поверхня з'являється лише там, де сторінка переходить у дію (панель заявки, футер). Відмова від категорійного «темний фон, неоновий градієнт, 3D-рендер панелей» — свідомий вибір напряму.
+
+Розміри зняті з погодженого макета 1696 px і задані у vw з межами clamp(), тож композиція масштабується пропорційно від планшета до широкого екрана; на телефоні (≤720 px) шари перебудовуються в одну колонку з липкою нижньою панеллю дзвінка.
+
+**Key Characteristics:**
+- Біло-блакитний аркуш із міліметровою сіткою 24 px як фірмове тло (герой праворуч, калькулятор).
+- Реальні фото EnRay з розмірними лініями (запечені в растр) і живими SVG-підписами моноширинним шрифтом.
+- Один акцент — кобальт; navy лише для панелі заявки й футера.
+- Рамки 1.5 px замість тіней; радіуси 10–16 px.
+- Моноширинний шрифт тільки для параметрів (кВт, рік, місто, термін).
+
+## Colors
+
+Холодна пастельна палітра: чорнило, небо й папір, один насичений кобальт і темно-синій для зони дії.
+
+### Primary
+- **Кобальт креслення** (`cobalt`): головні дії — кнопки «Розрахувати», заповнення повзунка, точки етапів, акцентне значення кВт у калькуляторі, кільце фокусу (outline 2px, offset 3px), виділення тексту.
+- **Глибокий кобальт** (`cobalt-deep`): hover головної кнопки; колір тексту виносок на фото (з білою обвідкою кольору `sky`).
+- **Кобальт лінії** (`cobalt-line`): моноширинні spec-рядки в картках сценаріїв і рамка результату калькулятора — «лінія креслення», не дія.
+
+### Secondary
+- **Глибокий navy** (`navy`): поверхня панелі заявки й футера. Єдина темна поверхня системи.
+- **Navy поля** (`navy-2`): тло полів введення на navy; рамка поля #3a4b66, hover #5a6f90, фокус — рамка #6f9cff і тло #172b49, помилка — рамка #ff8f7a і текст повідомлення #ffb3a6.
+- **Текст на navy** (`on-navy`) і **приглушений текст на navy** (`on-navy-muted`): основний і другорядний текст у панелі заявки й футері. Роздільник у футері — 1px #22324b.
+
+### Tertiary
+- **Viber** (`viber`): лише кнопка Viber у мобільній панелі (hover #5640d6). Це колір стороннього бренду, не акцент EnRay; в інших місцях не використовується.
+
+### Neutral
+- **Чорнило** (`ink`): заголовки, основний текст, рамка-контур кнопки.
+- **Чорнило 2** (`ink-2`): підзаголовок героя, текст карток, факти, шкала повзунка, номери етапів.
+- **Приглушений** (`muted`): примітки (14 px), підписи dt у мета кейсу, описи етапів.
+- **Небо** (`sky`): тло героя (градієнт 100deg від #e5f1fd до `sky`), hover пунктів мобільного меню, обвідка тексту виносок.
+- **Небо 2** (`sky-2`): тло смуги калькулятора під сіткою.
+- **Сітка** (`grid`): лінії міліметрової сітки 1px через 24 px.
+- **Папір** (`paper`): основне тло сторінки, картки, вкладка сценарію.
+- **Тонка лінія** (`rule`): рамка карток сценаріїв (hover #9fb6d6), роздільники фактів на телефоні.
+- **Чорнильна лінія** (`rule-strong`): рамка смуги фактів, карток кейсів, кнопки-контуру.
+
+Похідні значення поза токенами: доріжка повзунка #c4cad3, пунктир етапів #9aa3b5, плейсхолдер на navy #8ea0b8. Жовтий зі знака логотипа живе лише в самому логотипі; в CSS він не використовується.
+
+### Named Rules
+**Правило одного кобальту.** Дія на світлій поверхні завжди кобальтова. Другого акцентного кольору немає; navy — поверхня, а не акцент.
+
+**Правило navy для фіналу.** Темно-синя поверхня з'являється тільки там, де сторінка закінчується дією (заявка) або сама сторінка закінчується (футер). Темних героїв і темних секцій посередині немає.
+
+## Typography
+
+**Display Font:** Onest 700/800 (з Golos Text, system-ui)
+**Body Font:** Golos Text 400/500/600 (з system-ui, -apple-system, Segoe UI)
+**Label/Mono Font:** JetBrains Mono 500 (з ui-monospace, SFMono-Regular, Consolas)
+
+**Character:** Щільний широкий гротеск Onest дає заголовкам вагу інженерного штампу; Golos Text — спокійний читабельний український текст; JetBrains Mono — голос креслення, яким підписано параметри. Усі шрифти самохостингові (woff2, сабсети cyrillic / cyrillic-ext / latin, font-display: swap); Onest 800 cyrillic попередньо завантажується.
+
+### Hierarchy
+- **Display** (Onest 800, `display`): лише H1 героя, до трьох рядків, max-width 10.5em (14em на планшеті); на телефоні clamp(30px, 9.4vw, 44px)/1.08.
+- **Headline** (Onest 800, `headline`): H2 секцій. text-wrap: balance.
+- **Headline panel** (Onest 700, `headline-panel`): заголовок на navy-панелі, білий.
+- **Title** (Onest 700, `title`): рядок результату калькулятора; значення всередині — Onest 800 кобальтом, tabular-nums, без переносу.
+- **Wordmark** (Onest 800, `wordmark`): напис ENRAY поруч зі знаком.
+- **Lead** (Golos 400, `lead`): підзаголовок героя, `ink-2`, max-width 16.5em.
+- **Body** (Golos 400, `body`): основний текст; у картках max-width 36ch, у примітках 60ch.
+- **Body large** (Golos 500, `body-lg`): пункти навігації, факти, вкладки, назви етапів.
+- **Note** (Golos 400, `note`): примітки калькулятора, описи етапів, підписи полів.
+- **Spec** (JetBrains Mono 500, `spec` / `spec-value`): параметри — spec-рядки карток, значення dd у мета кейсу.
+- **Callout** (JetBrains Mono 500, 26 у одиницях viewBox 1410×842, 34 на телефоні): живі підписи на фото героя.
+
+### Named Rules
+**Правило моно лише для параметрів.** JetBrains Mono пише тільки вимірювані факти: кВт, рік, місто, термін. Речення, заголовки й кнопки моно не набираються.
+
+**Правило цифр у стовпчик.** Телефони, кВт, гривні, номери етапів — `font-variant-numeric: tabular-nums`.
+
+## Layout
+
+Модель — центрований аркуш: контейнер `wrap` (1500px) з бічним полем `gutter`; секції розділені вертикальним ритмом `section`. Масштаб пропорційний: майже всі розміри — clamp(min, Nvw, max) від макета 1696 px.
+
+- **Герой:** дві колонки 50.1fr / 49.9fr. Ліворуч текст з полем `gutter`; праворуч фото до правого краю екрана, з маскою-проявом зліва (прозоре → чорне на 6%). Сітка накладена на праву половину (opacity .55, mix-blend-mode: multiply).
+- **Плаваюча навігація** липка (sticky), відступ від краю clamp(10px, 2.36vw, 40px), max-width 1552px, накриває героя від'ємним margin.
+- **Сітки карток:** сценарії 3 колонки, кейси 2 колонки, проміжок `card-gap`.
+- **Калькулятор:** повноширинна смуга з сіткою; всередині 752fr / 698fr.
+- **Фінальний блок:** етапи 768fr / заявка 783fr.
+
+### Breakpoints
+- **≤1100px (планшет):** ховаються текстові посилання навігації (лишаються телефон і CTA); герой в одну колонку, фото під текстом, сітка на нижніх 55% героя; сценарії 2 колонки; калькулятор і фінальний блок в одну колонку.
+- **≤720px (телефон):** навігація на всю ширину без радіуса, висота 64px, лише знак, кнопка дзвінка (кобальтова квадратна 48px) і меню; поле сторінки 16px; кнопки героя на всю ширину (54px); фото 4:3.4; факти 2×2 без рамки з роздільниками `rule`; усі сітки в одну колонку; етапи — вертикальна шкала; форма в одну колонку; з'являється липка нижня панель «Подзвонити / Viber», тіло отримує padding-bottom 76px + safe-area.
+
+### Named Rules
+**Правило аркуша.** Міліметрова сітка (1px `grid` через `grid-cell`) лежить тільки на небесних поверхнях — правій половині героя та смузі калькулятора. На білому папері й на navy сітки немає.
+
+## Elevation & Depth
+
+Система майже пласка: глибину дають рамки 1.5 px, тон (небо → папір → navy) і сітка. Тіні м'які, холодні (navy rgba(13,31,66)), завжди з позитивним y-зсувом і від'ємним spread; вони позначають плаваючий шар або стан, а не декор.
+
+### Shadow Vocabulary
+- **Плаваюча навігація** (`box-shadow: 0 1px 0 rgba(13,31,66,.04), 0 12px 32px -18px rgba(13,31,66,.28)`) плюс `backdrop-filter: saturate(1.4) blur(14px)` на тлі rgba(255,255,255,.86).
+- **Головна кнопка** (`0 6px 16px -8px rgba(13,31,66,.45)`; hover `0 10px 22px -10px rgba(13,31,66,.5)` і translateY(-1px)). На navy-панелі тінь знята.
+- **Картка сценарію hover** (`0 18px 40px -28px rgba(13,31,66,.45)`) разом із рамкою #9fb6d6 і збільшенням фото 1.03.
+- **Мобільне меню** (`0 20px 40px -20px rgba(13,31,66,.35)`), **мобільна панель** (`0 -10px 24px -16px rgba(13,31,66,.35)`).
+- **Повзунок** (бігунок `0 2px 8px rgba(10,79,214,.35)`, фокус `0 0 0 4px rgba(10,79,214,.25)`).
+
+### Named Rules
+**Правило пласкої картки.** Картки в спокої без тіні — тільки рамка. Тінь з'являється на hover або в елемента, що плаває над контентом.
+
+## Shapes
+
+М'які інженерні кути: елементи керування 10px (`control`), картки й панелі `card` (10–16px), плаваюча навігація `nav` (14–20px). Вкладені фото в картці мають радіус картки мінус 4px (сценарій) або мінус 6px (кейс), щоб кути йшли паралельно. Вкладка сценарію — прямокутник у верхньому лівому куті фото з одним заокругленим нижнім правим кутом 14px, наче вирізана з аркуша.
+
+Ваги ліній: рамки карток, фактів, кнопок і полів 1.5px; роздільники 1px; пунктир етапів 2px dotted; підкреслення сильного посилання 2px з offset .28em; звичайні посилання 1px з offset .2em. Точки етапів — кола 14px кобальтом з білим кільцем 4px. Іконки — лінійні SVG, stroke 1.8, закруглені кінці, розмір 1.15em, колір currentColor.
+
+## Components
+
+### Buttons
+- **Shape:** м'який кут (`control`, 10px), рамка 1.5px.
+- **Primary:** кобальт, білий текст Golos 600, висота 48px; великий варіант `button-primary-lg` (52–70px, Golos 500) для героя й форми.
+- **Hover / Focus:** hover — `cobalt-deep`, підйом на 1px і глибша тінь; transition .2s cubic-bezier(.16,1,.3,1). Фокус — глобальне кобальтове кільце 2px з відступом 3px.
+- **Outline:** прозора, текст `ink`, рамка `rule-strong`; hover — рамка й текст кобальтом.
+- **Viber:** тільки в мобільній панелі.
+- **Сильне посилання:** Golos 600, підкреслення 2px, стрілка-іконка, що на hover зсувається на 4px; hover — кобальт. Для вторинних дій («Отримати детальний розрахунок», «Усі кейси»).
+
+### Navigation
+- Біла напівпрозора плаваюча панель із розмиттям (`nav-floating`), знак + ENRAY ліворуч, посилання Golos 500 праворуч (hover кобальт), телефон tabular-nums, кобальтова кнопка «Розрахувати».
+- На телефоні — суцільна смуга 64px, кнопка дзвінка й бургер (іконки 48px); меню — біла картка з радіусом 0 0 16px 16px, пункти 18px із hover `sky`, внизу головна кнопка.
+
+### Facts strip
+- Одна смуга з рамкою `rule-strong` 1.5px і радіусом 10px, три факти рівномірно; лінійна іконка + **число жирним `ink`** + пояснення `ink-2`.
+- На телефоні — сітка 2×2 без зовнішньої рамки, роздільники 1px `rule`, з'являється четвертий факт.
+- Лише перевірені факти з PRODUCT.md (100 кВт, 7–10 днів, документи й підключення).
+
+### Scenario card (з вкладкою)
+- Біла картка, рамка `rule` 1.5px, внутрішній відступ 8–12px; фото 720:376 у рамці з радіусом картки мінус 4px.
+- **Вкладка** з назвою сценарію (Дім / Бізнес / Агро) «врізана» в лівий верхній кут фото: тло `paper`, Golos 500, нижній правий кут 14px.
+- Тіло: опис задачі `ink-2` (до 36ch) і внизу spec-рядок моно `cobalt-line` «приклад: тип СЕС N кВт · місто · рік» — посилання на реальний кейс.
+- Hover: рамка #9fb6d6, тінь, фото масштаб 1.03 за .6s.
+
+### Calculator
+- Повноширинна небесна смуга (`sky-2` + сітка). Ліворуч заголовок-мітка повзунка, повзунок, шкала й поточне значення (Golos 600, tabular-nums).
+- **Повзунок:** доріжка 6px, заповнення кобальтом до значення (`--p`), решта #c4cad3; бігунок 28px — біле коло з кобальтовою рамкою 6px.
+- **Результат:** напівпрозора світла картка (`calc-result`) з рамкою `cobalt-line` 1.5px; рядок Title з кобальтовим значенням кВт, деталізація кВт·год, примітка з чесним формулюванням методики (тариф, генерація, «точну ціну порахує інженер»), сильне посилання до заявки.
+
+### Case card (зі spec-мета)
+- Рамка `rule-strong` 1.5px, радіус `card`. Заголовок у рядок Golos: **назва жирним** · місто · рік (місто й рік не розриваються).
+- Широке фото 695:165 з радіусом картки мінус 6px.
+- Мета як список dl: dt Golos `muted` («Потужність», «Монтаж», «Задача»), dd моно `ink` для чисел; текстові значення (задача) — Golos 500.
+
+### Process steps
+- П'ять етапів у рядок: номер 01–05 (Golos 500, `ink-2`, tabular-nums), назва Golos 500, кобальтова точка 14px під назвою, опис 14px `muted` (до 13ch). Точки з'єднані горизонтальним пунктиром 2px #9aa3b5.
+- На телефоні — вертикальна шкала: пунктир ліворуч, точка біля кожного етапу, номер і текст у дві колонки.
+
+### Inputs / Fields (navy request panel)
+- **Панель заявки:** `navy`, радіус `card`, заголовок Onest 700 білим, лід `on-navy-muted`, форма 2×2 (на телефоні 1 колонка), кнопка на всю ширину.
+- **Поле:** висота 50px, тло `navy-2`, рамка 1.5px #3a4b66, радіус 10px, текст Golos 17px білим; підпис 14px `on-navy-muted` над полем.
+- **Стани:** hover — рамка #5a6f90; фокус — рамка #6f9cff, тло #172b49; помилка (aria-invalid) — рамка #ff8f7a, повідомлення #ffb3a6; відправка — кнопка opacity .6, cursor: progress.
+
+### Footer
+- `navy`, знак + ENRAY білим (26–34px), посилання розділів `on-navy` (hover білий з підкресленням), під роздільником 1px #22324b контакти (телефон tabular-nums, адреса, пошта, години) і юридичні посилання 14px. Нижній відступ враховує safe-area.
+
+### Mobile call bar
+- Лише ≤720px: фіксована внизу біла (rgba .96) панель із тінню вгору, дві кнопки 52px у сітку 1fr 1fr — «Подзвонити» (контур) і «Viber» (фіолетова), з лінійними іконками.
+
+### Drafting annotation (фірмовий прийом)
+- **Фото:** лише реальний знімок об'єкта EnRay. Розмірні лінії й вказівні точки — тонкі сині лінії, **запечені в растр** (`hero-photo.webp`), разом із фото маскуються й кадруються.
+- **Підписи:** живий SVG `<text>` у viewBox розміру растра, `preserveAspectRatio="xMidYMax slice"` — так підписи кадруються синхронно з `object-fit: cover; object-position: 50% 100%`. JetBrains Mono 500, `cobalt-deep`, обвідка 6px кольору `sky` (paint-order: stroke) для читабельності на фото; SVG `aria-hidden`, а факти продубльовано в alt фото.
+- **Зміст:** тільки підтверджені факти саме цього об'єкта — потужність, тип і рік, термін монтажу. Жодних вигаданих параметрів, брендів, цін.
+
+## Do's and Don'ts
+
+### Do:
+- **Do** використовувати лише реальні фото об'єктів EnRay (`assets/src/` → `assets/plates/`, webp); у alt писати тип станції, потужність, місто й рік.
+- **Do** підписувати фото героя чи нових сторінок (Дім / Бізнес / Агро, кейси) живим SVG-текстом JetBrains Mono `cobalt-deep` з обвідкою `sky` поверх растра з запеченими лініями, тим самим viewBox і `preserveAspectRatio`, що й фото.
+- **Do** писати в підписах і spec-рядках тільки факти, які є в PRODUCT.md або в кейсі: кВт, рік, місто, термін.
+- **Do** тримати один кобальтовий акцент для дій і `cobalt-line` для ліній креслення.
+- **Do** класти міліметрову сітку 24px тільки на небесні поверхні (`sky`, `sky-2`).
+- **Do** задавати рамки карток і елементів керування 1.5px, роздільники 1px.
+- **Do** задавати розміри як clamp(min, vw, max) і перевіряти обидва брейкпоінти, 1100px і 720px; на телефоні завжди лишати нижню панель «Подзвонити / Viber».
+- **Do** вживати `tabular-nums` для телефонів, кВт, гривень і номерів етапів.
+
+### Don't:
+- **Don't** ставити стокові, згенеровані фото або 3D-рендери панелей — навіть як тло.
+- **Don't** робити темний герой, неонові градієнти чи світіння: navy тільки для панелі заявки й футера.
+- **Don't** набирати речення, заголовки чи кнопки JetBrains Mono — моно лише для параметрів.
+- **Don't** вигадувати в підписах ціни, окупність, бренди обладнання, гарантії чи кількість об'єктів.
+- **Don't** вводити другий акцентний колір; фіолетовий Viber — лише кнопка Viber.
+- **Don't** додавати тіні карткам у спокої; тінь — тільки для плаваючих шарів і hover.
