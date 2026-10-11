@@ -102,7 +102,7 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 add_action( 'wp_head', function () {
-	printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( enray_asset( 'fonts/Onest-800-cyrillic.woff2' ) ) );
+	printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( enray_asset( 'fonts/Onest-var-cyrillic.woff2' ) ) );
 	printf( '<meta name="theme-color" content="#dcedfd">' . "\n" );
 }, 1 );
 
