@@ -5,7 +5,7 @@ get_header();
 <main id="main" class="wp-main">
   <section class="section">
     <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true"> / </span><span>Кейси</span></p>
-    <h1 class="wp-title">Наші реалізовані кейси</h1>
+    <h1 class="wp-title">Збудовані станції</h1>
     <?php
     while ( have_posts() ) :
       the_post();

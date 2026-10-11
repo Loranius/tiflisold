@@ -32,12 +32,12 @@
     </a>
     <nav class="nav-links" aria-label="Основна навігація"><?php enray_nav_links( 'primary' ); ?></nav>
     <a class="nav-phone" href="<?php echo esc_attr( enray_tel() ); ?>"><?php echo esc_html( enray_opt( 'phone' ) ); ?></a>
-    <a class="btn btn-primary nav-cta" href="#zayavka">Розрахувати</a>
+    <a class="btn btn-primary nav-cta" href="#zayavka">Отримати розрахунок</a>
     <a class="icon-btn icon-btn--solid nav-call" href="<?php echo esc_attr( enray_tel() ); ?>" aria-label="Подзвонити: +38 067 672 22 44"><svg class="ico"><use href="#i-phone"/></svg></a>
     <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Відкрити меню"><svg class="ico"><use href="#i-menu"/></svg></button>
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
     <?php enray_nav_links( 'primary' ); ?>
-    <a class="btn btn-primary" href="#zayavka">Розрахувати станцію</a>
+    <a class="btn btn-primary" href="#zayavka">Отримати розрахунок</a>
   </div>
 </header>

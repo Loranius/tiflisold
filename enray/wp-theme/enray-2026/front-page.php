@@ -8,7 +8,7 @@ get_header();
       <h1>Сонячні станції для дому, бізнесу й&nbsp;поливу</h1>
       <p class="hero-sub">Світло під час відключень, менший рахунок, енергія для насосів. Під ключ у&nbsp;Вінницькій області за&nbsp;<span class="nw">7–10&nbsp;днів</span>.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="#kalkulyator">Розрахувати станцію</a>
+        <a class="btn btn-primary btn-lg" href="#kalkulyator">Порахувати потужність</a>
         <a class="btn btn-outline btn-lg" href="<?php echo esc_attr( enray_tel() ); ?>">Подзвонити</a>
       </div>
     </div>
@@ -24,7 +24,7 @@ get_header();
 
   <section class="facts" aria-label="Коротко про EnRay">
     <ul class="facts-strip">
-      <li><svg class="ico"><use href="#i-plant"/></svg><span><b>100 кВт</b> — найбільший об'єкт</span></li>
+      <li><svg class="ico"><use href="#i-plant"/></svg><span><b>6–100 кВт</b> — збудовані станції</span></li>
       <li><svg class="ico"><use href="#i-clock"/></svg><span><b>7–10 днів</b> — монтаж</span></li>
       <li><svg class="ico"><use href="#i-doc"/></svg><span>Документи <span class="fact-long">й підключення </span>— на нас</span></li>
       <li class="fact-extra"><svg class="ico"><use href="#i-tool"/></svg><span>Сервіс після запуску</span></li>
@@ -134,7 +134,7 @@ get_header();
 
   <section class="section cases" id="keysy" aria-labelledby="cases-h">
     <div class="cases-head">
-      <h2 id="cases-h">Наші реалізовані кейси</h2>
+      <h2 id="cases-h">Збудовані станції</h2>
       <a class="link-strong" href="<?php echo esc_url( home_url( '/keysy/' ) ); ?>">Усі кейси <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="case-grid">
@@ -166,7 +166,7 @@ get_header();
   </section>
 
   <section class="section closing" aria-label="Як ми працюємо і заявка">
-    <div class="process" id="pro-nas">
+    <div class="process" id="yak-pratsyuemo">
       <h2>Як ми працюємо</h2>
       <ol class="steps">
         <li><span class="step-n">01</span><b>Виїзд</b><span>огляд даху чи ділянки, заміри</span></li>

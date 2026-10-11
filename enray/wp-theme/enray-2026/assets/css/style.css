@@ -89,14 +89,14 @@ p { margin: 0; }
   box-shadow: 0 1px 0 rgba(13, 31, 66, .04), 0 12px 32px -18px rgba(13, 31, 66, .28);
 }
 @supports (backdrop-filter: blur(1px)) { .nav { background: rgba(255,255,255,.86); backdrop-filter: saturate(1.4) blur(14px); } }
-.brand { min-height: 44px; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font: 800 clamp(26px, 2.6vw, 44px)/1 var(--f-display); letter-spacing: -0.01em; color: var(--ink); }
+.brand { flex-shrink: 0; min-height: 44px; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font: 800 clamp(26px, 2.6vw, 44px)/1 var(--f-display); letter-spacing: -0.01em; color: var(--ink); }
 .brand img { width: clamp(34px, 2.8vw, 48px); height: auto; }
 .nav-links { display: flex; gap: clamp(16px, 1.85vw, 32px); margin-left: auto; }
 .nav-links a { padding: 10px 0; }
-.nav-links a, .nav-phone { font: 500 clamp(15px, 1.5vw, 25px)/1 var(--f-body); text-decoration: none; color: var(--ink); white-space: nowrap; }
+.nav-links a, .nav-phone { font: 500 clamp(15px, 1.3vw, 21px)/1 var(--f-body); text-decoration: none; color: var(--ink); white-space: nowrap; }
 .nav-links a:hover { color: var(--cobalt); }
 .nav-phone { margin-left: clamp(8px, 2.6vw, 44px); font-weight: 400; font-variant-numeric: tabular-nums; }
-.nav-cta { min-height: clamp(44px, 3.4vw, 58px); font-size: clamp(16px, 1.42vw, 24px); }
+.nav-cta { white-space: nowrap; flex-shrink: 0; min-height: clamp(44px, 3.4vw, 58px); font-size: clamp(16px, 1.42vw, 24px); }
 .mobile-menu { pointer-events: auto; position: absolute; left: 0; right: 0; max-width: 1552px; margin: 8px auto 0; background: var(--paper); border-radius: 16px; padding: 12px; display: grid; gap: 4px; box-shadow: 0 20px 40px -20px rgba(13,31,66,.35); }
 .mobile-menu a:not(.btn) { padding: 14px 12px; font: 500 18px/1 var(--f-body); text-decoration: none; border-radius: 10px; }
 .mobile-menu a:not(.btn):hover { background: var(--sky); }
@@ -271,10 +271,16 @@ input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rg
 
 .mobile-bar { display: none; }
 
+/* Вузький десктоп: до 1280px номер телефону в шапці стає кнопкою-іконкою */
+@media (max-width: 1280px) {
+  .nav-phone { display: none; }
+  .nav-call { display: inline-flex; }
+}
+
 /* Tablet */
 @media (max-width: 1100px) {
   .nav-links { display: none; }
-  .nav-phone { margin-left: auto; }
+  .nav-call { margin-left: auto; }
   .nav-toggle { display: inline-flex; }
   .mobile-menu { left: clamp(12px, 4.25vw, 72px); right: clamp(12px, 4.25vw, 72px); }
   .hero { grid-template-columns: 1fr; padding-top: 104px; }
