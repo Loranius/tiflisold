@@ -43,13 +43,17 @@
     kwOut.textContent = (plus ? 'від ' : '≈ ') + kw + ' кВт';
     kwhOut.textContent = '≈ ' + fmt.format(roundTo(month, 10)) + ' кВт·год на місяць, ≈ ' + fmt.format(roundTo(year, 100)) + ' кВт·год на рік';
     bill.setAttribute('aria-valuetext', billOut.textContent);
-    if (formBill) formBill.value = String(v);
   }
-  if (bill) { bill.addEventListener('input', update); update(); }
+  if (bill) {
+    // У форму переносимо лише суму, яку відвідувач сам вибрав повзунком.
+    bill.addEventListener('input', function () { update(); if (formBill) formBill.value = String(Number(bill.value)); });
+    update();
+  }
 
   // Заявка (у прототипі нікуди не надсилається; у WordPress її прийме Contact Form 7)
   var form = document.getElementById('request-form');
   var msg = document.getElementById('form-msg');
+  var summary = document.getElementById('form-errors');
   // У WordPress форму надсилає Contact Form 7: власну перевірку не вмикаємо,
   // лише повертаємо калькулятори до початкового стану після успішного надсилання.
   if (form && form.classList.contains('wpcf7-form')) {
@@ -58,33 +62,123 @@
       form.dispatchEvent(new CustomEvent('enray:reset'));
     });
   } else if (form) {
-    var phone = form.querySelector('#f-phone');
-    var name = form.querySelector('#f-name');
     var digits = function (s) { return (s || '').replace(/\D/g, ''); };
+    var num = function (s) { return Number(String(s).replace(/[\s ]/g, '').replace(',', '.')); };
+
+    // Правила для полів, які є на сторінці. Повертають текст помилки або ''.
+    var RULES = {
+      'f-name': function (v) {
+        v = v.trim();
+        if (!v) return 'Вкажіть, як до вас звертатися.';
+        if (v.length < 2) return 'Ім\'я занадто коротке.';
+        if (/\d/.test(v)) return 'Ім\'я не має містити цифр.';
+        return '';
+      },
+      'f-phone': function (v) {
+        var d = digits(v);
+        if (!d) return 'Вкажіть номер, щоб інженер міг передзвонити.';
+        if (/[^\d\s+()-]/.test(v)) return 'Номер може містити лише цифри, пробіли, «+», дужки й дефіс.';
+        var ok = (d.length === 12 && d.indexOf('380') === 0) || (d.length === 10 && d.charAt(0) === '0');
+        return ok ? '' : 'Перевірте номер: 10 цифр, наприклад 067 123 45 67, або з кодом +38.';
+      }
+    };
+    var numeric = function (input) {
+      return function (v) {
+        if (!v.trim()) return '';
+        var n = num(v);
+        return isFinite(n) && n > 0 ? '' : 'Тут потрібне число' + (input.dataset.unit ? ', ' + input.dataset.unit : '') + '.';
+      };
+    };
+    form.querySelectorAll('input[inputmode="numeric"], input[inputmode="decimal"]').forEach(function (i) {
+      if (!RULES[i.id]) RULES[i.id] = numeric(i);
+    });
+
+    // Під кожне поле з правилом — місце для тексту помилки, пов'язане з полем.
+    var errNode = function (el, field) {
+      var id = el.id + '-err';
+      var p = document.getElementById(id);
+      if (!p) {
+        p = document.createElement('p');
+        p.className = 'field-err'; p.id = id; p.hidden = true;
+        field.appendChild(p);
+        var d = el.getAttribute('aria-describedby');
+        el.setAttribute('aria-describedby', (d ? d + ' ' : '') + id);
+      }
+      return p;
+    };
+    var setErr = function (el, field, text) {
+      var p = errNode(el, field);
+      p.textContent = text; p.hidden = !text;
+      if (text) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+    };
+
+    var picks = form.querySelectorAll('fieldset[data-required]');
+    var check = function (el) {
+      if (el.tagName === 'FIELDSET') {
+        var on = el.querySelector('input:checked');
+        setErr(el, el, on ? '' : el.dataset.err);
+        return on ? '' : el.dataset.err;
+      }
+      var rule = RULES[el.id];
+      if (!rule) return '';
+      var text = rule(el.value);
+      setErr(el, el.closest('.field') || el.parentNode, text);
+      return text;
+    };
+    var targets = function () {
+      return Array.prototype.slice.call(picks).concat(Object.keys(RULES).map(function (id) { return document.getElementById(id); }).filter(Boolean))
+        .sort(function (a, b) { return a.compareDocumentPosition(b) & 2 ? 1 : -1; });
+    };
+
+    // Поле телефону: прибираємо літери одразу під час введення.
+    var phone = document.getElementById('f-phone');
+    if (phone) phone.addEventListener('input', function () {
+      var clean = phone.value.replace(/[^\d\s+()-]/g, '');
+      if (clean !== phone.value) phone.value = clean;
+    });
+
+    // Повторна перевірка поля після першої спроби надіслати; успіх ховаємо, щойно відвідувач знову друкує.
+    var tried = false;
+    form.addEventListener('input', function (e) {
+      if (msg.textContent) { msg.textContent = ''; msg.className = 'form-msg'; }
+      if (!tried) return;
+      var el = e.target.closest('fieldset[data-required]') || e.target;
+      check(el);
+      var left = targets().filter(function (t) { return t.getAttribute('aria-invalid') === 'true'; }).length;
+      summary.hidden = !left;
+      if (left) summary.textContent = left === 1 ? 'Залишилось виправити одне поле.' : 'Залишилось виправити полів: ' + left + '.';
+    });
+    form.addEventListener('change', function (e) { if (tried && e.target.type === 'radio') check(e.target.closest('fieldset')); });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var errors = [];
-      name.removeAttribute('aria-invalid');
-      phone.removeAttribute('aria-invalid');
-      if (!name.value.trim()) { errors.push('ім\'я'); name.setAttribute('aria-invalid', 'true'); }
-      var d = digits(phone.value);
-      if (d.length < 10 || d.length > 12) { errors.push('телефон у форматі +38 0XX XXX XX XX'); phone.setAttribute('aria-invalid', 'true'); }
-      msg.classList.toggle('is-error', errors.length > 0);
-      if (errors.length) {
-        msg.textContent = 'Перевірте: ' + errors.join(', ') + '.';
-        (name.getAttribute('aria-invalid') ? name : phone).focus();
+      tried = true;
+      var bad = targets().filter(function (el) { return check(el); });
+      if (bad.length) {
+        summary.hidden = false;
+        summary.textContent = bad.length === 1 ? 'Виправте поле, позначене знаком «!».' : 'Виправте поля, позначені знаком «!»: ' + bad.length + '.';
+        var first = bad[0];
+        (first.tagName === 'FIELDSET' ? first.querySelector('input') : first).focus({ preventScroll: true });
+        first.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         return;
       }
+      summary.hidden = true;
       var btn = form.querySelector('button[type=submit]');
+      var name = document.getElementById('f-name');
       btn.disabled = true;
       btn.textContent = 'Надсилаємо…';
       setTimeout(function () {
         btn.disabled = false;
         btn.textContent = 'Надіслати запит';
-        msg.textContent = 'Дякуємо, ' + name.value.trim() + '! Інженер передзвонить на ' + phone.value.trim() + ' у робочий час. (Прототип: заявка не надсилається.)';
+        msg.className = 'form-msg is-success';
+        msg.textContent = 'Дякуємо, ' + name.value.trim() + '! Заявку прийнято. Інженер передзвонить на ' + phone.value.trim() + ' у робочий час, 09:00–18:00. (Прототип: заявка не надсилається.)';
         form.reset();
+        tried = false;
         if (bill) update();
         form.dispatchEvent(new CustomEvent('enray:reset'));
+        msg.setAttribute('tabindex', '-1');
+        msg.focus({ preventScroll: true });
+        msg.scrollIntoView({ block: 'center' });
       }, 600);
     });
   }

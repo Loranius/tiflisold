@@ -213,17 +213,19 @@
     <div class="request" id="zayavka">
       <h2>Розрахунок для вашого бізнесу</h2>
       <p class="request-lead">Інженер передзвонить у робочий час, 09:00–18:00, і попросить рахунки за рік, щоб порахувати потужність та економію точно.</p>
-      <form class="request-form" id="request-form" novalidate>
+      <form class="request-form" id="request-form" method="post" action="#" novalidate>
         <input type="hidden" name="scenario" value="Бізнес">
         <div class="field"><label for="f-name">Ім'я</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+38 0__ ___ __ __" required></div>
+        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
         <div class="field"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2"></div>
         <div class="field"><label for="f-bill">Рахунок, грн/міс</label><input id="f-bill" name="bill" type="text" inputmode="numeric" placeholder="наприклад, 20 000"></div>
         <div class="field"><label for="f-tariff">Тариф, грн/кВт·год</label><input id="f-tariff" name="tariff" type="text" inputmode="decimal" placeholder="з вашого рахунку"></div>
         <div class="field"><label for="f-kw">Потужність, кВт (орієнтир)</label><input id="f-kw" name="kw" type="text" inputmode="numeric" placeholder="якщо знаєте"></div>
         <div class="field field--wide"><label for="f-hours">Графік роботи</label><input id="f-hours" name="hours" type="text" placeholder="наприклад, Пн–Сб, 08:00–20:00"></div>
+        <p class="form-errors" id="form-errors" role="alert" hidden></p>
         <button class="btn btn-primary btn-lg" type="submit">Надіслати запит</button>
         <p class="form-msg" id="form-msg" role="status"></p>
+        <p class="form-next">Інженер передзвонить і уточнить дані для розрахунку. Дані з форми використовуємо лише для зв'язку з вами: <a href="https://enray.com.ua/privacy-policy/">політика конфіденційності</a>.</p>
       </form>
     </div>
     <aside class="closing-aside">

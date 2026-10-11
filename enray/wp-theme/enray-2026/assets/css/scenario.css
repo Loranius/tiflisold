@@ -125,8 +125,8 @@
 /* Заявка */
 .closing--scenario { grid-template-columns: minmax(0, 783fr) minmax(0, 560fr); align-items: start; }
 .field--wide { grid-column: 1 / -1; }
-.field textarea { width: 100%; min-height: 72px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #3a4b66; background: var(--navy-2); color: #fff; font: 400 17px/1.4 var(--f-body); resize: vertical; field-sizing: content; transition: border-color .2s, background-color .2s; }
-.field textarea:hover { border-color: #5a6f90; }
+.field textarea { width: 100%; min-height: 72px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #5f7393; background: var(--navy-2); color: #fff; font: 400 17px/1.4 var(--f-body); resize: vertical; field-sizing: content; transition: border-color .2s, background-color .2s; }
+.field textarea:hover { border-color: #7d92b3; }
 .field textarea:focus { outline: none; border-color: #6f9cff; background: #172b49; }
 .closing-aside { display: grid; gap: 16px; align-content: start; padding-top: clamp(8px, 1vw, 20px); }
 .closing-aside p { color: var(--ink-2); max-width: 38ch; }

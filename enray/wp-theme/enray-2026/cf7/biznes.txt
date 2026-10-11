@@ -13,14 +13,15 @@
 
 ---8<--- Form
 [hidden scenario "Бізнес"]
-<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name]</div>
-<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 0__ ___ __ __"]</div>
+<div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
+<div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
 <div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2]</div>
 <div class="field"><label for="f-bill">Рахунок, грн/міс</label>[text bill id:f-bill placeholder "наприклад, 20 000"]</div>
 <div class="field"><label for="f-tariff">Тариф, грн/кВт·год</label>[text tariff id:f-tariff placeholder "з вашого рахунку"]</div>
 <div class="field"><label for="f-kw">Потужність, кВт (орієнтир)</label>[text kw id:f-kw placeholder "якщо знаєте"]</div>
 <div class="field field--wide"><label for="f-hours">Графік роботи</label>[text hours id:f-hours placeholder "наприклад, Пн–Сб, 08:00–20:00"]</div>
 [submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]
+<p class="form-next">Інженер передзвонить і уточнить дані для розрахунку. Дані з форми використовуємо лише для зв'язку з вами: <a href="/privacy-policy/">політика конфіденційності</a>.</p>
 ---8<---
 
 ---8<--- Mail body
