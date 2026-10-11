@@ -15,7 +15,7 @@
 [hidden scenario "Агро"]
 <div class="field"><label for="f-name">Ім'я</label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
 <div class="field"><label for="f-phone">Телефон</label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
-<div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2]</div>
+<div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2 maxlength:80]</div>
 <div class="field"><label for="f-pump">Насоси, кВт</label>[text pump id:f-pump placeholder "сумарно, якщо знаєте"]</div>
 <div class="field"><label for="f-hours">Годин поливу на день</label>[text hours id:f-hours placeholder "наприклад, 8"]</div>
 <div class="field"><label for="f-season">Сезон поливу</label>[text season id:f-season placeholder "наприклад, квітень — вересень"]</div>

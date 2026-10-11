@@ -60,6 +60,7 @@
     var kwhOut = document.getElementById('rz-kwh');
     var batOut = document.getElementById('rz-bat');
     var fLoads = document.getElementById('f-loads');
+    var loadsTouched = false; // у форму лише вибір відвідувача, не стартовий набір
     var calc = function () {
       var kw = 0, names = [];
       loads.forEach(function (i) { if (i.checked) { kw += Number(i.value); names.push(i.dataset.name); } });
@@ -67,12 +68,12 @@
       var bat = BATS.find(function (b) { return b >= kwh * 1.25; });
       kwhOut.textContent = '≈ ' + fmt1.format(kwh);
       batOut.textContent = !names.length ? 'оберіть прилади' : bat ? 'від ' + bat + ' кВт·год' : 'понад 30 кВт·год';
-      if (fLoads) { fLoads.value = names.join(', '); fLoads.style.height = 'auto'; fLoads.style.height = fLoads.scrollHeight + 'px'; }
+      if (fLoads && loadsTouched) { fLoads.value = names.join(', '); fLoads.style.height = 'auto'; fLoads.style.height = fLoads.scrollHeight + 'px'; }
     };
     if (kwhOut) {
-      loads.forEach(function (i) { i.addEventListener('change', calc); });
+      loads.forEach(function (i) { i.addEventListener('change', function () { loadsTouched = true; calc(); }); });
       calc();
-      if (form) form.addEventListener('enray:reset', calc);
+      if (form) form.addEventListener('enray:reset', function () { loadsTouched = false; calc(); });
     }
   }
 

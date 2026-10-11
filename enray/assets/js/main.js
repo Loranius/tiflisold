@@ -232,14 +232,13 @@
       }
       summary.hidden = true;
       var btn = form.querySelector('button[type=submit]');
-      var name = document.getElementById('f-name');
       btn.disabled = true;
       btn.textContent = 'Надсилаємо…';
       setTimeout(function () {
         btn.disabled = false;
         btn.textContent = 'Надіслати запит';
         msg.className = 'form-msg is-success';
-        msg.textContent = 'Дякуємо, ' + name.value.trim() + '! Заявку прийнято. Інженер передзвонить на ' + phone.value.trim() + ' у робочий час, 09:00–18:00. (Прототип: заявка не надсилається.)';
+        msg.textContent = 'Дякуємо! Заявку прийнято. Інженер передзвонить на ' + phone.value.trim() + ' у робочий час, 09:00–18:00. (Прототип: заявка не надсилається.)';
         form.reset();
         tried = false;
         if (bill) update();

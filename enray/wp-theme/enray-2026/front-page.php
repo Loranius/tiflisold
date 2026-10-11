@@ -51,7 +51,7 @@ get_header();
         </div>
       </article>
       <article class="scenario" id="agro">
-        <div class="scenario-media scenario-media--collage"><span class="tab">Агро</span><img src="<?php echo esc_url( enray_img( 'card-agro.webp' ) ); ?>" width="720" height="376" alt="Сонячні станції EnRay для поливу: панелі біля водойми, на даху господарської будівлі та на землі" loading="lazy"></div>
+        <div class="scenario-media"><span class="tab">Агро</span><img src="<?php echo esc_url( enray_img( 'card-agro.webp' ) ); ?>" width="720" height="376" alt="Сонячні станції EnRay для поливу: панелі біля водойми, на даху господарської будівлі та на землі" loading="lazy"></div>
         <div class="scenario-body">
           <p>Полив, насоси й віддалені ділянки: станції на 50–100 кВт під сезонне навантаження.</p>
           <p class="spec">приклад: СЕС 100 кВт · Лука-Мелешківська · 2025</p>
