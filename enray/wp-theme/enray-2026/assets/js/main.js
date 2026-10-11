@@ -17,6 +17,51 @@
   var YIELD = 1150;           // кВт·год на рік з 1 кВт панелей, Вінницька обл.
   var SIZES = [3, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50];
 
+  // Повзунки на сенсорних екранах. Браузер переставляє бігунок уже на дотик до доріжки,
+  // тож свайп, яким людина гортає сторінку, міняв би рахунок. Поки жест не підтверджено,
+  // значення не доходить до калькуляторів і форми: рух убік або короткий дотик на місці
+  // приймаємо, вертикальний свайп чи перехоплену браузером прокрутку — скасовуємо.
+  var gesture = null; // { r, v, x, y, ok: null | true | false, pending }
+  var held = function (e) { return gesture && e.target === gesture.r && gesture.ok !== true; };
+  ['input', 'change'].forEach(function (type) {
+    document.addEventListener(type, function (e) {
+      if (!held(e)) return;
+      e.stopImmediatePropagation();
+      gesture.pending = true;
+      if (gesture.ok === false) gesture.r.value = gesture.v; // скасований жест не рухає бігунок
+    }, true);
+  });
+  var release = function (g) {
+    var go = g.pending && g.r.value !== g.v;
+    g.pending = false; g.v = g.r.value;
+    if (go) {
+      g.r.dispatchEvent(new Event('input', { bubbles: true }));
+      g.r.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  };
+  var end = function (accept) {
+    var g = gesture; gesture = null;
+    if (!g) return;
+    if (accept) release(g);
+    else if (g.r.value !== g.v) g.r.value = g.v; // повертаємо мовчки: калькулятори й форма зміни не бачили
+  };
+  document.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'touch' || !e.target.matches || !e.target.matches('input[type=range]')) return;
+    gesture = { r: e.target, v: e.target.value, x: e.clientX, y: e.clientY, ok: null, pending: false };
+  }, true);
+  document.addEventListener('pointermove', function (e) {
+    if (!gesture || gesture.ok !== null || e.pointerType !== 'touch') return;
+    var dx = Math.abs(e.clientX - gesture.x), dy = Math.abs(e.clientY - gesture.y);
+    if (dx > 8 && dx > dy) { gesture.ok = true; release(gesture); } // свідомий рух убік
+    else if (dy > 10 && dy > dx) { gesture.ok = false; gesture.r.value = gesture.v; } // людина гортає сторінку
+  }, true);
+  document.addEventListener('pointerup', function (e) {
+    if (!gesture || e.pointerType !== 'touch') return;
+    var dx = Math.abs(e.clientX - gesture.x), dy = Math.abs(e.clientY - gesture.y);
+    end(gesture.ok === true || (gesture.ok === null && dx <= 10 && dy <= 10));
+  }, true);
+  document.addEventListener('pointercancel', function () { end(false); }, true);
+
   // Меню на телефоні
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('mobile-menu');
