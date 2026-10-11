@@ -53,7 +53,11 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 ::selection { background: var(--cobalt); color: #fff; }
 :focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 6px; }
-input { caret-color: var(--cobalt); }
+input, textarea { caret-color: var(--cobalt); }
+html { scrollbar-color: var(--rule-ui) var(--paper-2); }
+/* На темних панелях кобальтовий фокус губиться: світліший синій, 6.8:1 на navy. */
+.request :focus-visible, .site-footer :focus-visible { outline-color: #6f9cff; }
+.request input, .request textarea { caret-color: #6f9cff; }
 h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: 0; text-wrap: balance; margin: 0; color: var(--ink); }
 h2 { font-size: clamp(28px, 2.72vw, 46px); line-height: 1.1; }
 p { margin: 0; }
@@ -178,7 +182,8 @@ input[type=range]::-moz-range-progress { height: 6px; border-radius: 3px; backgr
 input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -11px; border-radius: 50%; background: #fff; border: 6px solid var(--cobalt); box-shadow: 0 2px 8px rgba(10,79,214,.35); }
 input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 6px solid var(--cobalt); box-shadow: 0 2px 8px rgba(10,79,214,.35); }
 input[type=range]:focus-visible { outline: none; }
-input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(10,79,214,.25); }
+input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--cobalt); }
+input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--cobalt); }
 .slider-scale { position: relative; height: 1.2em; margin-top: 10px; font: 400 clamp(15px, 1.42vw, 24px)/1 var(--f-body); color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .slider-scale span { position: absolute; top: 0; left: calc(14px + (100% - 28px) * var(--at, 0)); transform: translateX(-50%); white-space: nowrap; }
 .slider-scale span:first-child { left: 0; transform: none; }
