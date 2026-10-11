@@ -245,7 +245,9 @@
 /* Широке фото кейсу без обрізання (Агро) */
 .cf-main--wide { align-self: start; }
 .cf-main--wide img { height: auto; aspect-ratio: 1440 / 707; }
-.cf-left { display: grid; gap: clamp(16px, 1.6vw, 26px); align-content: start; min-width: 0; }
-.cf-left .cf-inverter img { aspect-ratio: 21 / 8; }
-.cf-main--wide .callouts text { font-size: 32px; stroke-width: 7px; }
+.cf-main--wide .callouts text { font-size: 26px; stroke-width: 6px; }
 @media (max-width: 720px) { .cf-main--wide .callouts text { font-size: 44px; stroke-width: 9px; } }
+.cf-grid--stack { grid-template-columns: 1fr; }
+.cf-grid--stack .cf-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 2.4vw, 40px); align-items: start; }
+.cf-aside { display: grid; gap: clamp(14px, 1.4vw, 22px); }
+@media (max-width: 720px) { .cf-grid--stack .cf-side { grid-template-columns: 1fr; } }

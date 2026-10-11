@@ -299,7 +299,11 @@
     var liveA = function () { sChart.classList.add('is-live'); if (sMini) sMini.classList.add('is-live'); };
     [['pump', aPump], ['hours', aHours], ['kw', aKw]].forEach(function (p) { p[1].addEventListener('input', function () { own[p[0]] = true; liveA(); renderA(); }); });
     [aFrom, aTo].forEach(function (s) { s.addEventListener('change', function () { own.season = true; liveA(); renderA(); }); });
-    bindToggle(function (md) { aMode = md; sChart.dataset.mode = md; sChart.classList.remove('is-live'); renderA(); });
+    bindToggle(function (md) {
+      aMode = md; sChart.dataset.mode = md; sChart.classList.remove('is-live');
+      document.querySelectorAll('.lg-on').forEach(function (li) { li.hidden = md !== 'on'; });
+      renderA();
+    });
     if (form) form.addEventListener('enray:reset', renderA);
     if (reduce) { sChart.classList.add('no-motion'); if (sMini) sMini.classList.add('no-motion'); }
     renderA();
