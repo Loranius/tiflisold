@@ -5,8 +5,8 @@ get_header();
 <main id="main">
   <section class="hero" id="top">
     <div class="hero-copy">
-      <h1>Сонячна станція, яка тримає світло під час відключень</h1>
-      <p class="hero-sub">Проєкт, монтаж і підключення у&nbsp;Вінницькій області за&nbsp;7–10&nbsp;днів</p>
+      <h1>Сонячні станції для дому, бізнесу й&nbsp;поливу</h1>
+      <p class="hero-sub">Світло під час відключень, менший рахунок, енергія для насосів. Під ключ у&nbsp;Вінницькій області за&nbsp;<span class="nw">7–10&nbsp;днів</span>.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#kalkulyator">Розрахувати станцію</a>
         <a class="btn btn-outline btn-lg" href="<?php echo esc_attr( enray_tel() ); ?>">Подзвонити</a>
@@ -63,19 +63,71 @@ get_header();
 
   <section class="calc" id="kalkulyator" aria-labelledby="calc-h">
     <div class="calc-inner">
-      <div class="calc-input">
-        <h2 id="calc-h"><label for="bill">Ваш рахунок за світло, грн/міс</label></h2>
-        <div class="slider">
-          <input id="bill" type="range" min="1000" max="15000" step="500" value="5000" aria-describedby="calc-note">
-          <div class="slider-scale" aria-hidden="true"><span>1 000</span><span>5 000</span><span>10 000</span><span>15 000+</span></div>
-        </div>
-        <output class="bill-value" for="bill" id="bill-out">5 000 грн</output>
+      <div class="calc-top">
+        <h2 id="calc-h">Яка потужність вам потрібна</h2>
+        <fieldset class="calc-switch" id="calc-switch" hidden>
+          <legend class="sr-only">Для чого станція</legend>
+          <label><input type="radio" name="calc-mode" value="dim" data-object="Дім" checked><span>Дім</span></label>
+          <label><input type="radio" name="calc-mode" value="biz" data-object="Бізнес"><span>Бізнес</span></label>
+          <label><input type="radio" name="calc-mode" value="agro" data-object="Агро"><span>Агро</span></label>
+        </fieldset>
       </div>
-      <div class="calc-result" aria-live="polite">
-        <p class="calc-kw">Рекомендована потужність: <b id="kw-out">≈ 12 кВт</b></p>
-        <p class="calc-detail" id="kwh-out">≈ 1 160 кВт·год на місяць, ≈ 13 900 кВт·год на рік</p>
-        <p class="calc-note" id="calc-note">Орієнтовно, за тарифом 4,32 грн/кВт·год і генерацією ≈ 1 150 кВт·год на 1 кВт панелей за рік. Точну потужність, склад і ціну інженер порахує після огляду.</p>
-        <a class="link-strong" href="#zayavka" id="calc-cta">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
+
+      <div class="calc-panel" data-mode="dim">
+        <div class="calc-input">
+          <label class="calc-label" for="bill">Ваш рахунок за світло, грн/міс</label>
+          <div class="slider">
+            <input id="bill" type="range" min="1000" max="15000" step="500" value="5000" aria-describedby="calc-note">
+            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1 000</span><span style="--at:.2857">5 000</span><span style="--at:.6429">10 000</span><span style="--at:1">15 000+</span></div>
+          </div>
+          <output class="bill-value" for="bill" id="bill-out">5 000 грн</output>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <p class="calc-kw">Рекомендована потужність: <b id="kw-out">≈ 12 кВт</b></p>
+          <p class="calc-detail" id="kwh-out">≈ 1 160 кВт·год на місяць, ≈ 13 900 кВт·год на рік</p>
+          <p class="calc-note" id="calc-note">Орієнтовно, за побутовим тарифом 4,32 грн/кВт·год і генерацією ≈ 1 150 кВт·год на 1 кВт панелей за рік. Скільки акумулятора потрібно на час відключень, видно в <a href="<?php echo esc_url( home_url( '/dim/' ) ); ?>#kalkulyator">калькуляторі для дому</a>. Точну потужність, склад і ціну інженер порахує після огляду.</p>
+          <a class="link-strong" href="#zayavka">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="calc-panel" data-mode="biz" hidden>
+        <div class="calc-input">
+          <label class="calc-label" for="c-kwh">Споживання за місяць, кВт·год</label>
+          <div class="slider">
+            <input id="c-kwh" type="range" min="1000" max="12000" step="250" value="3000" aria-describedby="c-biz-note">
+            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1 000</span><span style="--at:.3636">5 000</span><span style="--at:1">12 000+</span></div>
+          </div>
+          <output class="bill-value" for="c-kwh" id="c-kwh-out">3 000 кВт·год</output>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <p class="calc-kw">Рекомендована потужність: <b id="c-biz-kw">≈ 30 кВт</b></p>
+          <p class="calc-detail" id="c-biz-detail">≈ 36 000 кВт·год на рік споживання, станція дасть ≈ 34 500 кВт·год на рік</p>
+          <p class="calc-note" id="c-biz-note">Споживання в кВт·год є в рахунку або в кабінеті обленерго. Тариф для бізнесу в кожного свій, тому економію в гривнях рахуємо за вашим тарифом у <a href="<?php echo esc_url( home_url( '/biznes/' ) ); ?>#kalkulyator">калькуляторі для бізнесу</a>. Там же видно, скільки енергії ви використаєте вдень самі.</p>
+          <a class="link-strong" href="#zayavka">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="calc-panel" data-mode="agro" hidden>
+        <div class="calc-input">
+          <label class="calc-label" for="c-pump">Сумарна потужність насосів, кВт</label>
+          <div class="slider">
+            <input id="c-pump" type="range" min="1" max="100" step="1" value="30" aria-describedby="c-agro-note">
+            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1</span><span style="--at:.4949">50</span><span style="--at:1">100</span></div>
+          </div>
+          <output class="bill-value" for="c-pump" id="c-pump-out">30 кВт</output>
+          <label class="calc-label calc-label--2" for="c-hours">Годин роботи на день</label>
+          <div class="slider">
+            <input id="c-hours" type="range" min="1" max="14" step="1" value="8" aria-describedby="c-agro-note">
+            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1</span><span style="--at:.5385">8</span><span style="--at:1">14</span></div>
+          </div>
+          <output class="bill-value" for="c-hours" id="c-hours-out">8 год</output>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <p class="calc-kw">Рекомендована потужність: <b id="c-agro-kw">≈ 70 кВт</b></p>
+          <p class="calc-detail" id="c-agro-detail">Насосам потрібно ≈ 43 900 кВт·год за сезон, найслабший місяць — вересень</p>
+          <p class="calc-note" id="c-agro-note">Орієнтовно: сезон поливу квітень — вересень, насоси працюють удень, без акумулятора. Станцію рахуємо так, щоб вистачило й у найслабший місяць сезону. Інший сезон, нічний полив і покриття по місяцях — у <a href="<?php echo esc_url( home_url( '/agro/' ) ); ?>#kalkulyator">калькуляторі для поливу</a>.</p>
+          <a class="link-strong" href="#zayavka">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </div>
   </section>

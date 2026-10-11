@@ -50,6 +50,66 @@
     update();
   }
 
+  // Бізнес: потужність за споживанням у кВт·год, без припущень про тариф.
+  var BIZ = [5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100];
+  var sizeUp = function (need, list) {
+    return list.find(function (s) { return s >= need * 0.95; }) || Math.ceil(need / 10) * 10;
+  };
+  var BIG = ' Це більше за наш найбільший збудований об\'єкт (100 кВт), тому проєкт обговоримо з інженером.';
+  var cKwh = document.getElementById('c-kwh');
+  var setP = function (r) { r.style.setProperty('--p', (r.value - r.min) / (r.max - r.min) * 100 + '%'); };
+  var updBiz = function () {
+    var v = Number(cKwh.value), plus = v >= Number(cKwh.max);
+    var year = v * 12, kw = sizeUp(year / YIELD, BIZ);
+    setP(cKwh);
+    document.getElementById('c-kwh-out').textContent = fmt.format(v) + (plus ? '+' : '') + ' кВт·год';
+    cKwh.setAttribute('aria-valuetext', fmt.format(v) + ' кВт·год на місяць');
+    document.getElementById('c-biz-kw').textContent = (plus ? 'від ' : '≈ ') + kw + ' кВт';
+    document.getElementById('c-biz-detail').textContent = '≈ ' + fmt.format(roundTo(year, 100)) + ' кВт·год на рік споживання, станція дасть ≈ ' +
+      fmt.format(roundTo(kw * YIELD, 100)) + ' кВт·год на рік.' + (kw > 100 ? BIG : '');
+  };
+  if (cKwh) { cKwh.addEventListener('input', updBiz); updBiz(); }
+
+  // Агро: сезон квітень — вересень, станція закриває й найслабший місяць (як у калькуляторі для поливу).
+  var cPump = document.getElementById('c-pump'), cHours = document.getElementById('c-hours');
+  var updAgro = function () {
+    var pump = Number(cPump.value), hours = Number(cHours.value);
+    var DAYS = [30, 31, 30, 31, 31, 30], FA = [0.11, 0.125, 0.13, 0.14, 0.125, 0.095];
+    var MON = ['квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень'];
+    var need = 0, worst = 0, kwMax = 0;
+    DAYS.forEach(function (d, i) {
+      need += pump * hours * d;
+      var k = pump * hours * d / (YIELD * FA[i]);
+      if (k > kwMax) { kwMax = k; worst = i; }
+    });
+    var kw = Math.ceil(kwMax / 5) * 5;
+    setP(cPump); setP(cHours);
+    document.getElementById('c-pump-out').textContent = pump + ' кВт';
+    document.getElementById('c-hours-out').textContent = hours + ' год';
+    cHours.setAttribute('aria-valuetext', hours + ' год на день');
+    document.getElementById('c-agro-kw').textContent = '≈ ' + kw + ' кВт';
+    document.getElementById('c-agro-detail').textContent = 'Насосам потрібно ≈ ' + fmt.format(roundTo(need, 100)) +
+      ' кВт·год за сезон, найслабший місяць — ' + MON[worst] + '.' + (kw > 100 ? BIG : '');
+  };
+  if (cPump && cHours) { [cPump, cHours].forEach(function (r) { r.addEventListener('input', updAgro); }); updAgro(); }
+
+  // Перемикач Дім / Бізнес / Агро. Без JS видно лише калькулятор для дому.
+  var sw = document.getElementById('calc-switch');
+  if (sw) {
+    sw.hidden = false;
+    var autoObj = null;
+    sw.addEventListener('change', function (e) {
+      var mode = e.target.value;
+      document.querySelectorAll('.calc-panel').forEach(function (p) { p.hidden = p.dataset.mode !== mode; });
+      // Вибір відвідувача переносимо у форму, якщо там ще нічого не обрано вручну.
+      var cur = document.querySelector('#request-form input[name="object"]:checked');
+      if (!cur || cur === autoObj) {
+        var r = document.querySelector('#request-form input[name="object"][value="' + e.target.dataset.object + '"]');
+        if (r) { r.checked = true; autoObj = r; r.dispatchEvent(new Event('change', { bubbles: true })); }
+      }
+    });
+  }
+
   // Заявка (у прототипі нікуди не надсилається; у WordPress її прийме Contact Form 7)
   var form = document.getElementById('request-form');
   var msg = document.getElementById('form-msg');
