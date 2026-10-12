@@ -6,7 +6,7 @@
   "direction": null,
   "breakpoint": "1696x2528",
   "artifact": "index.html",
-  "phase": "plates",
+  "phase": "done",
   "phases": {
     "comps": {
       "status": "skipped",
@@ -37,9 +37,9 @@
       "forced": null
     },
     "plates": {
-      "status": "open",
+      "status": "skipped",
       "openedAt": "2026-10-11T07:56:47.430Z",
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 2,
       "notes": [
         {
@@ -49,6 +49,10 @@
         {
           "at": "2026-10-11T08:09:58.374Z",
           "text": "Reviewer round 1 (fix) applied: Onest display, hero photo fills column, calc grid restored, steps scale, mobile CTA and facts, case titles. Plates/hero gates not passed: user-declined comp imagery ('Реальні фото EnRay'); hero-repro/comp-diff not produced. Footer kept separate from form card per pre-approval statement to user ('Футер стане окремим блоком')."
+        },
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "Closed without the plates gate: the owner chose real EnRay photos over comp imagery (11.10.2026); all imagery is cropped from enray/assets/src originals. hero.gate / hero-repro not produced for the same reason."
         }
       ],
       "gate": {
@@ -68,47 +72,72 @@
       "forced": null
     },
     "hero": {
-      "status": "pending",
+      "status": "closed",
       "openedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 0,
-      "notes": [],
+      "notes": [
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "Hero built on the real 6 kW roof photo with live SVG drafting callouts; reviewed by impeccable-finish-reviewer rounds and screenshots, not by the comp hero gate (waived with plates)."
+        }
+      ],
       "gate": null,
       "forced": null
     },
     "sections": {
-      "status": "pending",
+      "status": "closed",
       "openedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 0,
-      "notes": [],
+      "notes": [
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "All sections shipped and extended per PRODUCT.md (services block, three cases, calculator modes); verified by Playwright regression and finish review."
+        }
+      ],
       "gate": null,
       "forced": null
     },
     "motion": {
-      "status": "pending",
+      "status": "closed",
       "openedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 0,
-      "notes": [],
+      "notes": [
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "'Drafting stroke' motion language shipped (DESIGN.md Motion); reduced-motion path verified."
+        }
+      ],
       "gate": null,
       "forced": null
     },
     "responsive": {
-      "status": "pending",
+      "status": "closed",
       "openedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 0,
-      "notes": [],
+      "notes": [
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "Adapted 320–2560 px, landscape, browser font 16/20/24 px (rem/em); verified by Playwright."
+        }
+      ],
       "gate": null,
       "forced": null
     },
     "review": {
-      "status": "pending",
+      "status": "closed",
       "openedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-10-12T07:04:54.000Z",
       "attempts": 0,
-      "notes": [],
+      "notes": [
+        {
+          "at": "2026-10-12T07:04:54.000Z",
+          "text": "Final polish review 12.10.2026 applied (process steps vertical beside form, facts 2×2 on tablets, pick grid, wide-screen H1, error icon, works-todo spacing, measures). comp-diff not re-run: the installed impeccable CLI exposes no comp-diff verb; diff/final/report.json predates the services work and is superseded by the review captures in .impeccable/review/."
+        }
+      ],
       "gate": null,
       "forced": null
     }

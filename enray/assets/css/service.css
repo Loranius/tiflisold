@@ -24,7 +24,7 @@
 
 /* Прогалина, яку заповнить компанія. У WordPress її бачать лише редактори. */
 .todo { display: inline-block; padding: 2px 8px; border: 1.5px dashed var(--todo-line); border-radius: 6px; background: var(--todo-bg); font: 600 0.8125rem/1.4 var(--f-body); color: var(--todo-ink); letter-spacing: .01em; }
-.works-todo { max-width: 60ch; padding: 18px 20px; border: 1.5px dashed var(--todo-line); border-radius: var(--radius); background: var(--todo-bg); color: var(--todo-ink); }
+.works-todo { margin-top: clamp(16px, 2vw, 34px); max-width: 60ch; padding: 18px 20px; border: 1.5px dashed var(--todo-line); border-radius: var(--radius); background: var(--todo-bg); color: var(--todo-ink); }
 
 /* Що входить: колонки специфікації, розділені лініями, а не картки */
 .includes h2 { margin-bottom: clamp(20px, 1.8vw, 30px); }

@@ -293,7 +293,7 @@
       var bad = targets().filter(function (el) { return check(el); });
       if (bad.length) {
         summary.hidden = false;
-        summary.textContent = bad.length === 1 ? 'Виправте поле, позначене знаком «!».' : 'Виправте поля, позначені знаком «!»: ' + bad.length + '.';
+        summary.textContent = bad.length === 1 ? 'Виправте поле з позначкою помилки.' : 'Виправте поля з позначкою помилки: ' + bad.length + '.';
         var first = bad[0];
         (first.tagName === 'FIELDSET' ? first.querySelector('input') : first).focus({ preventScroll: true });
         first.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
