@@ -159,3 +159,28 @@
   .bill-scale span::before { display: inline; font-size: .75rem; }
 }
 .bill-cols--mini .cap-line { border-top-color: var(--sky-key); }
+
+/* Агро: сезон поливу — висота стовпчика = потреба насосів, жовта частка — закриває станція */
+.scol { position: relative; display: flex; align-items: flex-end; height: 100%; }
+.scol-need { position: relative; width: 100%; height: var(--need, 0%); border-radius: 8px 8px 3px 3px; background: #b9c8dc; overflow: hidden; box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .14); transition: height .55s var(--ease); }
+.scol.is-idle { border-radius: 8px 8px 3px 3px; background: repeating-linear-gradient(135deg, transparent 0 6px, rgb(185 200 220 / .5) 6px 7px); }
+.no-motion .scol-need { transition: none; }
+.is-live .scol-need { transition-duration: .2s; }
+.gen-mark { position: absolute; left: -2px; right: -2px; bottom: var(--gen, 0%); height: 0; border-top: 2px dashed var(--cobalt); opacity: 0; transition: opacity .3s, bottom .2s; pointer-events: none; }
+.season-cols.is-on .gen-mark, .bill-cols--mini .gen-mark { opacity: 1; }
+.scol.is-weak .scol-need { box-shadow: inset 0 0 0 2.5px var(--cobalt); }
+.legend .sw--idle { background: repeating-linear-gradient(135deg, var(--surface) 0 3px, #b9c8dc 3px 4px); }
+.legend .sw--gen { width: 20px; height: 2px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--cobalt) 0 5px, transparent 5px 8px); }
+.legend .sw--weak { background: #b9c8dc; box-shadow: inset 0 0 0 2px var(--cobalt); }
+.bill-cols--mini .scol-need { background: rgb(255 255 255 / .22); box-shadow: none; border-radius: 4px 4px 2px 2px; }
+.bill-cols--mini .scol.is-idle { background: repeating-linear-gradient(135deg, transparent 0 4px, rgb(255 255 255 / .14) 4px 5px); }
+.bill-cols--mini .gen-mark { border-top-color: var(--sky-key); }
+.rz-pct { font: 800 .55em/1 var(--f-display); }
+
+/* Агро: поле сезону — два списки */
+.bi-label { font: 700 clamp(1rem, .95rem + .25vw, 1.125rem)/1.3 var(--f-display); }
+.bi-selects { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.bi-select { min-height: 52px; padding: 0 44px 0 16px; border: 1.5px solid var(--line-ui); border-radius: 14px; background-color: var(--surface); color: var(--ink); font: 500 1.0625rem/1 var(--f-body); appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 22px) 23px, calc(100% - 16px) 23px; background-size: 6px 6px; background-repeat: no-repeat; }
+.bi-select:hover { border-color: var(--ink-2); }
+.bi-select:focus { outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt); }

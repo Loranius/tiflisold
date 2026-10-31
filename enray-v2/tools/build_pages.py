@@ -83,7 +83,7 @@ def page(sh, p, body):
   <div class="rings" aria-hidden="true"></div>
 
   <section class="phero" aria-labelledby="hero-h">
-    <img class="phero-photo" src="../assets/img/{p['hero_img']}" width="1280" height="{p['hero_h']}" alt="{p['hero_alt']}" fetchpriority="high">
+    <img class="phero-photo" src="../assets/img/{p['hero_img']}" width="{p.get('hero_w', 1280)}" height="{p['hero_h']}" alt="{p['hero_alt']}" fetchpriority="high">
     <div class="phero-copy">
       <p class="crumbs"><a href="../">Головна</a><span aria-hidden="true">/</span><span>{p['crumb']}</span></p>
       <h1 id="hero-h">{p['h1']}</h1>
@@ -257,9 +257,63 @@ def build_biz(sh):
     return page(sh, p, body)
 
 
+def build_agro(sh):
+    v1 = read(os.path.join(REPO, 'enray', 'agro', 'index.html'))
+    panel = cut(v1, '<figure class="day-panel bill-panel">', '</figure>')
+    inputs = cut(v1, '<div class="biz-inputs">', '\n      <div class="rezerv-result"', False)
+    result = cut(v1, '<div class="rezerv-result" aria-live="polite">', '</a>') + '\n      </div>'
+    spec = cut(v1, '<dl class="cf-spec">', '</dl>')
+    note = cut(v1, '<p class="cf-note">', '</p>')
+    body = f'''  <section class="day" aria-labelledby="season-h">
+    <div class="sec-head">
+      <h2 id="season-h">Скільки енергії потрібно насосам за сезон</h2>
+      <p class="lead">Енергія насосів по місяцях сезону поливу без станції й&nbsp;зі станцією. Графік перерахується за вашими даними нижче.</p>
+    </div>
+    {panel}
+  </section>
+
+  <section class="rezerv" id="kalkulyator" aria-labelledby="calc-h">
+    <div class="sec-head">
+      <h2 id="calc-h">Порахуйте для своїх насосів</h2>
+      <p class="lead">Вкажіть насоси й сезон. Обидва графіки на сторінці перерахуються за вашими даними.</p>
+    </div>
+    <div class="rezerv-grid">
+      {inputs}
+      {result}
+    </div>
+  </section>
+
+  <section class="case-feature" aria-labelledby="case-h">
+    <div class="sec-head">
+      <h2 id="case-h">Полив саду в&nbsp;Луці-Мелешківській</h2>
+      <p class="lead">Станція 100&nbsp;кВт для поливу саду, змонтована за 10&nbsp;днів.</p>
+    </div>
+    <div class="cf-grid">
+      <figure class="cf-main">
+        <img src="../assets/img/agro-detail.webp" width="800" height="600" alt="Ряди сонячних панелей станції 100 кВт на даху господарської будівлі поруч із садом у селі Лука-Мелешківська" loading="lazy" decoding="async">
+        <figcaption>СЕС 100&nbsp;кВт · Лука-Мелешківська · 2025</figcaption>
+      </figure>
+      <div class="cf-side">
+        {spec}
+        {note}
+      </div>
+    </div>
+  </section>'''
+    p = dict(common(v1),
+             title=re.search(r'<title>(.*?)</title>', v1).group(1),
+             desc=re.search(r'<meta name="description" content="([^"]*)"', v1).group(1),
+             hero_img='hero-1800.webp', hero_w=1800, hero_h=977, hero_alt='Сонячна станція EnRay 100 кВт на даху господарської будівлі біля водойми для поливу саду',
+             crumb='Для поливу', h1='Енергія для поливу просто з&nbsp;поля',
+             sub='Сонячні станції для насосів і&nbsp;поливу у&nbsp;Вінницькій області, зокрема автономні, там, де немає мережі.',
+             cta=('Порахувати для насосів', '#kalkulyator'), steps_h=re.search(r'<h2 id="steps-h">(.*?)</h2>', v1).group(1),
+             faq_h=re.search(r'<h2 id="faq-h">(.*?)</h2>', v1).group(1), req_h='Розрахунок для вашого поливу',
+             req_lead='Інженер передзвонить у&nbsp;робочий час, 09:00–18:00, і&nbsp;попросить дані насосів, щоб підібрати потужність станції.')
+    return page(sh, p, body)
+
+
 def main():
     sh = shell()
-    for slug, fn in [('dim', build_dim), ('biz', build_biz)]:
+    for slug, fn in [('dim', build_dim), ('biz', build_biz), ('agro', build_agro)]:
         d = os.path.join(ROOT, slug)
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(fn(sh))
