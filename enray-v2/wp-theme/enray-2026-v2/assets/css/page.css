@@ -1,0 +1,242 @@
+/* EnRay v2 — сторінки сценаріїв і послуг. Основа — v2.css. */
+
+/* На внутрішніх сторінках аркуш починається одразу під меню, а перший екран — велика фотокартка */
+.sheet--page { margin-top: 0; padding-top: 96px; border-radius: 0; }
+.phero { position: relative; min-height: min(82svh, 46rem); display: flex; align-items: flex-end; border-radius: var(--r-xl); overflow: hidden; color: var(--on-accent); isolation: isolate; box-shadow: 0 40px 80px -50px rgb(var(--shadow-rgb) / .6); }
+.phero-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.phero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(4 14 32 / .72) 0%, rgb(4 14 32 / .38) 48%, rgb(4 14 32 / 0) 78%), linear-gradient(0deg, rgb(4 14 32 / .45), transparent 45%); }
+.phero-copy { width: min(100%, 40rem); padding: clamp(28px, 4vw, 64px); }
+.phero h1 { font-size: clamp(2.25rem, 1.4rem + 3.2vw, 4.25rem); letter-spacing: -0.03em; }
+.phero-sub { margin-top: 16px; max-width: 32ch; font-size: clamp(1.0625rem, 1rem + .35vw, 1.3125rem); line-height: 1.45; color: rgb(255 255 255 / .92); }
+.phero .hero-actions { justify-content: flex-start; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; font-size: .9375rem; color: rgb(255 255 255 / .85); }
+.crumbs a { display: inline-flex; align-items: center; min-height: 32px; color: var(--on-accent); text-underline-offset: .25em; }
+
+/* Доба з відключеннями — скляна панель */
+.day-panel { margin: 0; padding: clamp(20px, 2.6vw, 40px); border-radius: var(--r-xl); background: rgb(255 255 255 / .72); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .9), 0 40px 80px -50px rgb(var(--shadow-rgb) / .45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.day-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.day-title { font: 700 clamp(1.25rem, 1.05rem + .7vw, 1.625rem)/1.2 var(--f-display); }
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--cobalt-soft); }
+.seg-btn { min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font: 600 1rem/1 var(--f-body); cursor: pointer; transition: background-color .2s, color .2s; }
+.seg-btn[aria-pressed="true"] { background: var(--cobalt); color: var(--on-accent); }
+.day-strip { margin-top: clamp(20px, 2.4vw, 32px); }
+.day-cells { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 4px; }
+.cell { height: clamp(56px, 7vw, 96px); border-radius: 8px; transition: background-color .45s var(--ease); transition-delay: calc(var(--i, 0) * 18ms); box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .14); }
+.cell--grid { background: #b9c8dc; }
+.cell--sun { background: var(--sun); }
+.cell--bat { background: var(--cobalt); }
+.cell--dark { background: var(--ink); }
+.no-motion .cell { transition: none; }
+.day-scale { display: flex; justify-content: space-between; margin-top: 8px; font: 500 .8125rem/1 var(--f-mono); color: var(--muted); }
+.day-summary { margin-top: 18px; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); }
+.day-summary b { font-family: var(--f-display); font-weight: 800; }
+.legend { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; padding: 0; font-size: .9375rem; color: var(--ink-2); }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 14px; height: 14px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .2); }
+.sw--grid { background: #b9c8dc; } .sw--sun { background: var(--sun); } .sw--bat { background: var(--cobalt); } .sw--dark { background: var(--ink); }
+.day-note { margin-top: 12px; max-width: 70ch; font-size: .875rem; line-height: 1.5; color: var(--muted); }
+
+/* Резерв: прилади й результат */
+.rezerv-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 32px); align-items: start; }
+.loads { margin: 0; padding: 8px; border: 0; border-radius: var(--r-l); background: var(--surface); display: grid; gap: 2px; box-shadow: 0 24px 50px -40px rgb(var(--shadow-rgb) / .5); }
+.load { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 56px; padding: 8px 14px; border-radius: 14px; cursor: pointer; transition: background-color .2s; }
+@media (hover: hover) { .load:hover { background: var(--cobalt-soft); } }
+.load-input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.load-box { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; box-shadow: inset 0 0 0 1.5px var(--line-ui); color: transparent; font-size: 1rem; transition: background-color .2s, color .2s, box-shadow .2s; }
+.load-input:checked + .load-box { background: var(--cobalt); color: var(--on-accent); box-shadow: none; }
+.load-input:focus-visible + .load-box { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+.load-name { font-weight: 600; }
+.load-kw { font: 500 .875rem/1 var(--f-mono); color: var(--muted); white-space: nowrap; }
+.rezerv-result { position: sticky; top: 96px; display: grid; gap: 6px; padding: clamp(22px, 2.4vw, 34px); border-radius: var(--r-l); background: var(--ink); color: var(--on-accent); }
+.rz-label { font-size: .9375rem; color: rgb(255 255 255 / .75); }
+.rz-kwh { font: 800 clamp(2.5rem, 1.8rem + 2.4vw, 3.75rem)/1 var(--f-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.rz-kwh small { font-size: .4em; font-weight: 600; letter-spacing: 0; }
+.rz-bat { font: 800 clamp(1.5rem, 1.2rem + 1vw, 2rem)/1.1 var(--f-display); color: var(--sky-key); margin-bottom: 8px; }
+.rz-note { font-size: .875rem; line-height: 1.5; color: rgb(255 255 255 / .72); max-width: 60ch; }
+.rezerv-result .link-strong { color: var(--on-accent); margin-top: 6px; }
+
+/* Кейс і галерея */
+.cf-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(14px, 1.6vw, 24px); }
+.cf-main, .cf-inverter { position: relative; margin: 0; border-radius: var(--r-l); overflow: hidden; }
+.cf-main img { width: 100%; height: 100%; object-fit: cover; }
+.cf-main figcaption, .cf-inverter figcaption { position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: rgb(255 255 255 / .82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font: 500 .8125rem/1.3 var(--f-mono); color: var(--ink); }
+.cf-side { display: grid; gap: clamp(14px, 1.6vw, 24px); align-content: start; }
+.cf-spec { margin: 0; padding: 8px 22px; border-radius: var(--r-l); background: var(--surface); box-shadow: 0 24px 50px -40px rgb(var(--shadow-rgb) / .5); }
+.cf-spec div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.cf-spec div:last-child { border-bottom: 0; }
+.cf-spec dt { color: var(--muted); }
+.cf-spec dd { margin: 0; font-weight: 700; text-align: right; }
+.cf-inverter img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery { list-style: none; margin: clamp(14px, 1.6vw, 24px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 20px); }
+.gallery li { position: relative; border-radius: var(--r-m); overflow: hidden; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery span { position: absolute; left: 10px; bottom: 10px; padding: 5px 10px; border-radius: 999px; background: rgb(255 255 255 / .82); font: 500 .75rem/1.2 var(--f-mono); }
+
+/* Питання */
+.faq h2 { margin-bottom: clamp(20px, 2.4vw, 32px); }
+.faq-list { display: grid; gap: 10px; max-width: 56rem; }
+.faq details { border-radius: var(--r-m); background: var(--surface); box-shadow: 0 18px 40px -36px rgb(var(--shadow-rgb) / .5); }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 14px 20px; cursor: pointer; list-style: none; font: 700 clamp(1.0625rem, 1rem + .3vw, 1.25rem)/1.3 var(--f-display); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .ico { flex: none; width: 36px; height: 36px; padding: 8px; border-radius: 999px; background: var(--cobalt-soft); color: var(--cobalt); transition: transform .3s var(--ease); }
+.faq details[open] summary .ico { transform: rotate(45deg); }
+.faq details p { padding: 0 20px 20px; max-width: 68ch; color: var(--ink-2); }
+.faq details[open] > p { animation: settle .25s var(--ease); }
+@media (hover: hover) { .faq summary:hover { color: var(--cobalt); } }
+
+/* Поле «Що тримати на резерві» */
+.field textarea { min-height: 96px; }
+
+@media (max-width: 68.75em) {
+  .rezerv-grid, .cf-grid { grid-template-columns: minmax(0, 1fr); }
+  .rezerv-result { position: static; }
+  .cf-side { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 45em) {
+  .sheet--page { padding-top: 80px; }
+  .phero { min-height: 34rem; }
+  .phero::after { background: linear-gradient(0deg, rgb(4 14 32 / .82) 0%, rgb(4 14 32 / .45) 55%, rgb(4 14 32 / .2) 100%); }
+  .phero-copy { padding: 22px 18px 24px; }
+  .phero .hero-actions { display: grid; width: 100%; }
+  .phero .hero-actions .btn { width: 100%; }
+  .day-panel { padding: 16px; }
+  .seg { width: 100%; } .seg-btn { flex: 1; padding: 0 10px; }
+  .day-cells { gap: 2px; } .cell { height: 64px; border-radius: 4px; }
+  .cf-side { grid-template-columns: minmax(0, 1fr); }
+  .load { grid-template-columns: auto minmax(0, 1fr); }
+  .load-kw { grid-column: 2; }
+}
+
+/* Бізнес: рахунок за рік по місяцях (стовпчики: оплата мережі, жовта частка — закриває станція) */
+.bill-chart { display: grid; gap: 8px; margin-top: clamp(20px, 2.4vw, 32px); }
+.bill-cols { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(4px, .6vw, 10px); height: clamp(150px, 14vw, 230px); align-items: end; }
+.bcol { position: relative; height: 100%; border-radius: 8px 8px 3px 3px; background: #b9c8dc; overflow: hidden; --sun: 0%; box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .14); }
+.bcol-sun { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sun); background: var(--sun-c); transition: height .55s var(--ease); transition-delay: calc(var(--i, 0) * 35ms); }
+.no-motion .bcol-sun { transition: none; }
+.is-live .bcol-sun { transition-delay: 0s; transition-duration: .2s; }
+.cap-line { position: absolute; left: 0; right: 0; bottom: var(--cap, 60%); height: 0; border-top: 2px dashed var(--cobalt); opacity: 0; transition: opacity .4s; pointer-events: none; }
+.bill-cols.is-on .cap-line { opacity: 1; }
+.bill-scale { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(4px, .6vw, 10px); text-align: center; font: 500 .8125rem/1 var(--f-mono); color: var(--muted); }
+.bill-scale span::before { content: attr(data-s); display: none; }
+.legend .sw--cap { width: 20px; height: 2px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--cobalt) 0 5px, transparent 5px 8px); }
+
+/* Бізнес: поля калькулятора — біла картка рядками, як список приладів */
+.biz-inputs { padding: 6px clamp(16px, 2vw, 26px); border-radius: var(--r-l); background: var(--surface); box-shadow: 0 24px 50px -40px rgb(var(--shadow-rgb) / .5); }
+.bi-row { display: grid; gap: 10px; margin: 0; padding: 20px 0; border: 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.bi-row:last-child { border-bottom: 0; }
+.bi-row label, .bi-row legend { padding: 0; font: 700 clamp(1rem, .95rem + .25vw, 1.125rem)/1.3 var(--f-display); color: var(--ink); }
+.bi-share legend { float: left; width: 100%; margin-bottom: 10px; }
+.bi-share > * { clear: both; }
+.bi-num { width: min(100%, 18rem); min-height: 52px; padding: 0 16px; border: 1.5px solid var(--line-ui); border-radius: 14px; background: var(--surface); color: var(--ink); font: 500 1.25rem/1 var(--f-mono); caret-color: var(--cobalt); }
+.bi-num::placeholder { font: 400 1.0625rem/1 var(--f-body); color: #6b778a; }
+.bi-num:hover { border-color: var(--ink-2); }
+.bi-num:focus { outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt); }
+.bi-val { font: 700 1.25rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.bi-hint { font-size: .875rem; line-height: 1.45; color: var(--muted); }
+.seg--share { display: inline-flex; width: fit-content; }
+.seg--share label { position: relative; }
+.seg--share input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg--share span { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font: 600 1rem/1 var(--f-body); color: var(--ink); transition: background-color .2s, color .2s; }
+.seg--share input:checked + span { background: var(--cobalt); color: var(--on-accent); }
+.seg--share input:focus-visible + span { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+
+/* Бізнес: міні-графік і речення в темній картці результату */
+.bi-sentence { font-size: 1.0625rem; line-height: 1.45; color: rgb(255 255 255 / .9); max-width: 40ch; }
+.bill-mini { margin: 10px 0 12px; }
+.bill-cols--mini { height: 80px; gap: 4px; }
+.bill-cols--mini .bcol { box-shadow: none; background: rgb(255 255 255 / .22); border-radius: 4px 4px 2px 2px; }
+.cf-note { font-size: .875rem; line-height: 1.5; color: var(--muted); padding: 0 4px; }
+
+@media (max-width: 45em) {
+  .bill-cols { height: 140px; gap: 3px; }
+  .bcol { border-radius: 4px 4px 2px 2px; }
+  .bill-scale { gap: 3px; font-size: .75rem; }
+  .seg--share { display: flex; width: 100%; } .seg--share label { flex: 1; } .seg--share span { width: 100%; padding: 0 8px; }
+}
+@media (max-width: 37.5em) {
+  .bill-scale span { font-size: 0; }
+  .bill-scale span::before { display: inline; font-size: .75rem; }
+}
+.bill-cols--mini .cap-line { border-top-color: var(--sky-key); }
+
+/* Агро: сезон поливу — висота стовпчика = потреба насосів, жовта частка — закриває станція */
+.scol { position: relative; display: flex; align-items: flex-end; height: 100%; }
+.scol-need { position: relative; width: 100%; height: var(--need, 0%); border-radius: 8px 8px 3px 3px; background: #b9c8dc; overflow: hidden; box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .14); transition: height .55s var(--ease); }
+.scol.is-idle { border-radius: 8px 8px 3px 3px; background: repeating-linear-gradient(135deg, transparent 0 6px, rgb(185 200 220 / .5) 6px 7px); }
+.no-motion .scol-need { transition: none; }
+.is-live .scol-need { transition-duration: .2s; }
+.gen-mark { position: absolute; left: -2px; right: -2px; bottom: var(--gen, 0%); height: 0; border-top: 2px dashed var(--cobalt); opacity: 0; transition: opacity .3s, bottom .2s; pointer-events: none; }
+.season-cols.is-on .gen-mark, .bill-cols--mini .gen-mark { opacity: 1; }
+.scol.is-weak .scol-need { box-shadow: inset 0 0 0 2.5px var(--cobalt); }
+.legend .sw--idle { background: repeating-linear-gradient(135deg, var(--surface) 0 3px, #b9c8dc 3px 4px); }
+.legend .sw--gen { width: 20px; height: 2px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--cobalt) 0 5px, transparent 5px 8px); }
+.legend .sw--weak { background: #b9c8dc; box-shadow: inset 0 0 0 2px var(--cobalt); }
+.bill-cols--mini .scol-need { background: rgb(255 255 255 / .22); box-shadow: none; border-radius: 4px 4px 2px 2px; }
+.bill-cols--mini .scol.is-idle { background: repeating-linear-gradient(135deg, transparent 0 4px, rgb(255 255 255 / .14) 4px 5px); }
+.bill-cols--mini .gen-mark { border-top-color: var(--sky-key); }
+.rz-pct { font: 800 .55em/1 var(--f-display); }
+
+/* Агро: поле сезону — два списки */
+.bi-label { font: 700 clamp(1rem, .95rem + .25vw, 1.125rem)/1.3 var(--f-display); }
+.bi-selects { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.bi-select { min-height: 52px; padding: 0 44px 0 16px; border: 1.5px solid var(--line-ui); border-radius: 14px; background-color: var(--surface); color: var(--ink); font: 500 1.0625rem/1 var(--f-body); appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 22px) 23px, calc(100% - 16px) 23px; background-size: 6px 6px; background-repeat: no-repeat; }
+.bi-select:hover { border-color: var(--ink-2); }
+.bi-select:focus { outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt); }
+
+/* ===== Сторінки послуг ===== */
+/* Перший екран: текст ліворуч, штамп креслення праворуч — знак власний, як у першої версії EnRay */
+.phero--svc { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(16px, 2.4vw, 40px); }
+.phero--svc .phero-copy { padding-right: 0; }
+.phero--art { background: radial-gradient(120% 110% at 85% 0%, #1f5ed8 0%, #0b2a6b 52%, #071736 100%); }
+.phero--art::after { background: linear-gradient(90deg, rgb(4 14 32 / .35), transparent 70%); }
+.phero-art { position: absolute; z-index: -1; right: -2%; top: -6%; font-size: clamp(16rem, 34vw, 30rem); color: rgb(255 255 255 / .07); line-height: 0; }
+.phero-art .ico { stroke-width: .9; }
+.stamp { position: relative; z-index: 2; margin: clamp(20px, 3vw, 48px); margin-left: 0; background: var(--surface); color: var(--ink); border-radius: var(--r-l); box-shadow: 0 30px 60px -36px rgb(0 0 0 / .55); overflow: hidden; }
+.stamp-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: 16px 20px; background: var(--ink); color: var(--on-accent); }
+.stamp-head span:first-child { font: 800 clamp(1.125rem, 1rem + .5vw, 1.375rem)/1.15 var(--f-display); overflow-wrap: anywhere; }
+.stamp-by { font: 500 .75rem/1.3 var(--f-mono); color: var(--sky-key); letter-spacing: .03em; }
+.stamp-head::after { content: ""; flex-basis: 100%; height: 3px; margin: 10px -20px -16px; background: var(--energy); }
+.stamp-rows { margin: 0; }
+.stamp-rows div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 12px; padding: 11px 20px; border-bottom: 1px solid var(--line); }
+.stamp-rows div:last-child { border-bottom: 0; }
+.stamp-rows dt { color: var(--muted); font-size: .9375rem; }
+.stamp-rows dd { margin: 0; font-weight: 600; }
+.stamp-rows > div { animation: stamp-in .5s var(--ease) both; }
+.stamp-rows > div:nth-child(2) { animation-delay: .07s; } .stamp-rows > div:nth-child(3) { animation-delay: .14s; }
+.stamp-rows > div:nth-child(4) { animation-delay: .21s; } .stamp-rows > div:nth-child(5) { animation-delay: .28s; } .stamp-rows > div:nth-child(6) { animation-delay: .35s; }
+@keyframes stamp-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.todo { display: inline-block; padding: 2px 9px; border: 1.5px dashed #b45309; border-radius: 999px; background: #fff7ed; font: 600 .8125rem/1.4 var(--f-body); color: #9a3412; }
+.works-todo { max-width: 60ch; padding: 18px 22px; border: 1.5px dashed #b45309; border-radius: var(--r-l); background: #fff7ed; color: #9a3412; }
+.works h2, .includes h2, .others h2 { margin-bottom: clamp(20px, 2.4vw, 32px); }
+
+/* Що входить: білі картки з пунктами, маркер — коротка риска енергетичного градієнта */
+.inc-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.inc { padding: 22px; border-radius: var(--r-l); background: var(--surface); box-shadow: 0 20px 44px -36px rgb(var(--shadow-rgb) / .5); }
+.inc h3 { font-size: 1.25rem; letter-spacing: -0.015em; margin-bottom: 12px; }
+.inc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.inc li { position: relative; padding-left: 20px; color: var(--ink-2); line-height: 1.45; }
+.inc li::before { content: ""; position: absolute; left: 0; top: .66em; width: 10px; height: 3px; border-radius: 2px; background: var(--energy); }
+
+/* Інші послуги */
+.svc-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 12px; }
+.svc-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; min-height: 44px; padding: 18px 20px; border-radius: var(--r-m); background: var(--surface); text-decoration: none; box-shadow: 0 16px 36px -32px rgb(var(--shadow-rgb) / .5); transition: background-color .2s; }
+.svc-link-name { font: 700 1.125rem/1.25 var(--f-display); }
+.svc-link-what { grid-column: 1; font-size: .9375rem; color: var(--muted); line-height: 1.4; }
+.svc-link .ico { grid-column: 2; grid-row: 1 / 3; font-size: 1.25rem; transition: transform .25s var(--ease); }
+@media (hover: hover) { .svc-link:hover { background: var(--cobalt-soft); } .svc-link:hover .ico { transform: translateX(4px); color: var(--cobalt); } }
+.request + .others { margin-top: 0; }
+.request:has(+ .others) { padding-bottom: 0; }
+.others { padding-bottom: var(--sec); }
+
+@media (max-width: 68.75em) {
+  .phero--svc { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .phero--svc .stamp { margin: 0 clamp(16px, 3vw, 40px) clamp(20px, 3vw, 40px); }
+}
+@media (max-width: 45em) {
+  .phero--svc { min-height: 0; }
+  .phero--svc .phero-copy { padding-top: 40px; }
+  .stamp-rows div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .stamp-rows > div { animation: none; } }

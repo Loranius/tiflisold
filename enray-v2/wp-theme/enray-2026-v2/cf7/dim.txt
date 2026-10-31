@@ -1,0 +1,33 @@
+Форма Contact Form 7 «EnRay — заявка (Дім)»
+=============================================
+
+1. Contact → Add New, назва: EnRay — заявка (Дім).
+2. Вкладка «Form»: вставте все між рядками ---8<--- нижче.
+3. Вкладка «Mail»: тема «Нова заявка: Дім», тіло листа — блок «Mail body».
+4. Збережіть, скопіюйте числовий ID з шорткоду і вкажіть його:
+   Зовнішній вигляд → Налаштувати → EnRay: контакти й форми → ID форми: Дім.
+
+Тема сама виводить форму з класом request-form та id request-form, тому
+поля стають у дві колонки, а калькулятор підставляє в них дані відвідувача.
+Маску телефону з плагіна cf7-phone-mask-field можна застосувати до поля your-phone.
+
+---8<--- Form
+[hidden scenario "Дім"]
+<p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+<div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label>[text* your-name id:f-name autocomplete:name maxlength:60]</div>
+<div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>[tel* your-phone id:f-phone autocomplete:tel placeholder "+38 067 123 45 67"]</div>
+<div class="field"><label for="f-place">Населений пункт</label>[text place id:f-place autocomplete:address-level2 maxlength:80]</div>
+<div class="field"><label for="f-bill">Рахунок, грн/міс</label>[text bill id:f-bill maxlength:9 placeholder "наприклад, 2 500"]</div>
+<div class="field field--wide"><label for="f-loads">Що тримати на резерві</label>[textarea loads id:f-loads x2 maxlength:300 placeholder "оберіть прилади в калькуляторі або напишіть"]</div>
+[submit class:btn class:btn-primary class:btn-lg "Надіслати запит"]
+<p class="form-next">Інженер передзвонить і уточнить дані для розрахунку. Дані з форми використовуємо лише для зв'язку з вами: <a href="/privacy-policy/">політика конфіденційності</a>.</p>
+---8<---
+
+---8<--- Mail body
+Сценарій: Дім
+Ім'я: [your-name]
+Телефон: [your-phone]
+Населений пункт: [place]
+Рахунок, грн/міс: [bill]
+На резерві: [loads]
+---8<---
