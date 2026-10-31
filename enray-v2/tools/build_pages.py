@@ -250,7 +250,7 @@ def build_biz(sh):
              desc=re.search(r'<meta name="description" content="([^"]*)"', v1).group(1),
              hero_img='biz-hero.webp', hero_h=720, hero_alt='Ряд панелей наземної сонячної станції EnRay 30 кВт у Ладижині',
              crumb='Для бізнесу', h1='Менший рахунок за&nbsp;світло для&nbsp;бізнесу',
-             sub='Мережеві й гібридні сонячні станції на даху чи на землі у&nbsp;Вінницькій області: проєкт, монтаж і&nbsp;підключення до мережі.',
+             sub='Мережеві й гібридні сонячні станції на даху чи на землі для підприємств, магазинів, складів і&nbsp;агрокомпаній у&nbsp;Вінницькій області: проєкт, монтаж і&nbsp;підключення до мережі.',
              cta=('Порахувати економію', '#kalkulyator'), steps_h=re.search(r'<h2 id="steps-h">(.*?)</h2>', v1).group(1),
              faq_h=re.search(r'<h2 id="faq-h">(.*?)</h2>', v1).group(1), req_h='Розрахунок для вашого бізнесу',
              req_lead='Інженер передзвонить у&nbsp;робочий час, 09:00–18:00, і&nbsp;попросить рахунки за рік, щоб порахувати потужність та економію точно.')
@@ -311,12 +311,25 @@ def build_agro(sh):
     return page(sh, p, body)
 
 
+# Напрямок «полив» прибрано: агрокомпанії входять у «Для бізнесу». Тексти першої редакції чистимо тут.
+SCRUB = [
+    ('станцію 100 кВт для поливу саду в Луці-Мелешківській', 'станцію 100 кВт у Луці-Мелешківській'),
+    ('Станція для поливу саду', 'Наземна станція 100 кВт'),
+]
+
+
+def scrub(h):
+    for a, b in SCRUB:
+        h = h.replace(a, b)
+    return h
+
+
 def main():
     sh = shell()
-    for slug, fn in [('dim', build_dim), ('biz', build_biz), ('agro', build_agro)]:
+    for slug, fn in [('dim', build_dim), ('biz', build_biz)]:
         d = os.path.join(ROOT, slug)
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(fn(sh))
+        open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(scrub(fn(sh)))
         print('ok', slug)
 
 
@@ -490,7 +503,7 @@ def build_services():
     for slug in SVC_SLUGS:
         d = os.path.join(ROOT, 'posluhy', slug)
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(build_service(sh, slug, S, SHORT))
+        open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(scrub(build_service(sh, slug, S, SHORT)))
         print('ok posluhy/' + slug)
 
 

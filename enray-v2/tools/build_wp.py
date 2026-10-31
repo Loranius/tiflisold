@@ -19,7 +19,7 @@ OUT = os.path.join(V2, 'wp-theme', 'enray-2026-v2')
 TEL = "<?php echo esc_attr( enray_tel() ); ?>"
 VIBER = "<?php echo esc_attr( enray_viber() ); ?>"
 PHONE = "<?php echo esc_html( enray_opt( 'phone' ) ); ?>"
-SCEN = {'dim': '/dim/', 'biz': '/biznes/', 'agro': '/agro/'}
+SCEN = {'dim': '/dim/', 'biz': '/biznes/'}
 
 
 def read(p):
@@ -142,7 +142,7 @@ def main():
         "<?php\n/** Головна. Розмітка з enray-v2/index.html (build_wp.py). */\nget_header();\n?>\n" + body + "\n<?php\nget_footer();\n")
 
     # сценарії
-    for proto, slug, key in [('dim', 'dim', 'dim'), ('biz', 'biznes', 'biznes'), ('agro', 'agro', 'agro')]:
+    for proto, slug, key in [('dim', 'dim', 'dim'), ('biz', 'biznes', 'biznes')]:
         h = read(os.path.join(V2, proto, 'index.html'))
         body = conv(forms(cut(h, '<main id="main"', '</main>'), key))
         open(os.path.join(OUT, f'page-{slug}.php'), 'w', encoding='utf-8').write(
@@ -169,7 +169,7 @@ get_footer();
 
     # functions.php: стилі й скрипти v2, колір теми, версія
     f = read(os.path.join(OUT, 'functions.php'))
-    f = f.replace("define( 'ENRAY_VERSION', '1.0.0' );", "define( 'ENRAY_VERSION', '2.1.0' );")
+    f = f.replace("define( 'ENRAY_VERSION', '1.0.0' );", "define( 'ENRAY_VERSION', '2.2.0' );")
     a = f.index("add_action( 'wp_enqueue_scripts', function () {")
     b = f.index('} );', a) + 4
     f = f[:a] + '''add_action( 'wp_enqueue_scripts', function () {
@@ -187,14 +187,22 @@ get_footer();
 } );''' + f[b:]
     f = f.replace("content=\"#dcedfd\"", "content=\"#f2f4f7\"")
     f = f.replace('EnRay 2026: налаштування теми.', 'EnRay 2026 v2: налаштування теми (основа — тема enray-2026, стиль — enray-v2).')
+    # Напрямок «полив» прибрано: агрокомпанії входять у «Для бізнесу»
+    f = '\n'.join(l for l in f.split('\n') if "'agro'" not in l and "/agro/" not in l and "cf7_agro" not in l)
+    f = f.replace('для дому, бізнесу й поливу', 'для дому й бізнесу, зокрема агропідприємств')
     open(os.path.join(OUT, 'functions.php'), 'w', encoding='utf-8').write(f)
+    p404 = os.path.join(OUT, '404.php')
+    open(p404, 'w', encoding='utf-8').write('\n'.join(l for l in read(p404).split('\n') if '/agro/' not in l))
+    os.remove(os.path.join(OUT, 'cf7', 'agro.txt'))
+    ph = os.path.join(OUT, 'cf7', 'home.txt')
+    open(ph, 'w', encoding='utf-8').write(read(ph).replace(' "Станція для поливу"', '').replace('pick--6', 'pick--5'))
 
     open(os.path.join(OUT, 'style.css'), 'w', encoding='utf-8').write('''/*
 Theme Name: EnRay 2026 v2
 Theme URI: https://enray.com.ua/
 Author: EnRay
 Description: Нова редакція сайту EnRay: реальне фото станції на першому екрані, скляне меню, фотокартки зі скосом пластини знака, шлях сонця й енергетичний градієнт (див. enray-v2/DESIGN.md). Стилі лежать у assets/css, цей файл лише заголовок теми.
-Version: 2.1.0
+Version: 2.2.0
 Requires at least: 6.4
 Requires PHP: 7.4
 Text Domain: enray

@@ -10,7 +10,7 @@ get_header();
     <div class="phero-copy">
       <p class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Головна</a><span aria-hidden="true">/</span><span>Для бізнесу</span></p>
       <h1 id="hero-h">Менший рахунок за&nbsp;світло для&nbsp;бізнесу</h1>
-      <p class="phero-sub">Мережеві й гібридні сонячні станції на даху чи на землі у&nbsp;Вінницькій області: проєкт, монтаж і&nbsp;підключення до мережі.</p>
+      <p class="phero-sub">Мережеві й гібридні сонячні станції на даху чи на землі для підприємств, магазинів, складів і&nbsp;агрокомпаній у&nbsp;Вінницькій області: проєкт, монтаж і&nbsp;підключення до мережі.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="#kalkulyator">Порахувати економію</a>
         <a class="btn btn-glass btn-lg" href="<?php echo esc_attr( enray_tel() ); ?>"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Подзвонити</a>
@@ -158,7 +158,7 @@ get_header();
       </details>
       <details>
         <summary>Скільки триває монтаж?<svg class="ico"><use href="#i-plus"/></svg></summary>
-        <p>Наземну мережеву станцію 30 кВт у Ладижині ми змонтували за тиждень, станцію 100 кВт для поливу саду в Луці-Мелешківській — за 10 днів.</p>
+        <p>Наземну мережеву станцію 30 кВт у Ладижині ми змонтували за тиждень, станцію 100 кВт у Луці-Мелешківській — за 10 днів.</p>
       </details>
       <details>
         <summary>Хто займається документами й підключенням?<svg class="ico"><use href="#i-plus"/></svg></summary>

@@ -5,7 +5,7 @@ get_header();
 <section class="hero" id="top" aria-labelledby="hero-h">
   <picture class="hero-photo">
     <source media="(max-width: 45em)" srcset="<?php echo esc_url( enray_asset( 'img/hero-m.webp' ) ); ?>">
-    <img src="<?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?>" srcset="<?php echo esc_url( enray_asset( 'img/hero-1200.webp' ) ); ?> 1200w, <?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?> 1800w, <?php echo esc_url( enray_asset( 'img/hero-2400.webp' ) ); ?> 2400w" sizes="100vw" width="2400" height="1302" alt="Сонячна станція EnRay 100 кВт на даху господарської будівлі біля водойми для поливу саду, Лука-Мелешківська" fetchpriority="high">
+    <img src="<?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?>" srcset="<?php echo esc_url( enray_asset( 'img/hero-1200.webp' ) ); ?> 1200w, <?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?> 1800w" sizes="100vw" width="1800" height="977" alt="Ряд сонячних панелей серед квітучого поля на заході сонця" fetchpriority="high">
   </picture>
   <svg class="sunpath" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
     <defs><radialGradient id="sun-glow"><stop offset="0" stop-color="#ffe27a" stop-opacity=".95"/><stop offset=".35" stop-color="#ffc928" stop-opacity=".55"/><stop offset="1" stop-color="#ffc928" stop-opacity="0"/></radialGradient></defs>
@@ -17,25 +17,23 @@ get_header();
   </svg>
   <div class="hero-copy">
     <h1 id="hero-h">Сонячні станції, електрика й безпека <span class="hero-key">під&nbsp;ключ</span></h1>
-    <p class="hero-sub">Для дому, бізнесу й поливу у&nbsp;Вінницькій області. Проєкт, монтаж і&nbsp;сервіс від однієї команди.</p>
+    <p class="hero-sub">Для дому й&nbsp;бізнесу у&nbsp;Вінницькій області. Проєкт, монтаж і&nbsp;сервіс від однієї команди.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="#kalkulyator">Порахувати потужність</a>
       <a class="btn btn-glass btn-lg" href="#posluhy">Усі послуги</a>
     </div>
   </div>
-  <p class="hero-caption">СЕС 100 кВт для поливу саду · Лука-Мелешківська · 2025</p>
 </section>
 
 <main id="main" class="sheet">
   <div class="rings" aria-hidden="true"></div>
 
   <section class="intro" id="rishennya" aria-labelledby="intro-h">
-    <h2 id="intro-h">Енергія для дому, бізнесу й&nbsp;поливу</h2>
+    <h2 id="intro-h">Енергія для дому й&nbsp;бізнесу</h2>
     <p class="lead">EnRay з&nbsp;Вінниці проєктує й&nbsp;будує сонячні станції, робить електромонтаж, ставить сигналізацію й&nbsp;камери. Від виїзду інженера до підключення в&nbsp;обленерго працює одна команда.</p>
     <ul class="ways">
       <li class="way"><a href="<?php echo esc_url( home_url( '/dim/' ) ); ?>"><img src="<?php echo esc_url( enray_asset( 'img/dim.webp' ) ); ?>" alt="Сонячні панелі на даху цегляного приватного будинку" loading="lazy" decoding="async"><span class="way-text"><b>Для дому</b><span>Світло під час відключень і менший рахунок</span></span><span class="way-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span></a></li>
-      <li class="way"><a href="<?php echo esc_url( home_url( '/biznes/' ) ); ?>"><img src="<?php echo esc_url( enray_asset( 'img/biz.webp' ) ); ?>" alt="Наземна сонячна станція 30 кВт у Ладижині" loading="lazy" decoding="async"><span class="way-text"><b>Для бізнесу</b><span>Менший рахунок за електроенергію</span></span><span class="way-ico"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span></a></li>
-      <li class="way"><a href="<?php echo esc_url( home_url( '/agro/' ) ); ?>"><img src="<?php echo esc_url( enray_asset( 'img/agro.webp' ) ); ?>" alt="Сонячні панелі на даху господарської будівлі серед садів" loading="lazy" decoding="async"><span class="way-text"><b>Для поливу</b><span>Енергія для насосів у сезон</span></span><span class="way-ico"><svg class="ico" aria-hidden="true"><use href="#i-drop"/></svg></span></a></li>
+      <li class="way"><a href="<?php echo esc_url( home_url( '/biznes/' ) ); ?>"><img src="<?php echo esc_url( enray_asset( 'img/biz.webp' ) ); ?>" alt="Наземна сонячна станція 30 кВт у Ладижині" loading="lazy" decoding="async"><span class="way-text"><b>Для бізнесу</b><span>Підприємства, магазини, склади й агрокомпанії</span></span><span class="way-ico"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span></a></li>
     </ul>
   </section>
 
@@ -126,7 +124,6 @@ get_header();
           <legend class="sr-only">Для чого станція</legend>
           <label><input type="radio" name="calc-mode" value="dim" data-object="Станція для дому" checked><span>Дім</span></label>
           <label><input type="radio" name="calc-mode" value="biz" data-object="Станція для бізнесу"><span>Бізнес</span></label>
-          <label><input type="radio" name="calc-mode" value="agro" data-object="Станція для поливу"><span>Агро</span></label>
         </fieldset>
       </div>
 
@@ -163,29 +160,6 @@ get_header();
           <a class="link-strong" href="#zayavka">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
-
-      <div class="calc-panel" data-mode="agro" hidden>
-        <div class="calc-input">
-          <label class="calc-label" for="c-pump">Сумарна потужність насосів, кВт</label>
-          <div class="slider">
-            <input id="c-pump" type="range" min="1" max="100" step="1" value="30" aria-describedby="c-agro-note">
-            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1</span><span style="--at:.4949">50</span><span style="--at:1">100</span></div>
-          </div>
-          <output class="bill-value" for="c-pump" id="c-pump-out">30 кВт</output>
-          <label class="calc-label calc-label--2" for="c-hours">Годин роботи на день</label>
-          <div class="slider">
-            <input id="c-hours" type="range" min="1" max="14" step="1" value="8" aria-describedby="c-agro-note">
-            <div class="slider-scale" aria-hidden="true"><span style="--at:0">1</span><span style="--at:.5385">8</span><span style="--at:1">14</span></div>
-          </div>
-          <output class="bill-value" for="c-hours" id="c-hours-out">8 год</output>
-        </div>
-        <div class="calc-result" aria-live="polite">
-          <p class="calc-kw">Рекомендована потужність: <b id="c-agro-kw">≈ 70 кВт</b></p>
-          <p class="calc-detail" id="c-agro-detail">Насосам потрібно ≈ 43 900 кВт·год за сезон, найслабший місяць — вересень</p>
-          <p class="calc-note" id="c-agro-note">Орієнтовно: сезон поливу квітень — вересень, насоси працюють удень, без акумулятора. Станцію рахуємо так, щоб вистачило й у найслабший місяць сезону. Інший сезон і нічний полив інженер врахує в розрахунку.</p>
-          <a class="link-strong" href="#zayavka">Отримати детальний розрахунок <svg class="ico"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
     </div>
   
   </section>
@@ -213,11 +187,11 @@ get_header();
           </div>
         </li>
         <li class="case">
-          <img src="<?php echo esc_url( enray_asset( 'img/case-1.webp' ) ); ?>" alt="Станція 100 кВт на даху господарської будівлі серед садів" loading="lazy" decoding="async">
+          <img src="<?php echo esc_url( enray_asset( 'img/case-1.webp' ) ); ?>" alt="Станція 100 кВт на даху господарської будівлі" loading="lazy" decoding="async">
           <div class="case-body">
             <p class="case-meta">2025 · Лука-Мелешківська</p>
-            <h3>СЕС 100&nbsp;кВт для поливу саду</h3>
-            <dl><div><dt>Потужність</dt><dd>100 кВт</dd></div><div><dt>Монтаж</dt><dd>10 днів</dd></div><div><dt>Задача</dt><dd>живлення поливу</dd></div></dl>
+            <h3>СЕС 100&nbsp;кВт для господарства</h3>
+            <dl><div><dt>Потужність</dt><dd>100 кВт</dd></div><div><dt>Монтаж</dt><dd>10 днів</dd></div><div><dt>Задача</dt><dd>живлення господарства</dd></div></dl>
           </div>
         </li>
     </ul>

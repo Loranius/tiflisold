@@ -7,14 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ENRAY_VERSION', '2.1.0' );
+define( 'ENRAY_VERSION', '2.2.0' );
 
 /** Сторінки сценаріїв: slug сторінки => ключ шаблону. */
 function enray_scenarios() {
 	return array(
 		'dim'    => 'Дім',
 		'biznes' => 'Бізнес',
-		'agro'   => 'Агро',
 	);
 }
 
@@ -59,7 +58,6 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		'cf7_home' => array( 'ID форми Contact Form 7: головна', 'number' ),
 		'cf7_dim'  => array( 'ID форми Contact Form 7: Дім', 'number' ),
 		'cf7_biznes' => array( 'ID форми Contact Form 7: Бізнес', 'number' ),
-		'cf7_agro' => array( 'ID форми Contact Form 7: Агро', 'number' ),
 		'cf7_service' => array( 'ID форми Contact Form 7: послуги (одна на всі)', 'number' ),
 	);
 	foreach ( $fields as $key => $f ) {
@@ -147,7 +145,6 @@ function enray_default_menu() {
 	return array(
 		array( 'Для дому', home_url( '/dim/' ) ),
 		array( 'Для бізнесу', home_url( '/biznes/' ) ),
-		array( 'Агро', home_url( '/agro/' ) ),
 		array( 'Послуги', home_url( '/#posluhy' ) ),
 		array( 'Кейси', home_url( '/keysy/' ) ),
 	);
@@ -159,7 +156,6 @@ function enray_footer_groups() {
 		'Сонячні станції'     => array(
 			array( 'Станції для дому', home_url( '/dim/' ) ),
 			array( 'Станції для бізнесу', home_url( '/biznes/' ) ),
-			array( 'Станції для поливу', home_url( '/agro/' ) ),
 			array( 'Обслуговування СЕС', home_url( '/obsluhovuvannia/' ) ),
 		),
 		'Електрика й безпека' => array(
@@ -287,10 +283,9 @@ add_action( 'wp_head', function () {
 		return; // Yoast або Rank Math самі виводять description.
 	}
 	$desc = array(
-		'front'  => 'EnRay у Вінницькій області: сонячні електростанції для дому, бізнесу й поливу, електромонтажні роботи, системи охорони й відеоспостереження. Проєкт, монтаж і сервіс від однієї команди.',
+		'front'  => 'EnRay у Вінницькій області: сонячні електростанції для дому й бізнесу, зокрема агропідприємств, електромонтажні роботи, системи охорони й відеоспостереження. Проєкт, монтаж і сервіс від однієї команди.',
 		'dim'    => 'Гібридна сонячна станція для приватного будинку у Вінницькій області: світло, котел, холодильник та інтернет під час відключень. Проєкт, монтаж і підключення від EnRay.',
 		'biznes' => 'Мережеві та гібридні сонячні станції для бізнесу у Вінницькій області: менший рахунок за електроенергію, монтаж на даху чи на землі, документи й підключення від EnRay.',
-		'agro'   => 'Сонячні станції для поливу та насосів у Вінницькій області, зокрема автономні: СЕС 100 кВт для поливу саду в Луці-Мелешківській. Проєкт, монтаж і запуск від EnRay.',
 	);
 	$key = is_front_page() ? 'front' : enray_current_scenario();
 	if ( $key && isset( $desc[ $key ] ) ) {

@@ -26,7 +26,7 @@
     sync();
   });
 
-  // Картки «Для дому / бізнесу / поливу» відкривають калькулятор у потрібному режимі.
+  // Картки «Для дому / бізнесу» відкривають калькулятор у потрібному режимі.
   document.querySelectorAll('[data-calc]').forEach(function (a) {
     a.addEventListener('click', function () {
       var r = document.querySelector('.calc-switch input[value="' + a.dataset.calc + '"]');

@@ -42,7 +42,7 @@
     <ul class="gallery" aria-label="Роботи EnRay">
       <li><img src="<?php echo esc_url( enray_asset( 'img/dim-g2.webp' ) ); ?>" alt="Сонячні панелі на двосхилому даху приватного будинку" loading="lazy" decoding="async"><span>Дахова СЕС · 2024</span></li>
       <li><img src="<?php echo esc_url( enray_asset( 'img/biz-g1.webp' ) ); ?>" alt="Наземна станція 30 кВт у Ладижині" loading="lazy" decoding="async"><span>Наземна СЕС 30 кВт · 2026</span></li>
-      <li><img src="<?php echo esc_url( enray_asset( 'img/agro-detail.webp' ) ); ?>" alt="Станція для поливу саду" loading="lazy" decoding="async"><span>СЕС 100 кВт · 2025</span></li>
+      <li><img src="<?php echo esc_url( enray_asset( 'img/agro-detail.webp' ) ); ?>" alt="Наземна станція 100 кВт" loading="lazy" decoding="async"><span>СЕС 100 кВт · 2025</span></li>
       <li><img src="<?php echo esc_url( enray_asset( 'img/dim-g4.webp' ) ); ?>" alt="Панелі на плоскому даху, вигляд з дрона" loading="lazy" decoding="async"><span>Дахова СЕС · 2024</span></li>
     </ul>
   </section>

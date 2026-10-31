@@ -121,7 +121,8 @@ p { margin: 0; }
 .intro { text-align: center; }
 .intro h2 { max-width: 16ch; margin: 0 auto; }
 .intro .lead { margin: 18px auto 0; max-width: 52ch; }
-.ways { list-style: none; margin: clamp(32px, 3.6vw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 24px); text-align: left; }
+.ways { list-style: none; margin: clamp(32px, 3.6vw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 24px); text-align: left; }
+.ways .way a { aspect-ratio: 3 / 2; }
 .way a { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: var(--r-l); overflow: hidden; color: var(--on-accent); text-decoration: none; box-shadow: 0 24px 50px -30px rgb(var(--shadow-rgb) / .55); }
 .way img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
 .way a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgb(4 14 32 / .78) 100%); }
@@ -292,8 +293,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
   .nav-cta { margin-left: auto; }
   .icon-btn { display: inline-flex; }
   .ways { grid-template-columns: 1fr 1fr; }
-  .ways .way:last-child { grid-column: 1 / -1; }
-  .ways .way:last-child a { aspect-ratio: 16 / 7; }
+  .ways .way a { aspect-ratio: 4 / 3; }
   .calc-panel { grid-template-columns: minmax(0, 1fr); }
   .case-row { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: minmax(18rem, 46%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
   .case { scroll-snap-align: start; }
@@ -315,8 +315,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
   .hero-caption { left: 16px; right: 16px; text-align: center; }
   .sheet { padding: 56px 16px 0; }
   .ways { grid-template-columns: 1fr; }
-  .ways .way:last-child { grid-column: auto; }
-  .way a, .ways .way:last-child a { aspect-ratio: 5 / 4; }
+  .way a, .ways .way a { aspect-ratio: 5 / 4; }
   .fact-cards { grid-template-columns: 1fr; }
   .fact { min-height: 10rem; }
   .facts { padding: 14px; }
@@ -330,6 +329,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
   .timeline li::after, .timeline li:nth-child(even)::after { left: -30px; right: auto; }
   .request-form { grid-template-columns: minmax(0, 1fr); }
   .pick { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pick label:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .req-card { padding: 20px 16px; }
   .foot { padding-bottom: calc(24px + 76px + env(safe-area-inset-bottom, 0px)); }
   .foot-card { grid-template-columns: 1fr; }
@@ -414,3 +414,6 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
 .rv.rv-in img { transform: none; }
 .rv.rv-in:hover img, .rv.rv-in a:hover img { transition-duration: .7s; }
 @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; } .rv img { transform: none !important; } }
+
+/* На головному фото вже є справжнє сонце — анімоване сонце не дублюємо, лишаємо дугу й мітки часу */
+.hero .sp-sun { display: none; }
