@@ -5,7 +5,7 @@ get_header();
 <section class="hero" id="top" aria-labelledby="hero-h">
   <picture class="hero-photo">
     <source media="(max-width: 45em)" srcset="<?php echo esc_url( enray_asset( 'img/hero-m.webp' ) ); ?>">
-    <img src="<?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?>" srcset="<?php echo esc_url( enray_asset( 'img/hero-1200.webp' ) ); ?> 1200w, <?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?> 1800w" sizes="100vw" width="1800" height="977" alt="Ряд сонячних панелей серед квітучого поля на заході сонця" fetchpriority="high">
+    <img src="<?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?>" srcset="<?php echo esc_url( enray_asset( 'img/hero-1200.webp' ) ); ?> 1200w, <?php echo esc_url( enray_asset( 'img/hero-1800.webp' ) ); ?> 1800w, <?php echo esc_url( enray_asset( 'img/hero-2400.webp' ) ); ?> 2400w" sizes="100vw" width="2400" height="1302" alt="Ряд сонячних панелей серед квітучого поля на заході сонця" fetchpriority="high">
   </picture>
   <svg class="sunpath" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
     <defs><radialGradient id="sun-glow"><stop offset="0" stop-color="#ffe27a" stop-opacity=".95"/><stop offset=".35" stop-color="#ffc928" stop-opacity=".55"/><stop offset="1" stop-color="#ffc928" stop-opacity="0"/></radialGradient></defs>
