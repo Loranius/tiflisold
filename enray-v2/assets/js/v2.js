@@ -88,3 +88,41 @@
     set();
   }
 })();
+
+// Плавна поява під час прокрутки: блоки, що вже на екрані при завантаженні, не ховаємо;
+// у рядах карток діти з'являються по черзі. Без JS, без IntersectionObserver чи з меншим рухом — усе видно одразу.
+(function () {
+  'use strict';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var GROUPS = '.ways, .fact-cards, .rail-track, .case-row, .case-list, .inc-grid, .svc-links, .gallery, .faq-list, .legend';
+  var SINGLES = '.sheet .sec-head, .intro > *:not(.ways), .facts > *:not(.fact-cards), .timeline > li, .calc-inner, .day-panel, .rezerv-grid > *, ' +
+    '.cf-main, .cf-side, .cf-inverter, .req-side, .req-card, .works-todo, .foot-card, .wp-main > .sec-head';
+  var fold = window.innerHeight * 0.92;
+  var below = function (el) { return el.getBoundingClientRect().top > fold; };
+  var show = function (el) { el.classList.add('rv-in'); };
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      if (e.target.dataset.rvGroup !== undefined) {
+        [].forEach.call(e.target.children, function (c, i) {
+          c.style.transitionDelay = Math.min(i, 5) * 90 + 'ms';
+          show(c);
+          setTimeout(function () { c.style.transitionDelay = ''; }, 1400);
+        });
+      } else show(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  var seen = new Set();
+  document.querySelectorAll(GROUPS).forEach(function (g) {
+    if (!below(g)) return;
+    g.dataset.rvGroup = '';
+    [].forEach.call(g.children, function (c) { c.classList.add('rv'); seen.add(c); });
+    io.observe(g);
+  });
+  document.querySelectorAll(SINGLES).forEach(function (el) {
+    if (seen.has(el) || el.closest('.rv') || !below(el)) return;
+    el.classList.add('rv');
+    io.observe(el);
+  });
+})();

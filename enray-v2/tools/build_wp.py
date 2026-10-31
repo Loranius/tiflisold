@@ -169,7 +169,7 @@ get_footer();
 
     # functions.php: стилі й скрипти v2, колір теми, версія
     f = read(os.path.join(OUT, 'functions.php'))
-    f = f.replace("define( 'ENRAY_VERSION', '1.0.0' );", "define( 'ENRAY_VERSION', '2.0.0' );")
+    f = f.replace("define( 'ENRAY_VERSION', '1.0.0' );", "define( 'ENRAY_VERSION', '2.1.0' );")
     a = f.index("add_action( 'wp_enqueue_scripts', function () {")
     b = f.index('} );', a) + 4
     f = f[:a] + '''add_action( 'wp_enqueue_scripts', function () {
@@ -194,7 +194,7 @@ Theme Name: EnRay 2026 v2
 Theme URI: https://enray.com.ua/
 Author: EnRay
 Description: Нова редакція сайту EnRay: реальне фото станції на першому екрані, скляне меню, фотокартки зі скосом пластини знака, шлях сонця й енергетичний градієнт (див. enray-v2/DESIGN.md). Стилі лежать у assets/css, цей файл лише заголовок теми.
-Version: 2.0.0
+Version: 2.1.0
 Requires at least: 6.4
 Requires PHP: 7.4
 Text Domain: enray

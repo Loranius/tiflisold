@@ -406,3 +406,11 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
 @media (prefers-reduced-motion: reduce) {
   .hero.is-drawing .sp-arc, .hero.is-drawing .sp-tick, .glint { animation: none !important; }
 }
+
+/* Плавна поява під час прокрутки (клас .rv ставить v2.js лише блокам нижче першого екрана) */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .8s var(--ease); }
+.rv.rv-in { opacity: 1; transform: none; }
+.rv img { transform: scale(1.06); transition: transform 1.2s var(--ease); }
+.rv.rv-in img { transform: none; }
+.rv.rv-in:hover img, .rv.rv-in a:hover img { transition-duration: .7s; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; } .rv img { transform: none !important; } }
