@@ -80,8 +80,7 @@ def page(sh, p, body):
 {sh['header']}
 
 <main id="main" class="sheet sheet--page">
-  <div class="blob blob--a" aria-hidden="true"></div>
-  <div class="blob blob--b" aria-hidden="true"></div>
+  <div class="rings" aria-hidden="true"></div>
 
   <section class="phero" aria-labelledby="hero-h">
     <img class="phero-photo" src="../assets/img/{p['hero_img']}" width="1280" height="{p['hero_h']}" alt="{p['hero_alt']}" fetchpriority="high">

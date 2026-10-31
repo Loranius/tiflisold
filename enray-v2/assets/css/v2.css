@@ -340,3 +340,69 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
 @media (max-height: 31.25em) and (orientation: landscape) {
   .top { position: absolute; }
 }
+
+/* ===== Ідентичність EnRay: «шлях сонця» і «пластини» зі знака логотипа =====
+   Знак EnRay — дві зсунуті пластини з переходом кобальт → бірюза → сонячний жовтий.
+   1) Енергетичний градієнт (лише там, де щось «тече»: прогрес, стрічка етапів, лінія результату).
+   2) Зрізаний верхній правий кут фотокарток — як скіс пластини знака; тінь переїжджає на обгортку.
+   3) Дуга шляху сонця на першому екрані — головний момент руху.
+   4) Відблиск на склі панелей при наведенні, тонкі кільця-траєкторії замість кольорових плям. */
+:root {
+  --energy: linear-gradient(90deg, #0a4fd6 0%, #12a3c8 55%, #ffc928 100%);
+  --energy-v: linear-gradient(180deg, #0a4fd6 0%, #12a3c8 55%, #ffc928 100%);
+  --cut: clamp(18px, 2.2vw, 30px);
+}
+.way a, .fact, .svc-card, .case, .phero, .cf-main, .calc-result, .rezerv-result { -webkit-mask: linear-gradient(225deg, transparent calc(var(--cut) * .7071), #000 calc(var(--cut) * .7071 + .5px)); mask: linear-gradient(225deg, transparent calc(var(--cut) * .7071), #000 calc(var(--cut) * .7071 + .5px)); }
+/* маска зрізає й власну тінь, тож тінь — на батьку через drop-shadow */
+.way, .rail-track > li, .case-row > li { filter: drop-shadow(0 22px 26px rgb(var(--shadow-rgb) / .22)); }
+.way a, .svc-card, .case { box-shadow: none; }
+.case { position: relative; }
+
+/* Кільця-траєкторії сонця замість розмитих плям */
+.blob { display: none; }
+.rings { position: absolute; z-index: 0; inset: 0; pointer-events: none; overflow: hidden; }
+.rings::before, .rings::after { content: ""; position: absolute; border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 46px, rgb(10 79 214 / .11) 46px 47px); -webkit-mask: radial-gradient(closest-side, #000 30%, transparent 100%); mask: radial-gradient(closest-side, #000 30%, transparent 100%); }
+.rings::before { width: 70rem; height: 70rem; left: -36rem; top: 4rem; }
+.rings::after { width: 64rem; height: 64rem; right: -34rem; top: 150rem; background: repeating-radial-gradient(circle, transparent 0 46px, rgb(240 180 0 / .16) 46px 47px); }
+
+/* Енергетичний градієнт там, де щось «тече» */
+.rail-progress span { background: var(--energy); }
+.timeline::before { opacity: 1; background: var(--line); }
+.timeline::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; transform: translateX(-50%) scaleY(var(--flow, 1)); transform-origin: top; background: var(--energy-v); }
+.calc-result::after, .rezerv-result::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--energy); }
+.calc-result, .rezerv-result { position: relative; overflow: hidden; }
+
+/* Шлях сонця на першому екрані */
+.sunpath { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+.sp-arc { fill: none; stroke: rgb(255 255 255 / .78); stroke-width: 2; filter: drop-shadow(0 0 6px rgb(255 214 90 / .45)); stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; }
+.sp-tick circle { fill: rgb(255 255 255 / .9); }
+.sp-tick text { font: 500 15px var(--f-mono); fill: rgb(255 255 255 / .82); letter-spacing: .04em; }
+.sp-core { fill: #fff6cf; }
+.sp-sun { transform-box: fill-box; }
+.hero.is-drawing .sp-arc { animation: sp-draw 1.8s var(--ease) both; }
+.hero.is-drawing .sp-tick { animation: sp-fade .5s var(--ease) both; }
+.hero.is-drawing .sp-tick:nth-of-type(1) { animation-delay: .35s; }
+.hero.is-drawing .sp-tick:nth-of-type(2) { animation-delay: .75s; }
+.hero.is-drawing .sp-tick:nth-of-type(3) { animation-delay: 1.15s; }
+@keyframes sp-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes sp-fade { from { opacity: 0; } to { opacity: 1; } }
+.hero-copy, .hero-caption { z-index: 2; }
+
+/* Відблиск сонця на склі панелей: смуга світла проходить по фото */
+.way a, .svc-card, .fact, .phero { --glint: -60%; }
+.glint { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / .28) 48%, rgb(255 255 255 / .06) 54%, transparent 62%); transform: translateX(var(--glint)); opacity: 0; }
+@media (hover: hover) {
+  .way a:hover .glint, .svc-card:hover .glint { animation: glint .9s var(--ease) both; }
+}
+.phero.is-lit .glint, .hero.is-lit .glint { animation: glint 1.4s var(--ease) .2s both; }
+@keyframes glint { 0% { transform: translateX(-70%); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateX(80%); opacity: 0; } }
+
+@media (max-width: 45em) {
+  .sp-tick text { font-size: 26px; }
+  .sp-tick:nth-of-type(1), .sp-tick:nth-of-type(3) { display: none; }
+  .timeline::after { left: 7px; transform: scaleY(var(--flow, 1)); }
+  .rings::before { width: 44rem; height: 44rem; left: -26rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.is-drawing .sp-arc, .hero.is-drawing .sp-tick, .glint { animation: none !important; }
+}

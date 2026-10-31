@@ -43,3 +43,48 @@
     });
   });
 })();
+
+(function () {
+  'use strict';
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Відблиск: шар світла всередині фотокарток (додаємо скриптом, щоб розмітка лишалась чистою)
+  document.querySelectorAll('.way a, .svc-card, .phero, .hero').forEach(function (el) {
+    var g = document.createElement('span'); g.className = 'glint'; g.setAttribute('aria-hidden', 'true');
+    el.appendChild(g);
+  });
+
+  // Головний момент: дуга шляху сонця креслиться, сонце піднімається до полудня, по панелях проходить відблиск
+  var hero = document.querySelector('.hero');
+  var move = document.getElementById('sun-move');
+  if (hero && move) {
+    var svg = hero.querySelector('.sunpath');
+    // На вузькому екрані бічні частини дуги обрізані — сонце зупиняється ближче до полудня, щоб його було видно
+    if (window.matchMedia('(max-width: 45em)').matches) move.setAttribute('keyPoints', '0;0.54');
+    if (calm || !move.beginElement) {
+      try { svg.setCurrentTime(2.4); move.beginElement(); svg.setCurrentTime(2.4); svg.pauseAnimations(); } catch (e) {}
+    } else {
+      hero.classList.add('is-drawing');
+      setTimeout(function () { move.beginElement(); }, 250);
+      setTimeout(function () { hero.classList.add('is-lit'); }, 1500);
+    }
+  }
+  var ph = document.querySelector('.phero');
+  if (ph && !calm) setTimeout(function () { ph.classList.add('is-lit'); }, 300);
+
+  // Стрічка етапів наповнюється енергією, поки читач іде по кроках (статично повна без JS чи з меншим рухом)
+  var tl = document.querySelector('.timeline');
+  if (tl && !calm && 'IntersectionObserver' in window) {
+    var set = function () {
+      var r = tl.getBoundingClientRect(), vh = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (vh * .7 - r.top) / r.height));
+      tl.style.setProperty('--flow', p.toFixed(3));
+    };
+    var on = false;
+    new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting && !on) { on = true; window.addEventListener('scroll', set, { passive: true }); set(); }
+      else if (!es[0].isIntersecting && on) { on = false; window.removeEventListener('scroll', set); set(); }
+    }).observe(tl);
+    set();
+  }
+})();
