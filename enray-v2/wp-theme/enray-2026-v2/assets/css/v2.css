@@ -419,3 +419,10 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
 
 /* На головному фото вже є справжнє сонце — анімоване сонце не дублюємо, лишаємо дугу й мітки часу */
 .hero .sp-sun { display: none; }
+
+/* Калькулятор не стрибає при перемиканні «Дім / Бізнес»: обидві панелі лежать в одній клітинці сітки,
+   висота блока — за вищою з них; неактивна лише невидима (недоступна для фокусу й читачів екрана) */
+.calc-inner { display: grid; grid-template-areas: "top" "panel"; }
+.calc-inner > .calc-top { grid-area: top; }
+.calc-inner > .calc-panel { grid-area: panel; }
+.calc-inner > .calc-panel[hidden] { display: grid !important; visibility: hidden; pointer-events: none; }
