@@ -107,3 +107,55 @@
   .load { grid-template-columns: auto minmax(0, 1fr); }
   .load-kw { grid-column: 2; }
 }
+
+/* Бізнес: рахунок за рік по місяцях (стовпчики: оплата мережі, жовта частка — закриває станція) */
+.bill-chart { display: grid; gap: 8px; margin-top: clamp(20px, 2.4vw, 32px); }
+.bill-cols { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(4px, .6vw, 10px); height: clamp(150px, 14vw, 230px); align-items: end; }
+.bcol { position: relative; height: 100%; border-radius: 8px 8px 3px 3px; background: #b9c8dc; overflow: hidden; --sun: 0%; box-shadow: inset 0 0 0 1px rgb(var(--shadow-rgb) / .14); }
+.bcol-sun { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sun); background: var(--sun-c); transition: height .55s var(--ease); transition-delay: calc(var(--i, 0) * 35ms); }
+.no-motion .bcol-sun { transition: none; }
+.is-live .bcol-sun { transition-delay: 0s; transition-duration: .2s; }
+.cap-line { position: absolute; left: 0; right: 0; bottom: var(--cap, 60%); height: 0; border-top: 2px dashed var(--cobalt); opacity: 0; transition: opacity .4s; pointer-events: none; }
+.bill-cols.is-on .cap-line { opacity: 1; }
+.bill-scale { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(4px, .6vw, 10px); text-align: center; font: 500 .8125rem/1 var(--f-mono); color: var(--muted); }
+.bill-scale span::before { content: attr(data-s); display: none; }
+.legend .sw--cap { width: 20px; height: 2px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--cobalt) 0 5px, transparent 5px 8px); }
+
+/* Бізнес: поля калькулятора — біла картка рядками, як список приладів */
+.biz-inputs { padding: 6px clamp(16px, 2vw, 26px); border-radius: var(--r-l); background: var(--surface); box-shadow: 0 24px 50px -40px rgb(var(--shadow-rgb) / .5); }
+.bi-row { display: grid; gap: 10px; margin: 0; padding: 20px 0; border: 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.bi-row:last-child { border-bottom: 0; }
+.bi-row label, .bi-row legend { padding: 0; font: 700 clamp(1rem, .95rem + .25vw, 1.125rem)/1.3 var(--f-display); color: var(--ink); }
+.bi-share legend { float: left; width: 100%; margin-bottom: 10px; }
+.bi-share > * { clear: both; }
+.bi-num { width: min(100%, 18rem); min-height: 52px; padding: 0 16px; border: 1.5px solid var(--line-ui); border-radius: 14px; background: var(--surface); color: var(--ink); font: 500 1.25rem/1 var(--f-mono); caret-color: var(--cobalt); }
+.bi-num::placeholder { font: 400 1.0625rem/1 var(--f-body); color: #6b778a; }
+.bi-num:hover { border-color: var(--ink-2); }
+.bi-num:focus { outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt); }
+.bi-val { font: 700 1.25rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.bi-hint { font-size: .875rem; line-height: 1.45; color: var(--muted); }
+.seg--share { display: inline-flex; width: fit-content; }
+.seg--share label { position: relative; }
+.seg--share input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg--share span { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font: 600 1rem/1 var(--f-body); color: var(--ink); transition: background-color .2s, color .2s; }
+.seg--share input:checked + span { background: var(--cobalt); color: var(--on-accent); }
+.seg--share input:focus-visible + span { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+
+/* Бізнес: міні-графік і речення в темній картці результату */
+.bi-sentence { font-size: 1.0625rem; line-height: 1.45; color: rgb(255 255 255 / .9); max-width: 40ch; }
+.bill-mini { margin: 10px 0 12px; }
+.bill-cols--mini { height: 80px; gap: 4px; }
+.bill-cols--mini .bcol { box-shadow: none; background: rgb(255 255 255 / .22); border-radius: 4px 4px 2px 2px; }
+.cf-note { font-size: .875rem; line-height: 1.5; color: var(--muted); padding: 0 4px; }
+
+@media (max-width: 45em) {
+  .bill-cols { height: 140px; gap: 3px; }
+  .bcol { border-radius: 4px 4px 2px 2px; }
+  .bill-scale { gap: 3px; font-size: .75rem; }
+  .seg--share { display: flex; width: 100%; } .seg--share label { flex: 1; } .seg--share span { width: 100%; padding: 0 8px; }
+}
+@media (max-width: 37.5em) {
+  .bill-scale span { font-size: 0; }
+  .bill-scale span::before { display: inline; font-size: .75rem; }
+}
+.bill-cols--mini .cap-line { border-top-color: var(--sky-key); }
