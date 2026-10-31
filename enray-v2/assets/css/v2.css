@@ -170,7 +170,7 @@ p { margin: 0; }
 .calc { padding: clamp(24px, 3.2vw, 48px); border-radius: var(--r-xl); background: rgb(255 255 255 / .72); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .9), 0 40px 80px -50px rgb(var(--shadow-rgb) / .45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .calc-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-bottom: clamp(22px, 2.4vw, 36px); }
 .calc-top h2 { font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem); }
-.calc-switch { display: inline-grid; grid-template-columns: repeat(3, auto); gap: 4px; margin: 0; padding: 4px; border: 0; border-radius: 999px; background: var(--cobalt-soft); }
+.calc-switch { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 4px; margin: 0; padding: 4px; border: 0; border-radius: 999px; background: var(--cobalt-soft); }
 .calc-switch label { position: relative; cursor: pointer; }
 .calc-switch input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
 .calc-switch span { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font: 600 1rem/1 var(--f-body); color: var(--ink); transition: background-color .2s, color .2s; }
@@ -321,7 +321,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
   .facts { padding: 14px; }
   .rail-track { grid-auto-columns: 82%; }
   .calc { padding: 18px; }
-  .calc-switch { display: grid; width: 100%; grid-template-columns: repeat(3, 1fr); }
+  .calc-switch { display: grid; width: 100%; grid-template-columns: repeat(2, 1fr); }
   .calc-switch span { padding: 0 8px; min-height: 48px; }
   .case-row { grid-auto-columns: 86%; }
   .timeline::before { left: 7px; transform: none; }
