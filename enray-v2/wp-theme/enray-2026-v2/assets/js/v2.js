@@ -75,11 +75,14 @@
   // Стрічка етапів наповнюється енергією, поки читач іде по кроках (статично повна без JS чи з меншим рухом)
   var tl = document.querySelector('.timeline');
   if (tl && !calm && 'IntersectionObserver' in window) {
-    var set = function () {
+    var raf = 0;
+    var upd = function () {
+      raf = 0;
       var r = tl.getBoundingClientRect(), vh = window.innerHeight;
       var p = Math.min(1, Math.max(0, (vh * .7 - r.top) / r.height));
       tl.style.setProperty('--flow', p.toFixed(3));
     };
+    var set = function () { if (!raf) raf = requestAnimationFrame(upd); };
     var on = false;
     new IntersectionObserver(function (es) {
       if (es[0].isIntersecting && !on) { on = true; window.addEventListener('scroll', set, { passive: true }); set(); }
@@ -99,7 +102,14 @@
     '.cf-main, .cf-side, .cf-inverter, .req-side, .req-card, .works-todo, .foot-card, .wp-main > .sec-head';
   var fold = window.innerHeight * 0.92;
   var below = function (el) { return el.getBoundingClientRect().top > fold; };
-  var show = function (el) { el.classList.add('rv-in'); };
+  // Фото в картці ще вантажиться — чекаємо на нього (не довше 1.2 с), щоб воно не «вистрибнуло» після появи картки
+  var show = function (el) {
+    var img = el.querySelector('img');
+    if (!img || img.complete) { el.classList.add('rv-in'); return; }
+    var done = function () { if (!el.classList.contains('rv-in')) el.classList.add('rv-in'); };
+    img.addEventListener('load', done, { once: true }); img.addEventListener('error', done, { once: true });
+    setTimeout(done, 1200);
+  };
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
       if (!e.isIntersecting) return;
@@ -113,16 +123,24 @@
       } else show(e.target);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  var near = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      near.unobserve(e.target);
+      [].forEach.call(e.target.dataset.rvGroup !== undefined ? e.target.children : [e.target], function (c) { c.classList.add('rv-near'); });
+    });
+  }, { rootMargin: '0px 0px 50% 0px' });
+  var watch = function (el) { io.observe(el); near.observe(el); };
   var seen = new Set();
   document.querySelectorAll(GROUPS).forEach(function (g) {
     if (!below(g)) return;
     g.dataset.rvGroup = '';
     [].forEach.call(g.children, function (c) { c.classList.add('rv'); seen.add(c); });
-    io.observe(g);
+    watch(g);
   });
   document.querySelectorAll(SINGLES).forEach(function (el) {
     if (seen.has(el) || el.closest('.rv') || !below(el)) return;
     el.classList.add('rv');
-    io.observe(el);
+    watch(el);
   });
 })();

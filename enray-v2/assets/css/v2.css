@@ -133,7 +133,7 @@ p { margin: 0; }
 @media (hover: hover) { .way a:hover img { transform: scale(1.04); } }
 
 /* Факти на фото */
-.facts { padding: clamp(20px, 2.4vw, 32px); border-radius: var(--r-xl); background: rgb(255 255 255 / .62); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .8), 0 30px 60px -40px rgb(var(--shadow-rgb) / .35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.facts { padding: clamp(20px, 2.4vw, 32px); border-radius: var(--r-xl); background: rgb(255 255 255 / .8); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .8), 0 30px 60px -40px rgb(var(--shadow-rgb) / .35); }
 .facts h2 { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem); margin: 4px 4px clamp(16px, 2vw, 24px); }
 .fact-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
 .fact { position: relative; min-height: clamp(13rem, 18vw, 16rem); display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 22px; border-radius: var(--r-l); overflow: hidden; color: var(--on-accent); isolation: isolate; }
@@ -167,7 +167,7 @@ p { margin: 0; }
 .rail.is-static .rail-ctrl { display: none; }
 
 /* Калькулятор — скляна картка (логіка й розмітка з v1) */
-.calc { padding: clamp(24px, 3.2vw, 48px); border-radius: var(--r-xl); background: rgb(255 255 255 / .72); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .9), 0 40px 80px -50px rgb(var(--shadow-rgb) / .45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.calc { padding: clamp(24px, 3.2vw, 48px); border-radius: var(--r-xl); background: rgb(255 255 255 / .86); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .9), 0 40px 80px -50px rgb(var(--shadow-rgb) / .45); }
 .calc-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-bottom: clamp(22px, 2.4vw, 36px); }
 .calc-top h2 { font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem); }
 .calc-switch { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 4px; margin: 0; padding: 4px; border: 0; border-radius: 999px; background: var(--cobalt-soft); }
@@ -353,8 +353,9 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
   --cut: clamp(18px, 2.2vw, 30px);
 }
 .way a, .fact, .svc-card, .case, .phero, .cf-main, .calc-result, .rezerv-result { -webkit-mask: linear-gradient(225deg, transparent calc(var(--cut) * .7071), #000 calc(var(--cut) * .7071 + .5px)); mask: linear-gradient(225deg, transparent calc(var(--cut) * .7071), #000 calc(var(--cut) * .7071 + .5px)); }
-/* маска зрізає й власну тінь, тож тінь — на батьку через drop-shadow */
-.way, .rail-track > li, .case-row > li { filter: drop-shadow(0 22px 26px rgb(var(--shadow-rgb) / .22)); }
+/* маска зрізає й власну тінь, тож тінь — на батьку. Звичайна box-shadow з від'ємним розкидом лежить лише під карткою
+   й не торкається скошеного кута; drop-shadow давав той самий вигляд, але перемальовувався на кожному кадрі прокрутки */
+.way, .rail-track > li, .case-row > li { border-radius: var(--r-l); box-shadow: 0 30px 34px -22px rgb(var(--shadow-rgb) / .34); }
 .way a, .svc-card, .case { box-shadow: none; }
 .case { position: relative; }
 
@@ -409,6 +410,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--
 
 /* Плавна поява під час прокрутки (клас .rv ставить v2.js лише блокам нижче першого екрана) */
 .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .8s var(--ease); }
+.rv-near:not(.rv-in), .rv-near:not(.rv-in) img { will-change: opacity, transform; } /* шар готуємо, коли блок за пів екрана від появи */
 .rv.rv-in { opacity: 1; transform: none; }
 .rv img { transform: scale(1.06); transition: transform 1.2s var(--ease); }
 .rv.rv-in img { transform: none; }
