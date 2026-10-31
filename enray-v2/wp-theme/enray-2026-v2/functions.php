@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ENRAY_VERSION', '2.2.0' );
+define( 'ENRAY_VERSION', '2.2.1' );
 
 /** Сторінки сценаріїв: slug сторінки => ключ шаблону. */
 function enray_scenarios() {
