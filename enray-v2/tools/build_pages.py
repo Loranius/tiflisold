@@ -320,5 +320,180 @@ def main():
         print('ok', slug)
 
 
+
+# ---------------- Сторінки послуг (дані — enray/tools/build_services.py) ----------------
+
+SVC_SLUGS = ['proiektuvannia', 'budivnytstvo', 'obsluhovuvannia', 'electrical-works', 'systemy-okhorony-ta-bezpeky', 'videosposterezhennia-cctv']
+SVC_VISUAL = {  # фото першого екрана або синя картка з іконкою, де власних фото поки немає
+    'proiektuvannia': ('img', 'roof-e2.webp', 1100, 825, 'Сонячна станція EnRay на даху приватного будинку'),
+    'budivnytstvo': ('img', 'lad-2.webp', 1100, 619, 'Наземна станція EnRay 30 кВт у Ладижині'),
+    'obsluhovuvannia': ('img', 'roof-f2.webp', 1100, 613, 'Дахова сонячна станція EnRay, вигляд з дрона'),
+    'electrical-works': ('icon', 'i-bolt'),
+    'systemy-okhorony-ta-bezpeky': ('icon', 'i-shield'),
+    'videosposterezhennia-cctv': ('icon', 'i-camera'),
+}
+TODO = '<span class="todo">уточнити</span>'
+
+
+def services_data():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('bs', os.path.join(REPO, 'enray', 'tools', 'build_services.py'))
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m.SERVICES, m.SHORT
+
+
+def esc(s):
+    import html
+    return html.escape(s, quote=False)
+
+
+def deepen(x):
+    """Шапка й футер для сторінок на два рівні глибше (posluhy/<slug>/)."""
+    x = x.replace('href="../', 'href="../../').replace('src="../', 'src="../../')
+    return x
+
+
+def build_service(sh, slug, S, SHORT):
+    s = S[slug]
+    vis = SVC_VISUAL[slug]
+    if vis[0] == 'img':
+        media = f'<img class="phero-photo" src="../../assets/img/{vis[1]}" width="{vis[2]}" height="{vis[3]}" alt="{vis[4]}" fetchpriority="high">'
+        art = ''
+    else:
+        media = f'<span class="phero-art" aria-hidden="true">{I(vis[1])}</span>'
+        art = ' phero--art'
+    todo_cls = ' class="is-todo"'
+    rows = ''.join(
+        f'<div{todo_cls if v is None else ""}><dt>{esc(k)}</dt><dd>{TODO if v is None else esc(v)}</dd></div>'
+        for k, v in s['stamp'])
+    cta_href = s['cta'][1].replace('home', '../../')
+    inc = ''.join(f'<li class="inc"><h3>{esc(h)}</h3><ul>{"".join(f"<li>{esc(i)}</li>" for i in items)}</ul></li>' for h, items in s['includes'])
+    steps = ''.join(f'        <li><span class="step-n">{i:02d}</span><h3>{esc(b)}</h3><p>{esc(t[0].upper() + t[1:])}.</p></li>\n' for i, (b, t) in enumerate(s['steps'], 1))
+    if s['photos']:
+        lis = ''.join(f'      <li><img src="../../assets/img/{f}" alt="{esc(a)}" loading="lazy" decoding="async"><span>{esc(c)}</span></li>\n' for f, a, c in s['photos'])
+        works = f'    <ul class="gallery" aria-label="Роботи EnRay">\n{lis}    </ul>'
+    else:
+        works = '    <p class="works-todo">Тут будуть 3–4 фото ваших робіт: щит, проводка, камери чи датчики на реальних об\'єктах. Стокові фото не ставимо.</p>'
+    faq = ''.join(f'      <details><summary>{esc(q)}{I("i-plus")}</summary><p>{TODO if a is None else esc(a)}</p></details>\n' for q, a in s['faq'])
+    others = ''.join(
+        f'<li><a class="svc-link" href="../{o}/"><span class="svc-link-name">{esc(S[o]["name"])}</span><span class="svc-link-what">{esc(SHORT[o])}</span>{I("i-arrow")}</a></li>'
+        for o in SVC_SLUGS if o != slug)
+    task = s.get('form_task', 'Що потрібно зробити')
+    form = f'''<form class="request-form" id="request-form" method="post" action="#" novalidate>
+        <input type="hidden" name="service" value="{esc(s['form_service'])}">
+        <p class="form-req"><span class="req" aria-hidden="true">*</span> — обов'язкові поля, решта за бажанням.</p>
+        <div class="field"><label for="f-name">Ім'я <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required></div>
+        <div class="field"><label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+38 067 123 45 67" required></div>
+        <div class="field field--wide"><label for="f-place">Населений пункт</label><input id="f-place" name="place" type="text" autocomplete="address-level2" maxlength="80"></div>
+        <div class="field field--wide"><label for="f-task">{esc(task)}</label><textarea id="f-task" name="task" rows="3" maxlength="500"></textarea></div>
+        <p class="form-errors" id="form-errors" role="alert" hidden></p>
+        <button class="btn btn-primary btn-lg" type="submit">Надіслати запит</button>
+        <p class="form-msg" id="form-msg" role="status"></p>
+        <p class="form-next">Інженер передзвонить, уточнить задачу й домовиться про виїзд. Дані з форми використовуємо лише для зв'язку з вами: <a href="https://enray.com.ua/privacy-policy/">політика конфіденційності</a>.</p>
+      </form>'''
+    return f'''<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{esc(s['title'])}</title>
+<meta name="description" content="{esc(s['desc'])}">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="icon" href="../../assets/img/logo-mark.png">
+<link rel="preload" href="../../assets/fonts/Onest-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/fonts.css">
+<link rel="stylesheet" href="../../assets/css/v2.css">
+<link rel="stylesheet" href="../../assets/css/page.css">
+</head>
+<body class="page">
+<a class="skip" href="#main">Перейти до змісту</a>
+{sh['sprite']}
+
+{deepen(sh['header'])}
+
+<main id="main" class="sheet sheet--page">
+  <div class="rings" aria-hidden="true"></div>
+
+  <section class="phero phero--svc{art}" aria-labelledby="hero-h">
+    {media}
+    <div class="phero-copy">
+      <p class="crumbs"><a href="../../">Головна</a><span aria-hidden="true">/</span><a href="../../#posluhy">Послуги</a><span aria-hidden="true">/</span><span>{esc(s['crumb'])}</span></p>
+      <h1 id="hero-h">{s['h1']}</h1>
+      <p class="phero-sub">{esc(s['lead'])}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="{cta_href}">{esc(s['cta'][0])}</a>
+        <a class="btn btn-glass btn-lg" href="{TEL}">{I('i-phone')}Подзвонити</a>
+      </div>
+    </div>
+    <figure class="stamp" aria-labelledby="stamp-h">
+      <figcaption class="stamp-head"><span id="stamp-h">{esc(s['name'])}</span><span class="stamp-by">EnRay · Вінниця</span></figcaption>
+      <dl class="stamp-rows">{rows}</dl>
+    </figure>
+  </section>
+
+  <section class="includes" aria-labelledby="inc-h">
+    <h2 id="inc-h">Що входить</h2>
+    <ul class="inc-grid">{inc}</ul>
+  </section>
+
+  <section class="steps" aria-labelledby="steps-h">
+    <h2 id="steps-h">{esc(s['steps_h'])}</h2>
+    <ol class="timeline">
+{steps}    </ol>
+  </section>
+
+  <section class="works" aria-labelledby="works-h">
+    <h2 id="works-h">Наші роботи</h2>
+{works}
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Питання про {esc(s['crumb'].lower())}</h2>
+    <div class="faq-list">
+{faq}    </div>
+  </section>
+
+  <section class="request" id="zayavka" aria-labelledby="req-h">
+    <div class="req-side">
+      <h2 id="req-h">{esc(s['form_h'])}</h2>
+      <p class="lead">Інженер передзвонить у&nbsp;робочий час, 09:00–18:00.</p>
+      <p class="req-alt">Зручніше голосом?</p>
+      <a class="req-phone" href="{TEL}">+38 067 672 22 44</a>
+      <a class="btn btn-viber" href="{VIBER}">{I('i-viber')}Написати у Viber</a>
+    </div>
+    <div class="req-card">
+      {form}
+    </div>
+  </section>
+
+  <section class="others" aria-labelledby="oth-h">
+    <h2 id="oth-h">Інші послуги</h2>
+    <ul class="svc-links">{others}</ul>
+  </section>
+</main>
+
+{deepen(sh['footer'])}
+
+{sh['mbar']}
+
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/v2.js" defer></script>
+</body>
+</html>
+'''
+
+
+def build_services():
+    sh = shell()
+    S, SHORT = services_data()
+    for slug in SVC_SLUGS:
+        d = os.path.join(ROOT, 'posluhy', slug)
+        os.makedirs(d, exist_ok=True)
+        open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(build_service(sh, slug, S, SHORT))
+        print('ok posluhy/' + slug)
+
+
 if __name__ == '__main__':
     main()
+    build_services()

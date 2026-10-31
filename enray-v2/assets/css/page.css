@@ -184,3 +184,59 @@
   background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 22px) 23px, calc(100% - 16px) 23px; background-size: 6px 6px; background-repeat: no-repeat; }
 .bi-select:hover { border-color: var(--ink-2); }
 .bi-select:focus { outline: 2px solid var(--cobalt); outline-offset: 2px; border-color: var(--cobalt); }
+
+/* ===== Сторінки послуг ===== */
+/* Перший екран: текст ліворуч, штамп креслення праворуч — знак власний, як у першої версії EnRay */
+.phero--svc { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(16px, 2.4vw, 40px); }
+.phero--svc .phero-copy { padding-right: 0; }
+.phero--art { background: radial-gradient(120% 110% at 85% 0%, #1f5ed8 0%, #0b2a6b 52%, #071736 100%); }
+.phero--art::after { background: linear-gradient(90deg, rgb(4 14 32 / .35), transparent 70%); }
+.phero-art { position: absolute; z-index: -1; right: -2%; top: -6%; font-size: clamp(16rem, 34vw, 30rem); color: rgb(255 255 255 / .07); line-height: 0; }
+.phero-art .ico { stroke-width: .9; }
+.stamp { position: relative; z-index: 2; margin: clamp(20px, 3vw, 48px); margin-left: 0; background: var(--surface); color: var(--ink); border-radius: var(--r-l); box-shadow: 0 30px 60px -36px rgb(0 0 0 / .55); overflow: hidden; }
+.stamp-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: 16px 20px; background: var(--ink); color: var(--on-accent); }
+.stamp-head span:first-child { font: 800 clamp(1.125rem, 1rem + .5vw, 1.375rem)/1.15 var(--f-display); overflow-wrap: anywhere; }
+.stamp-by { font: 500 .75rem/1.3 var(--f-mono); color: var(--sky-key); letter-spacing: .03em; }
+.stamp-head::after { content: ""; flex-basis: 100%; height: 3px; margin: 10px -20px -16px; background: var(--energy); }
+.stamp-rows { margin: 0; }
+.stamp-rows div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 12px; padding: 11px 20px; border-bottom: 1px solid var(--line); }
+.stamp-rows div:last-child { border-bottom: 0; }
+.stamp-rows dt { color: var(--muted); font-size: .9375rem; }
+.stamp-rows dd { margin: 0; font-weight: 600; }
+.stamp-rows > div { animation: stamp-in .5s var(--ease) both; }
+.stamp-rows > div:nth-child(2) { animation-delay: .07s; } .stamp-rows > div:nth-child(3) { animation-delay: .14s; }
+.stamp-rows > div:nth-child(4) { animation-delay: .21s; } .stamp-rows > div:nth-child(5) { animation-delay: .28s; } .stamp-rows > div:nth-child(6) { animation-delay: .35s; }
+@keyframes stamp-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.todo { display: inline-block; padding: 2px 9px; border: 1.5px dashed #b45309; border-radius: 999px; background: #fff7ed; font: 600 .8125rem/1.4 var(--f-body); color: #9a3412; }
+.works-todo { max-width: 60ch; padding: 18px 22px; border: 1.5px dashed #b45309; border-radius: var(--r-l); background: #fff7ed; color: #9a3412; }
+.works h2, .includes h2, .others h2 { margin-bottom: clamp(20px, 2.4vw, 32px); }
+
+/* Що входить: білі картки з пунктами, маркер — коротка риска енергетичного градієнта */
+.inc-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.inc { padding: 22px; border-radius: var(--r-l); background: var(--surface); box-shadow: 0 20px 44px -36px rgb(var(--shadow-rgb) / .5); }
+.inc h3 { font-size: 1.25rem; letter-spacing: -0.015em; margin-bottom: 12px; }
+.inc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.inc li { position: relative; padding-left: 20px; color: var(--ink-2); line-height: 1.45; }
+.inc li::before { content: ""; position: absolute; left: 0; top: .66em; width: 10px; height: 3px; border-radius: 2px; background: var(--energy); }
+
+/* Інші послуги */
+.svc-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 12px; }
+.svc-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; min-height: 44px; padding: 18px 20px; border-radius: var(--r-m); background: var(--surface); text-decoration: none; box-shadow: 0 16px 36px -32px rgb(var(--shadow-rgb) / .5); transition: background-color .2s; }
+.svc-link-name { font: 700 1.125rem/1.25 var(--f-display); }
+.svc-link-what { grid-column: 1; font-size: .9375rem; color: var(--muted); line-height: 1.4; }
+.svc-link .ico { grid-column: 2; grid-row: 1 / 3; font-size: 1.25rem; transition: transform .25s var(--ease); }
+@media (hover: hover) { .svc-link:hover { background: var(--cobalt-soft); } .svc-link:hover .ico { transform: translateX(4px); color: var(--cobalt); } }
+.request + .others { margin-top: 0; }
+.request:has(+ .others) { padding-bottom: 0; }
+.others { padding-bottom: var(--sec); }
+
+@media (max-width: 68.75em) {
+  .phero--svc { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .phero--svc .stamp { margin: 0 clamp(16px, 3vw, 40px) clamp(20px, 3vw, 40px); }
+}
+@media (max-width: 45em) {
+  .phero--svc { min-height: 0; }
+  .phero--svc .phero-copy { padding-top: 40px; }
+  .stamp-rows div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .stamp-rows > div { animation: none; } }
